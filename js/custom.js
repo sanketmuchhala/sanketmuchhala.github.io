@@ -37,7 +37,7 @@ $(function() {
 	function re_size () {
 		if ($( window ).width() <= 991) {
                         $('.nav li').on('click', function () {
-                        $('#menu ul').css({"display":"none"});
+                        $('#menu ul').hide();
                         });
 	
 			/* ------------bannre button margin ------------- */

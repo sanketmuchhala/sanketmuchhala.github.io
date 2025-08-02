@@ -5,8 +5,12 @@
   --font-family: 'Poppins', sans-serif;
 }
 
+<<<<<<< HEAD
 html, body {
   height: 100%;
+=======
+html {
+>>>>>>> origin/main
   scroll-behavior: smooth;
 }
 
@@ -15,6 +19,7 @@ body {
   color: var(--text-color);
   font-family: var(--font-family);
   line-height: 1.6;
+<<<<<<< HEAD
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
 }
@@ -26,6 +31,8 @@ section {
   flex-direction: column;
   justify-content: center;
   scroll-snap-align: start;
+=======
+>>>>>>> origin/main
 }
 
 .navbar-brand,
@@ -52,6 +59,7 @@ section {
   text-align: center;
 }
 
+<<<<<<< HEAD
 .btn-icon {
   display: inline-flex;
   align-items: center;
@@ -141,6 +149,59 @@ section {
   font-size: 0.9rem;
   color: #aaa;
   margin-top: 1rem;
+=======
+.skills-list .badge {
+  background: var(--accent-color);
+  color: #000;
+  margin: 0.2rem;
+  font-weight: 500;
+}
+
+.timeline {
+  border-left: 2px solid var(--accent-color);
+  padding-left: 20px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.timeline-item:before {
+  content: '';
+  position: absolute;
+  left: -11px;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  background: var(--accent-color);
+  border-radius: 50%;
+}
+
+.duration {
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.card {
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.btn-accent {
+  background: var(--accent-color);
+  color: #000;
+  border: none;
+  transition: background 0.3s;
+}
+
+.btn-accent:hover {
+  background: #00cdd1;
+  color: #000;
+>>>>>>> origin/main
 }
 
 .contact-form .form-control {

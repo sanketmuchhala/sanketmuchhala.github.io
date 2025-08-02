@@ -1,0 +1,175 @@
+:root {
+  --bg-color: #0d0d0d;
+  --text-color: #f0f0f0;
+  --accent-color: #00adb5;
+  --font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-family);
+  line-height: 1.6;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+}
+
+section {
+  min-height: 100vh;
+  padding: 4rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  scroll-snap-align: start;
+}
+
+.navbar-brand,
+.nav-link {
+  transition: color 0.3s;
+}
+
+.navbar-brand:hover,
+.nav-link:hover {
+  color: var(--accent-color);
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.section-title {
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 4px;
+  background: var(--accent-color);
+  color: #000;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.btn-icon:hover {
+  background: #00cdd1;
+  transform: translateY(-3px);
+}
+
+.education-item {
+  max-width: 500px;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.tech-category {
+  margin-bottom: 2rem;
+}
+
+.tech-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.tech-icons img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s;
+}
+
+.tech-icons img:hover {
+  transform: scale(1.1);
+}
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  perspective: 1000px;
+}
+
+.cert-card {
+  position: relative;
+  width: 100%;
+  height: 260px;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.cert-card:hover {
+  transform: rotateY(180deg);
+}
+
+.cert-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.cert-face.back {
+  transform: rotateY(180deg);
+}
+
+.resume-note {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-top: 1rem;
+}
+
+.contact-form .form-control {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  color: #fff;
+}
+
+.contact-form .form-control:focus {
+  border-color: var(--accent-color);
+  box-shadow: none;
+  background: #1a1a1a;
+  color: #fff;
+}
+
+.social a {
+  color: var(--text-color);
+  transition: color 0.3s;
+}
+
+.social a:hover {
+  color: var(--accent-color);
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}

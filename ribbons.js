@@ -148,11 +148,11 @@
         this._ribbons = [];
         this._options = {
             // ribbon color HSL saturation amount
-            colorSaturation: "70%",
+            colorSaturation: "0%",
             // ribbon color HSL brightness amount
-            colorBrightness: "55%",
+            colorBrightness: "20%",
             // ribbon color opacity amount
-            colorAlpha: 0.8,
+            colorAlpha: 0.4,
             // how fast to cycle through colors in the HSL color space - INCREASED SPEED
             colorCycleSpeed : 12, // Further increased for more dynamic colors
             // where to start from on the Y axis on each side (top|min, middle|center, bottom|max, random)
@@ -266,7 +266,7 @@
                 point1 = new Point( startx, starty ),
                 point2 = new Point( startx, starty ),
                 point3 = null,
-                color  = Math.round( random( 240, 300 ) ), // Focus on purple/blue range for new color scheme
+                color  = Math.round( random( 0, 60 ) ), // Focus on black/gray range for dark theme
                 delay  = 0;
 
             // build ribbon sections

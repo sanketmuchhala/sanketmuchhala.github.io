@@ -36,9 +36,9 @@ $(function() {
 	}
 	function re_size () {
 		if ($( window ).width() <= 991) {
-			$('.nav li').on('click', function () {
-			$('.#menu ul').css({"display":"none"});
-			});
+                        $('.nav li').on('click', function () {
+                        $('#menu ul').css({"display":"none"});
+                        });
 	
 			/* ------------bannre button margin ------------- */
 			$('.cd-intro').children('button').removeClass('mt_30').addClass('mt_20');

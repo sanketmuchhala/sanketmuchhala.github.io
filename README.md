@@ -1,5 +1,3 @@
-# sanketmuchhala.github.io
-
 Personal portfolio of Sanket Muchhala built with HTML, CSS, and JavaScript. The site features a dark theme with a ribbon animation background and includes sections for about, skills, experience, projects, certifications, and contact information.
 
 ## Development

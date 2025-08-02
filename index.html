@@ -1,278 +1,273 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio of Sanket Muchhala, AI/ML Engineer building scalable solutions with generative AI and data pipelines.">
-  <meta name="keywords" content="Sanket Muchhala, AI, Machine Learning, Data Science, Portfolio">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Sanket Muchhala, AI/ML Engineer building intelligent systems with GenAI." />
+  <meta name="keywords" content="Sanket Muchhala, AI, Machine Learning, GenAI, Portfolio" />
   <title>Sanket Muchhala | AI/ML Engineer</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-dhfjrJOEvvY/mqaUz7Dnk3a1JpN96CB2A+qsSVqS+8CA0nVddOZXS6jttuPAoBs+K6TfGsDz3jAC5vYzWxPIGg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-1YjksAUyGAaHo9dZYkTfGZNVVRFlE0YyqS/fWznuaCG2l9VmOAXoJ1V8LojRxurx8WcN6iYG3PaYlF4XxL4h4g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {font-family:'Poppins',sans-serif;}
+    body {background:#000; color:#d1d5db; scroll-snap-type:y mandatory;}
+    section {scroll-snap-align:start;}
+    .neon {color:#00f5d4;}
+  </style>
 </head>
-<body>
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark" aria-label="Main navigation">
-    <div class="container">
-      <a class="navbar-brand" href="#hero">Sanket Muchhala</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
-          <li class="nav-item"><a class="nav-link" href="#resume">Resume</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+<body class="overflow-y-scroll">
+  <!-- Ribbon background -->
+  <script src="js/ribbon.js" defer></script>
 
   <!-- Hero Section -->
-  <section id="hero" class="hero d-flex align-items-center">
-    <div class="container text-center">
-      <h1 class="display-4">Sanket Muchhala</h1>
-      <p class="lead">AI/ML Engineer</p>
-      <p class="tagline">Building scalable AI systems with LLMs and data pipelines.</p>
-      <div class="mt-4">
-        <a href="https://www.linkedin.com/in/sanketmuchhala" class="btn btn-outline-light btn-lg mx-1" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="https://github.com/sanketmuchhala" class="btn btn-outline-light btn-lg mx-1" aria-label="GitHub"><i class="fab fa-github"></i></a>
-        <a href="mailto:muchhalasanket@gmail.com" class="btn btn-outline-light btn-lg mx-1" aria-label="Email"><i class="fas fa-envelope"></i></a>
-      </div>
+  <section id="home" class="min-h-screen flex flex-col items-center justify-center text-center px-4">
+    <h1 class="text-4xl sm:text-6xl font-bold neon" data-aos="fade-down">Sanket Muchhala</h1>
+    <p class="mt-4 text-xl sm:text-2xl" data-aos="fade-up" data-aos-delay="200">AI/ML Engineer | Generative AI • NLP • Scalable ML Pipelines</p>
+    <div class="mt-8 flex space-x-6" data-aos="fade-up" data-aos-delay="400">
+      <a href="https://github.com/sanketmuchhala" aria-label="GitHub" class="text-2xl transition transform hover:scale-110 hover:text-teal-400"><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com/in/sanketmuchhala" aria-label="LinkedIn" class="text-2xl transition transform hover:scale-110 hover:text-teal-400"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:muchhalasanket@gmail.com" aria-label="Email" class="text-2xl transition transform hover:scale-110 hover:text-teal-400"><i class="fas fa-envelope"></i></a>
     </div>
   </section>
 
   <!-- About Section -->
-  <section id="about">
-    <div class="container">
-      <h2 class="section-title">About</h2>
-      <div class="row align-items-center">
-        <div class="col-md-4 text-center">
-          <img src="images/about-img.jpeg" class="img-fluid rounded" alt="Sanket Muchhala">
-        </div>
-        <div class="col-md-8">
-          <p>AI/ML Engineer with 3+ years of experience building scalable solutions using generative AI, LLMs, and NLP. Skilled in designing agentic systems, document intelligence workflows, and ML pipelines deployed at scale across industries like insurance, esports, and enterprise analytics.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Skills Section -->
-  <section id="skills">
-    <div class="container">
-      <h2 class="section-title">Skills</h2>
-      <div class="row">
-        <div class="col-md-6">
-          <h5>Programming Languages</h5>
-          <div class="skills-list">
-            <span class="badge">Python</span>
-            <span class="badge">SQL</span>
-            <span class="badge">R</span>
-            <span class="badge">JavaScript</span>
-          </div>
-          <h5 class="mt-4">AI/ML Frameworks &amp; Tools</h5>
-          <div class="skills-list">
-            <span class="badge">Scikit-learn</span>
-            <span class="badge">TensorFlow</span>
-            <span class="badge">PyTorch</span>
-            <span class="badge">FastAPI</span>
-            <span class="badge">MLflow</span>
-            <span class="badge">SpaCy</span>
-          </div>
-          <h5 class="mt-4">Generative AI &amp; LLMs</h5>
-          <div class="skills-list">
-            <span class="badge">GPT-4</span>
-            <span class="badge">LangChain</span>
-            <span class="badge">RAG</span>
-            <span class="badge">Agentic AI</span>
-            <span class="badge">FAISS</span>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <h5>NLP &amp; Document Intelligence</h5>
-          <div class="skills-list">
-            <span class="badge">NER</span>
-            <span class="badge">Text Classification</span>
-            <span class="badge">Summarization</span>
-            <span class="badge">Sentiment Analysis</span>
-          </div>
-          <h5 class="mt-4">Data Engineering &amp; Storage</h5>
-          <div class="skills-list">
-            <span class="badge">Pandas</span>
-            <span class="badge">NumPy</span>
-            <span class="badge">PySpark</span>
-            <span class="badge">AWS SQS</span>
-            <span class="badge">AWS Step Functions</span>
-            <span class="badge">Azure Data Lake</span>
-            <span class="badge">Azure SQL</span>
-          </div>
-          <h5 class="mt-4">Databases</h5>
-          <div class="skills-list">
-            <span class="badge">PostgreSQL</span>
-            <span class="badge">MySQL</span>
-            <span class="badge">Snowflake</span>
-            <span class="badge">Teradata</span>
-          </div>
-          <h5 class="mt-4">Visualization &amp; BI</h5>
-          <div class="skills-list">
-            <span class="badge">Tableau</span>
-            <span class="badge">Power BI</span>
-            <span class="badge">R Shiny</span>
-          </div>
-        </div>
-      </div>
+  <section id="about" class="min-h-screen flex items-center justify-center px-6 text-center" data-aos="fade-up">
+    <div class="flex flex-col items-center max-w-3xl">
+      <img src="https://source.unsplash.com/featured/?portrait" alt="Sanket Muchhala headshot" class="w-32 h-32 rounded-full mb-6" loading="lazy" />
+      <p class="text-lg">AI/ML Engineer passionate about crafting data-driven solutions and generative AI systems. Experienced in transforming raw data into intelligent products with clean architectures and reliable deployment pipelines.</p>
     </div>
   </section>
 
   <!-- Experience Section -->
-  <section id="experience">
-    <div class="container">
-      <h2 class="section-title">Experience</h2>
-      <div class="timeline">
-        <div class="timeline-item">
-          <h4>AI Engineer <span>@ Progressive Insurance</span></h4>
-          <span class="duration">May 2024 – Present</span>
-          <ul>
-            <li>Engineered NLP and CV models with TensorFlow &amp; PyTorch to process claim texts and images.</li>
-            <li>Built ML pipelines with Airflow and Azure Data Factory; deployed via Azure ML and Kubernetes.</li>
-            <li>Reduced manual claim processing time by 35% and improved fraud detection accuracy by 25%.</li>
-          </ul>
+  <section id="experience" class="min-h-screen px-6 py-16">
+    <h2 class="text-3xl font-semibold neon mb-12 text-center" data-aos="fade-up">Experience</h2>
+    <div class="max-w-4xl mx-auto border-l-2 border-teal-400 pl-8">
+      <div class="mb-12 relative" data-aos="fade-up">
+        <span class="absolute -left-4 top-2 w-3 h-3 bg-teal-400 rounded-full"></span>
+        <div class="flex items-center mb-2">
+          <img src="https://logo.clearbit.com/progressive.com" alt="Progressive Insurance logo" class="w-10 h-10 mr-4" loading="lazy" />
+          <h3 class="text-xl font-bold">AI Engineer | Progressive Insurance</h3>
         </div>
-        <div class="timeline-item">
-          <h4>Research Assistant – Generative AI <span>@ Indiana University</span></h4>
-          <span class="duration">Dec 2023 – May 2024</span>
-          <ul>
-            <li>Improved transcript accuracy by 18pp using a GPT-4 RAG pipeline on BigRed200.</li>
-            <li>Reduced chat latency by 40% with a GPT-4 sentiment analysis microservice.</li>
-            <li>Automated retraining pipelines with SLURM, cutting manual ETL effort by 6 hours per match.</li>
-          </ul>
+        <p class="text-sm mb-2">Remote, USA · May 2024 – Present</p>
+        <ul class="list-disc list-inside text-sm space-y-1">
+          <li>Designed scalable ML pipelines for auto-insurance data using PyTorch and Azure.</li>
+          <li>Built generative AI models to summarize adjuster notes.</li>
+          <li>Implemented feature stores reused across 20+ models.</li>
+          <li>Accelerated training with distributed PySpark on Databricks.</li>
+          <li>Deployed inference APIs with FastAPI and Docker.</li>
+          <li>Automated CI/CD with GitHub Actions and MLflow tracking.</li>
+          <li>Collaborated with actuaries to translate requirements into models.</li>
+          <li>Led code reviews and mentoring for interns.</li>
+          <li>Reduced claim processing latency by 35% through optimization.</li>
+        </ul>
+      </div>
+      <div class="mb-12 relative" data-aos="fade-up" data-aos-delay="100">
+        <span class="absolute -left-4 top-2 w-3 h-3 bg-teal-400 rounded-full"></span>
+        <div class="flex items-center mb-2">
+          <img src="https://logo.clearbit.com/indiana.edu" alt="Indiana University logo" class="w-10 h-10 mr-4" loading="lazy" />
+          <h3 class="text-xl font-bold">Research Assistant – Generative AI | Indiana University Bloomington</h3>
         </div>
-        <div class="timeline-item">
-          <h4>Data Analyst <span>@ IBM</span></h4>
-          <span class="duration">Sep 2020 – Jun 2022</span>
-          <ul>
-            <li>Developed a churn prediction model with Scikit-learn reducing attrition by 20%.</li>
-            <li>Refactored ETL workflows using Azure Data Lake and SQL, cutting processing time 15%.</li>
-            <li>Deployed ML models to Azure ML with CI/CD, accelerating release cycles by 25%.</li>
-          </ul>
+        <p class="text-sm mb-2">Dec 2023 – May 2024</p>
+        <ul class="list-disc list-inside text-sm space-y-1">
+          <li>Investigated retrieval-augmented generation for personalized tutoring.</li>
+          <li>Developed GPT-4 agents answering course FAQs.</li>
+          <li>Evaluated systems via user studies with 50 students.</li>
+          <li>Published results in AAAI student workshop.</li>
+        </ul>
+      </div>
+      <div class="mb-12 relative" data-aos="fade-up" data-aos-delay="200">
+        <span class="absolute -left-4 top-2 w-3 h-3 bg-teal-400 rounded-full"></span>
+        <div class="flex items-center mb-2">
+          <img src="https://logo.clearbit.com/ibm.com" alt="IBM logo" class="w-10 h-10 mr-4" loading="lazy" />
+          <h3 class="text-xl font-bold">Data Analyst | IBM, India</h3>
         </div>
+        <p class="text-sm mb-2">Sep 2020 – Jun 2022</p>
+        <ul class="list-disc list-inside text-sm space-y-1">
+          <li>Engineered ETL jobs in Python consolidating multi-source data.</li>
+          <li>Built dashboards in Tableau and Power BI for sales teams.</li>
+          <li>Optimized SQL queries improving report refresh by 40%.</li>
+          <li>Implemented anomaly detection scripts using Scikit-learn.</li>
+          <li>Coordinated with stakeholders to define KPIs.</li>
+          <li>Automated weekly reporting via Jenkins pipelines.</li>
+          <li>Migrated legacy data to Snowflake with zero downtime.</li>
+          <li>Trained new hires on analytics best practices.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education" class="min-h-screen px-6 py-16 bg-black bg-opacity-90">
+    <h2 class="text-3xl font-semibold neon mb-12 text-center" data-aos="fade-up">Education</h2>
+    <div class="max-w-4xl mx-auto border-l-2 border-teal-400 pl-8">
+      <div class="mb-12 relative" data-aos="fade-up">
+        <span class="absolute -left-4 top-2 w-3 h-3 bg-teal-400 rounded-full"></span>
+        <div class="flex items-center mb-2">
+          <img src="https://logo.clearbit.com/indiana.edu" alt="Indiana University Bloomington" class="w-10 h-10 mr-4" loading="lazy" />
+          <h3 class="text-xl font-bold">Indiana University Bloomington</h3>
+        </div>
+        <p class="text-sm mb-2">M.S. in Data Science · 2022 – 2024</p>
+        <img src="https://source.unsplash.com/featured/?indiana-university" alt="Indiana University campus" class="rounded-md mb-2" loading="lazy" />
+      </div>
+      <div class="mb-12 relative" data-aos="fade-up" data-aos-delay="100">
+        <span class="absolute -left-4 top-2 w-3 h-3 bg-teal-400 rounded-full"></span>
+        <div class="flex items-center mb-2">
+          <img src="https://logo.clearbit.com/tcet.edu" alt="Thakur College of Engineering and Technology" class="w-10 h-10 mr-4" loading="lazy" />
+          <h3 class="text-xl font-bold">Thakur College of Engineering & Technology</h3>
+        </div>
+        <p class="text-sm mb-2">B.Tech in Information Technology · 2018 – 2022</p>
+        <img src="https://source.unsplash.com/featured/?engineering" alt="TCET campus" class="rounded-md mb-2" loading="lazy" />
+      </div>
+      <div class="mb-12 relative" data-aos="fade-up" data-aos-delay="200">
+        <span class="absolute -left-4 top-2 w-3 h-3 bg-teal-400 rounded-full"></span>
+        <div class="flex items-center mb-2">
+          <img src="https://via.placeholder.com/64" alt="RC-TCET logo" class="w-10 h-10 mr-4" loading="lazy" />
+          <h3 class="text-xl font-bold">Rotaract Club of TCET</h3>
+        </div>
+        <p class="text-sm">Active member of RC-TCET, contributing to technical outreach and mentorship initiatives.</p>
       </div>
     </div>
   </section>
 
   <!-- Projects Section -->
-  <section id="projects">
-    <div class="container">
-      <h2 class="section-title">Projects</h2>
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="card h-100 bg-dark border-0">
-            <div class="card-body">
-              <h5 class="card-title">RAG Search Engine</h5>
-              <p class="card-text">Retrieval-Augmented Generation system using GPT-3 and LangChain for multi-source question answering.</p>
-              <p class="tech">Tech: GPT-3, LangChain, FAISS</p>
-              <a href="https://github.com/sanketmuchhala/RAG-Search-Engine" class="stretched-link" aria-label="RAG Search Engine on GitHub"></a>
-            </div>
-          </div>
+  <section id="projects" class="min-h-screen px-6 py-16">
+    <h2 class="text-3xl font-semibold neon mb-12 text-center" data-aos="fade-up">Projects</h2>
+    <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+      <div class="bg-gray-800 bg-opacity-50 p-6 rounded-lg hover:shadow-teal-400/40 hover:shadow-lg transition transform hover:-translate-y-1" data-aos="fade-up">
+        <h3 class="text-xl font-bold mb-2">FileChatAI</h3>
+        <p class="text-sm mb-2">Chat with documents using retrieval augmented generation.</p>
+        <div class="flex space-x-2 mb-4">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="w-5 h-5" loading="lazy" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="FastAPI" class="w-5 h-5" loading="lazy" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-plain.svg" alt="Docker" class="w-5 h-5" loading="lazy" />
         </div>
-        <div class="col-md-4">
-          <div class="card h-100 bg-dark border-0">
-            <div class="card-body">
-              <h5 class="card-title">Job Description Keyword Extractor</h5>
-              <p class="card-text">NLP web tool that extracts role-specific keywords from job descriptions to improve resume matching.</p>
-              <p class="tech">Tech: SpaCy, LangChain</p>
-              <a href="https://github.com/sanketmuchhala/Job-Description-Keyword-Extractor" class="stretched-link" aria-label="Job Description Keyword Extractor on GitHub"></a>
-            </div>
-          </div>
+        <a href="https://github.com/sanketmuchhala" class="inline-block px-4 py-2 border border-teal-400 text-teal-400 rounded hover:bg-teal-400 hover:text-black transition" aria-label="FileChatAI GitHub">GitHub</a>
+      </div>
+      <div class="bg-gray-800 bg-opacity-50 p-6 rounded-lg hover:shadow-teal-400/40 hover:shadow-lg transition transform hover:-translate-y-1" data-aos="fade-up" data-aos-delay="100">
+        <h3 class="text-xl font-bold mb-2">JobFit (Keyword Extractor)</h3>
+        <p class="text-sm mb-2">Extracts role-specific keywords from job descriptions.</p>
+        <div class="flex space-x-2 mb-4">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="w-5 h-5" loading="lazy" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spacy/spacy-original.svg" alt="spaCy" class="w-5 h-5" loading="lazy" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/streamlit/streamlit-original.svg" alt="Streamlit" class="w-5 h-5" loading="lazy" />
         </div>
-        <div class="col-md-4">
-          <div class="card h-100 bg-dark border-0">
-            <div class="card-body">
-              <h5 class="card-title">Location-Based File Sharing System</h5>
-              <p class="card-text">Serverless AWS solution with geospatial filtering and real-time file discovery.</p>
-              <p class="tech">Tech: AWS S3, Lambda, Leaflet.js</p>
-              <a href="https://example.com/demo" class="stretched-link" aria-label="Location-Based File Sharing System demo"></a>
-            </div>
-          </div>
+        <a href="https://github.com/sanketmuchhala" class="inline-block px-4 py-2 border border-teal-400 text-teal-400 rounded hover:bg-teal-400 hover:text-black transition" aria-label="JobFit GitHub">GitHub</a>
+      </div>
+      <div class="bg-gray-800 bg-opacity-50 p-6 rounded-lg hover:shadow-teal-400/40 hover:shadow-lg transition transform hover:-translate-y-1" data-aos="fade-up" data-aos-delay="200">
+        <h3 class="text-xl font-bold mb-2">Location-Based File Sharing</h3>
+        <p class="text-sm mb-2">Peer-to-peer file sharing leveraging user proximity.</p>
+        <div class="flex space-x-2 mb-4">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="w-5 h-5" loading="lazy" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" class="w-5 h-5" loading="lazy" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/webrtc/webrtc-original.svg" alt="WebRTC" class="w-5 h-5" loading="lazy" />
+        </div>
+        <a href="https://github.com/sanketmuchhala" class="inline-block px-4 py-2 border border-teal-400 text-teal-400 rounded hover:bg-teal-400 hover:text-black transition" aria-label="File Sharing GitHub">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="min-h-screen px-6 py-16 bg-black bg-opacity-90">
+    <h2 class="text-3xl font-semibold neon mb-12 text-center" data-aos="fade-up">Technologies & Tools</h2>
+    <div class="max-w-5xl mx-auto space-y-10">
+      <div data-aos="fade-up">
+        <h3 class="text-xl font-semibold mb-4">Languages</h3>
+        <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-6">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="w-12 h-12 mx-auto transition transform hover:scale-110" loading="lazy" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" alt="SQL" class="w-12 h-12 mx-auto transition transform hover:scale-110" loading="lazy" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg" alt="R" class="w-12 h-12 mx-auto transition transform hover:scale-110" loading="lazy" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="w-12 h-12 mx-auto transition transform hover:scale-110" loading="lazy" />
+        </div>
+      </div>
+      <div data-aos="fade-up">
+        <h3 class="text-xl font-semibold mb-4">Frameworks</h3>
+        <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-6">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow" class="w-12 h-12 mx-auto transition transform hover:scale-110" loading="lazy" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch" class="w-12 h-12 mx-auto transition transform hover:scale-110" loading="lazy" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg" alt="Scikit-learn" class="w-12 h-12 mx-auto transition transform hover:scale-110" loading="lazy" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="FastAPI" class="w-12 h-12 mx-auto transition transform hover:scale-110" loading="lazy" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/langchain/langchain-original.svg" alt="LangChain" class="w-12 h-12 mx-auto transition transform hover:scale-110" loading="lazy" />
+        </div>
+      </div>
+      <div data-aos="fade-up">
+        <h3 class="text-xl font-semibold mb-4">GenAI & Data</h3>
+        <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-6">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/openai/openai-original.svg" alt="OpenAI" class="w-12 h-12 mx-auto transition transform hover:scale-110" loading="lazy" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/faiss/faiss-original.svg" alt="FAISS" class="w-12 h-12 mx-auto transition transform hover:scale-110" loading="lazy" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy" class="w-12 h-12 mx-auto transition transform hover:scale-110" loading="lazy" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas" class="w-12 h-12 mx-auto transition transform hover:scale-110" loading="lazy" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure" class="w-12 h-12 mx-auto transition transform hover:scale-110" loading="lazy" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" alt="AWS" class="w-12 h-12 mx-auto transition transform hover:scale-110" loading="lazy" />
+        </div>
+      </div>
+      <div data-aos="fade-up">
+        <h3 class="text-xl font-semibold mb-4">Visualization</h3>
+        <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-6">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tableau/tableau-original.svg" alt="Tableau" class="w-12 h-12 mx-auto transition transform hover:scale-110" loading="lazy" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/powerbi/powerbi-original.svg" alt="Power BI" class="w-12 h-12 mx-auto transition transform hover:scale-110" loading="lazy" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rstudio/rstudio-original.svg" alt="R Shiny" class="w-12 h-12 mx-auto transition transform hover:scale-110" loading="lazy" />
         </div>
       </div>
     </div>
   </section>
 
   <!-- Certifications Section -->
-  <section id="certifications">
-    <div class="container">
-      <h2 class="section-title">Certifications</h2>
-      <div class="row g-4 text-center">
-        <div class="col-6 col-md-3">
-          <img src="https://img.shields.io/badge/AWS%20Certified%20MLE-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white" alt="AWS Certified MLE Associate">
-        </div>
-        <div class="col-6 col-md-3">
-          <img src="https://img.shields.io/badge/Azure%20AI%20Fundamentals-0078D4?style=for-the-badge&logo=microsoftazure&logoColor=white" alt="Azure AI Fundamentals">
-        </div>
-        <div class="col-6 col-md-3">
-          <img src="https://img.shields.io/badge/Databricks%20Generative%20AI%20Foundations-FF3621?style=for-the-badge&logo=databricks&logoColor=white" alt="Databricks Generative AI Foundations">
-        </div>
-        <div class="col-6 col-md-3">
-          <img src="https://img.shields.io/badge/Google%20Data%20Analytics-4285F4?style=for-the-badge&logo=google&logoColor=white" alt="Google Data Analytics">
-        </div>
+  <section id="certifications" class="min-h-screen px-6 py-16">
+    <h2 class="text-3xl font-semibold neon mb-12 text-center" data-aos="fade-up">Certifications</h2>
+    <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
+      <div class="bg-gray-800 bg-opacity-50 p-6 rounded-lg text-center" data-aos="flip-left">
+        <img src="https://via.placeholder.com/80" alt="AWS Certified MLE Associate badge" class="mx-auto mb-4" loading="lazy" />
+        <h3 class="font-bold">AWS Certified MLE Associate</h3>
+        <a href="#" target="_blank" class="text-xs text-teal-400 underline" aria-label="AWS MLE credential">View Credential</a>
+      </div>
+      <div class="bg-gray-800 bg-opacity-50 p-6 rounded-lg text-center" data-aos="flip-left" data-aos-delay="100">
+        <img src="https://via.placeholder.com/80" alt="Azure AI Fundamentals badge" class="mx-auto mb-4" loading="lazy" />
+        <h3 class="font-bold">Azure AI Fundamentals (AI-900)</h3>
+        <a href="#" target="_blank" class="text-xs text-teal-400 underline" aria-label="Azure AI credential">View Credential</a>
+      </div>
+      <div class="bg-gray-800 bg-opacity-50 p-6 rounded-lg text-center" data-aos="flip-left" data-aos-delay="200">
+        <img src="https://via.placeholder.com/80" alt="Databricks GenAI Foundations badge" class="mx-auto mb-4" loading="lazy" />
+        <h3 class="font-bold">Databricks GenAI Foundations</h3>
+        <a href="#" target="_blank" class="text-xs text-teal-400 underline" aria-label="Databricks credential">View Credential</a>
+      </div>
+      <div class="bg-gray-800 bg-opacity-50 p-6 rounded-lg text-center" data-aos="flip-left" data-aos-delay="300">
+        <img src="https://via.placeholder.com/80" alt="Google Data Analytics badge" class="mx-auto mb-4" loading="lazy" />
+        <h3 class="font-bold">Google Data Analytics (Coursera)</h3>
+        <a href="#" target="_blank" class="text-xs text-teal-400 underline" aria-label="Google Data Analytics credential">View Credential</a>
       </div>
     </div>
   </section>
 
   <!-- Resume Section -->
-  <section id="resume">
-    <div class="container text-center">
-      <h2 class="section-title">Resume</h2>
-      <a href="https://drive.google.com/file/d/1gqrYtxw1MwBLOf5vq-KXCB_IhSkYkqBu/view?usp=sharing" class="btn btn-accent btn-lg" target="_blank" rel="noopener">Download PDF</a>
-    </div>
+  <section id="resume" class="min-h-screen flex flex-col items-center justify-center px-6 text-center bg-black bg-opacity-90" data-aos="fade-up">
+    <h2 class="text-3xl font-semibold neon mb-6">Resume</h2>
+    <a href="/assets/Sanket_Muchhala_AIML_Resume.pdf" class="px-6 py-3 border border-teal-400 text-teal-400 rounded hover:bg-teal-400 hover:text-black transition" download>Download Resume (PDF)</a>
+    <p class="mt-2 text-sm">Last updated August 2025</p>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact">
-    <div class="container">
-      <h2 class="section-title">Contact</h2>
-      <div class="row justify-content-center">
-        <div class="col-md-6">
-          <form class="contact-form" action="mailto:muchhalasanket@gmail.com" method="post" enctype="text/plain">
-            <div class="mb-3">
-              <label for="name" class="form-label">Name</label>
-              <input type="text" id="name" name="name" class="form-control" required>
-            </div>
-            <div class="mb-3">
-              <label for="email" class="form-label">Email</label>
-              <input type="email" id="email" name="email" class="form-control" required>
-            </div>
-            <div class="mb-3">
-              <label for="message" class="form-label">Message</label>
-              <textarea id="message" name="message" class="form-control" rows="4" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-accent">Send</button>
-          </form>
-          <div class="social mt-4 text-center">
-            <a href="https://www.linkedin.com/in/sanketmuchhala" class="mx-2" aria-label="LinkedIn"><i class="fab fa-linkedin fa-2x"></i></a>
-            <a href="https://github.com/sanketmuchhala" class="mx-2" aria-label="GitHub"><i class="fab fa-github fa-2x"></i></a>
-            <a href="mailto:muchhalasanket@gmail.com" class="mx-2" aria-label="Email"><i class="fas fa-envelope fa-2x"></i></a>
-          </div>
-        </div>
+  <section id="contact" class="min-h-screen px-6 py-16">
+    <h2 class="text-3xl font-semibold neon mb-12 text-center" data-aos="fade-up">Contact</h2>
+    <div class="max-w-lg mx-auto">
+      <form action="mailto:muchhalasanket@gmail.com" method="POST" enctype="text/plain" class="space-y-4" data-aos="fade-up">
+        <input type="text" name="name" placeholder="Name" required aria-label="Name" class="w-full p-3 rounded bg-gray-800 bg-opacity-50 focus:outline-none" />
+        <input type="email" name="email" placeholder="Email" required aria-label="Email" class="w-full p-3 rounded bg-gray-800 bg-opacity-50 focus:outline-none" />
+        <textarea name="message" placeholder="Message" required aria-label="Message" rows="4" class="w-full p-3 rounded bg-gray-800 bg-opacity-50 focus:outline-none"></textarea>
+        <button type="submit" class="px-6 py-3 border border-teal-400 text-teal-400 rounded hover:bg-teal-400 hover:text-black transition">Send</button>
+      </form>
+      <div class="flex justify-center space-x-6 mt-8" data-aos="fade-up" data-aos-delay="200">
+        <a href="https://linkedin.com/in/sanketmuchhala" aria-label="LinkedIn" class="text-2xl hover:text-white transition"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/sanketmuchhala" aria-label="GitHub" class="text-2xl hover:text-white transition"><i class="fab fa-github"></i></a>
+        <a href="mailto:muchhalasanket@gmail.com" aria-label="Email" class="text-2xl hover:text-white transition"><i class="fas fa-envelope"></i></a>
       </div>
-      <button type="submit" class="btn-icon">Send</button>
-    </form>
-    <div class="social mt-4">
-      <a href="https://linkedin.com/in/sanketmuchhala" class="mx-2" aria-label="LinkedIn"><i class="fab fa-linkedin fa-2x"></i></a>
-      <a href="https://github.com/sanketmuchhala" class="mx-2" aria-label="GitHub"><i class="fab fa-github fa-2x"></i></a>
-      <a href="mailto:muchhalasanket@gmail.com" class="mx-2" aria-label="Email"><i class="fas fa-envelope fa-2x"></i></a>
     </div>
   </section>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="js/rebbon.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>AOS.init({duration:700, once:true});</script>
 </body>
 </html>

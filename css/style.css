@@ -1753,6 +1753,45 @@ figure {
     color: #ffc107;
 }
 
+/* ----------------------------------------------
+        3.X Timeline
+----------------------------------------------- */
+.timeline {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+.timeline:before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #333;
+}
+.timeline li {
+    position: relative;
+    padding-left: 60px;
+    margin-bottom: 40px;
+}
+.timeline-panel {
+    background: #121212;
+    padding: 15px;
+    border-radius: 4px;
+}
+.timeline-title {
+    color: #fff;
+    margin: 0 0 5px 0;
+    font-size: 18px;
+}
+.timeline-duration {
+    color: #ccc;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
 
 /* ----------------------------------------------
 	RESPONSIVE

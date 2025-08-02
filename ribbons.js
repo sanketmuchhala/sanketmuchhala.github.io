@@ -158,9 +158,9 @@
             // where to start from on the Y axis on each side (top|min, middle|center, bottom|max, random)
             verticalPosition : "random",
             // how fast to get to the other side of the screen - INCREASED SPEED
-            horizontalSpeed : 250, // Further increased for faster movement
+            horizontalSpeed : 300, // Further increased for continuous fast movement
             // how many ribbons to keep on screen at any given time - INCREASED COUNT
-            ribbonCount: 5, // Increased from 4
+            ribbonCount: 6, // Increased for more continuous coverage
             // add stroke along with ribbon fill colors
             strokeSize: 0,
             // move ribbons vertically by a factor on page scroll
@@ -220,6 +220,11 @@
                 window.addEventListener( "resize", this._onResize );
                 window.addEventListener( "scroll", this._onScroll );
                 document.body.appendChild( this._canvas );
+                
+                // Initialize with ribbons immediately for continuous animation
+                for (var i = 0; i < this._options.ribbonCount; i++) {
+                    this.addRibbon();
+                }
             }
             catch( e ) {
                 console.warn( "Canvas Context Error: " + e.toString() );
@@ -301,7 +306,7 @@
                 point1.copy( point2 );
                 point2.copy( point3 );
 
-                delay += 2; // Further reduced delay for faster animation
+                delay += 1; // Minimal delay for immediate continuous animation
                 color += this._options.colorCycleSpeed;
             }
             this._ribbons.push( ribbon );
@@ -318,7 +323,7 @@
                 }
                 if( section.delay <= 0 )
                 {
-                    section.phase += 0.04; // Further increased phase increment for faster animation
+                    section.phase += 0.06; // Maximum phase increment for continuous smooth animation
                     section.alpha = Math.sin( section.phase ) * 1;
                     section.alpha = ( section.alpha <= 0 ) ? 0 : section.alpha;
                     section.alpha = ( section.alpha >= 1 ) ? 1 : section.alpha;
@@ -376,14 +381,26 @@
         // Draw ribbons
         _onDraw: function()
         {
+            if (!this._context || !this._canvas) return;
+            
             // Clear the canvas before drawing
             this._context.clearRect( 0, 0, this._width, this._height );
             
+            // Ensure ribbons array exists
+            if (!this._ribbons) {
+                this._ribbons = [];
+            }
+            
             // cleanup ribbons list to remove finished ribbons
-            for( var i = 0, t = this._ribbons.length; i < t; ++i )
+            for( var i = this._ribbons.length - 1; i >= 0; i-- )
             {
-                var ribbon = this._ribbons[ i ],
-                    done   = true;
+                var ribbon = this._ribbons[ i ];
+                if (!ribbon || !Array.isArray(ribbon)) {
+                    this._ribbons.splice( i, 1 );
+                    continue;
+                }
+                
+                var done = true;
 
                 // draw ribbon sections
                 for( var s = 0, l = ribbon.length; s < l; ++s )

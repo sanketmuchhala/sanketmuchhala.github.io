@@ -1134,11 +1134,19 @@ button:focus {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
 }
 
 .blog-date {
     color: var(--text-muted);
     font-size: 0.9rem;
+}
+
+.blog-author {
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    font-weight: var(--font-weight-medium);
 }
 
 .blog-category {

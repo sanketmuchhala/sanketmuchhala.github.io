@@ -154,13 +154,13 @@
             // ribbon color opacity amount
             colorAlpha: 0.4,
             // how fast to cycle through colors in the HSL color space - INCREASED SPEED
-            colorCycleSpeed : 12, // Further increased for more dynamic colors
+            colorCycleSpeed : 8, // Further increased for more dynamic colors
             // where to start from on the Y axis on each side (top|min, middle|center, bottom|max, random)
             verticalPosition : "random",
             // how fast to get to the other side of the screen - INCREASED SPEED
             horizontalSpeed : 300, // Further increased for continuous fast movement
             // how many ribbons to keep on screen at any given time - INCREASED COUNT
-            ribbonCount: 6, // Increased for more continuous coverage
+            ribbonCount: 4, // Increased for more continuous coverage
             // add stroke along with ribbon fill colors
             strokeSize: 0,
             // move ribbons vertically by a factor on page scroll

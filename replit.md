@@ -3,12 +3,18 @@
 This is a modern, responsive portfolio website for Sanket Muchhala, an AI/ML Engineer. The site showcases professional experience, skills, projects, and contact information through a sleek, dark-themed design with animated ribbon background effects. Built as a single-page application using pure HTML, CSS, and JavaScript, it's optimized for GitHub Pages hosting with no build dependencies required.
 
 ## Recent Changes (August 2025)
-- Enhanced color palette with modern purple/indigo theme
-- Improved ribbons animation for continuous smooth movement
+- Changed to intense black color scheme (#000000 background) with white/gray accents for maximum contrast
+- Enhanced ribbons animation for continuous smooth movement with subtle gray tones
 - Added company logos to experience section (Progressive, IBM, Indiana University)
 - Added university logos to education section
 - Integrated user's GitHub profile image in hero section
-- Fixed JavaScript navigation errors
+- Simplified blog system to single post "AI vs Human Brain" with dedicated page
+- Built complete blog structure with clean URLs and responsive design
+- Implemented extensive mobile optimizations and media queries to fix overlap issues
+- Enhanced animations with fadeInUp, slideInLeft, and slideInRight effects
+- Added Download Resume button with placeholder link
+- Created detailed blog template documentation (blog-template.md)
+- Fixed all mobile navigation and responsive design issues
 - Optimized for GitHub Pages deployment
 
 # User Preferences
@@ -25,9 +31,10 @@ Preferred communication style: Simple, everyday language.
 
 ## Design System
 - **CSS Custom Properties**: Centralized design tokens for colors, typography, spacing, and animations stored in `:root` variables
-- **Dark Theme**: Professional dark color scheme optimized for modern UI trends and reduced eye strain
+- **Intense Black Theme**: Pure black (#000000) background with white/gray accents for maximum contrast and modern aesthetic
 - **Typography System**: Inter font family with multiple weight variations for visual hierarchy
-- **Animation Framework**: CSS transitions and transforms with cubic-bezier timing functions for smooth interactions
+- **Animation Framework**: CSS transitions, transforms, and keyframe animations (fadeInUp, slideInLeft, slideInRight) with cubic-bezier timing functions
+- **Mobile-First Responsive Design**: Comprehensive media queries for phones, tablets, and desktop with proper touch targets
 
 ## Navigation System
 - **Sticky Navigation**: Fixed header that adapts appearance based on scroll position

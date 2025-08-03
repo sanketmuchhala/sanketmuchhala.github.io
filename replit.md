@@ -9,7 +9,9 @@ This is a modern, responsive portfolio website for Sanket Muchhala, an AI/ML Eng
 - Added university logos to education section
 - Integrated user's GitHub profile image in hero section
 - Simplified blog system to single post "AI vs Human Brain" with dedicated page
-- Built complete blog structure with clean URLs and responsive design
+- Built complete blog structure with clean URLs and responsive design  
+- Added dark/light mode toggle switch in navigation bar with persistent localStorage
+- Implemented light theme with appropriate colors and contrast ratios
 - Implemented extensive mobile optimizations and media queries to fix overlap issues
 - Enhanced animations with fadeInUp, slideInLeft, and slideInRight effects
 - Added Download Resume button with placeholder link

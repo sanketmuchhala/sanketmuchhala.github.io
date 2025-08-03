@@ -5,10 +5,18 @@ document.addEventListener('DOMContentLoaded', function() {
     const navMenu = document.getElementById('nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
     
-    // Mobile menu toggle
+    // Enhanced mobile menu toggle with animations
     hamburger.addEventListener('click', function() {
         hamburger.classList.toggle('active');
         navMenu.classList.toggle('active');
+        
+        // Add staggered animation for menu items
+        if (navMenu.classList.contains('active')) {
+            const navItems = navMenu.querySelectorAll('.nav-item');
+            navItems.forEach((item, index) => {
+                item.style.animation = `fadeInUp 0.3s ease-out ${index * 0.1}s both`;
+            });
+        }
     });
     
     // Close mobile menu when clicking on a link
@@ -17,6 +25,14 @@ document.addEventListener('DOMContentLoaded', function() {
             hamburger.classList.remove('active');
             navMenu.classList.remove('active');
         });
+    });
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        }
     });
     
     // Navbar scroll effect

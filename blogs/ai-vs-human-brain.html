@@ -389,5 +389,14 @@
 
     <script src="../ribbons.js"></script>
     <script src="../script.js"></script>
+    <script>
+        // Ensure theme toggle works on blog pages
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check for theme on page load
+            const savedTheme = localStorage.getItem('portfolio-theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            document.body.setAttribute('data-theme', savedTheme);
+        });
+    </script>
 </body>
 </html>

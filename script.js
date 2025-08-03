@@ -67,30 +67,73 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', updateActiveNavLink);
     updateActiveNavLink(); // Call once on load
     
-    // Theme toggle functionality
+    // Theme toggle functionality - improved for GitHub Pages
     const themeToggle = document.getElementById('theme-toggle');
     const themeIcon = document.getElementById('theme-icon');
     
     if (themeToggle && themeIcon) {
-        // Check for saved theme preference or default to 'dark'
-        const currentTheme = localStorage.getItem('theme') || 'dark';
-        document.body.setAttribute('data-theme', currentTheme);
-        updateThemeIcon(currentTheme);
-
-        themeToggle.addEventListener('click', function() {
-            const theme = document.body.getAttribute('data-theme');
-            const newTheme = theme === 'dark' ? 'light' : 'dark';
-            
-            document.body.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            updateThemeIcon(newTheme);
+        // Initialize theme system
+        initializeTheme();
+        
+        // Add click event listener
+        themeToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            toggleTheme();
         });
+
+        function initializeTheme() {
+            try {
+                // Check for saved theme preference or default to 'dark'
+                const savedTheme = localStorage.getItem('portfolio-theme');
+                const currentTheme = savedTheme || 'dark';
+                
+                // Apply theme to document root for better compatibility
+                document.documentElement.setAttribute('data-theme', currentTheme);
+                document.body.setAttribute('data-theme', currentTheme);
+                
+                updateThemeIcon(currentTheme);
+                
+                console.log('Theme initialized:', currentTheme);
+            } catch (error) {
+                console.warn('Theme initialization failed, using default dark theme:', error);
+                setTheme('dark');
+            }
+        }
+
+        function toggleTheme() {
+            try {
+                const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                
+                setTheme(newTheme);
+                console.log('Theme switched to:', newTheme);
+            } catch (error) {
+                console.error('Theme toggle failed:', error);
+            }
+        }
+
+        function setTheme(theme) {
+            // Apply to both document root and body for maximum compatibility
+            document.documentElement.setAttribute('data-theme', theme);
+            document.body.setAttribute('data-theme', theme);
+            
+            // Save to localStorage with a prefixed key
+            try {
+                localStorage.setItem('portfolio-theme', theme);
+            } catch (error) {
+                console.warn('Failed to save theme preference:', error);
+            }
+            
+            updateThemeIcon(theme);
+        }
 
         function updateThemeIcon(theme) {
             if (theme === 'light') {
                 themeIcon.className = 'fas fa-moon';
+                themeToggle.setAttribute('aria-label', 'Switch to dark mode');
             } else {
                 themeIcon.className = 'fas fa-sun';
+                themeToggle.setAttribute('aria-label', 'Switch to light mode');
             }
         }
     }

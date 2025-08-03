@@ -12,6 +12,8 @@ This is a modern, responsive portfolio website for Sanket Muchhala, an AI/ML Eng
 - Built complete blog structure with clean URLs and responsive design  
 - Added dark/light mode toggle switch in navigation bar with persistent localStorage
 - Implemented light theme with appropriate colors and contrast ratios
+- Fixed theme toggle compatibility issues for GitHub Pages hosting
+- Added multiple CSS selectors and fallback mechanisms for cross-browser support
 - Implemented extensive mobile optimizations and media queries to fix overlap issues
 - Enhanced animations with fadeInUp, slideInLeft, and slideInRight effects
 - Added Download Resume button with placeholder link

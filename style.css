@@ -500,6 +500,84 @@ section {
     font-size: 1.3rem;
 }
 
+/* Compact Timeline for Education */
+.education .timeline {
+    position: relative;
+    max-width: 100%;
+    margin: 0;
+}
+
+.education .timeline::before {
+    content: '';
+    position: absolute;
+    left: 25px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+}
+
+.education .timeline-item {
+    position: relative;
+    margin-bottom: 1.5rem;
+    padding-left: 60px;
+}
+
+.education .timeline-marker {
+    position: absolute;
+    left: 16px;
+    top: 0;
+    width: 16px;
+    height: 16px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    border: 3px solid var(--background-darker);
+    box-shadow: var(--shadow-small);
+}
+
+.education .timeline-content {
+    background: var(--background-card);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.education .timeline-content:hover {
+    transform: translateX(5px);
+    box-shadow: var(--shadow-medium);
+    border-color: var(--primary-color);
+}
+
+.education .timeline-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0;
+}
+
+.education .company-logo {
+    flex-shrink: 0;
+}
+
+.education .timeline-info h3 {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+}
+
+.education .company {
+    color: var(--text-primary);
+    font-weight: var(--font-weight-semibold);
+    margin-right: 0.75rem;
+    font-size: 0.9rem;
+}
+
+.education .period {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
 .education-item {
     display: flex;
     align-items: center;
@@ -1763,6 +1841,41 @@ button:focus {
         text-align: center;
         gap: 0.75rem;
     }
+    
+    .education .timeline::before {
+        left: 20px;
+    }
+    
+    .education .timeline-item {
+        padding-left: 50px;
+        margin-bottom: 1rem;
+    }
+    
+    .education .timeline-marker {
+        left: 12px;
+        width: 14px;
+        height: 14px;
+    }
+    
+    .education .timeline-content {
+        padding: 0.75rem;
+    }
+    
+    .education .timeline-header {
+        gap: 0.5rem;
+    }
+    
+    .education .timeline-info h3 {
+        font-size: 1rem;
+    }
+    
+    .education .company {
+        font-size: 0.85rem;
+    }
+    
+    .education .period {
+        font-size: 0.8rem;
+    }
 
     /* Skills Section Mobile */
     .skills-grid {
@@ -2298,7 +2411,6 @@ button:focus {
   
 
   
-
   
 
   

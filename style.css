@@ -12,6 +12,10 @@
     --success-color: #10b981;
     --warning-color: #f59e0b;
     
+    /* RGB values for rgba() usage */
+    --primary-color-rgb: 255, 255, 255;
+    --accent-color-rgb: 153, 153, 153;
+    
     --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     --font-weight-light: 300;
     --font-weight-normal: 400;
@@ -51,6 +55,10 @@ body[data-theme="light"] {
     --border-color: #e0e0e0;
     --success-color: #10b981;
     --warning-color: #f59e0b;
+    
+    /* RGB values for rgba() usage */
+    --primary-color-rgb: 0, 112, 243;
+    --accent-color-rgb: 136, 136, 136;
     
     --shadow-small: 0 2px 8px rgba(0, 0, 0, 0.08);
     --shadow-medium: 0 8px 32px rgba(0, 0, 0, 0.12);
@@ -799,6 +807,7 @@ section {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
+    align-items: start;
 }
 
 .contact-info h3 {
@@ -934,7 +943,11 @@ section {
     
     .contact-content {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 3rem;
+    }
+    
+    .social-icons {
+        justify-content: center;
     }
 }
 
@@ -1023,13 +1036,24 @@ section {
 
 @media (max-width: 480px) {
     .btn {
-        width: 100%;
+        width: auto;
+        min-width: 120px;
+        max-width: 160px;
         justify-content: center;
+        padding: 10px 16px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        border-radius: 12px;
     }
     
     .hero-buttons {
-        flex-direction: column;
+        flex-direction: row;
         width: 100%;
+        gap: 0.75rem;
+        margin-top: 1.5rem;
+        margin-bottom: 2.5rem;
+        justify-content: center;
+        flex-wrap: wrap;
     }
     
     .contact-methods,
@@ -1660,8 +1684,9 @@ button:focus {
 
     /* Hero Section Mobile */
     .hero {
-        padding: 140px 0 60px; /* Increased top padding to prevent navbar overlap */
+        padding: 120px 0 60px; /* Reduced top padding since buttons are smaller */
         min-height: auto;
+        margin-top: 10px; /* Reduced margin since buttons are more compact */
     }
 
     .hero-content {
@@ -1687,15 +1712,23 @@ button:focus {
     }
 
     .hero-buttons {
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
-        gap: 0.75rem;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 1.5rem;
+        margin-bottom: 2rem;
+        flex-wrap: wrap;
     }
 
     .btn {
-        width: 100%;
-        max-width: 280px;
+        width: auto;
+        min-width: 140px;
+        max-width: 200px;
         justify-content: center;
+        padding: 12px 20px;
+        font-size: 0.95rem;
+        font-weight: 600;
     }
 
     /* Typography Mobile */
@@ -1800,6 +1833,41 @@ button:focus {
         padding: 1.5rem;
         text-align: center;
     }
+    
+    /* Certifications responsive styles */
+    .certifications-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .cert-card {
+        padding: 1.5rem;
+    }
+    
+    .cert-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+    
+    .cert-title {
+        font-size: 1.1rem;
+    }
+    
+    .cert-description {
+        font-size: 0.9rem;
+    }
+    
+    .cert-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
 
     /* General Mobile Improvements */
     .container {
@@ -1857,7 +1925,8 @@ button:focus {
 
     /* Extra padding to prevent navbar overlap on very small screens */
     .hero {
-        padding: 160px 0 60px !important;
+        padding: 140px 0 60px !important;
+        margin-top: 15px;
     }
 
     .profile-image {
@@ -1896,40 +1965,240 @@ button:focus {
         margin-top: 1rem;
         font-size: clamp(1.8rem, 7vw, 2.5rem) !important;
     }
+    
+    /* Certifications on very small screens */
+    .cert-card {
+        padding: 1rem;
+    }
+    
+    .cert-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .cert-badge {
+        align-self: flex-start;
+    }
+    
+    .cert-link {
+        width: 100%;
+        justify-content: center;
+    }
 }
 
 /* === Certification Styles === */
-.cert-link {
+.certifications-section {
+    background: linear-gradient(135deg, var(--background-darker) 0%, var(--background) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.certifications-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23ffffff" opacity="0.02"/><circle cx="75" cy="75" r="1" fill="%23ffffff" opacity="0.02"/><circle cx="50" cy="10" r="0.5" fill="%23ffffff" opacity="0.01"/><circle cx="10" cy="60" r="0.5" fill="%23ffffff" opacity="0.01"/><circle cx="90" cy="40" r="0.5" fill="%23ffffff" opacity="0.01"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    pointer-events: none;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.cert-card {
+    background: var(--background-card);
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid var(--border-color);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.cert-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.cert-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary-color);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.cert-card:hover::before {
+    transform: scaleX(1);
+}
+
+.cert-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.cert-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
     display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 10px 16px;
-    background-color: #ffffff;
-    border-radius: 10px;
-    text-decoration: none;
-    color: #111827;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: white;
+    font-size: 1.8rem;
+    box-shadow: 0 8px 20px rgba(var(--primary-color-rgb), 0.3);
+    transition: transform 0.3s ease;
+}
+
+.cert-card:hover .cert-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.cert-badge {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.cert-content {
+    margin-bottom: 1.5rem;
+}
+
+.cert-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.cert-description {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.cert-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+}
+
+.cert-issuer {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.cert-date {
+    color: var(--text-muted);
+    background: var(--background-darker);
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
     font-weight: 500;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.cert-actions {
+    border-top: 1px solid var(--border-color);
+    padding-top: 1.5rem;
+}
+
+.cert-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(var(--primary-color-rgb), 0.1), rgba(var(--accent-color-rgb), 0.1));
+    border: 1px solid rgba(var(--primary-color-rgb), 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.cert-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
 }
 
 .cert-link:hover {
-    background-color: #e5e7eb;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: white;
     transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(var(--primary-color-rgb), 0.3);
+}
+
+.cert-link:hover::before {
+    left: 100%;
 }
 
 .cert-link i {
-    font-size: 1.5rem;
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
+}
+
+.cert-link:hover i {
+    transform: translateX(3px);
 }
 
 .social-links {
-    margin-top: 40px;
+    /* Remove margin-top to align with contact-info */
 }
 
 .social-links h3 {
-    margin-bottom: 16px;
+    margin-bottom: 1rem;
     font-size: 1.5rem;
     color: var(--primary-color);
+}
+
+.social-description {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    line-height: 1.7;
 }
 
 .social-methods {
@@ -1961,3 +2230,75 @@ button:focus {
     font-size: 1.5rem;
     color: #6b7280;
 }
+
+.social-method {
+    margin: 0 10px;
+    font-size: 24px;
+    color: #333;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.social-method:hover {
+    transform: scale(1.1);
+    color: #0077b5; /* Optional hover color */
+}
+
+.social-method img {
+    display: inline-block;
+    height: 1em;
+    width: 1em;
+    filter: invert(20%) sepia(8%) saturate(10%) hue-rotate(180deg);
+}
+
+.social-icons {
+    display: flex;
+    gap: 16px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+  
+  .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 56px;
+    width: 56px;
+    border-radius: 50%;
+    background: var(--background-card);
+    border: 1px solid var(--border-color);
+    text-decoration: none;
+    color: var(--text-secondary);
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  }
+  
+  .icon:hover {
+    transform: translateY(-2px);
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+    box-shadow: 0 8px 20px rgba(var(--primary-color-rgb), 0.3);
+  }
+  
+  .icon i {
+    font-size: 1.2rem;
+  }
+  
+  /* Style for LeetCode image to match the theme */
+  .icon img {
+    height: 1.2rem;
+    width: 1.2rem;
+    filter: brightness(0) saturate(100%) invert(0.7);
+    transition: filter 0.3s ease;
+  }
+  
+  .icon:hover img {
+    filter: brightness(0) saturate(100%) invert(1);
+  }
+  
+
+  
+
+  
+
+  

@@ -1036,24 +1036,24 @@ section {
 
 @media (max-width: 480px) {
     .btn {
-        width: auto;
-        min-width: 120px;
-        max-width: 160px;
-        justify-content: center;
-        padding: 10px 16px;
-        font-size: 0.9rem;
-        font-weight: 600;
-        border-radius: 12px;
+        width: auto !important;
+        min-width: 120px !important;
+        max-width: 160px !important;
+        justify-content: center !important;
+        padding: 10px 16px !important;
+        font-size: 0.9rem !important;
+        font-weight: 600 !important;
+        border-radius: 12px !important;
     }
     
     .hero-buttons {
-        flex-direction: row;
-        width: 100%;
-        gap: 0.75rem;
-        margin-top: 1.5rem;
-        margin-bottom: 2.5rem;
-        justify-content: center;
-        flex-wrap: wrap;
+        flex-direction: row !important;
+        width: 100% !important;
+        gap: 0.75rem !important;
+        margin-top: 1.5rem !important;
+        margin-bottom: 2.5rem !important;
+        justify-content: center !important;
+        flex-wrap: wrap !important;
     }
     
     .contact-methods,
@@ -1712,23 +1712,23 @@ button:focus {
     }
 
     .hero-buttons {
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        gap: 1rem;
-        margin-top: 1.5rem;
-        margin-bottom: 2rem;
-        flex-wrap: wrap;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 1rem !important;
+        margin-top: 1.5rem !important;
+        margin-bottom: 2rem !important;
+        flex-wrap: wrap !important;
     }
 
     .btn {
-        width: auto;
-        min-width: 140px;
-        max-width: 200px;
-        justify-content: center;
-        padding: 12px 20px;
-        font-size: 0.95rem;
-        font-weight: 600;
+        width: auto !important;
+        min-width: 140px !important;
+        max-width: 200px !important;
+        justify-content: center !important;
+        padding: 12px 20px !important;
+        font-size: 0.95rem !important;
+        font-weight: 600 !important;
     }
 
     /* Typography Mobile */
@@ -1989,7 +1989,7 @@ button:focus {
 
 /* === Certification Styles === */
 .certifications-section {
-    background: linear-gradient(135deg, var(--background-darker) 0%, var(--background) 100%);
+    background: linear-gradient(135deg, var(--background-darker) 0%, var(--background) 100%) !important;
     position: relative;
     overflow: hidden;
 }
@@ -2017,21 +2017,21 @@ button:focus {
 }
 
 .certifications-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important;
+    gap: 2rem !important;
+    margin-top: 3rem !important;
 }
 
 .cert-card {
-    background: var(--background-card);
-    border-radius: 20px;
-    padding: 2rem;
-    border: 1px solid var(--border-color);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    background: var(--background-card) !important;
+    border-radius: 20px !important;
+    padding: 2rem !important;
+    border: 1px solid var(--border-color) !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    position: relative !important;
+    overflow: hidden !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
 }
 
 .cert-card::before {
@@ -2286,14 +2286,14 @@ button:focus {
   
   /* Style for LeetCode image to match the theme */
   .icon img {
-    height: 1.2rem;
-    width: 1.2rem;
-    filter: brightness(0) saturate(100%) invert(0.7);
-    transition: filter 0.3s ease;
+    height: 1.2rem !important;
+    width: 1.2rem !important;
+    filter: brightness(0) saturate(100%) invert(0.7) !important;
+    transition: filter 0.3s ease !important;
   }
   
   .icon:hover img {
-    filter: brightness(0) saturate(100%) invert(1);
+    filter: brightness(0) saturate(100%) invert(1) !important;
   }
   
 

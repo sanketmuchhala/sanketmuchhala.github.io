@@ -172,7 +172,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }, observerOptions);
     
     // Observe elements for animation
-    const animateElements = document.querySelectorAll('.skill-category, .project-card, .timeline-item, .stat-item');
+    const animateElements = document.querySelectorAll('.skill-category, .project-card, .timeline-item, .stat-item, .skill-item');
     animateElements.forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
@@ -330,7 +330,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Performance optimization - throttle scroll events
-    let ticking = false;
     
     function throttle(func, delay) {
         let timeoutId;
@@ -393,7 +392,7 @@ function handleContactForm() {
     const contactMethods = document.querySelectorAll('.contact-method');
     
     contactMethods.forEach(method => {
-        method.addEventListener('click', function(e) {
+        method.addEventListener('click', function() {
             // Add click animation
             this.style.transform = 'translateX(15px) scale(0.98)';
             setTimeout(() => {
@@ -453,3 +452,249 @@ function initializeDarkMode() {
 }
 
 initializeDarkMode();
+
+// Apple Watch Style Skills Section
+document.addEventListener('DOMContentLoaded', function() {
+    initializeSkillsSection();
+    
+    function initializeSkillsSection() {
+        const skillItems = document.querySelectorAll('.skill-item');
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        
+        // Initialize skill items with staggered animation
+        skillItems.forEach((item, index) => {
+            item.style.setProperty('--index', index);
+            item.style.animationDelay = `${index * 0.05}s`;
+        });
+        
+        // Apple Watch style jiggle animation on hover
+        skillItems.forEach(item => {
+            let jiggleTimeout;
+            
+            item.addEventListener('mouseenter', function() {
+                // Clear any existing jiggle
+                clearTimeout(jiggleTimeout);
+                
+                // Add jiggle effect to surrounding items
+                const allItems = Array.from(skillItems);
+                const currentIndex = allItems.indexOf(this);
+                
+                allItems.forEach((otherItem, index) => {
+                    const distance = Math.abs(index - currentIndex);
+                    if (distance <= 2 && otherItem !== this) {
+                        const intensity = 1 - (distance * 0.3);
+                        otherItem.style.animation = `jiggle 0.3s ease-in-out ${Math.random() * 0.1}s`;
+                        otherItem.style.transform = `scale(${1 + intensity * 0.05}) rotate(${(Math.random() - 0.5) * intensity * 2}deg)`;
+                    }
+                });
+                
+                // Reset animations after jiggle
+                jiggleTimeout = setTimeout(() => {
+                    allItems.forEach(item => {
+                        if (item !== this) {
+                            item.style.animation = '';
+                            item.style.transform = '';
+                        }
+                    });
+                }, 500);
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                clearTimeout(jiggleTimeout);
+            });
+            
+            // Click effect with zoom and ripple
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Create ripple effect
+                const ripple = document.createElement('div');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                
+                ripple.style.cssText = `
+                    position: absolute;
+                    width: ${size}px;
+                    height: ${size}px;
+                    left: ${x}px;
+                    top: ${y}px;
+                    background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+                    border-radius: 50%;
+                    transform: scale(0);
+                    animation: ripple 0.6s linear;
+                    pointer-events: none;
+                    z-index: 1000;
+                `;
+                
+                this.appendChild(ripple);
+                
+                // Remove ripple after animation
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+                
+                // Add press effect
+                this.style.transform = 'scale(0.9)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 150);
+                
+                // Show skill details (optional enhancement)
+                showSkillDetails(this);
+            });
+        });
+        
+        // Filter functionality
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const filter = this.getAttribute('data-filter');
+                
+                // Update active button
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Filter skill items with animation
+                filterSkillItems(filter);
+            });
+        });
+        
+        // Random floating animation
+        startFloatingAnimation();
+    }
+    
+    function filterSkillItems(filter) {
+        const skillItems = document.querySelectorAll('.skill-item');
+        
+        skillItems.forEach((item, index) => {
+            const category = item.getAttribute('data-category');
+            const shouldShow = filter === 'all' || category === filter;
+            
+            if (shouldShow) {
+                item.style.display = 'flex';
+                item.classList.remove('hidden');
+                item.classList.add('show');
+                
+                // Staggered reveal animation
+                setTimeout(() => {
+                    item.style.transform = 'scale(1) rotateY(0deg)';
+                    item.style.opacity = '1';
+                }, index * 50);
+            } else {
+                item.classList.remove('show');
+                item.classList.add('hidden');
+                
+                setTimeout(() => {
+                    item.style.display = 'none';
+                }, 300);
+            }
+        });
+    }
+    
+    function startFloatingAnimation() {
+        const skillItems = document.querySelectorAll('.skill-item');
+        
+        skillItems.forEach((item, index) => {
+            const delay = index * 200;
+            
+            setTimeout(() => {
+                item.style.animation = `float 6s ease-in-out infinite ${Math.random() * 2}s`;
+            }, delay);
+        });
+    }
+    
+    function showSkillDetails(skillItem) {
+        const skillName = skillItem.querySelector('.skill-name').textContent;
+        const category = skillItem.getAttribute('data-category');
+        
+        // Create a subtle notification
+        const notification = document.createElement('div');
+        notification.style.cssText = `
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            background: var(--background-card);
+            border: 2px solid var(--primary-color);
+            border-radius: 20px;
+            padding: 1rem 2rem;
+            color: var(--text-primary);
+            font-weight: 600;
+            z-index: 10000;
+            box-shadow: var(--shadow-large);
+            animation: popIn 0.3s ease-out forwards;
+        `;
+        notification.textContent = `${skillName} - ${category.charAt(0).toUpperCase() + category.slice(1)}`;
+        
+        document.body.appendChild(notification);
+        
+        setTimeout(() => {
+            notification.style.animation = 'popOut 0.3s ease-in forwards';
+            setTimeout(() => notification.remove(), 300);
+        }, 1500);
+    }
+    
+    // Add CSS animations for the new effects
+    const skillsStyleSheet = document.createElement('style');
+    skillsStyleSheet.textContent = `
+        @keyframes jiggle {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(1deg); }
+            75% { transform: rotate(-1deg); }
+        }
+        
+        @keyframes ripple {
+            to {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            25% { transform: translateY(-5px) rotate(0.5deg); }
+            50% { transform: translateY(-3px) rotate(0deg); }
+            75% { transform: translateY(-7px) rotate(-0.5deg); }
+        }
+        
+        @keyframes popIn {
+            to {
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+        
+        @keyframes popOut {
+            to {
+                transform: translate(-50%, -50%) scale(0);
+                opacity: 0;
+            }
+        }
+        
+        /* Honeycomb breathing effect */
+        .skills-honeycomb::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 200%;
+            height: 200%;
+            transform: translate(-50%, -50%);
+            background: radial-gradient(circle, rgba(var(--primary-color-rgb), 0.03) 0%, transparent 50%);
+            animation: breathe 4s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        @keyframes breathe {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); }
+            50% { transform: translate(-50%, -50%) scale(1.1); }
+        }
+        
+        .skills-honeycomb {
+            position: relative;
+        }
+    `;
+    
+    document.head.appendChild(skillsStyleSheet);
+});

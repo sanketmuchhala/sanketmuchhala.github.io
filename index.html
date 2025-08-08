@@ -166,65 +166,191 @@
                 <h2 class="section-title">Technical Skills</h2>
                 <div class="section-divider"></div>
             </div>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3><i class="fas fa-code"></i> Programming Languages</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">SQL</span>
-                        <span class="skill-tag">R</span>
-                        <span class="skill-tag">JavaScript</span>
+            <div class="skills-honeycomb" id="skillsHoneycomb">
+                <!-- Programming Languages -->
+                <div class="skill-item" data-category="programming">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" />
                     </div>
+                    <span class="skill-name">Python</span>
                 </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-brain"></i> AI/ML Frameworks & Tools</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Scikit-learn</span>
-                        <span class="skill-tag">TensorFlow</span>
-                        <span class="skill-tag">PyTorch</span>
-                        <span class="skill-tag">FastAPI</span>
-                        <span class="skill-tag">MLflow</span>
-                        <span class="skill-tag">SpaCy</span>
+                <div class="skill-item" data-category="programming">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL" />
                     </div>
+                    <span class="skill-name">SQL</span>
                 </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-robot"></i> Generative AI & LLMs</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">GPT-4</span>
-                        <span class="skill-tag">LangChain</span>
-                        <span class="skill-tag">RAG</span>
-                        <span class="skill-tag">Agentic AI</span>
-                        <span class="skill-tag">Vector DBs (FAISS)</span>
+                <div class="skill-item" data-category="programming">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg" alt="R" />
                     </div>
+                    <span class="skill-name">R</span>
                 </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-language"></i> NLP & Document Intelligence</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">NER</span>
-                        <span class="skill-tag">Text Classification</span>
-                        <span class="skill-tag">Summarization</span>
-                        <span class="skill-tag">Sentiment Analysis</span>
+                <div class="skill-item" data-category="programming">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
                     </div>
+                    <span class="skill-name">JavaScript</span>
                 </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-database"></i> Data Engineering & Storage</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Pandas</span>
-                        <span class="skill-tag">NumPy</span>
-                        <span class="skill-tag">PySpark</span>
-                        <span class="skill-tag">AWS (SQS, Step Functions)</span>
-                        <span class="skill-tag">Azure Data Lake</span>
-                        <span class="skill-tag">Azure SQL</span>
+
+                <!-- AI/ML Frameworks & Tools -->
+                <div class="skill-item" data-category="aiml">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg" alt="Scikit-learn" />
                     </div>
+                    <span class="skill-name">Scikit-learn</span>
                 </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-chart-bar"></i> Visualization & BI</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Tableau</span>
-                        <span class="skill-tag">Power BI</span>
-                        <span class="skill-tag">R Shiny</span>
+                <div class="skill-item" data-category="aiml">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow" />
                     </div>
+                    <span class="skill-name">TensorFlow</span>
                 </div>
+                <div class="skill-item" data-category="aiml">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch" />
+                    </div>
+                    <span class="skill-name">PyTorch</span>
+                </div>
+                <div class="skill-item" data-category="aiml">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="FastAPI" />
+                    </div>
+                    <span class="skill-name">FastAPI</span>
+                </div>
+                <div class="skill-item" data-category="aiml">
+                    <div class="skill-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <span class="skill-name">MLflow</span>
+                </div>
+                <div class="skill-item" data-category="aiml">
+                    <div class="skill-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <span class="skill-name">SpaCy</span>
+                </div>
+
+                <!-- Generative AI & LLMs -->
+                <div class="skill-item" data-category="genai">
+                    <div class="skill-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <span class="skill-name">GPT-4</span>
+                </div>
+                <div class="skill-item" data-category="genai">
+                    <div class="skill-icon">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <span class="skill-name">LangChain</span>
+                </div>
+                <div class="skill-item" data-category="genai">
+                    <div class="skill-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <span class="skill-name">RAG</span>
+                </div>
+                <div class="skill-item" data-category="genai">
+                    <div class="skill-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <span class="skill-name">Agentic AI</span>
+                </div>
+                <div class="skill-item" data-category="genai">
+                    <div class="skill-icon">
+                        <i class="fas fa-vector-square"></i>
+                    </div>
+                    <span class="skill-name">FAISS</span>
+                </div>
+
+                <!-- Data Engineering & Storage -->
+                <div class="skill-item" data-category="data">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas" />
+                    </div>
+                    <span class="skill-name">Pandas</span>
+                </div>
+                <div class="skill-item" data-category="data">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy" />
+                    </div>
+                    <span class="skill-name">NumPy</span>
+                </div>
+                <div class="skill-item" data-category="data">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachespark/apachespark-original.svg" alt="PySpark" />
+                    </div>
+                    <span class="skill-name">PySpark</span>
+                </div>
+                <div class="skill-item" data-category="data">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" alt="AWS" />
+                    </div>
+                    <span class="skill-name">AWS</span>
+                </div>
+                <div class="skill-item" data-category="data">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure" />
+                    </div>
+                    <span class="skill-name">Azure</span>
+                </div>
+
+                <!-- Visualization & BI -->
+                <div class="skill-item" data-category="visualization">
+                    <div class="skill-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <span class="skill-name">Tableau</span>
+                </div>
+                <div class="skill-item" data-category="visualization">
+                    <div class="skill-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <span class="skill-name">Power BI</span>
+                </div>
+                <div class="skill-item" data-category="visualization">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg" alt="R Shiny" />
+                    </div>
+                    <span class="skill-name">R Shiny</span>
+                </div>
+
+                <!-- NLP & Document Intelligence -->
+                <div class="skill-item" data-category="nlp">
+                    <div class="skill-icon">
+                        <i class="fas fa-tags"></i>
+                    </div>
+                    <span class="skill-name">NER</span>
+                </div>
+                <div class="skill-item" data-category="nlp">
+                    <div class="skill-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <span class="skill-name">Text Classification</span>
+                </div>
+                <div class="skill-item" data-category="nlp">
+                    <div class="skill-icon">
+                        <i class="fas fa-compress-alt"></i>
+                    </div>
+                    <span class="skill-name">Summarization</span>
+                </div>
+                <div class="skill-item" data-category="nlp">
+                    <div class="skill-icon">
+                        <i class="fas fa-smile"></i>
+                    </div>
+                    <span class="skill-name">Sentiment Analysis</span>
+                </div>
+            </div>
+            
+            <!-- Category Filter -->
+            <div class="skill-filters">
+                <button class="filter-btn active" data-filter="all">All Skills</button>
+                <button class="filter-btn" data-filter="programming">Programming</button>
+                <button class="filter-btn" data-filter="aiml">AI/ML</button>
+                <button class="filter-btn" data-filter="genai">Generative AI</button>
+                <button class="filter-btn" data-filter="data">Data Engineering</button>
+                <button class="filter-btn" data-filter="visualization">Visualization</button>
+                <button class="filter-btn" data-filter="nlp">NLP</button>
             </div>
         </div>
     </section>

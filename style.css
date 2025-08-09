@@ -2483,6 +2483,27 @@ button:focus {
     display: block;
     transition: all 0.3s ease;
     filter: brightness(0.95) contrast(1.05) saturate(1.1);
+    will-change: transform;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+/* Progressive image loading */
+.collage-item img[loading="lazy"] {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.collage-item img[loading="lazy"].loaded {
+    opacity: 1;
+}
+
+/* Optimize masonry layout performance */
+.photo-collage {
+    contain: layout style paint;
+    will-change: scroll-position;
 }
 
 .collage-item:hover img {

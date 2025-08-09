@@ -453,3 +453,148 @@ function initializeDarkMode() {
 }
 
 initializeDarkMode();
+
+// Photography Section Functionality
+function initializePhotography() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const photoItems = document.querySelectorAll('.photo-item, .masonry-item, .creative-item');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxTitle = document.getElementById('lightbox-title');
+    const lightboxCategory = document.getElementById('lightbox-category');
+
+    // Filter functionality
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const filter = this.getAttribute('data-filter');
+            
+            // Update active button
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Filter items
+            photoItems.forEach(item => {
+                const category = item.getAttribute('data-category');
+                if (filter === 'all' || category === filter) {
+                    item.style.display = 'block';
+                    item.style.animation = 'fadeInUp 0.6s ease forwards';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    });
+
+    // Lightbox functionality
+    photoItems.forEach(item => {
+        item.addEventListener('click', function() {
+            const img = this.querySelector('img');
+            const title = this.querySelector('.photo-title, .creative-overlay h3')?.textContent || 'Photography';
+            const category = this.getAttribute('data-category') || 'Art';
+            
+            if (img) {
+                lightboxImg.src = img.src;
+                lightboxTitle.textContent = title;
+                lightboxCategory.textContent = category.charAt(0).toUpperCase() + category.slice(1);
+                lightbox.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            }
+        });
+    });
+
+    // Close lightbox
+    if (lightbox) {
+        lightbox.addEventListener('click', function(e) {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+    }
+}
+
+// Photo Collage Functionality for Main Page
+function initializePhotoCollage() {
+    const collageItems = document.querySelectorAll('.collage-item');
+    
+    // Add click functionality to open images in full view
+    collageItems.forEach(item => {
+        item.addEventListener('click', function() {
+            const img = this.querySelector('img');
+            if (img) {
+                openImageModal(img.src, img.alt);
+            }
+        });
+        
+        // Add staggered animation on page load
+        item.style.opacity = '0';
+        item.style.transform = 'scale(0.8)';
+    });
+    
+    // Animate collage items with staggered delay
+    setTimeout(() => {
+        collageItems.forEach((item, index) => {
+            setTimeout(() => {
+                item.style.transition = 'all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+                item.style.opacity = '1';
+                item.style.transform = 'scale(1)';
+            }, index * 100);
+        });
+    }, 500);
+}
+
+// Open image modal for main page photography
+function openImageModal(src, alt) {
+    // Create modal if it doesn't exist
+    let modal = document.getElementById('imageModal');
+    if (!modal) {
+        modal = document.createElement('div');
+        modal.id = 'imageModal';
+        modal.className = 'image-modal';
+        modal.innerHTML = `
+            <div class="image-modal-content">
+                <span class="image-modal-close">&times;</span>
+                <img src="${src}" alt="${alt}">
+            </div>
+        `;
+        document.body.appendChild(modal);
+        
+        // Add close functionality
+        const closeBtn = modal.querySelector('.image-modal-close');
+        closeBtn.addEventListener('click', () => closeImageModal());
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeImageModal();
+        });
+    } else {
+        // Update existing modal
+        const img = modal.querySelector('img');
+        img.src = src;
+        img.alt = alt;
+    }
+    
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+}
+
+// Close image modal
+function closeImageModal() {
+    const modal = document.getElementById('imageModal');
+    if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+}
+
+// Close lightbox function (global for onclick)
+function closeLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    if (lightbox) {
+        lightbox.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+}
+
+// Initialize photography when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    initializePhotography();
+    initializePhotoCollage();
+});

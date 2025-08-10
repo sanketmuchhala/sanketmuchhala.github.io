@@ -67,6 +67,9 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', updateActiveNavLink);
     updateActiveNavLink(); // Call once on load
     
+    // Initialize ribbons background effect
+    initializeRibbons();
+    
     // Theme toggle functionality - improved for GitHub Pages
     const themeToggle = document.getElementById('theme-toggle');
     const themeIcon = document.getElementById('theme-icon');
@@ -250,6 +253,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize ribbons background effect
     function initializeRibbons() {
+        console.log('Attempting to initialize ribbons...');
+        console.log('Ribbons class available:', typeof Ribbons);
         try {
             if (typeof Ribbons !== 'undefined') {
                 new Ribbons({
@@ -273,9 +278,6 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error('Could not initialize ribbons background:', error);
         }
     }
-    
-    // Initialize ribbons immediately when DOM is ready
-    initializeRibbons();
     
     // Counter animation for stats
     function animateCounters() {

@@ -13,6 +13,9 @@
     <!-- Preload critical resources -->
     <link rel="preload" href="style.css?v=1.1" as="style">
     <link rel="preload" href="script.js" as="script">
+    <link rel="preload" href="photography/photos/optimized/sunset-mountains.webp" as="image">
+    <link rel="preload" href="photography/photos/optimized/urban-architecture.webp" as="image">
+    <link rel="preload" href="photography/photos/optimized/nature-closeup.webp" as="image">
     
     <!-- DNS prefetch for external resources -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -30,13 +33,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Favicons -->
-    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/photos/favicon.svg" />
-    <link rel="shortcut icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="apple-mobile-web-app-title" content="Sanket" />
-    <link rel="manifest" href="/site.webmanifest" />
 </head>
 <body>
     <!-- Navigation -->
@@ -63,6 +62,9 @@
                 </li>
                 <li class="nav-item">
                     <a href="#photography" class="nav-link">Photography</a>
+                </li>
+                <li class="nav-item">
+                    <a href="resume/index.html" class="nav-link">Resume</a>
                 </li>
                 <li class="nav-item">
                     <a href="#blog" class="nav-link">Blog</a>
@@ -95,7 +97,10 @@
                     <span class="greeting">Hello, I'm</span>
                     <span class="name">Sanket Muchhala</span>
                 </h1>
-                <h2 class="hero-subtitle">AI/ML Engineer</h2>
+                <h2 class="hero-subtitle">
+                    <span class="typing-text" id="typing-text">AI Engineer</span>
+                    <span class="typing-cursor">|</span>
+                </h2>
                 <p class="hero-description">
                     Passionate about building scalable AI solutions using generative AI, LLMs, and NLP. 
                     Experienced in designing agentic systems, document intelligence workflows, and ML pipelines deployed at scale.
@@ -103,7 +108,7 @@
                 <div class="hero-buttons">
                     <!-- <a href="#contact" class="btn btn-primary">Get In Touch</a> -->
                     <a href="#projects" class="btn btn-secondary">View My Work</a>
-                    <a href="https://github.com/sanketmuchhala/sanketmuchhala.github.io/blob/main/Sanket_Muchhala_Resume.pdf" class="btn btn-resume" download>
+                    <a href="Sanket_Muchhala_Resume.pdf" class="btn btn-resume" download>
                         <i class="fas fa-download"></i> Download My Resume
                     </a>
                 </div>
@@ -145,7 +150,10 @@
                         <div class="education-item">
                             <div class="education-logo">
                                 <a href="https://www.indiana.edu/" target="_blank" rel="noopener noreferrer" aria-label="Indiana University">
-                                    <img src="/photos/1631332394799.jpeg" alt="Indiana University Logo" height="40" style="background-color: #7d120d; padding: 6px; border-radius: 8px;">
+                                    <picture>
+                                        <source srcset="photos/1631332394799.webp" type="image/webp">
+                                        <img src="photos/1631332394799.jpeg" alt="Indiana University Logo" height="40" style="background-color: #7d120d; padding: 6px; border-radius: 8px;" loading="lazy" decoding="async">
+                                    </picture>
                                 </a>
                             </div>
                             <div class="education-content">
@@ -156,7 +164,10 @@
                         <div class="education-item">
                             <div class="education-logo">
                                 <a href="https://www.tcetmumbai.in/" target="_blank" rel="noopener noreferrer" aria-label="Indiana University">
-                                    <img src="/photos/download.jpeg" alt="Indiana University Logo" height="40" style="background-color: #141355; padding: 6px; border-radius: 8px;">
+                                    <picture>
+                                        <source srcset="photos/download.webp" type="image/webp">
+                                        <img src="photos/download.jpeg" alt="Indiana University Logo" height="40" style="background-color: #141355; padding: 6px; border-radius: 8px;" loading="lazy" decoding="async">
+                                    </picture>
                                 </a>
                             </div>
                             <div class="education-content">
@@ -297,7 +308,10 @@
                         <div class="timeline-header">
                             <div class="company-logo">
                                 <a href="https://www.indiana.edu/" target="_blank" rel="noopener noreferrer" aria-label="Indiana University" style="display: inline-block; width: 50px; height: 50px; background-color: #7d120d; border-radius: 12px; padding: 6px; box-sizing: border-box;">
-                                    <img src="/photos/1631332394799.jpeg" alt="Indiana University Logo" style="width: 100%; height: 100%; object-fit: contain; border-radius: 6px;">
+                                    <picture>
+                                        <source srcset="photos/1631332394799.webp" type="image/webp">
+                                        <img src="photos/1631332394799.jpeg" alt="Indiana University Logo" style="width: 100%; height: 100%; object-fit: contain; border-radius: 6px;" loading="lazy" decoding="async">
+                                    </picture>
                                 </a>                                
                             </div>
                             <div class="timeline-info">
@@ -321,7 +335,7 @@
                         <div class="timeline-header">
                             <div class="company-logo">
                                 <a target="_blank" rel="noopener noreferrer" aria-label="Indiana University" style="display: inline-block; width: 52px; height: 52px; background-color: #000000; border-radius: 12px; padding: 6px; box-sizing: border-box;">
-                                    <img src="https://static.vecteezy.com/system/resources/previews/021/496/305/non_2x/ibm-brand-symbol-software-computer-logo-white-design-illustration-with-black-background-free-vector.jpg" alt="Indiana University Logo" style="width: 100%; height: 100%; object-fit: contain; border-radius: 6px;">
+                                    <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 18px;">IBM</div>
                                 </a>   
                             </div>
                             <div class="timeline-info">
@@ -349,97 +363,25 @@
             <div class="section-header">
                 <h2 class="section-title">Featured Projects</h2>
                 <div class="section-divider"></div>
+                <div class="section-actions">
+                    <a href="projects/index.html" class="btn btn-primary">
+                        <i class="fas fa-external-link-alt"></i>
+                        View All Projects
+                    </a>
+                </div>
             </div>
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-header">
-                        <h3>RAG Search Engine</h3>
-                        <a href="https://github.com/sanketmuchhala/FileChatAI" class="project-link" aria-label="View project on GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </div>
-                    <p class="project-description">
-                        Built a Retrieval-Augmented Generation (RAG) system using GPT-3 and LangChain for multi-source question answering. 
-                        Integrated FAISS-based vector search with PDF chunking to enable fast, contextually relevant retrieval.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">GPT-3</span>
-                        <span class="tech-tag">LangChain</span>
-                        <span class="tech-tag">FAISS</span>
-                        <span class="tech-tag">Python</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Playing around with RAG</h3>
-                        <a href="https://github.com/sanketmuchhala/Care-Coordination" class="project-link" aria-label="View project on GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </div>
-                    <p class="project-description">
-                        This project is a hands-on implementation of a Retrieval-Augmented Generation (RAG) pipeline using the DeepSeek-R1 model. 
-                        The goal is to explore how large language models can be combined with external data sources to build question-answering systems grounded in real information.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">DeepSeek-R1</span>
-                        <span class="tech-tag">LangChain</span>
-                        <span class="tech-tag">FAISS</span>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Job Description Keyword Extractor</h3>
-                        <a href="https://github.com/sanketmuchhala/jobfit" class="project-link" aria-label="View project on GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </div>
-                    <p class="project-description">
-                        Created an NLP-based web tool using SpaCy and LangChain to extract role-specific keywords from job descriptions. 
-                        Improved resume-to-JD matching accuracy by 15% across 500+ users.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">SpaCy</span>
-                        <span class="tech-tag">LangChain</span>
-                        <span class="tech-tag">NLP</span>
-                        <span class="tech-tag">Web Development</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Game Analytics</h3>
-                        <a href="https://github.com/sanketmuchhala/Game-Analytics" class="project-link" aria-label="View project on GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </div>
-                    <p class="project-description">
-                        As a Research Assistant, I contributed to a data-driven project that analyzed player behavior within a gaming environment. 
-                        The goal was to uncover insights from large-scale gameplay datasets and support academic research on engagement, retention, and churn prediction.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">LangChain</span>
-                        <span class="tech-tag">NLP</span>
-                        <span class="tech-tag">Pandas</span>
-                        <span class="tech-tag">Matplotlib</span>
-                        <span class="tech-tag">Seaborn</span>
-                        <span class="tech-tag">Scikit-learn</span>
-                        <span class="tech-tag">Matplotlib</span>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-header">
                         <h3>Location-Based File Sharing System</h3>
-                        <a href="https://d3vjtmq7zqrgp7.cloudfront.net/" class="project-link" aria-label="View live demo">
-                            <i class="fas fa-external-link-alt"></i>
-                        <a href="https://github.com/sanketmuchhala/ECC-LBFS" class="project-link" aria-label="View project on GitHub">
-                            <i class="fab fa-github"></i>
-
-                        </a>
+                        <div class="project-links">
+                            <a href="https://d3vjtmq7zqrgp7.cloudfront.net/" class="project-link" aria-label="View live demo">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <a href="https://github.com/sanketmuchhala/ECC-LBFS" class="project-link" aria-label="View project on GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
                     </div>
                     <p class="project-description">
                         Engineered a serverless AWS solution using S3 and Lambda with geospatial filtering, maintaining 99% uptime with efficient access control. 
@@ -451,69 +393,74 @@
                         <span class="tech-tag">Leaflet.js</span>
                         <span class="tech-tag">JavaScript</span>
                     </div>
+                    <div class="project-actions">
+                        <a href="projects/location-based-file-sharing.html" class="btn btn-primary">
+                            <span>Read More</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
                     </div>
-
-                    <div class="project-card">
-                        <div class="project-header">
-                            <h3>Regional Impact of Patents</h3>
-                            <a href="https://github.com/sanketmuchhala/Project-Patent-Classification" class="project-link" aria-label="View project on GitHub">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                        <p class="project-description">
-                            This project involves deep analysis of patent filings across the United States using a large-scale patent dataset.
-                             I trained a BART-based model on Cornell’s Big Red 200 supercomputing cluster to classify patents and extract emerging innovation trends.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">BART</span>
-                            <span class="tech-tag">BigRed200</span>
-                            <span class="tech-tag">Linux</span>
-                            <span class="tech-tag">Big Data</span>
-                        </div>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-header">
-                            <h3>Care Coordination</h3>
-                            <a href="https://github.com/sanketmuchhala/Care-Coordination" class="project-link" aria-label="View project on GitHub">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                        <p class="project-description">
-                            Access to quality healthcare shouldn’t depend on where you live — yet rural hospitals across the U.S. are facing systemic financial pressures. 
-                            In this project, we visualized disparities in healthcare cost structures, availability, and Medicare payments between rural and urban regions using real-world data from the Centers for Medicare & Medicaid Services (CMS).
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Data Visualization</span>
-                            <span class="tech-tag">Matplotlib</span>
-                            <span class="tech-tag">Pandas</span>
-                            <span class="tech-tag">Seaborn</span>
-                        </div>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-header">
-                            <h3>Superstore Sales Management Dashboard</h3>
-                            <a href="https://sanketmuchhala.shinyapps.io/project/" class="project-link" aria-label="View live demo">
-                                <i class="fas fa-external-link-alt"></i>
-                            <a href="https://github.com/sanketmuchhala/Superstore-Sales-Management-Dashboard" class="project-link" aria-label="View project on GitHub">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                        <p class="project-description">
-                            This interactive dashboard provides deep insights into Superstore sales data using advanced visualizations and forecasting tools. 
-                            Built using R's Shiny framework, the app allows users to explore trends, filter and sort data, and make data-driven predictions through a web interface.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">R</span>
-                            <span class="tech-tag">Shiny</span>
-                            <span class="tech-tag">Time Series Analysis</span>
-                            <span class="tech-tag">Forecasting</span>
-                            <span class="tech-tag">Data Visualization</span>
-                        </div>
                 </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>RAG Search Engine</h3>
+                        <div class="project-links">
+                            <a href="https://github.com/sanketmuchhala/FileChatAI" class="project-link" aria-label="View project on GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Built a Retrieval-Augmented Generation (RAG) system using GPT-3 and LangChain for multi-source question answering. 
+                        Integrated FAISS-based vector search with PDF chunking to enable fast, contextually relevant retrieval.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">GPT-3</span>
+                        <span class="tech-tag">LangChain</span>
+                        <span class="tech-tag">FAISS</span>
+                        <span class="tech-tag">Python</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/rag-search-engine.html" class="btn btn-primary">
+                            <span>Read More</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>MCP Project <span class="status-badge status-developing">Developing</span></h3>
+                        <div class="project-links">
+                            <a href="projects/mcp-project.html" class="project-link" aria-label="View project details">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <a href="#" class="project-link disabled" aria-label="Repository not yet available">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Currently developing a Model Context Protocol (MCP) implementation to enhance AI model interactions and context management. 
+                        Creating standardized protocols for AI models to access external data sources and tools.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Protocol Design</span>
+                        <span class="tech-tag">AI/ML</span>
+                        <span class="tech-tag">API Development</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/mcp-project.html" class="btn btn-primary">
+                            <span>Read More</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+
+
+
             </div>
         </div>
     </section>
@@ -525,37 +472,78 @@
                 <h2 class="section-title">Through My Lens</h2>
                 <div class="section-divider"></div>
                 <p class="section-subtitle">Capturing moments, emotions, and the beauty of the world around us through the art of photography</p>
+                <div class="section-actions">
+                    <a href="photography/photos/" class="btn btn-primary">
+                        <i class="fas fa-external-link-alt"></i>
+                        View All Photos
+                    </a>
+                </div>
             </div>
             
             <!-- Beautiful Photo Collage -->
             <div class="photo-collage">
                 <div class="collage-item">
-                    <img src="photography/photos/sunset-mountains.jpg" alt="Sunset over mountains" loading="lazy" decoding="async">
+                    <picture>
+                        <source srcset="photography/photos/optimized/sunset-mountains.webp" type="image/webp">
+                        <img src="photography/photos/sunset-mountains.jpg" alt="Sunset over mountains" loading="lazy" decoding="async" 
+                             srcset="photography/photos/sunset-mountains.jpg 800w, photography/photos/sunset-mountains.jpg 400w" 
+                             sizes="(max-width: 768px) 400px, 800px">
+                    </picture>
                 </div>
                 
                 <div class="collage-item">
-                    <img src="photography/photos/urban-architecture.jpg" alt="Urban architecture" loading="lazy" decoding="async">
+                    <picture>
+                        <source srcset="photography/photos/optimized/urban-architecture.webp" type="image/webp">
+                        <img src="photography/photos/urban-architecture.jpg" alt="Urban architecture" loading="lazy" decoding="async"
+                             srcset="photography/photos/urban-architecture.jpg 800w, photography/photos/urban-architecture.jpg 400w"
+                             sizes="(max-width: 768px) 400px, 800px">
+                    </picture>
                 </div>
                 
                 <div class="collage-item">
-                    <img src="photography/photos/nature-closeup.jpg" alt="Nature closeup" loading="lazy" decoding="async">
+                    <picture>
+                        <source srcset="photography/photos/optimized/nature-closeup.webp" type="image/webp">
+                        <img src="photography/photos/nature-closeup.jpg" alt="Nature closeup" loading="lazy" decoding="async"
+                             srcset="photography/photos/nature-closeup.jpg 800w, photography/photos/nature-closeup.jpg 400w"
+                             sizes="(max-width: 768px) 400px, 800px">
+                    </picture>
                 </div>
                 
                 <div class="collage-item">
-                    <img src="photography/photos/autumn-colors.jpg" alt="Autumn colors" loading="lazy" decoding="async">
+                    <picture>
+                        <source srcset="photography/photos/optimized/autumn-colors.webp" type="image/webp">
+                        <img src="photography/photos/autumn-colors.jpg" alt="Autumn colors" loading="lazy" decoding="async"
+                             srcset="photography/photos/autumn-colors.jpg 800w, photography/photos/autumn-colors.jpg 400w"
+                             sizes="(max-width: 768px) 400px, 800px">
+                    </picture>
                 </div>
                 
                 <div class="collage-item">
-                    <img src="photography/photos/IMG_20190619_160550_Original-min.jpg" alt="Summer vibes" loading="lazy" decoding="async">
+                    <picture>
+                        <source srcset="photography/photos/optimized/IMG_20190619_160550_Original-min.webp" type="image/webp">
+                        <img src="photography/photos/IMG_20190619_160550_Original-min.jpg" alt="Summer vibes" loading="lazy" decoding="async"
+                             srcset="photography/photos/IMG_20190619_160550_Original-min.jpg 800w, photography/photos/IMG_20190619_160550_Original-min.jpg 400w"
+                             sizes="(max-width: 768px) 400px, 800px">
+                    </picture>
                 </div>
                 
                 <div class="collage-item">
-                    <img src="photography/photos/IMG_5166-min.JPG" alt="Street photography" loading="lazy" decoding="async">
+                    <picture>
+                        <source srcset="photography/photos/optimized/IMG_5166-min.webp" type="image/webp">
+                        <img src="photography/photos/IMG_5166-min.JPG" alt="Street photography" loading="lazy" decoding="async"
+                             srcset="photography/photos/IMG_5166-min.JPG 800w, photography/photos/IMG_5166-min.JPG 400w"
+                             sizes="(max-width: 768px) 400px, 800px">
+                    </picture>
                 </div>
 
                 
                 <div class="collage-item">
-                    <img src="photography/photos/IMG_6517-min.JPEG" alt="Minimalist composition" loading="lazy" decoding="async">
+                    <picture>
+                        <source srcset="photography/photos/optimized/IMG_6517-min.webp" type="image/webp">
+                        <img src="photography/photos/IMG_6517-min.JPEG" alt="Minimalist composition" loading="lazy" decoding="async"
+                             srcset="photography/photos/IMG_6517-min.JPEG 800w, photography/photos/IMG_6517-min.JPEG 400w"
+                             sizes="(max-width: 768px) 400px, 800px">
+                    </picture>
                 </div>
                 
 
@@ -572,6 +560,12 @@
             <div class="section-header">
                 <h2 class="section-title">Latest Blog Posts</h2>
                 <div class="section-divider"></div>
+                <div class="section-actions">
+                    <a href="blogs/index.html" class="btn btn-primary">
+                        <i class="fas fa-external-link-alt"></i>
+                        View All Blogs
+                    </a>
+                </div>
             </div>
             <div class="blog-grid single-blog">
                 <article class="blog-card">
@@ -801,7 +795,7 @@
     </footer>
 
     <!-- Optimized Script Loading -->
-    <script src="ribbons.js" defer></script>
+    <script src="ribbons.js"></script>
     <script src="script.js" defer></script>
 </body>
 </html>

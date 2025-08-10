@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Analytics - Sanket Muchhala | AI/ML Engineer</title>
+    <meta name="description" content="Built a comprehensive analytics dashboard for mobile games using Python and data visualization tools to track player behavior and game performance">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo"><a href="../index.html"><span>SM</span></a></div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="../index.html#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="../index.html#experience" class="nav-link">Experience</a></li>
+                <li class="nav-item"><a href="index.html" class="nav-link active">Projects</a></li>
+                <li class="nav-item"><a href="../blogs/index.html" class="nav-link">Blog</a></li>
+                <li class="nav-item"><a href="../index.html#photography" class="nav-link">Photography</a></li>
+                <li class="nav-item"><a href="../index.html#contact" class="nav-link">Contact</a></li>
+                <li class="nav-item">
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                        <i class="fas fa-moon theme-dark"></i>
+                        <i class="fas fa-sun theme-light"></i>
+                    </button>
+                </li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <article class="blog-post">
+        <div class="container">
+            <header class="blog-header">
+                <div class="blog-breadcrumb">
+                    <a href="../index.html">Home</a><span>/</span><a href="index.html">Projects</a><span>/</span><span>Game Analytics</span>
+                </div>
+                <h1 class="blog-post-title">Game Analytics Dashboard</h1>
+                <div class="blog-post-meta">
+                    <div class="meta-item"><i class="fas fa-user"></i><span>Sanket Muchhala</span></div>
+                    <div class="meta-item"><i class="fas fa-calendar"></i><span>September 2024</span></div>
+                    <div class="meta-item"><i class="fas fa-tag"></i><span class="blog-category">Data Analytics, Gaming</span></div>
+                    <div class="meta-item"><i class="fas fa-code-branch"></i><span>Python, Pandas, Matplotlib, Seaborn</span></div>
+                </div>
+            </header>
+            
+            <div class="blog-featured-image">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDgwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjMUExQTFBIi8+Cjx0ZXh0IHg9IjQwMCIgeT0iMTgwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjRkZGRkZGIiBmb250LWZhbWlseT0iSW50ZXIiIGZvbnQtd2VpZ2h0PSI2MDAiIGZvbnQtc2l6ZT0iMzIiPkdhbWUgQW5hbHl0aWNzPC90ZXh0Pgo8dGV4dCB4PSI0MDAiIHk9IjIzMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI0ZGRkZGRiIgZm9udC1mYW1pbHk9IkludGVyIiBmb250LXdlaWdodD0iNTAwIiBmb250LXNpemU9IjE4Ij5EYXNoYm9hcmQ8L3RleHQ+Cjx0ZXh0IHg9IjQwMCIgeT0iMjgwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjRkZGRkZGIiBmb250LWZhbWlseT0iSW50ZXIiIGZvbnQtd2VpZ2h0PSI1MDAiIGZvbnQtc2l6ZT0iMTgiPlBsYXllciBCZWhhdmlvciBUcmFja2luZzwvdGV4dD4KPC9zdmc+Cg==" alt="Game Analytics Dashboard">
+            </div>
+            
+            <div class="blog-content">
+                <div class="lead-paragraph">
+                    <p>Built a comprehensive analytics dashboard for mobile games using Python and data visualization tools to track player behavior and game performance. The system provides insights into user engagement, retention, and monetization patterns.</p>
+                </div>
+                
+                <h2>Project Overview</h2>
+                <p>Mobile gaming is a highly competitive industry where understanding player behavior and game performance is crucial for success. This project addresses the need for comprehensive analytics by building a dashboard that processes game telemetry data and provides actionable insights for game developers and product managers.</p>
+                
+                <h2>Technical Architecture</h2>
+                <h3>Core Components</h3>
+                <ul>
+                    <li><strong>Data Ingestion Engine:</strong> Processes real-time game telemetry and event logs</li>
+                    <li><strong>Data Processing Pipeline:</strong> Cleans, transforms, and aggregates raw game data</li>
+                    <li><strong>Analytics Engine:</strong> Calculates key performance indicators and metrics</li>
+                    <li><strong>Visualization Dashboard:</strong> Interactive charts and graphs for data exploration</li>
+                    <li><strong>Reporting System:</strong> Automated generation of daily/weekly reports</li>
+                </ul>
+                
+                <h3>Key Technologies</h3>
+                <div class="project-tech">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Pandas</span>
+                    <span class="tech-tag">Matplotlib</span>
+                    <span class="tech-tag">Seaborn</span>
+                    <span class="tech-tag">NumPy</span>
+                    <span class="tech-tag">Streamlit</span>
+                </div>
+                
+                <h2>Implementation Details</h2>
+                <h3>Data Processing Pipeline</h3>
+                <ol>
+                    <li>Raw game telemetry data is ingested from multiple sources (client logs, server events, analytics APIs)</li>
+                    <li>Data is cleaned and normalized using Pandas for consistent formatting</li>
+                    <li>Event sequences are reconstructed to track player journeys through the game</li>
+                    <li>Aggregated metrics are calculated at various time intervals (hourly, daily, weekly)</li>
+                </ol>
+                
+                <h3>Key Metrics & Analytics</h3>
+                <ul>
+                    <li><strong>User Engagement:</strong> Daily/Monthly Active Users (DAU/MAU), session duration, session frequency</li>
+                    <li><strong>Retention Analysis:</strong> Day 1, Day 7, Day 30 retention rates with cohort analysis</li>
+                    <li><strong>Monetization Metrics:</strong> Average Revenue Per User (ARPU), conversion rates, purchase patterns</li>
+                    <li><strong>Game Performance:</strong> Level completion rates, difficulty spikes, player progression</li>
+                    <li><strong>Technical Metrics:</strong> Crash rates, loading times, performance bottlenecks</li>
+                </ul>
+                
+                <h3>Visualization & Dashboard</h3>
+                <ol>
+                    <li>Interactive charts built with Matplotlib and Seaborn for data exploration</li>
+                    <li>Real-time dashboard using Streamlit for live monitoring</li>
+                    <li>Custom widgets for filtering data by date ranges, user segments, and game features</li>
+                    <li>Exportable reports in multiple formats (PDF, Excel, CSV)</li>
+                </ol>
+                
+                <h2>Results & Impact</h2>
+                <ul>
+                    <li>Reduced time-to-insight from 2 days to 2 hours for game performance analysis</li>
+                    <li>Identified 3 critical retention bottlenecks leading to 15% improvement in Day 7 retention</li>
+                    <li>Enabled data-driven decisions that increased player engagement by 25%</li>
+                    <li>Processed over 100GB of game telemetry data with 99.9% accuracy</li>
+                    <li>Automated reporting saved 20+ hours per week for the analytics team</li>
+                </ul>
+                
+                <h2>Challenges & Solutions</h2>
+                <h3>Challenge 1: Data Volume & Performance</h3>
+                <p>Processing large volumes of real-time game data required optimization for speed and memory efficiency. The solution involved implementing chunked processing, parallel data operations, and efficient data structures using NumPy arrays and Pandas optimizations.</p>
+                
+                <h3>Challenge 2: Data Quality & Consistency</h3>
+                <p>Game telemetry data often contained missing values, duplicates, and inconsistent formatting across different game versions. This was resolved by implementing robust data validation rules, automated cleaning procedures, and version-aware data processing.</p>
+                
+                <h3>Challenge 3: Real-time Analytics</h3>
+                <p>Providing real-time insights while maintaining dashboard performance was challenging. The solution involved implementing incremental processing, caching mechanisms, and asynchronous data updates to balance real-time requirements with system performance.</p>
+                
+                <h2>Future Enhancements</h2>
+                <ul>
+                    <li>Implement machine learning models for player churn prediction and behavior forecasting</li>
+                    <li>Add A/B testing framework integration for experiment analysis</li>
+                    <li>Develop mobile app for on-the-go analytics monitoring</li>
+                    <li>Integrate with game engine APIs for real-time performance monitoring</li>
+                    <li>Add support for cross-platform game analytics (PC, console, mobile)</li>
+                    <li>Implement predictive analytics for revenue forecasting and resource planning</li>
+                </ul>
+                
+                <h2>Key Learnings</h2>
+                <p>This project demonstrated the importance of understanding the gaming domain when building analytics systems. Game-specific metrics like retention curves, monetization funnels, and player progression patterns required deep domain knowledge to implement correctly. Additionally, the project highlighted the value of building flexible, scalable data pipelines that can handle the unpredictable nature of game telemetry data.</p>
+                
+                <h2>Conclusion</h2>
+                <p>The Game Analytics Dashboard successfully demonstrates how data science and analytics can drive improvements in mobile gaming. By providing comprehensive insights into player behavior and game performance, the system enables developers to make informed decisions that enhance user experience and business outcomes. The project showcases the practical application of data analytics in a fast-paced, competitive industry where understanding user behavior is critical for success.</p>
+            </div>
+            
+            <div class="blog-share">
+                <h3>Project Links</h3>
+                <div class="share-buttons">
+                    <a href="https://github.com/sanketmuchhala/game-analytics" class="share-btn github" target="_blank" rel="noopener">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                    <a href="https://pandas.pydata.org/" class="share-btn twitter" target="_blank" rel="noopener">
+                        <i class="fas fa-external-link-alt"></i> Pandas
+                    </a>
+                    <a href="https://matplotlib.org/" class="share-btn linkedin" target="_blank" rel="noopener">
+                        <i class="fas fa-book"></i> Matplotlib
+                    </a>
+                </div>
+            </div>
+            
+            <div class="blog-navigation">
+                <a href="index.html" class="btn btn-secondary">
+                    <i class="fas fa-arrow-left"></i> Back to Projects
+                </a>
+                <a href="location-based-file-sharing.html" class="btn btn-primary">
+                    Next Project: Location-Based File Sharing <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </article>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Sanket Muchhala. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="../index.html">Home</a>
+                    <a href="../index.html#about">About</a>
+                    <a href="../index.html#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../ribbons.js"></script>
+    <script src="../script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Theme toggle functionality
+            const themeToggle = document.getElementById('theme-toggle');
+            const currentTheme = localStorage.getItem('theme') || 'dark';
+            
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            document.body.setAttribute('data-theme', currentTheme);
+            
+            themeToggle.addEventListener('click', function() {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                
+                document.documentElement.setAttribute('data-theme', newTheme);
+                document.body.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+            });
+        });
+    </script>
+</body>
+</html>

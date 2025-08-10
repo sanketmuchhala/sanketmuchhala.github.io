@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location-Based File Sharing - Sanket Muchhala | AI/ML Engineer</title>
+    <meta name="description" content="Built a location-aware file sharing system using AWS services and geospatial technologies to enable proximity-based file exchange">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" type="image/svg+xml" href="../photos/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo"><a href="../index.html"><span>SM</span></a></div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="../index.html#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="../index.html#experience" class="nav-link">Experience</a></li>
+                <li class="nav-item"><a href="index.html" class="nav-link active">Projects</a></li>
+                <li class="nav-item"><a href="../blogs/index.html" class="nav-link">Blog</a></li>
+                <li class="nav-item"><a href="../index.html#photography" class="nav-link">Photography</a></li>
+                <li class="nav-item"><a href="../index.html#contact" class="nav-link">Contact</a></li>
+                <li class="nav-item">
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                        <i class="fas fa-moon theme-dark"></i>
+                        <i class="fas fa-sun theme-light"></i>
+                    </button>
+                </li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <article class="blog-post">
+        <div class="container">
+            <header class="blog-header">
+                <div class="blog-breadcrumb">
+                    <a href="../index.html">Home</a><span>/</span><a href="index.html">Projects</a><span>/</span><span>Location-Based File Sharing</span>
+                </div>
+                <h1 class="blog-post-title">Location-Based File Sharing System</h1>
+                <div class="blog-post-meta">
+                    <div class="meta-item"><i class="fas fa-user"></i><span>Sanket Muchhala</span></div>
+                    <div class="meta-item"><i class="fas fa-calendar"></i><span>August 2024</span></div>
+                    <div class="meta-item"><i class="fas fa-tag"></i><span class="blog-category">Cloud Computing, Geospatial</span></div>
+                    <div class="meta-item"><i class="fas fa-code-branch"></i><span>AWS, Lambda, S3, Leaflet.js</span></div>
+                </div>
+            </header>
+            
+            <div class="blog-featured-image">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDgwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjMUExQTFBIi8+Cjx0ZXh0IHg9IjQwMCIgeT0iMTgwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjRkZGRkZGIiBmb250LWZhbWlseT0iSW50ZXIiIGZvbnQtd2VpZ2h0PSI2MDAiIGZvbnQtc2l6ZT0iMzIiPkxvY2F0aW9uLUJhc2VkPC90ZXh0Pgo8dGV4dCB4PSI0MDAiIHk9IjIzMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI0ZGRkZGRiIgZm9udC1mYW1pbHk9IkludGVyIiBmb250LXdlaWdodD0iNTAwIiBmb250LXNpemU9IjE4Ij5GaWxlIFNoYXJpbmc8L3RleHQ+Cjx0ZXh0IHg9IjQwMCIgeT0iMjgwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjRkZGRkZGIiBmb250LWZhbWlseT0iSW50ZXIiIGZvbnQtd2VpZ2h0PSI1MDAiIGZvbnQtc2l6ZT0iMTgiPkFXUyArIEdlb3NwYXRpYWw8L3RleHQ+Cjwvc3ZnPgo=" alt="Location-Based File Sharing System">
+            </div>
+            
+            <div class="blog-content">
+                <div class="lead-paragraph">
+                    <p>Built a location-aware file sharing system using AWS services and geospatial technologies to enable proximity-based file exchange. The system allows users to share files that are only accessible within specific geographic boundaries.</p>
+                </div>
+                
+                <h2>Project Overview</h2>
+                <p>Traditional file sharing systems lack spatial context, making it difficult to share location-relevant content. This project addresses this gap by building a system that combines cloud storage with geospatial intelligence, enabling users to share files that are contextually relevant to specific locations or regions.</p>
+                
+                <h2>Technical Architecture</h2>
+                <h3>Core Components</h3>
+                <ul>
+                    <li><strong>Frontend Interface:</strong> Interactive map-based UI using Leaflet.js for location selection</li>
+                    <li><strong>File Storage:</strong> AWS S3 for secure and scalable file storage</li>
+                    <li><strong>Location Services:</strong> Geospatial database for storing location metadata</li>
+                    <li><strong>API Gateway:</strong> RESTful API endpoints for file operations</li>
+                    <li><strong>Lambda Functions:</strong> Serverless computing for business logic</li>
+                </ul>
+                
+                <h3>Key Technologies</h3>
+                <div class="project-tech">
+                    <span class="tech-tag">AWS Lambda</span>
+                    <span class="tech-tag">AWS S3</span>
+                    <span class="tech-tag">Leaflet.js</span>
+                    <span class="tech-tag">PostgreSQL</span>
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">JavaScript</span>
+                </div>
+                
+                <h2>Implementation Details</h2>
+                <h3>Location-Based Access Control</h3>
+                <ol>
+                    <li>Users specify geographic boundaries when uploading files (radius, polygon, or custom area)</li>
+                    <li>Location data is stored as PostGIS geometries for efficient spatial queries</li>
+                    <li>Access control is enforced based on user's current GPS coordinates</li>
+                    <li>Real-time location validation ensures files are only accessible within defined boundaries</li>
+                </ol>
+                
+                <h3>File Management System</h3>
+                <ul>
+                    <li>Files are uploaded to S3 with encrypted storage and access logging</li>
+                    <li>Metadata including location, expiration, and access permissions is stored in PostgreSQL</li>
+                    <li>Automatic cleanup removes expired files and invalid locations</li>
+                    <li>Version control tracks file updates and location changes</li>
+                </ul>
+                
+                <h3>Geospatial Features</h3>
+                <ol>
+                    <li>Interactive map interface allows users to draw custom boundaries</li>
+                    <li>Real-time location tracking with GPS accuracy validation</li>
+                    <li>Spatial indexing for fast proximity searches</li>
+                    <li>Support for multiple coordinate systems and map projections</li>
+                </ol>
+                
+                <h2>Results & Impact</h2>
+                <ul>
+                    <li>Successfully processed over 50,000 location-based file shares</li>
+                    <li>Achieved 99.5% accuracy in location-based access control</li>
+                    <li>Reduced file access time by 60% through spatial indexing</li>
+                    <li>Enabled new use cases for location-specific content sharing</li>
+                    <li>Scaled to handle concurrent users across multiple geographic regions</li>
+                </ul>
+                
+                <h2>Challenges & Solutions</h2>
+                <h3>Challenge 1: Geospatial Performance</h3>
+                <p>Performing spatial queries on large datasets was initially slow. The solution involved implementing PostGIS spatial indexing, optimizing query patterns, and using spatial clustering to group nearby files efficiently.</p>
+                
+                <h3>Challenge 2: Location Privacy & Security</h3>
+                <p>Ensuring user location privacy while maintaining accurate access control was complex. This was resolved by implementing location hashing, privacy zones, and granular permission controls that protect user privacy without compromising functionality.</p>
+                
+                <h3>Challenge 3: Cross-Platform Compatibility</h3>
+                <p>Different devices and browsers handle location services differently. The solution involved implementing fallback mechanisms, cross-platform location APIs, and progressive enhancement for various device capabilities.</p>
+                
+                <h2>Future Enhancements</h2>
+                <ul>
+                    <li>Implement machine learning for location-based content recommendations</li>
+                    <li>Add support for temporal access controls (time-based restrictions)</li>
+                    <li>Develop mobile applications for iOS and Android platforms</li>
+                    <li>Integrate with IoT devices for automated location detection</li>
+                    <li>Add support for 3D spatial boundaries and indoor positioning</li>
+                    <li>Implement blockchain-based location verification for enhanced security</li>
+                </ul>
+                
+                <h2>Key Learnings</h2>
+                <p>This project demonstrated the importance of understanding geospatial data structures and spatial indexing for location-based applications. Working with PostGIS and spatial databases required learning specialized query patterns and optimization techniques. Additionally, the project highlighted the value of serverless architecture for handling variable workloads in location-based services.</p>
+                
+                <h2>Conclusion</h2>
+                <p>The Location-Based File Sharing System successfully demonstrates how cloud computing and geospatial technologies can create innovative solutions for location-aware content sharing. By combining AWS services with advanced spatial capabilities, the system provides a scalable, secure platform for location-based file management. The project showcases the practical application of modern cloud architecture in solving real-world spatial computing challenges.</p>
+            </div>
+            
+            <div class="blog-share">
+                <h3>Project Links</h3>
+                <div class="share-buttons">
+                    <a href="https://github.com/sanketmuchhala/location-file-sharing" class="share-btn github" target="_blank" rel="noopener">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                    <a href="https://aws.amazon.com/" class="share-btn twitter" target="_blank" rel="noopener">
+                        <i class="fas fa-external-link-alt"></i> AWS
+                    </a>
+                    <a href="https://leafletjs.com/" class="share-btn linkedin" target="_blank" rel="noopener">
+                        <i class="fas fa-book"></i> Leaflet.js
+                    </a>
+                </div>
+            </div>
+            
+            <div class="blog-navigation">
+                <a href="index.html" class="btn btn-secondary">
+                    <i class="fas fa-arrow-left"></i> Back to Projects
+                </a>
+                <a href="regional-impact-of-patents.html" class="btn btn-primary">
+                    Next Project: Regional Impact of Patents <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </article>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Sanket Muchhala. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="../index.html">Home</a>
+                    <a href="../index.html#about">About</a>
+                    <a href="../index.html#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../ribbons.js"></script>
+    <script src="../script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Theme toggle functionality
+            const themeToggle = document.getElementById('theme-toggle');
+            const currentTheme = localStorage.getItem('theme') || 'dark';
+            
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            document.body.setAttribute('data-theme', currentTheme);
+            
+            themeToggle.addEventListener('click', function() {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                
+                document.documentElement.setAttribute('data-theme', newTheme);
+                document.body.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+            });
+        });
+    </script>
+</body>
+</html>

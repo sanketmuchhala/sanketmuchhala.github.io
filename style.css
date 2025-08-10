@@ -105,6 +105,9 @@ body[data-theme="light"] ::-webkit-scrollbar-thumb:hover {
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
+    /* Scroll performance optimizations */
+    -webkit-overflow-scrolling: touch;
+    scroll-padding-top: 80px; /* Account for fixed navbar */
 }
 
 body {
@@ -113,6 +116,10 @@ body {
     color: var(--text-primary);
     line-height: 1.6;
     overflow-x: hidden;
+    /* Scroll performance optimizations */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 .container {
@@ -859,6 +866,10 @@ section {
     flex-direction: column;
     position: relative;
     overflow: hidden;
+    /* Performance optimizations */
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
 .project-card::before {
@@ -878,7 +889,7 @@ section {
 }
 
 .project-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-10px) translateZ(0);
     box-shadow: var(--shadow-large);
     border-color: var(--primary-color);
 }
@@ -1365,12 +1376,17 @@ button:focus {
     transition: var(--transition);
     border: 1px solid var(--border-color);
     animation: fadeInUp 0.6s ease-out;
+    /* Performance optimizations */
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
 .blog-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-10px) translateZ(0);
     box-shadow: var(--shadow-large);
     border-color: var(--primary-color);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .blog-image {
@@ -1515,12 +1531,17 @@ button:focus {
     height: 100%;
     display: flex;
     flex-direction: column;
+    /* Performance optimizations */
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
 .project-card-enhanced:hover {
-    transform: translateY(-8px);
+    transform: translateY(-8px) translateZ(0);
     box-shadow: var(--shadow-large);
     border-color: var(--primary-color);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-card-enhanced .blog-image {
@@ -3647,5 +3668,94 @@ button:focus {
         font-size: 1.5rem;
         width: 2.5rem;
         height: 2.5rem;
+    }
+}
+
+/* Scroll Performance Optimizations */
+@media (prefers-reduced-motion: no-preference) {
+    /* Smooth scrolling for elements that need it */
+    .project-card,
+    .project-card-enhanced,
+    .blog-card,
+    .skill-category,
+    .timeline-item,
+    .cert-card,
+    .photo-item,
+    .collage-item {
+        /* Hardware acceleration for smooth animations */
+        will-change: transform;
+        transform: translateZ(0);
+        backface-visibility: hidden;
+        perspective: 1000px;
+    }
+    
+    /* Optimize hover effects */
+    .project-card:hover,
+    .project-card-enhanced:hover,
+    .blog-card:hover,
+    .skill-category:hover,
+    .timeline-item:hover,
+    .cert-card:hover,
+    .photo-item:hover,
+    .collage-item:hover {
+        transform: translateY(-5px) translateZ(0);
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    
+    .project-card:hover,
+    .project-card-enhanced:hover,
+    .blog-card:hover,
+    .skill-category:hover,
+    .timeline-item:hover,
+    .cert-card:hover,
+    .photo-item:hover,
+    .collage-item:hover {
+        transform: none;
+    }
+}
+
+/* Scroll performance improvements for mobile */
+@media (max-width: 768px) {
+    .projects-grid,
+    .blog-grid,
+    .skills-grid,
+    .certifications-grid {
+        /* Reduce grid complexity on mobile for better performance */
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    /* Optimize animations for mobile */
+    .project-card,
+    .project-card-enhanced,
+    .blog-card,
+    .skill-category,
+    .timeline-item,
+    .cert-card {
+        will-change: auto;
+        transform: none;
+        backface-visibility: visible;
+    }
+    
+    .project-card:hover,
+    .project-card-enhanced:hover,
+    .blog-card:hover,
+    .skill-category:hover,
+    .timeline-item:hover,
+    .cert-card:hover {
+        transform: none;
+        transition: none;
     }
 }

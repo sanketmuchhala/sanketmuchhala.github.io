@@ -157,8 +157,8 @@
             colorCycleSpeed : 8, // Further increased for more dynamic colors
             // where to start from on the Y axis on each side (top|min, middle|center, bottom|max, random)
             verticalPosition : "random",
-            // how fast to get to the other side of the screen - INCREASED SPEED
-            horizontalSpeed : 300, // Further increased for continuous fast movement
+            // how fast to get to the other side of the screen - SLOWER SPEED
+            horizontalSpeed : 150, // Reduced for slower, more relaxed movement
             // how many ribbons to keep on screen at any given time - INCREASED COUNT
             ribbonCount: 4, // Increased for more continuous coverage
             // add stroke along with ribbon fill colors
@@ -323,14 +323,14 @@
                 }
                 if( section.delay <= 0 )
                 {
-                    section.phase += 0.06; // Maximum phase increment for continuous smooth animation
+                    section.phase += 0.03; // Reduced phase increment for slower, smoother animation
                     section.alpha = Math.sin( section.phase ) * 1;
                     section.alpha = ( section.alpha <= 0 ) ? 0 : section.alpha;
                     section.alpha = ( section.alpha >= 1 ) ? 1 : section.alpha;
 
                     if( this._options.animateSections )
                     {
-                        var mod = ( Math.sin( 1 + section.phase * Math.PI / 2 ) * 0.15 ); // Increased animation intensity (was 0.1)
+                        var mod = ( Math.sin( 1 + section.phase * Math.PI / 2 ) * 0.08 ); // Reduced animation intensity for subtler movement
 
                         if( section.dir === "right" )
                         {

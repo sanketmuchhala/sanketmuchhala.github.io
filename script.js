@@ -253,16 +253,16 @@ document.addEventListener('DOMContentLoaded', function() {
         try {
             if (typeof Ribbons !== 'undefined') {
                 new Ribbons({
-                    // Enhanced animation settings for smoother continuous movement
+                    // Slower animation settings for more relaxed movement
                     colorSaturation: "70%",
                     colorBrightness: "55%",
                     colorAlpha: 0.8,
-                    colorCycleSpeed: 12, // Further increased for more dynamic colors
+                    colorCycleSpeed: 6, // Reduced for slower color changes
                     verticalPosition: "random", // Mix it up for more variety
-                    horizontalSpeed: 250, // Faster horizontal movement
-                    ribbonCount: 5, // More ribbons for continuous motion
+                    horizontalSpeed: 120, // Slower horizontal movement
+                    ribbonCount: 4, // Fewer ribbons for less busy animation
                     strokeSize: 0,
-                    parallaxAmount: -0.3,
+                    parallaxAmount: -0.2, // Reduced parallax effect
                     animateSections: true
                 });
                 console.log('Ribbons background initialized successfully');
@@ -620,4 +620,54 @@ document.addEventListener('DOMContentLoaded', function() {
     initializePhotography();
     initializePhotoCollage();
     initializeProgressiveImageLoading();
+    initializeTypingAnimation();
 });
+
+// Typing animation for job titles
+function initializeTypingAnimation() {
+    const typingText = document.getElementById('typing-text');
+    if (!typingText) return;
+    
+    const jobTitles = [
+        'AI Engineer',
+        'ML Engineer', 
+        'Data Analyst'
+    ];
+    
+    let currentIndex = 0;
+    let currentText = '';
+    let isDeleting = false;
+    let typingSpeed = 150;
+    
+    function type() {
+        const currentJobTitle = jobTitles[currentIndex];
+        
+        if (isDeleting) {
+            // Delete text
+            currentText = currentJobTitle.substring(0, currentText.length - 1);
+            typingSpeed = 100;
+        } else {
+            // Type text
+            currentText = currentJobTitle.substring(0, currentText.length + 1);
+            typingSpeed = 150;
+        }
+        
+        typingText.textContent = currentText;
+        
+        if (!isDeleting && currentText === currentJobTitle) {
+            // Pause at end of typing
+            typingSpeed = 2000;
+            isDeleting = true;
+        } else if (isDeleting && currentText === '') {
+            // Move to next job title
+            isDeleting = false;
+            currentIndex = (currentIndex + 1) % jobTitles.length;
+            typingSpeed = 500;
+        }
+        
+        setTimeout(type, typingSpeed);
+    }
+    
+    // Start the typing animation after a delay
+    setTimeout(type, 1000);
+}

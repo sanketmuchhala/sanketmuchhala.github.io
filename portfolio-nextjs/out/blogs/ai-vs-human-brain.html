@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI vs Human Brain - Sanket Muchhala | AI/ML Engineer</title>
+    <meta name="description" content="A deep dive into the fundamental differences between artificial intelligence and human cognition. Exploring what AI really is, how it works, and the philosophical question of whether machines can truly think.">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html"><span>SM</span></a>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="../index.html#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#skills" class="nav-link">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#experience" class="nav-link">Experience</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#blog" class="nav-link active">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#photography" class="nav-link">Photography</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#contact" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                        <i class="fas fa-sun" id="theme-icon"></i>
+                    </button>
+                </li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Post Content -->
+    <article class="blog-post">
+        <div class="container">
+            <!-- Blog Header -->
+            <header class="blog-header">
+                <div class="blog-breadcrumb">
+                    <a href="../index.html">Home</a>
+                    <span>/</span>
+                    <a href="../index.html#blog">Blog</a>
+                    <span>/</span>
+                    <span>AI vs Human Brain</span>
+                </div>
+                
+                <h1 class="blog-post-title">AI vs Human Brain</h1>
+                
+                <div class="blog-post-meta">
+                    <div class="meta-item">
+                        <i class="fas fa-user"></i>
+                        <span>Sanket Muchhala</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-calendar"></i>
+                        <span>August 3, 2025</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-clock"></i>
+                        <span>12 min read</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-tag"></i>
+                        <span class="blog-category">AI/Philosophy</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Featured Image -->
+            <div class="blog-featured-image">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDgwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjMUExQTFBIi8+Cjx0ZXh0IHg9IjQwMCIgeT0iMTgwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjRkZGRkZGIiBmb250LWZhbWlseT0iSW50ZXIiIGZvbnQtd2VpZ2h0PSI3MDAiIGZvbnQtc2l6ZT0iMzYiPkFJIHZzIEh1bWFuIEJyYWluPC90ZXh0Pgo8dGV4dCB4PSI0MDAiIHk9IjI0MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI0ZGRkZGRiIgZm9udC1mYW1pbHk9IkludGVyIiBmb250LXdlaWdodD0iNDAwIiBmb250LXNpemU9IjE4Ij5FeHBsb3JpbmcgdGhlIEZ1bmRhbWVudGFsIERpZmZlcmVuY2VzPC90ZXh0Pgo8L3N2Zz4K" alt="AI vs Human Brain">
+            </div>
+
+            <!-- Blog Content -->
+            <div class="blog-content">
+                <p class="lead-paragraph">
+                    <strong>"AI is going to take your job."</strong>
+                </p>
+
+                <p>
+                    That's usually how the conversation starts these days. Then comes the counter: <em>"But humans made AI!"</em> — and sure, that's true. But let's be honest: <strong>some humans made AI.</strong> And not every human is smarter than the AI they're using.
+                </p>
+
+                <p>
+                    Before we dive into what AI really is and how it works, let me take you back to <strong>August 2022</strong>, when I attended my very first lecture in a course called <em>Elements of AI</em>. AI wasn't a buzzword then — at least, not like it is now. No ChatGPT, no viral AI-generated videos, no doom-laden LinkedIn think pieces. Just a quiet classroom, a curious group of students, and a professor who began the lecture by opening something called the <strong>OpenAI Playground</strong>.
+                </p>
+
+                <p>
+                    What followed wasn't a technical breakdown of algorithms or neural nets. It was just a simple chat with the AI — and I remember my professor saying:
+                </p>
+
+                <blockquote>
+                    <p>"AI is just math. Don't be afraid of it."</p>
+                </blockquote>
+
+                <p>
+                    That line stuck with me. Because what seemed magical at first — a machine replying with human-like sentences — started to become something I could break down and understand.
+                </p>
+
+                <h2>What is AI, Really?</h2>
+
+                <p>
+                    Let's clear something up: AI is not one big thing. It's not a single robot plotting in a server room. It's a collection of statistical models, built to predict outcomes based on data. At its core, <strong>AI is about pattern recognition</strong>, probability, and optimization — not thought, emotion, or desire.
+                </p>
+
+                <p>
+                    Take <strong>ChatGPT</strong>, for example. Its full form is <strong>Chat Generative Pre-trained Transformer</strong>. It's based on a technology called a <strong>Transformer</strong>, originally introduced by Google in 2017. Transformers are models that excel at understanding and generating sequences — like words in a sentence.
+                </p>
+
+                <p>Here's what happens under the hood:</p>
+
+                <ul>
+                    <li>You give it a prompt.</li>
+                    <li>It calculates the <strong>most likely next word</strong>, based on everything it has been trained on.</li>
+                    <li>Then it repeats that step, one token at a time.</li>
+                </ul>
+
+                <p>
+                    That's it. No deep thoughts. No hidden consciousness. Just really smart pattern matching based on probabilities.
+                </p>
+
+                <h2>How Is It Different from Gemini or Grok?</h2>
+
+                <p>
+                    <strong>ChatGPT</strong> (by OpenAI), <strong>Gemini</strong> (by Google), and <strong>Grok</strong> (by xAI/Elon Musk's team) are all based on the same foundation: large language models trained on massive datasets.
+                </p>
+
+                <p>But here's where they differ:</p>
+
+                <table style="width: 100%; border-collapse: collapse; margin: 2rem 0;">
+                    <thead>
+                        <tr style="background-color: var(--background-card); border-bottom: 2px solid var(--border-color);">
+                            <th style="padding: 1rem; text-align: left; color: var(--text-primary);">Feature</th>
+                            <th style="padding: 1rem; text-align: left; color: var(--text-primary);">ChatGPT</th>
+                            <th style="padding: 1rem; text-align: left; color: var(--text-primary);">Gemini (Google)</th>
+                            <th style="padding: 1rem; text-align: left; color: var(--text-primary);">Grok (xAI)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid var(--border-color);">
+                            <td style="padding: 1rem; color: var(--text-primary); font-weight: 500;">Model Family</td>
+                            <td style="padding: 1rem; color: var(--text-secondary);">GPT-4 (Transformer)</td>
+                            <td style="padding: 1rem; color: var(--text-secondary);">Gemini 1.5 (formerly Bard)</td>
+                            <td style="padding: 1rem; color: var(--text-secondary);">Based on LLMs & Grok architecture</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-color);">
+                            <td style="padding: 1rem; color: var(--text-primary); font-weight: 500;">Integration</td>
+                            <td style="padding: 1rem; color: var(--text-secondary);">OpenAI ecosystem</td>
+                            <td style="padding: 1rem; color: var(--text-secondary);">Tightly integrated with Google</td>
+                            <td style="padding: 1rem; color: var(--text-secondary);">Integrated into X (Twitter)</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-color);">
+                            <td style="padding: 1rem; color: var(--text-primary); font-weight: 500;">Output Style</td>
+                            <td style="padding: 1rem; color: var(--text-secondary);">Balanced, helpful tone</td>
+                            <td style="padding: 1rem; color: var(--text-secondary);">Search-informed, factual tone</td>
+                            <td style="padding: 1rem; color: var(--text-secondary);">Edgy, "uncensored" tone</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 1rem; color: var(--text-primary); font-weight: 500;">Training Data</td>
+                            <td style="padding: 1rem; color: var(--text-secondary);">Broad web corpus</td>
+                            <td style="padding: 1rem; color: var(--text-secondary);">Web + Google Search data</td>
+                            <td style="padding: 1rem; color: var(--text-secondary);">Web + Twitter data</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p>
+                    Each of these models has its own <strong>architecture tweaks</strong>, training methods, and <strong>safety layers</strong>. But ultimately, they're all just next-word predictors with different vibes.
+                </p>
+
+                <h2>What About Prompt Engineering?</h2>
+
+                <p>
+                    Here's a fun fact: <strong>Every time you type a prompt, you're not the only one talking to the AI.</strong>
+                    Behind the scenes, these models are fed with tons of internal instructions before your words even get there. Things like:
+                </p>
+
+                <ul>
+                    <li>"Be helpful, honest, and harmless."</li>
+                    <li>"Use a friendly tone."</li>
+                    <li>"Avoid controversial or sensitive topics."</li>
+                </ul>
+
+                <p>
+                    These <strong>internal prompts</strong> — called <em>system prompts</em> — are invisible to users, but they deeply influence how the model behaves.
+                </p>
+
+                <p>
+                    Now let's talk about something interesting:
+                    If <strong>Perplexity AI</strong> is using GPT-4 just like ChatGPT, why are the answers often so different?
+                </p>
+
+                <h2>The Art of Prompt Stacking: Perplexity's Edge</h2>
+
+                <p>
+                    Perplexity doesn't just pass your question to GPT-4. It carefully constructs a <strong>meta-prompt</strong> — a combination of search results, context building, tone instructions, and formatting guidelines — before handing it off to the model.
+                </p>
+
+                <p>Let's say you ask:</p>
+
+                <blockquote>
+                    <p>"What's the best laptop for video editing under $1500?"</p>
+                </blockquote>
+
+                <p>Here's what Perplexity might do behind the scenes:</p>
+
+                <ol>
+                    <li>Search the web for recent articles and reviews.</li>
+                    <li>Extract 3-5 key sources.</li>
+                    <li>Summarize each into a structured input.</li>
+                    <li>Pass that to GPT-4 with a prompt like: <em>"Based on the following expert reviews, write a concise recommendation with pros and cons…"</em></li>
+                </ol>
+
+                <p>
+                    And just like that, you get a well-rounded, evidence-based answer — not just a generic reply.
+                </p>
+
+                <h2>So... Does AI Have a Mind of Its Own?</h2>
+
+                <p>
+                    Let's go philosophical for a moment. Some people imagine AI as a ghost in the machine — something that thinks, feels, maybe even dreams of electric sheep.
+                </p>
+
+                <p>But the reality is far more mathematical:</p>
+
+                <blockquote>
+                    <p>AI models don't <strong>think</strong> — they <strong>calculate</strong>.<br>
+                    They don't know what they're saying — they just know what <em>should</em> come next.</p>
+                </blockquote>
+
+                <p>Imagine you're filling in a sentence:</p>
+
+                <blockquote>
+                    <p>"The cat sat on the ____."</p>
+                </blockquote>
+
+                <p>
+                    Your brain might guess: "mat," "couch," or "window sill." That's conditional probability at play. AI does this — but scaled up to billions of parameters, trained on trillions of words.
+                </p>
+
+                <p>No consciousness. No goals. Just math.</p>
+
+                <h2>Wait, I'm a Human — I Missed the Point 😅</h2>
+
+                <p>
+                    Let's get back to the real theme of this article: <strong>Human Brain vs AI.</strong>
+                </p>
+
+                <p>
+                    The human brain is curious. It forgets, it wanders off, it loops back. Like I just did.
+                    AI doesn't do that. It stays laser-focused on your prompt.
+                    But it also can't surprise itself, question its own assumptions, or take a break because it got distracted by an idea.
+                </p>
+
+                <p>
+                    We are flawed, unpredictable, creative, self-aware — and AI is none of those things.
+                    But that doesn't mean AI isn't powerful. It means we should understand it <strong>deeply</strong>, <strong>respectfully</strong>, and with a healthy dose of critical thinking.
+                </p>
+
+                <h2>Will AI Replace Us?</h2>
+
+                <p>
+                    Right now, some estimates say that up to 30% of the code at big tech companies — Amazon, Microsoft, Google — is being written by AI. Tools like Claude by Anthropic and GitHub Copilot are generating production-level code.
+                </p>
+
+                <p>Why is this happening? That's a good topic for another blog post.</p>
+
+                <p>But here's something to keep in mind:</p>
+
+                <p>
+                    Every time there's a revolutionary new technology, the market reacts with fear and speculation — just like it's doing now. It takes time for people, companies, and industries to figure out which professions remain profitable, which evolve, and which become obsolete.
+                </p>
+
+                <p>
+                    Back during the dot-com boom, people said the internet would destroy jobs.
+                    It didn't — it reshaped them. Jobs shifted, entire new fields emerged, and old roles evolved.
+                </p>
+
+                <p>
+                    AI is no different. The world will adjust. Some jobs will change. Some will vanish. But new ones — roles we haven't even imagined yet — will take their place.
+                </p>
+
+                <h2>Full Circle</h2>
+
+                <p>
+                    So yeah — AI is writing code, answering questions, generating art, and even writing blogs like this one.
+                    But it still needs a human brain to ask the right questions, to steer the ship, and — occasionally — to say:
+                </p>
+
+                <blockquote>
+                    <p>"Wait, I'm a human. I missed the point. Let's get back to it."</p>
+                </blockquote>
+
+                <p>
+                    And maybe that's what sets us apart. Not intelligence — but self-awareness, imperfection, and the ability to wander, wonder, and find our way back.
+                </p>
+
+                <h2>One Final Question</h2>
+
+                <p>Did I use AI to write this post?</p>
+
+                <p>
+                    The answer isn't black and white — it's greyscale. Probably yes and no. What I originally wrote was one long thought piece of my mind, not clear blog structure but just rough ideas. What AI actually helped me with was to channel my thoughts relevant to this post, to write much more efficiently.
+                </p>
+
+                <p>
+                    <strong>Final Thought:</strong><br>
+                    The question is not "Will AI replace us?"<br>
+                    It's "How will we work with it, knowing what it can and can't do?"
+                </p>
+
+                <p>
+                    Because at the end of the day, the human brain made AI — and if we're thoughtful enough, we can keep it that way.
+                </p>
+            </div>
+
+            <!-- Share Buttons -->
+            <div class="blog-share">
+                <h3>Share this post</h3>
+                <div class="share-buttons">
+                    <a href="https://twitter.com/intent/tweet?text=AI vs Human Brain&url=https://sanketmuchhala.github.io/blogs/ai-vs-human-brain.html" target="_blank" class="share-btn twitter">
+                        <i class="fab fa-twitter"></i>
+                        <span>Twitter</span>
+                    </a>
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://sanketmuchhala.github.io/blogs/ai-vs-human-brain.html" target="_blank" class="share-btn linkedin">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="mailto:?subject=AI vs Human Brain&body=Check out this blog post: https://sanketmuchhala.github.io/blogs/ai-vs-human-brain.html" class="share-btn email">
+                        <i class="fas fa-envelope"></i>
+                        <span>Email</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Navigation to other posts -->
+            <div class="blog-navigation">
+                <a href="../index.html#blog" class="btn btn-secondary">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Blog
+                </a>
+                <a href="../index.html#contact" class="btn btn-primary">
+                    Get In Touch
+                </a>
+            </div>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Sanket Muchhala. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="../index.html#home">Home</a>
+                    <a href="../index.html#about">About</a>
+                    <a href="../index.html#skills">Skills</a>
+                    <a href="../index.html#experience">Experience</a>
+                    <a href="../index.html#projects">Projects</a>
+                    <a href="../index.html#blog">Blog</a>
+                    <a href="../index.html#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../ribbons.js"></script>
+    <script src="../script.js"></script>
+    <script>
+        // Ensure theme toggle works on blog pages
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check for theme on page load
+            const savedTheme = localStorage.getItem('portfolio-theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            document.body.setAttribute('data-theme', savedTheme);
+        });
+    </script>
+</body>
+</html>

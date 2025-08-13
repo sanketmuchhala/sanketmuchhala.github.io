@@ -149,14 +149,11 @@
             <div class="blog-share">
                 <h3>Project Links</h3>
                 <div class="share-buttons">
+                    <a href="https://sanketmuchhala.shinyapps.io/project/" class="share-btn deployment" target="_blank" rel="noopener">
+                        <i class="fas fa-external-link-alt"></i> View Live Demo
+                    </a>
                     <a href="https://github.com/sanketmuchhala/Superstore-Sales-Management-Dashboard" class="share-btn github" target="_blank" rel="noopener">
                         <i class="fab fa-github"></i> View on GitHub
-                    </a>
-                    <a href="https://sanketmuchhala.shinyapps.io/project/" class="share-btn twitter" target="_blank" rel="noopener">
-                        <i class="fas fa-external-link-alt"></i> Live Demo
-                    </a>
-                    <a href="https://shiny.rstudio.com/" class="share-btn linkedin" target="_blank" rel="noopener">
-                        <i class="fas fa-book"></i> R Shiny
                     </a>
                 </div>
             </div>
@@ -188,22 +185,49 @@
     <script src="../ribbons.js"></script>
     <script src="../script.js"></script>
     <script>
+        // Ensure theme toggle works on project pages
         document.addEventListener('DOMContentLoaded', function() {
-            // Theme toggle functionality
             const themeToggle = document.getElementById('theme-toggle');
-            const currentTheme = localStorage.getItem('theme') || 'dark';
+            const themeIcon = document.getElementById('theme-icon');
             
-            document.documentElement.setAttribute('data-theme', currentTheme);
-            document.body.setAttribute('data-theme', currentTheme);
-            
-            themeToggle.addEventListener('click', function() {
-                const currentTheme = document.documentElement.getAttribute('data-theme');
-                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            if (themeToggle && themeIcon) {
+                // Initialize theme system
+                const savedTheme = localStorage.getItem('portfolio-theme') || 'dark';
+                document.documentElement.setAttribute('data-theme', savedTheme);
+                document.body.setAttribute('data-theme', savedTheme);
                 
-                document.documentElement.setAttribute('data-theme', newTheme);
-                document.body.setAttribute('data-theme', newTheme);
-                localStorage.setItem('theme', newTheme);
-            });
+                // Update icon based on current theme
+                if (savedTheme === 'light') {
+                    themeIcon.className = 'fas fa-moon';
+                    themeToggle.setAttribute('aria-label', 'Switch to dark mode');
+                } else {
+                    themeIcon.className = 'fas fa-sun';
+                    themeToggle.setAttribute('aria-label', 'Switch to light mode');
+                }
+                
+                // Add click event listener
+                themeToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+                    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                    
+                    // Apply theme
+                    document.documentElement.setAttribute('data-theme', newTheme);
+                    document.body.setAttribute('data-theme', newTheme);
+                    
+                    // Save to localStorage
+                    localStorage.setItem('portfolio-theme', newTheme);
+                    
+                    // Update icon
+                    if (newTheme === 'light') {
+                        themeIcon.className = 'fas fa-moon';
+                        themeToggle.setAttribute('aria-label', 'Switch to dark mode');
+                    } else {
+                        themeIcon.className = 'fas fa-sun';
+                        themeToggle.setAttribute('aria-label', 'Switch to light mode');
+                    }
+                });
+            }
         });
     </script>
 </body>

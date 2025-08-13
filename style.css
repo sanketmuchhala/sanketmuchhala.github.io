@@ -919,6 +919,7 @@ section {
     color: var(--text-secondary);
     font-size: 1.2rem;
     transition: var(--transition);
+    text-decoration: none;
 }
 
 .project-link:hover {
@@ -2010,6 +2011,18 @@ button:focus {
 .share-btn.email {
     background: var(--background-card);
     color: var(--text-primary);
+}
+
+.share-btn.github {
+    background: var(--background-card);
+    color: var(--text-primary);
+    border-color: var(--border-color);
+}
+
+.share-btn.deployment {
+    background: var(--primary-color);
+    color: var(--background-dark);
+    border-color: var(--primary-color);
 }
 
 .share-btn:hover {

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<!-- Photo gallery: Pure CSS responsive hex grid; keeps local photos -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Photos • Hex Grid</title>
+  <link rel="icon" href="/photos/favicon.svg">
+
+  <!-- Fonts used in the provided CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Saira:wght@300;400;600&family=Sour+Gummy:wght@600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/photos/gallery.css">
+</head>
+<body>
+  <header>
+    <h1>Pure CSS responsive hex grid 🎇 with no media queries 🎇</h1>
+    <em>minimal code, ~25 relevant CSS declarations</em>
+    <p>in the future, things should get even simpler with sibling-index()</p>
+  </header>
+
+  <main>
+    <!-- Use local images; each anchor has --i index used by CSS for layout -->
+    <a href="/photography/photos/autumn-colors.jpg" target="_blank" style="--i: 0">
+      <img src="/photography/photos/autumn-colors.jpg" alt="Autumn colors" />
+    </a>
+    <a href="/photography/photos/IMG_20190619_160550_Original-min.jpg" target="_blank" style="--i: 1">
+      <img src="/photography/photos/IMG_20190619_160550_Original-min.jpg" alt="IMG_20190619_160550" />
+    </a>
+    <a href="/photography/photos/IMG_5166-min.JPG" target="_blank" style="--i: 2">
+      <img src="/photography/photos/IMG_5166-min.JPG" alt="IMG_5166" />
+    </a>
+    <a href="/photography/photos/IMG_6517-min.JPEG" target="_blank" style="--i: 3">
+      <img src="/photography/photos/IMG_6517-min.JPEG" alt="IMG_6517" />
+    </a>
+    <a href="/photography/photos/nature-closeup.jpg" target="_blank" style="--i: 4">
+      <img src="/photography/photos/nature-closeup.jpg" alt="Nature closeup" />
+    </a>
+    <a href="/photography/photos/sunset-mountains.jpg" target="_blank" style="--i: 5">
+      <img src="/photography/photos/sunset-mountains.jpg" alt="Sunset mountains" />
+    </a>
+    <a href="/photography/photos/urban-architecture.jpg" target="_blank" style="--i: 6">
+      <img src="/photography/photos/urban-architecture.jpg" alt="Urban architecture" />
+    </a>
+    <!-- A couple of local photos from photos/ -->
+    <a href="/photos/1631332394799.jpeg" target="_blank" style="--i: 7">
+      <img src="/photos/1631332394799.jpeg" alt="Local photo 1631332394799" />
+    </a>
+    <a href="/photos/download.jpeg" target="_blank" style="--i: 8">
+      <img src="/photos/download.jpeg" alt="Local photo download" />
+    </a>
+  </main>
+
+  <footer>
+    <b>Fin.</b>
+    <p>
+      <strong>One more thing.</strong>
+      If the Maths and Physics infused CSS, canvas and SVG work that I've been putting out for over a decade has helped you in any way or you just like it, please remember that praise can't keep me afloat financially, but you can! So please consider being a cool cat and supporting it monthly or with a one time donation on
+      <a href='https://ko-fi.com/anatudor' target='_blank'>Ko-fi</a>.
+      Or at least sharing this to show the world what can be done on the web these days... because I think it's pretty damn cool!
+    </p>
+  </footer>
+  <script defer src="/photos/gallery.js"></script>
+</body>
+</html>

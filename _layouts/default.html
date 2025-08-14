@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+    
+    <!-- Performance Optimizations -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <meta name="keywords" content="{% if page.keywords %}{{ page.keywords }}{% else %}AI, Machine Learning, ML Engineer, Generative AI, LLMs, NLP{% endif %}">
+    
+    <!-- Critical CSS for above-the-fold content -->
+    <style>
+        /* Critical CSS for immediate rendering */
+        :root {
+            --primary-color: #ffffff;
+            --background-dark: #000000;
+            --text-primary: #f8fafc;
+            --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        body { margin: 0; font-family: var(--font-family); background: var(--background-dark); color: var(--text-primary); }
+        .navbar { position: fixed; top: 0; width: 100%; z-index: 1000; background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); }
+        .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+        .hero-title { font-size: 3rem; font-weight: 700; margin-bottom: 1rem; }
+        .hero-subtitle { font-size: 1.5rem; opacity: 0.8; }
+    </style>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="{{ '/style.css' | relative_url }}?v=1.2" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ '/style.css' | relative_url }}?v=1.2"></noscript>
+    
+    <!-- Preload critical images -->
+    <link rel="preload" href="{{ '/photography/photos/optimized/sunset-mountains.webp' | relative_url }}" as="image" type="image/webp">
+    <link rel="preload" href="{{ '/photography/photos/optimized/urban-architecture.webp' | relative_url }}" as="image" type="image/webp">
+    <link rel="preload" href="{{ '/photography/photos/optimized/nature-closeup.webp' | relative_url }}" as="image" type="image/webp">
+    
+    <!-- DNS prefetch for external resources -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="//avatars.githubusercontent.com">
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://avatars.githubusercontent.com">
+    
+    <!-- Load fonts with display=swap for better performance -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Load Font Awesome asynchronously -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="{{ '/favicon.svg' | relative_url }}" />
+    <meta name="apple-mobile-web-app-title" content="Sanket" />
+    
+    <!-- Jekyll SEO Tag -->
+    {% seo %}
+    
+    <!-- Load JavaScript asynchronously -->
+    <script src="{{ '/script.js' | relative_url }}" defer></script>
+    
+    <!-- Page-specific head content -->
+    {% if page.head %}
+        {{ page.head }}
+    {% endif %}
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="{{ '/' | relative_url }}"><span>SM</span></a>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="{{ '/' | relative_url }}#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ '/' | relative_url }}#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ '/' | relative_url }}#skills" class="nav-link">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ '/' | relative_url }}#experience" class="nav-link">Experience</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ '/' | relative_url }}#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ '/' | relative_url }}#photography" class="nav-link">Photography</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ '/blogs/' | relative_url }}" class="nav-link">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ '/' | relative_url }}#certifications" class="nav-link">Certifications</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ '/' | relative_url }}#contact" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                        <i class="fas fa-sun" id="theme-icon"></i>
+                    </button>
+                </li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        {{ content }}
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; {{ 'now' | date: "%Y" }} {{ site.author }}. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="{{ '/' | relative_url }}#home">Home</a>
+                    <a href="{{ '/' | relative_url }}#about">About</a>
+                    <a href="{{ '/' | relative_url }}#skills">Skills</a>
+                    <a href="{{ '/' | relative_url }}#experience">Experience</a>
+                    <a href="{{ '/' | relative_url }}#projects">Projects</a>
+                    <a href="{{ '/' | relative_url }}#photography">Photography</a>
+                    <a href="{{ '/' | relative_url }}#certifications">Certifications</a>
+                    <a href="{{ '/' | relative_url }}#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="{{ '/ribbons.js' | relative_url }}" defer></script>
+    
+    <!-- Page-specific scripts -->
+    {% if page.scripts %}
+        {{ page.scripts }}
+    {% endif %}
+</body>
+</html>

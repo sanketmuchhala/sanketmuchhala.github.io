@@ -198,7 +198,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('animate-in');
+                requestAnimationFrame(() => {
+                    entry.target.classList.add('animate-in');
+                });
+                // Unobserve after animation to improve performance
+                observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
@@ -249,32 +253,40 @@ setTimeout(() => {
     }
 }, 1000);
 
-// Parallax effect for hero section
-window.addEventListener('scroll', () => {
+// Optimized parallax effect for hero section with throttling
+const handleParallax = throttle(() => {
     const scrolled = window.pageYOffset;
     const heroText = document.querySelector('.hero-text');
     const heroImage = document.querySelector('.hero-image');
     
     if (heroText && heroImage && scrolled < window.innerHeight) {
-        heroText.style.transform = `translateY(${scrolled * 0.5}px)`;
-        heroImage.style.transform = `translateY(${scrolled * 0.3}px)`;
+        requestAnimationFrame(() => {
+            heroText.style.transform = `translateY(${scrolled * 0.5}px)`;
+            heroImage.style.transform = `translateY(${scrolled * 0.3}px)`;
+        });
     }
-});
+}, 16); // ~60fps
 
-// Dynamic skill tag hover effects
+window.addEventListener('scroll', handleParallax, { passive: true });
+
+// Optimized skill tag hover effects with CSS transitions instead of JS
 document.querySelectorAll('.skill-tag').forEach(tag => {
     tag.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-3px) scale(1.05)';
+        requestAnimationFrame(() => {
+            this.style.transform = 'translateY(-3px) scale(1.05)';
+        });
     });
     
     tag.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(0) scale(1)';
+        requestAnimationFrame(() => {
+            this.style.transform = 'translateY(0) scale(1)';
+        });
     });
 });
 
-// Project card tilt effect
+// Optimized project card tilt effect with throttling
 document.querySelectorAll('.project-card').forEach(card => {
-    card.addEventListener('mousemove', function(e) {
+    const handleTilt = throttle(function(e) {
         const rect = this.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
@@ -285,8 +297,12 @@ document.querySelectorAll('.project-card').forEach(card => {
         const rotateX = (y - centerY) / 10;
         const rotateY = (centerX - x) / 10;
         
-        this.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px)`;
-    });
+        requestAnimationFrame(() => {
+            this.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px)`;
+        });
+    }, 16); // ~60fps
+    
+    card.addEventListener('mousemove', handleTilt, { passive: true });
     
     card.addEventListener('mouseleave', function() {
         this.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)';

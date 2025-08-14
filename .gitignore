@@ -1,2 +1,30 @@
+# Dependencies
 node_modules/
 package-lock.json
+
+# Jekyll build artifacts
+_site/
+.jekyll-cache/
+.jekyll-metadata
+
+# Ruby/Bundler
+vendor/
+.bundle/
+Gemfile.lock
+
+# Development tools
+.vscode/
+.claude/
+*.log
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Build outputs
+*.min.css
+*.min.js
+
+# Temporary files
+*.tmp
+*.temp

@@ -21,6 +21,7 @@ description: "AI/ML Engineer specializing in generative AI, LLMs, and scalable M
                 Experienced in designing agentic systems, document intelligence workflows, and ML pipelines deployed at scale.
             </p>
             <div class="hero-buttons">
+                <!-- <a href="#contact" class="btn btn-primary">Get In Touch</a> -->
                 <a href="#projects" class="btn btn-secondary">View My Work</a>
                 <a href="{{ '/Sanket_Muchhala_Resume.pdf' | relative_url }}" class="btn btn-resume" download>
                     <i class="fas fa-download"></i> Download My Resume
@@ -91,6 +92,20 @@ description: "AI/ML Engineer specializing in generative AI, LLMs, and scalable M
                     </div>
                 </div>
             </div>
+            <div class="about-stats">
+                <div class="stat-item">
+                    <div class="stat-number">3+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">AI Projects Deployed</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">Industries Impacted</div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -99,59 +114,66 @@ description: "AI/ML Engineer specializing in generative AI, LLMs, and scalable M
 <section id="skills" class="skills">
     <div class="container">
         <div class="section-header">
-            <h2 class="section-title">Skills & Technologies</h2>
+            <h2 class="section-title">Technical Skills</h2>
             <div class="section-divider"></div>
         </div>
-        <div class="skills-content">
-            <div class="skills-category">
-                <h3>AI & Machine Learning</h3>
-                <div class="skills-grid">
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3><i class="fas fa-code"></i> Programming Languages</h3>
+                <div class="skill-tags">
                     <span class="skill-tag">Python</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">R</span>
+                    <span class="skill-tag">JavaScript</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3><i class="fas fa-brain"></i> AI/ML Frameworks & Tools</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Scikit-learn</span>
                     <span class="skill-tag">TensorFlow</span>
                     <span class="skill-tag">PyTorch</span>
-                    <span class="skill-tag">Scikit-learn</span>
-                    <span class="skill-tag">OpenAI GPT</span>
+                    <span class="skill-tag">FastAPI</span>
+                    <span class="skill-tag">MLflow</span>
+                    <span class="skill-tag">SpaCy</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3><i class="fas fa-robot"></i> Generative AI & LLMs</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">GPT-4</span>
                     <span class="skill-tag">LangChain</span>
-                    <span class="skill-tag">Hugging Face</span>
-                    <span class="skill-tag">NLP</span>
-                    <span class="skill-tag">Computer Vision</span>
-                    <span class="skill-tag">Deep Learning</span>
+                    <span class="skill-tag">RAG</span>
+                    <span class="skill-tag">Agentic AI</span>
+                    <span class="skill-tag">Vector DBs (FAISS)</span>
                 </div>
             </div>
-            <div class="skills-category">
-                <h3>Cloud & DevOps</h3>
-                <div class="skills-grid">
-                    <span class="skill-tag">AWS</span>
-                    <span class="skill-tag">Docker</span>
-                    <span class="skill-tag">Kubernetes</span>
-                    <span class="skill-tag">CI/CD</span>
-                    <span class="skill-tag">Terraform</span>
-                    <span class="skill-tag">Git</span>
-                    <span class="skill-tag">Jenkins</span>
+            <div class="skill-category">
+                <h3><i class="fas fa-language"></i> NLP & Document Intelligence</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">NER</span>
+                    <span class="skill-tag">Text Classification</span>
+                    <span class="skill-tag">Summarization</span>
+                    <span class="skill-tag">Sentiment Analysis</span>
                 </div>
             </div>
-            <div class="skills-category">
-                <h3>Web Development</h3>
-                <div class="skills-grid">
-                    <span class="skill-tag">React</span>
-                    <span class="skill-tag">Node.js</span>
-                    <span class="skill-tag">JavaScript</span>
-                    <span class="skill-tag">TypeScript</span>
-                    <span class="skill-tag">HTML/CSS</span>
-                    <span class="skill-tag">REST APIs</span>
-                    <span class="skill-tag">GraphQL</span>
-                </div>
-            </div>
-            <div class="skills-category">
-                <h3>Data & Analytics</h3>
-                <div class="skills-grid">
-                    <span class="skill-tag">SQL</span>
-                    <span class="skill-tag">PostgreSQL</span>
-                    <span class="skill-tag">MongoDB</span>
+            <div class="skill-category">
+                <h3><i class="fas fa-database"></i> Data Engineering & Storage</h3>
+                <div class="skill-tags">
                     <span class="skill-tag">Pandas</span>
                     <span class="skill-tag">NumPy</span>
+                    <span class="skill-tag">PySpark</span>
+                    <span class="skill-tag">AWS (SQS, Step Functions)</span>
+                    <span class="skill-tag">Azure Data Lake</span>
+                    <span class="skill-tag">Azure SQL</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3><i class="fas fa-chart-bar"></i> Visualization & BI</h3>
+                <div class="skill-tags">
                     <span class="skill-tag">Tableau</span>
                     <span class="skill-tag">Power BI</span>
+                    <span class="skill-tag">R Shiny</span>
                 </div>
             </div>
         </div>
@@ -162,7 +184,7 @@ description: "AI/ML Engineer specializing in generative AI, LLMs, and scalable M
 <section id="experience" class="experience">
     <div class="container">
         <div class="section-header">
-            <h2 class="section-title">Experience</h2>
+            <h2 class="section-title">Professional Experience</h2>
             <div class="section-divider"></div>
         </div>
         <div class="timeline">
@@ -170,45 +192,78 @@ description: "AI/ML Engineer specializing in generative AI, LLMs, and scalable M
                 <div class="timeline-marker"></div>
                 <div class="timeline-content">
                     <div class="timeline-header">
-                        <h3>AI/ML Engineer</h3>
-                        <span class="timeline-company">State Farm</span>
-                        <span class="timeline-date">May 2024 - Present</span>
+                        <div class="company-logo">
+                            <a target="_blank" rel="noopener noreferrer" aria-label="Progressive Insurance" style="display: inline-block; width: 50px; height: 50px; background-color: #003261; border-radius: 12px; padding: 6px; box-sizing: border-box;">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmilznc1gQhRFK7rBJL0E7PL7Ul4qfLnrqOQ&s" alt="Progressive Insurance Logo" style="width: 100%; height: 100%; object-fit: contain; border-radius: 6px;">
+                            </a> 
+                        </div>
+                        <div class="timeline-info">
+                            <h3>AI Engineer</h3>
+                            <span class="company">Progressive Insurance</span>
+                            <span class="period">May 2024 – Present</span>
+                        </div>
                     </div>
-                    <ul class="timeline-description">
-                        <li>Developed and deployed AI-powered document processing solutions using Azure Cognitive Services and custom ML models</li>
-                        <li>Built automated workflows for insurance claim processing, reducing manual review time by 60%</li>
-                        <li>Implemented RAG systems for knowledge management and customer service automation</li>
-                        <li>Collaborated with cross-functional teams to integrate AI solutions into existing business processes</li>
+                    <div class="project-title">AI-Powered Claims Automation & Risk Analysis (ACARA)</div>
+                    <ul class="achievements">
+                        <li>Engineered custom NLP and CV models using TensorFlow and PyTorch to process and classify claim-related texts, forms, and images</li>
+                        <li>Developed NER, sentiment analysis tools using BERT models via Hugging Face Transformers to extract key entities from claim documents</li>
+                        <li>Built ML pipelines with Apache Airflow, Azure Data Factory to preprocess and stream data from on-prem SQL Server and Azure Data Lake</li>
+                        <li>Deployed models to production using Azure ML Services and managed versioning with MLflow and DVC</li>
+                        <li>Designed RESTful APIs using FastAPI to integrate predictive models into the core claims processing system</li>
+                        <li>Containerized model services with Docker and orchestrated deployment via Kubernetes on AKS</li>
+                        <li>Achieved 35% reduction in manual claim processing time and improved fraud detection accuracy by 25%</li>
                     </ul>
                 </div>
             </div>
+            
             <div class="timeline-item">
                 <div class="timeline-marker"></div>
                 <div class="timeline-content">
                     <div class="timeline-header">
-                        <h3>Data Science Intern</h3>
-                        <span class="timeline-company">State Farm</span>
-                        <span class="timeline-date">May 2023 - Aug 2023</span>
+                        <div class="company-logo">
+                            <a href="https://www.indiana.edu/" target="_blank" rel="noopener noreferrer" aria-label="Indiana University" style="display: inline-block; width: 50px; height: 50px; background-color: #7d120d; border-radius: 12px; padding: 6px; box-sizing: border-box;">
+                                <picture>
+                                    <source srcset="{{ '/photos/1631332394799.webp' | relative_url }}" type="image/webp">
+                                    <img src="{{ '/photos/1631332394799.jpeg' | relative_url }}" alt="Indiana University Logo" style="width: 100%; height: 100%; object-fit: contain; border-radius: 6px;" loading="lazy" decoding="async">
+                                </picture>
+                            </a>                                
+                        </div>
+                        <div class="timeline-info">
+                            <h3>Research Assistant – Generative AI</h3>
+                            <span class="company">Indiana University Bloomington</span>
+                            <span class="period">Dec 2023 – May 2024</span>
+                        </div>
                     </div>
-                    <ul class="timeline-description">
-                        <li>Developed ML models for predictive analytics in insurance risk assessment</li>
-                        <li>Created automated data pipelines for real-time analytics dashboards</li>
-                        <li>Implemented NLP solutions for customer feedback analysis and sentiment detection</li>
+                    <ul class="achievements">
+                        <li>Improved transcript accuracy by 18pp using a GPT-4 RAG pipeline deployed on BigRed200, processing over 200 hours of esports videos</li>
+                        <li>Reduced latency 40% in chat feature via GPT-4 sentiment analysis microservice, processing 1M+ messages in near real-time</li>
+                        <li>Automated retraining pipelines using SLURM on HPC systems, cutting manual ETL effort by 6 hours per match</li>
+                        <li>Documented GenAI workflows, adopted by two graduate cohorts for ongoing esports psychology research</li>
                     </ul>
                 </div>
             </div>
+            
             <div class="timeline-item">
                 <div class="timeline-marker"></div>
                 <div class="timeline-content">
                     <div class="timeline-header">
-                        <h3>Software Engineer</h3>
-                        <span class="timeline-company">GamingMonk</span>
-                        <span class="timeline-date">Jun 2021 - Jul 2022</span>
+                        <div class="company-logo">
+                            <a target="_blank" rel="noopener noreferrer" aria-label="IBM" style="display: inline-block; width: 52px; height: 52px; background-color: #000000; border-radius: 12px; padding: 6px; box-sizing: border-box;">
+                                <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 18px;">IBM</div>
+                            </a>   
+                        </div>
+                        <div class="timeline-info">
+                            <h3>Data Analyst</h3>
+                            <span class="company">IBM</span>
+                            <span class="period">Sep 2020 – Jun 2022</span>
+                        </div>
                     </div>
-                    <ul class="timeline-description">
-                        <li>Built real-time analytics dashboard for esports tournament data using React and Node.js</li>
-                        <li>Developed ML models for player performance prediction and match outcome analysis</li>
-                        <li>Implemented automated tournament management system handling 10,000+ concurrent users</li>
+                    <ul class="achievements">
+                        <li>Led end-to-end development of a churn prediction model using Python and Scikit-learn, driving a 20% reduction in customer attrition</li>
+                        <li>Refactored ETL workflows using Azure Data Lake and SQL, improving data availability and cutting processing time by 15%</li>
+                        <li>Built automated data validation pipelines with SQL and Python, raising dashboard reporting accuracy by 18%</li>
+                        <li>Deployed ML models to Azure ML environments with CI/CD support, accelerating release cycles by 25%</li>
+                        <li>Introduced versioning standards for ML pipelines and datasets, increasing transparency in model updates and audits</li>
                     </ul>
                 </div>
             </div>
@@ -223,45 +278,94 @@ description: "AI/ML Engineer specializing in generative AI, LLMs, and scalable M
             <h2 class="section-title">Featured Projects</h2>
             <div class="section-divider"></div>
             <div class="section-actions">
-                <a href="{{ '/projects.html' | relative_url }}" class="btn btn-primary">
+                <a href="{{ '/projects/index.html' | relative_url }}" class="btn btn-primary">
                     <i class="fas fa-external-link-alt"></i>
                     View All Projects
                 </a>
             </div>
         </div>
         <div class="projects-grid">
-            {% assign featured_projects = site.projects | where: "featured", true | limit: 3 %}
-            {% for project in featured_projects %}
             <div class="project-card">
                 <div class="project-header">
-                    <h3>{{ project.title }} {% if project.status %}<span class="status-badge status-{{ project.status }}">{{ project.status | capitalize }}</span>{% endif %}</h3>
+                    <h3>AI Study Buddy <span class="status-badge status-developing">Developing</span></h3>
                     <div class="project-links">
-                        {% if project.deployment_url %}
-                        <a href="{{ project.deployment_url }}" class="project-link" aria-label="View live demo">
-                            <i class="fas fa-external-link-alt"></i>
-                        </a>
-                        {% endif %}
-                        {% if project.github_url %}
-                        <a href="{{ project.github_url }}" class="project-link" aria-label="View project on GitHub">
+                        <a href="https://github.com/sanketmuchhala/ai-study-buddy" class="project-link" aria-label="View project on GitHub">
                             <i class="fab fa-github"></i>
                         </a>
-                        {% endif %}
                     </div>
                 </div>
-                <p class="project-description">{{ project.description }}</p>
+                <p class="project-description">
+                    An intelligent learning assistant powered by advanced AI algorithms for optimizing study schedules, adaptive learning recommendations, and interview preparation coaching using scientifically-proven techniques.
+                </p>
                 <div class="project-tech">
-                    {% for tech in project.technologies limit: 4 %}
-                    <span class="tech-tag">{{ tech }}</span>
-                    {% endfor %}
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">TypeScript</span>
+                    <span class="tech-tag">AI Algorithms</span>
+                    <span class="tech-tag">TailwindCSS</span>
                 </div>
                 <div class="project-actions">
-                    <a href="{{ project.url | relative_url }}" class="btn btn-primary">
+                    <a href="{{ '/projects/ai-study-buddy.html' | relative_url }}" class="btn btn-primary">
                         <span>Read More</span>
                         <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
-            {% endfor %}
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>AI Job Application Agent <span class="status-badge status-developing">Developing</span></h3>
+                    <div class="project-links">
+                        <a href="https://github.com/sanketmuchhala/ApplicationAgent" class="project-link" aria-label="View repository">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                <p class="project-description">
+                    An intelligent job application automation tool that uses DeepSeek's powerful AI API for semantic field matching, contextual response generation, and form analysis - all at ultra-low cost (~$0.14 per 1M tokens).
+                </p>
+                <div class="project-tech">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">DeepSeek AI</span>
+                    <span class="tech-tag">MCP Protocol</span>
+                    <span class="tech-tag">Claude Desktop</span>
+                </div>
+                <div class="project-actions">
+                    <a href="{{ '/projects/mcp-project.html' | relative_url }}" class="btn btn-primary">
+                        <span>Read More</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>Location-Based File Sharing System</h3>
+                    <div class="project-links">
+                        <a href="https://d3vjtmq7zqrgp7.cloudfront.net/" class="project-link" aria-label="View live demo">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                        <a href="https://github.com/sanketmuchhala/ECC-LBFS" class="project-link" aria-label="View project on GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                <p class="project-description">
+                    Engineered a serverless AWS solution using S3 and Lambda with geospatial filtering, maintaining 99% uptime with efficient access control. 
+                    Integrated OpenStreetMap via Leaflet.js into a responsive JavaScript frontend.
+                </p>
+                <div class="project-tech">
+                    <span class="tech-tag">AWS S3</span>
+                    <span class="tech-tag">Lambda</span>
+                    <span class="tech-tag">Leaflet.js</span>
+                    <span class="tech-tag">JavaScript</span>
+                </div>
+                <div class="project-actions">
+                    <a href="{{ '/projects/location-based-file-sharing.html' | relative_url }}" class="btn btn-primary">
+                        <span>Read More</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -280,65 +384,217 @@ description: "AI/ML Engineer specializing in generative AI, LLMs, and scalable M
                 </a>
             </div>
         </div>
-        <div class="photography-grid">
-            <div class="photo-item">
+        
+        <!-- Beautiful Photo Collage -->
+        <div class="photo-collage">
+            <div class="collage-item">
                 <picture>
                     <source srcset="{{ '/photography/photos/optimized/sunset-mountains.webp' | relative_url }}" type="image/webp">
-                    <img src="{{ '/photography/photos/sunset-mountains.jpg' | relative_url }}" alt="Sunset Mountains" loading="lazy" decoding="async">
+                    <img src="{{ '/photography/photos/sunset-mountains.jpg' | relative_url }}" alt="Sunset over mountains" loading="lazy" decoding="async" 
+                         srcset="{{ '/photography/photos/sunset-mountains.jpg' | relative_url }} 800w, {{ '/photography/photos/sunset-mountains.jpg' | relative_url }} 400w" 
+                         sizes="(max-width: 768px) 400px, 800px">
                 </picture>
             </div>
-            <div class="photo-item">
+            
+            <div class="collage-item">
                 <picture>
                     <source srcset="{{ '/photography/photos/optimized/urban-architecture.webp' | relative_url }}" type="image/webp">
-                    <img src="{{ '/photography/photos/urban-architecture.jpg' | relative_url }}" alt="Urban Architecture" loading="lazy" decoding="async">
+                    <img src="{{ '/photography/photos/urban-architecture.jpg' | relative_url }}" alt="Urban architecture" loading="lazy" decoding="async"
+                         srcset="{{ '/photography/photos/urban-architecture.jpg' | relative_url }} 800w, {{ '/photography/photos/urban-architecture.jpg' | relative_url }} 400w"
+                         sizes="(max-width: 768px) 400px, 800px">
                 </picture>
             </div>
-            <div class="photo-item">
+            
+            <div class="collage-item">
                 <picture>
                     <source srcset="{{ '/photography/photos/optimized/nature-closeup.webp' | relative_url }}" type="image/webp">
-                    <img src="{{ '/photography/photos/nature-closeup.jpg' | relative_url }}" alt="Nature Closeup" loading="lazy" decoding="async">
+                    <img src="{{ '/photography/photos/nature-closeup.jpg' | relative_url }}" alt="Nature closeup" loading="lazy" decoding="async"
+                         srcset="{{ '/photography/photos/nature-closeup.jpg' | relative_url }} 800w, {{ '/photography/photos/nature-closeup.jpg' | relative_url }} 400w"
+                         sizes="(max-width: 768px) 400px, 800px">
+                </picture>
+            </div>
+            
+            <div class="collage-item">
+                <picture>
+                    <source srcset="{{ '/photography/photos/optimized/autumn-colors.webp' | relative_url }}" type="image/webp">
+                    <img src="{{ '/photography/photos/autumn-colors.jpg' | relative_url }}" alt="Autumn colors" loading="lazy" decoding="async"
+                         srcset="{{ '/photography/photos/autumn-colors.jpg' | relative_url }} 800w, {{ '/photography/photos/autumn-colors.jpg' | relative_url }} 400w"
+                         sizes="(max-width: 768px) 400px, 800px">
+                </picture>
+            </div>
+            
+            <div class="collage-item">
+                <picture>
+                    <source srcset="{{ '/photography/photos/optimized/IMG_20190619_160550_Original-min.webp' | relative_url }}" type="image/webp">
+                    <img src="{{ '/photography/photos/IMG_20190619_160550_Original-min.jpg' | relative_url }}" alt="Summer vibes" loading="lazy" decoding="async"
+                         srcset="{{ '/photography/photos/IMG_20190619_160550_Original-min.jpg' | relative_url }} 800w, {{ '/photography/photos/IMG_20190619_160550_Original-min.jpg' | relative_url }} 400w"
+                         sizes="(max-width: 768px) 400px, 800px">
+                </picture>
+            </div>
+            
+            <div class="collage-item">
+                <picture>
+                    <source srcset="{{ '/photography/photos/optimized/IMG_5166-min.webp' | relative_url }}" type="image/webp">
+                    <img src="{{ '/photography/photos/IMG_5166-min.JPG' | relative_url }}" alt="Street photography" loading="lazy" decoding="async"
+                         srcset="{{ '/photography/photos/IMG_5166-min.JPG' | relative_url }} 800w, {{ '/photography/photos/IMG_5166-min.JPG' | relative_url }} 400w"
+                         sizes="(max-width: 768px) 400px, 800px">
+                </picture>
+            </div>
+            
+            <div class="collage-item">
+                <picture>
+                    <source srcset="{{ '/photography/photos/optimized/IMG_6517-min.webp' | relative_url }}" type="image/webp">
+                    <img src="{{ '/photography/photos/IMG_6517-min.JPEG' | relative_url }}" alt="Minimalist composition" loading="lazy" decoding="async"
+                         srcset="{{ '/photography/photos/IMG_6517-min.JPEG' | relative_url }} 800w, {{ '/photography/photos/IMG_6517-min.JPEG' | relative_url }} 400w"
+                         sizes="(max-width: 768px) 400px, 800px">
                 </picture>
             </div>
         </div>
     </div>
 </section>
 
+<!-- Blog Section -->
+<section id="blog" class="blog">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Latest Blog Posts</h2>
+            <div class="section-divider"></div>
+            <div class="section-actions">
+                <a href="{{ '/blogs/index.html' | relative_url }}" class="btn btn-primary">
+                    <i class="fas fa-external-link-alt"></i>
+                    View All Blogs
+                </a>
+            </div>
+        </div>
+        <div class="blog-grid">
+            {% assign latest_blogs = site.blogs | sort: 'date' | reverse | limit: 3 %}
+            {% for blog in latest_blogs %}
+            <article class="blog-card">
+                <div class="blog-image">
+                    <img src="{{ blog.featured_image }}" alt="{{ blog.title }}">
+                </div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-author">{{ site.author }}</span>
+                        <span class="blog-date">{{ blog.date | date: "%B %d, %Y" }}</span>
+                        <span class="blog-category">{{ blog.categories | first }}</span>
+                    </div>
+                    <h3 class="blog-title">{{ blog.title }}</h3>
+                    <p class="blog-excerpt">{{ blog.description }}</p>
+                    <a href="{{ blog.url | relative_url }}" class="blog-read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
 <!-- Certifications Section -->
-<section id="certifications" class="certifications">
+<section id="certifications" class="certifications-section">
     <div class="container">
         <div class="section-header">
             <h2 class="section-title">Certifications</h2>
             <div class="section-divider"></div>
+            <p class="section-subtitle">Professional credentials that validate my expertise in AI/ML and cloud technologies</p>
         </div>
         <div class="certifications-grid">
-            <div class="certification-card">
-                <div class="certification-logo">
-                    <img src="https://images.credly.com/size/680x680/images/0e284c3f-5164-4b21-8660-0d84737941bc/image.png" alt="AWS Solutions Architect" loading="lazy">
+            <div class="cert-card">
+                <div class="cert-header">
+                    <div class="cert-icon">
+                        <i class="fab fa-aws"></i>
+                    </div>
+                    <div class="cert-badge">
+                        <span>Verified</span>
+                    </div>
                 </div>
-                <div class="certification-content">
-                    <h3>AWS Solutions Architect Associate</h3>
-                    <p>Amazon Web Services</p>
-                    <span class="certification-date">2024</span>
+                <div class="cert-content">
+                    <h3 class="cert-title">AWS Certified Machine Learning Engineer Associate</h3>
+                    <p class="cert-description">Advanced AWS ML services and best practices for production ML systems</p>
+                    <div class="cert-meta">
+                        <span class="cert-issuer">Amazon Web Services</span>
+                        <span class="cert-date">2024</span>
+                    </div>
+                </div>
+                <div class="cert-actions">
+                    <a href="https://www.credly.com/badges/8424e14a-fb0f-4af9-9707-9644f1c0d599/linked_in_profile" class="cert-link" target="_blank" rel="noopener noreferrer" aria-label="View AWS certification">
+                        <i class="fas fa-external-link-alt"></i>
+                        <span>View Credential</span>
+                    </a>
                 </div>
             </div>
-            <div class="certification-card">
-                <div class="certification-logo">
-                    <img src="https://images.credly.com/size/680x680/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png" alt="AWS Machine Learning" loading="lazy">
+
+            <div class="cert-card">
+                <div class="cert-header">
+                    <div class="cert-icon">
+                        <i class="fab fa-microsoft"></i>
+                    </div>
+                    <div class="cert-badge">
+                        <span>Verified</span>
+                    </div>
                 </div>
-                <div class="certification-content">
-                    <h3>AWS Machine Learning Specialty</h3>
-                    <p>Amazon Web Services</p>
-                    <span class="certification-date">2024</span>
+                <div class="cert-content">
+                    <h3 class="cert-title">Azure Artificial Intelligence Fundamentals (AI-900)</h3>
+                    <p class="cert-description">Microsoft Azure AI services and machine learning fundamentals</p>
+                    <div class="cert-meta">
+                        <span class="cert-issuer">Microsoft</span>
+                        <span class="cert-date">2024</span>
+                    </div>
+                </div>
+                <div class="cert-actions">
+                    <a href="https://learn.microsoft.com/en-us/users/SANKETMUCHHALA-0655/achievements/XQ6FTGFY" class="cert-link" target="_blank" rel="noopener noreferrer" aria-label="View Azure certification">
+                        <i class="fas fa-external-link-alt"></i>
+                        <span>View Credential</span>
+                    </a>
                 </div>
             </div>
-            <div class="certification-card">
-                <div class="certification-logo">
-                    <img src="https://images.credly.com/size/680x680/images/be8fcaeb-c769-4858-b567-ffaaa73ce8c9/image.png" alt="Google Cloud ML Engineer" loading="lazy">
+
+            <div class="cert-card">
+                <div class="cert-header">
+                    <div class="cert-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div class="cert-badge">
+                        <span>Verified</span>
+                    </div>
                 </div>
-                <div class="certification-content">
-                    <h3>Google Cloud ML Engineer</h3>
-                    <p>Google Cloud</p>
-                    <span class="certification-date">2023</span>
+                <div class="cert-content">
+                    <h3 class="cert-title">Databricks Generative AI Foundations</h3>
+                    <p class="cert-description">Comprehensive understanding of generative AI and LLM applications</p>
+                    <div class="cert-meta">
+                        <span class="cert-issuer">Databricks</span>
+                        <span class="cert-date">2024</span>
+                    </div>
+                </div>
+                <div class="cert-actions">
+                    <a href="https://credentials.databricks.com/38f5f364-567c-463a-9139-eaeda5eced80#acc.QbhpOWCx" class="cert-link" target="_blank" rel="noopener noreferrer" aria-label="View Databricks certification">
+                        <i class="fas fa-external-link-alt"></i>
+                        <span>View Credential</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="cert-card">
+                <div class="cert-header">
+                    <div class="cert-icon">
+                        <i class="fab fa-google"></i>
+                    </div>
+                    <div class="cert-badge">
+                        <span>Verified</span>
+                    </div>
+                </div>
+                <div class="cert-content">
+                    <h3 class="cert-title">Google Data Analytics Professional Certificate</h3>
+                    <p class="cert-description">Comprehensive data analysis skills using Google tools and methodologies</p>
+                    <div class="cert-meta">
+                        <span class="cert-issuer">Google</span>
+                        <span class="cert-date">2021</span>
+                    </div>
+                </div>
+                <div class="cert-actions">
+                    <a href="http://coursera.org/account/accomplishments/professional-cert/V6G9C6ZEJHZF?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=pdf_header_button&utm_product=prof" class="cert-link" target="_blank" rel="noopener noreferrer" aria-label="View Google certification">
+                        <i class="fas fa-external-link-alt"></i>
+                        <span>View Credential</span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -351,32 +607,69 @@ description: "AI/ML Engineer specializing in generative AI, LLMs, and scalable M
         <div class="section-header">
             <h2 class="section-title">Get In Touch</h2>
             <div class="section-divider"></div>
-            <p class="section-subtitle">I'm always interested in new opportunities and collaborations. Let's connect!</p>
         </div>
         <div class="contact-content">
             <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <div class="contact-details">
-                        <h3>Email</h3>
-                        <a href="mailto:sanketmuchhala@gmail.com">sanketmuchhala@gmail.com</a>
-                    </div>
+                <h3>Let's Connect</h3>
+                <p>
+                    I'm always interested in discussing new opportunities, innovative projects, 
+                    or just connecting with fellow AI/ML enthusiasts. Feel free to reach out!
+                </p>
+                <div class="contact-methods">
+                    <a href="mailto:sanketmuchhala1@gmail.com" class="contact-method">
+                        <i class="fas fa-envelope"></i>
+                        <span>sanketmuchhala1@gmail.com</span>
+                    </a>
+                    <a href="tel:+18127784451" class="contact-method">
+                        <i class="fas fa-phone"></i>
+                        <span>+1 812-778-4451</span>
+                    </a>
                 </div>
-                <div class="contact-item">
-                    <i class="fab fa-linkedin"></i>
-                    <div class="contact-details">
-                        <h3>LinkedIn</h3>
-                        <a href="https://www.linkedin.com/in/sanketmuchhala/" target="_blank" rel="noopener noreferrer">linkedin.com/in/sanketmuchhala</a>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-github"></i>
-                    <div class="contact-details">
-                        <h3>GitHub</h3>
-                        <a href="https://github.com/sanketmuchhala" target="_blank" rel="noopener noreferrer">github.com/sanketmuchhala</a>
-                    </div>
+            </div>
+            <div class="social-links">
+                <h3>Socials</h3>
+                <p class="social-description">
+                    Connect with me on social platforms to stay updated with my latest work and insights.
+                </p>
+                <div class="social-icons">
+                    <!-- LinkedIn -->
+                    <a href="https://www.linkedin.com/in/sanketmuchhala/" class="icon" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                      <i class="fab fa-linkedin-in"></i>
+                    </a>
+                  
+                    <!-- GitHub -->
+                    <a href="https://github.com/sanketmuchhala" class="icon" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                      <i class="fab fa-github"></i>
+                    </a>
+                  
+                    <!-- Twitter -->
+                    <a href="https://twitter.com/sanketmuchhala" class="icon" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                      <i class="fab fa-twitter"></i>
+                    </a>
+                  
+                    <!-- Instagram -->
+                    <a href="https://www.instagram.com/sanketmuchhala/" class="icon" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                      <i class="fab fa-instagram"></i>
+                    </a>
+                  
+                    <!-- LeetCode -->
+                    <a href="https://leetcode.com/sanketmuchhala/" class="icon" target="_blank" rel="noopener noreferrer" aria-label="LeetCode">
+                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/leetcode/leetcode-original.svg" alt="LeetCode" />
+                    </a>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+<!-- Lightbox Modal -->
+<div id="lightbox" class="lightbox">
+    <div class="lightbox-content">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <img id="lightbox-img" src="" alt="Lightbox Image">
+        <div class="lightbox-info">
+            <h3 id="lightbox-title"></h3>
+            <p id="lightbox-category"></p>
+        </div>
+    </div>
+</div>

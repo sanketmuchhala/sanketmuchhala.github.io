@@ -64,6 +64,8 @@ exclude:
   - README.md
   - portfolio-nextjs/
   - src/
+  - projects/*.html
+  - blogs/*.html
 
 # Include files that should be processed
 include:

@@ -1,0 +1,54 @@
+---
+layout: default
+---
+
+<article class="blog-post">
+    <div class="container">
+        <header class="blog-header">
+            <div class="blog-breadcrumb">
+                <a href="{{ '/' | relative_url }}">Home</a><span>/</span><a href="{{ '/projects/' | relative_url }}">Projects</a><span>/</span><span>{{ page.title }}</span>
+            </div>
+            <h1 class="blog-post-title">{{ page.title }} {% if page.status %}<span class="status-badge status-{{ page.status }}">{{ page.status | capitalize }}</span>{% endif %}</h1>
+            <div class="blog-post-meta">
+                <div class="meta-item"><i class="fas fa-user"></i><span>{{ site.author }}</span></div>
+                {% if page.date %}
+                <div class="meta-item"><i class="fas fa-calendar"></i><span>{{ page.date | date: "%B %Y" }}</span></div>
+                {% endif %}
+                {% if page.categories %}
+                <div class="meta-item"><i class="fas fa-tag"></i><span class="blog-category">{{ page.categories | join: ", " }}</span></div>
+                {% endif %}
+                {% if page.technologies %}
+                <div class="meta-item"><i class="fas fa-code-branch"></i><span>{{ page.technologies | join: ", " }}</span></div>
+                {% endif %}
+            </div>
+        </header>
+        
+        {% if page.featured_image %}
+        <div class="blog-featured-image">
+            <img src="{{ page.featured_image | relative_url }}" alt="{{ page.title }}">
+        </div>
+        {% endif %}
+        
+        <div class="blog-content">
+            {{ content }}
+        </div>
+        
+        {% if page.github_url or page.deployment_url %}
+        <div class="blog-share">
+            <h3>Project Links</h3>
+            <div class="share-buttons">
+                {% if page.github_url %}
+                <a href="{{ page.github_url }}" class="share-btn github" target="_blank" rel="noopener">
+                    <i class="fab fa-github"></i> View on GitHub
+                </a>
+                {% endif %}
+                {% if page.deployment_url %}
+                <a href="{{ page.deployment_url }}" class="share-btn deployment" target="_blank" rel="noopener">
+                    <i class="fas fa-external-link-alt"></i> Live Demo
+                </a>
+                {% endif %}
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</article>

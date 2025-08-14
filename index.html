@@ -10,12 +10,30 @@
     <meta name="description" content="AI/ML Engineer specializing in generative AI, LLMs, and scalable ML solutions">
     <meta name="keywords" content="AI, Machine Learning, ML Engineer, Generative AI, LLMs, NLP">
     
+    <!-- Critical CSS for above-the-fold content -->
+    <style>
+        /* Critical CSS for immediate rendering */
+        :root {
+            --primary-color: #ffffff;
+            --background-dark: #000000;
+            --text-primary: #f8fafc;
+            --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        body { margin: 0; font-family: var(--font-family); background: var(--background-dark); color: var(--text-primary); }
+        .navbar { position: fixed; top: 0; width: 100%; z-index: 1000; background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); }
+        .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+        .hero-title { font-size: 3rem; font-weight: 700; margin-bottom: 1rem; }
+        .hero-subtitle { font-size: 1.5rem; opacity: 0.8; }
+    </style>
+    
     <!-- Preload critical resources -->
-    <link rel="preload" href="style.css?v=1.1" as="style">
-    <link rel="preload" href="script.js" as="script">
-    <link rel="preload" href="photography/photos/optimized/sunset-mountains.webp" as="image">
-    <link rel="preload" href="photography/photos/optimized/urban-architecture.webp" as="image">
-    <link rel="preload" href="photography/photos/optimized/nature-closeup.webp" as="image">
+    <link rel="preload" href="style.css?v=1.2" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="style.css?v=1.2"></noscript>
+    
+    <!-- Preload critical images -->
+    <link rel="preload" href="photography/photos/optimized/sunset-mountains.webp" as="image" type="image/webp">
+    <link rel="preload" href="photography/photos/optimized/urban-architecture.webp" as="image" type="image/webp">
+    <link rel="preload" href="photography/photos/optimized/nature-closeup.webp" as="image" type="image/webp">
     
     <!-- DNS prefetch for external resources -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -28,14 +46,19 @@
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://avatars.githubusercontent.com">
     
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="style.css?v=1.1">
+    <!-- Load fonts with display=swap for better performance -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Load Font Awesome asynchronously -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
     
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta name="apple-mobile-web-app-title" content="Sanket" />
+    
+    <!-- Load JavaScript asynchronously -->
+    <script src="script.js" defer></script>
 </head>
 <body>
     <!-- Navigation -->

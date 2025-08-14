@@ -1,0 +1,85 @@
+# Jekyll Configuration
+title: "Sanket Muchhala - AI/ML Engineer"
+description: "AI/ML Engineer specializing in generative AI, LLMs, and scalable ML solutions"
+author: "Sanket Muchhala"
+email: "sanketmuchhala@gmail.com"
+url: "https://sanketmuchhala.github.io"
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+relative_links:
+  enabled: true
+  collections: true
+
+# Disable Sass processing to avoid architecture issues
+sass:
+  load_paths: []
+  style: compressed
+
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+  blogs:
+    output: true
+    permalink: /blogs/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+  - scope:
+      path: ""
+      type: "blogs"
+    values:
+      layout: "blog"
+
+# Plugins
+plugins:
+  - jekyll-seo-tag
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - .git/
+  - .github/
+  - README.md
+  - portfolio-nextjs/
+  - src/
+
+# Include files that should be processed
+include:
+  - _sass
+  - _assets
+  - photography
+  - photos
+  - resume
+  - favicon.svg
+  - ribbons.js
+  - script.js
+  - script.min.js
+  - style.css
+  - style.min.css
+  - Sanket_Muchhala_Resume.pdf
+
+# SEO
+lang: en_US
+locale: en_US

@@ -1,0 +1,59 @@
+---
+layout: default
+---
+
+<article class="blog-post">
+    <div class="container">
+        <header class="blog-header">
+            <div class="blog-breadcrumb">
+                <a href="{{ '/' | relative_url }}">Home</a><span>/</span><a href="{{ '/blogs/' | relative_url }}">Blog</a><span>/</span><span>{{ page.title }}</span>
+            </div>
+            <h1 class="blog-post-title">{{ page.title }}</h1>
+            <div class="blog-post-meta">
+                <div class="meta-item"><i class="fas fa-user"></i><span>{{ site.author }}</span></div>
+                {% if page.date %}
+                <div class="meta-item"><i class="fas fa-calendar"></i><span>{{ page.date | date: "%B %d, %Y" }}</span></div>
+                {% endif %}
+                {% if page.categories %}
+                <div class="meta-item"><i class="fas fa-tag"></i><span class="blog-category">{{ page.categories | join: ", " }}</span></div>
+                {% endif %}
+                {% if page.read_time %}
+                <div class="meta-item"><i class="fas fa-clock"></i><span>{{ page.read_time }} min read</span></div>
+                {% endif %}
+            </div>
+        </header>
+        
+        {% if page.featured_image %}
+        <div class="blog-featured-image">
+            <img src="{{ page.featured_image | relative_url }}" alt="{{ page.title }}">
+        </div>
+        {% endif %}
+        
+        <div class="blog-content">
+            {{ content }}
+        </div>
+        
+        {% if page.tags %}
+        <div class="blog-tags">
+            <h3>Tags</h3>
+            <div class="tag-list">
+                {% for tag in page.tags %}
+                <span class="tag">{{ tag }}</span>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+        
+        <div class="blog-share">
+            <h3>Share this post</h3>
+            <div class="share-buttons">
+                <a href="https://twitter.com/intent/tweet?text={{ page.title | url_encode }}&url={{ page.url | absolute_url }}" class="share-btn twitter" target="_blank" rel="noopener">
+                    <i class="fab fa-twitter"></i> Twitter
+                </a>
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | absolute_url }}" class="share-btn linkedin" target="_blank" rel="noopener">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+            </div>
+        </div>
+    </div>
+</article>

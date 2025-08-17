@@ -1,10 +1,11 @@
 # Jekyll Configuration
-title: "Sanket Muchhala - AI/ML Engineer"
-description: "AI/ML Engineer specializing in generative AI, LLMs, and scalable ML solutions"
+title: "Sanket Muchhala — AI/ML Engineer"
+description: "AI/ML engineer focused on NLP, fraud detection, and production LLM systems"
 author: "Sanket Muchhala"
 email: "sanketmuchhala@gmail.com"
 url: "https://sanketmuchhala.github.io"
 baseurl: ""
+image: "/photos/export.png"
 
 # Build settings
 markdown: kramdown

@@ -2,6 +2,7 @@
 layout: default
 title: "Home"
 description: "AI/ML Engineer specializing in generative AI, LLMs, and scalable ML solutions"
+image: "/photos/export.png"
 ---
 
 <!-- Hero Section -->
@@ -278,7 +279,7 @@ description: "AI/ML Engineer specializing in generative AI, LLMs, and scalable M
             <h2 class="section-title">Featured Projects</h2>
             <div class="section-divider"></div>
             <div class="section-actions">
-                <a href="{{ '/projects/index.html' | relative_url }}" class="btn btn-primary">
+                <a href="{{ '/projects.html' | relative_url }}" class="btn btn-primary">
                     <i class="fas fa-external-link-alt"></i>
                     View All Projects
                 </a>
@@ -304,7 +305,7 @@ description: "AI/ML Engineer specializing in generative AI, LLMs, and scalable M
                     <span class="tech-tag">TailwindCSS</span>
                 </div>
                 <div class="project-actions">
-                    <a href="{{ '/projects/ai-study-buddy.html' | relative_url }}" class="btn btn-primary">
+                    <a href="{{ '/projects/ai-study-buddy/' | relative_url }}" class="btn btn-primary">
                         <span>Read More</span>
                         <i class="fas fa-arrow-right"></i>
                     </a>
@@ -330,7 +331,7 @@ description: "AI/ML Engineer specializing in generative AI, LLMs, and scalable M
                     <span class="tech-tag">Claude Desktop</span>
                 </div>
                 <div class="project-actions">
-                    <a href="{{ '/projects/mcp-project.html' | relative_url }}" class="btn btn-primary">
+                    <a href="{{ '/projects/mcp-project/' | relative_url }}" class="btn btn-primary">
                         <span>Read More</span>
                         <i class="fas fa-arrow-right"></i>
                     </a>
@@ -360,7 +361,7 @@ description: "AI/ML Engineer specializing in generative AI, LLMs, and scalable M
                     <span class="tech-tag">JavaScript</span>
                 </div>
                 <div class="project-actions">
-                    <a href="{{ '/projects/location-based-file-sharing.html' | relative_url }}" class="btn btn-primary">
+                    <a href="{{ '/projects/location-based-file-sharing/' | relative_url }}" class="btn btn-primary">
                         <span>Read More</span>
                         <i class="fas fa-arrow-right"></i>
                     </a>
@@ -460,7 +461,7 @@ description: "AI/ML Engineer specializing in generative AI, LLMs, and scalable M
             <h2 class="section-title">Latest Blog Posts</h2>
             <div class="section-divider"></div>
             <div class="section-actions">
-                <a href="{{ '/blogs/index.html' | relative_url }}" class="btn btn-primary">
+                <a href="{{ '/blogs.html' | relative_url }}" class="btn btn-primary">
                     <i class="fas fa-external-link-alt"></i>
                     View All Blogs
                 </a>

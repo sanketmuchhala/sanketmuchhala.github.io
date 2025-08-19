@@ -8,7 +8,35 @@
     <!-- Performance Optimizations -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-    <meta name="keywords" content="{% if page.keywords %}{{ page.keywords }}{% else %}AI, Machine Learning, ML Engineer, Generative AI, LLMs, NLP{% endif %}">
+    <meta name="keywords" content="{% if page.keywords %}{{ page.keywords }}{% else %}{{ site.keywords }}{% endif %}">
+    <meta name="author" content="{{ site.author }}">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+    <meta name="bingbot" content="index, follow">
+    
+    <!-- Enhanced Open Graph -->
+    <meta property="og:type" content="{% if page.layout == 'project' %}article{% else %}website{% endif %}">
+    <meta property="og:title" content="{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}">
+    <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <meta property="og:image" content="{{ site.url }}{% if page.image %}{{ page.image }}{% else %}{{ site.image }}{% endif %}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    <meta property="og:site_name" content="{{ site.title }}">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@{{ site.twitter.username }}">
+    <meta name="twitter:creator" content="@{{ site.twitter.username }}">
+    <meta name="twitter:title" content="{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}">
+    <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <meta name="twitter:image" content="{{ site.url }}{% if page.image %}{{ page.image }}{% else %}{{ site.image }}{% endif %}">
+    
+    <!-- LinkedIn Specific -->
+    <meta property="article:author" content="{{ site.social.links[0] }}">
+    <meta property="profile:first_name" content="Sanket">
+    <meta property="profile:last_name" content="Muchhala">
+    <meta property="profile:username" content="sanketmuchhala">
     
     <!-- Critical CSS for above-the-fold content -->
     <style>
@@ -35,6 +63,9 @@
     <link rel="preload" href="{{ '/photography/photos/optimized/urban-architecture.webp' | relative_url }}" as="image" type="image/webp">
     <link rel="preload" href="{{ '/photography/photos/optimized/nature-closeup.webp' | relative_url }}" as="image" type="image/webp">
     
+    <!-- Canonical URL -->
+    <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+    
     <!-- DNS prefetch for external resources -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
@@ -55,10 +86,83 @@
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="{{ '/favicon.svg' | relative_url }}" />
-    <meta name="apple-mobile-web-app-title" content="Sanket" />
+    <meta name="apple-mobile-web-app-title" content="Sanket Muchhala - AI Engineer" />
+    <meta name="theme-color" content="#000000">
+    <meta name="msapplication-TileColor" content="#000000">
+    
+    <!-- Additional SEO Meta -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     
     <!-- Jekyll SEO Tag -->
     {% seo %}
+    
+    <!-- Structured Data JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "{{ site.author }}",
+      "url": "{{ site.url }}",
+      "image": "{{ site.url }}{{ site.image }}",
+      "jobTitle": "AI Engineer & Data Scientist",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Progressive Insurance"
+      },
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Indiana University Bloomington"
+      },
+      "knowsAbout": [
+        "Artificial Intelligence",
+        "Machine Learning",
+        "Data Science",
+        "Deep Learning",
+        "Natural Language Processing",
+        "Computer Vision",
+        "Generative AI",
+        "Large Language Models",
+        "Python Programming",
+        "TensorFlow",
+        "PyTorch",
+        "AWS",
+        "Azure"
+      ],
+      "sameAs": [
+        "{{ site.social.links[0] }}",
+        "{{ site.social.links[1] }}",
+        "{{ site.social.links[2] }}"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "US"
+      },
+      "email": "{{ site.email }}",
+      "description": "{{ site.description }}"
+    }
+    </script>
+    
+    {% if page.layout == 'project' %}
+    <!-- Project-specific structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CreativeWork",
+      "name": "{{ page.title }}",
+      "description": "{{ page.description }}",
+      "author": {
+        "@type": "Person",
+        "name": "{{ site.author }}"
+      },
+      "url": "{{ site.url }}{{ page.url }}",
+      "dateCreated": "{% if page.date %}{{ page.date | date_to_xmlschema }}{% else %}{{ site.time | date_to_xmlschema }}{% endif %}",
+      "programmingLanguage": {% if page.tech %}{{ page.tech | jsonify }}{% else %}["Python", "Machine Learning", "AI"]{% endif %}
+    }
+    </script>
+    {% endif %}
     
     <!-- Load JavaScript asynchronously -->
     <script src="{{ '/script.js' | relative_url }}" defer></script>

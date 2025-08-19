@@ -1,0 +1,512 @@
+---
+layout: default
+title: "Tech Skills - watchOS Style"
+description: "Interactive watchOS-style interface showcasing technical skills and expertise"
+keywords: "watchOS interface, tech skills, interactive portfolio, Apple Watch UI"
+---
+
+<style>
+  .watchos-container {
+    width: 100%;
+    height: 100vh;
+    background: radial-gradient(circle at center, #1a1a1a 0%, #000000 100%);
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .apps-grid {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    transform-origin: center center;
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: grab;
+  }
+
+  .apps-grid:active {
+    cursor: grabbing;
+  }
+
+  .app-icon {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center center;
+    font-size: 28px;
+    font-weight: 500;
+    color: white;
+    user-select: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .app-icon:hover {
+    transform: scale(1.15);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  }
+
+  .app-icon:active {
+    transform: scale(0.95);
+    transition: transform 0.1s;
+  }
+
+  .app-icon.pulsing {
+    animation: pulse 0.3s ease-out;
+  }
+
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+    100% { transform: scale(1); }
+  }
+
+  /* watchOS Style App Colors */
+  .python { background: linear-gradient(135deg, #306998, #FFD43B); }
+  .javascript { background: linear-gradient(135deg, #F7DF1E, #F7DF1E); color: #000; }
+  .react { background: linear-gradient(135deg, #61DAFB, #21232A); }
+  .tensorflow { background: linear-gradient(135deg, #FF6F00, #FF8F00); }
+  .pytorch { background: linear-gradient(135deg, #EE4C2C, #EE4C2C); }
+  .aws { background: linear-gradient(135deg, #FF9900, #232F3E); }
+  .azure { background: linear-gradient(135deg, #0078D4, #00BCF2); }
+  .docker { background: linear-gradient(135deg, #0DB7ED, #0DB7ED); }
+  .kubernetes { background: linear-gradient(135deg, #326CE5, #326CE5); }
+  .git { background: linear-gradient(135deg, #F05032, #F05032); }
+  .sql { background: linear-gradient(135deg, #4479A1, #4479A1); }
+  .mongodb { background: linear-gradient(135deg, #47A248, #47A248); }
+  .nodejs { background: linear-gradient(135deg, #339933, #339933); }
+  .fastapi { background: linear-gradient(135deg, #009688, #009688); }
+  .scikit { background: linear-gradient(135deg, #F7931E, #F7931E); }
+  .pandas { background: linear-gradient(135deg, #150458, #E70488); }
+  .numpy { background: linear-gradient(135deg, #013243, #4DABCF); }
+  .opencv { background: linear-gradient(135deg, #5C3EE8, #5C3EE8); }
+  .tableau { background: linear-gradient(135deg, #E97627, #E97627); }
+  .powerbi { background: linear-gradient(135deg, #F2C811, #F2C811); }
+  .rstudio { background: linear-gradient(135deg, #276DC3, #276DC3); }
+
+  .skill-name {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.8);
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    font-weight: 400;
+  }
+
+  .app-icon:hover .skill-name {
+    opacity: 1;
+  }
+
+  .controls {
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+    z-index: 100;
+  }
+
+  .control-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  .control-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+  }
+
+  .back-button {
+    position: fixed;
+    top: 40px;
+    left: 40px;
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    z-index: 100;
+  }
+
+  .back-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+  }
+
+  .zoom-indicator {
+    position: fixed;
+    top: 40px;
+    right: 40px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+    font-weight: 400;
+    z-index: 100;
+  }
+
+  @media (max-width: 768px) {
+    .apps-grid {
+      width: 400px;
+      height: 400px;
+    }
+    .app-icon {
+      width: 55px;
+      height: 55px;
+      font-size: 22px;
+    }
+    .controls {
+      bottom: 30px;
+    }
+    .back-button {
+      top: 30px;
+      left: 30px;
+      padding: 10px 16px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .apps-grid {
+      width: 350px;
+      height: 350px;
+    }
+    .app-icon {
+      width: 45px;
+      height: 45px;
+      font-size: 18px;
+    }
+  }
+</style>
+
+<div class="watchos-container">
+  <a href="{{ '/' | relative_url }}" class="back-button">← Portfolio</a>
+  
+  <div class="zoom-indicator" id="zoomLevel">100%</div>
+  
+  <div class="apps-grid" id="appsGrid">
+    <!-- Center app -->
+    <div class="app-icon python" style="top: 265px; left: 265px;" data-skill="Python">
+      PY
+      <div class="skill-name">Python</div>
+    </div>
+
+    <!-- Inner ring (6 apps) -->
+    <div class="app-icon tensorflow" style="top: 185px; left: 265px;" data-skill="TensorFlow">
+      TF
+      <div class="skill-name">TensorFlow</div>
+    </div>
+    <div class="app-icon pytorch" style="top: 215px; left: 334px;" data-skill="PyTorch">
+      PT
+      <div class="skill-name">PyTorch</div>
+    </div>
+    <div class="app-icon aws" style="top: 315px; left: 334px;" data-skill="AWS">
+      AWS
+      <div class="skill-name">AWS</div>
+    </div>
+    <div class="app-icon azure" style="top: 345px; left: 265px;" data-skill="Azure">
+      AZ
+      <div class="skill-name">Azure</div>
+    </div>
+    <div class="app-icon docker" style="top: 315px; left: 196px;" data-skill="Docker">
+      DC
+      <div class="skill-name">Docker</div>
+    </div>
+    <div class="app-icon react" style="top: 215px; left: 196px;" data-skill="React">
+      RC
+      <div class="skill-name">React</div>
+    </div>
+
+    <!-- Middle ring (12 apps) -->
+    <div class="app-icon javascript" style="top: 105px; left: 265px;" data-skill="JavaScript">
+      JS
+      <div class="skill-name">JavaScript</div>
+    </div>
+    <div class="app-icon kubernetes" style="top: 135px; left: 334px;" data-skill="Kubernetes">
+      K8
+      <div class="skill-name">Kubernetes</div>
+    </div>
+    <div class="app-icon git" style="top: 185px; left: 383px;" data-skill="Git">
+      GIT
+      <div class="skill-name">Git</div>
+    </div>
+    <div class="app-icon sql" style="top: 265px; left: 403px;" data-skill="SQL">
+      SQL
+      <div class="skill-name">SQL</div>
+    </div>
+    <div class="app-icon mongodb" style="top: 345px; left: 383px;" data-skill="MongoDB">
+      MG
+      <div class="skill-name">MongoDB</div>
+    </div>
+    <div class="app-icon nodejs" style="top: 395px; left: 334px;" data-skill="Node.js">
+      NJ
+      <div class="skill-name">Node.js</div>
+    </div>
+    <div class="app-icon fastapi" style="top: 425px; left: 265px;" data-skill="FastAPI">
+      FA
+      <div class="skill-name">FastAPI</div>
+    </div>
+    <div class="app-icon scikit" style="top: 395px; left: 196px;" data-skill="Scikit-learn">
+      SK
+      <div class="skill-name">Scikit-learn</div>
+    </div>
+    <div class="app-icon pandas" style="top: 345px; left: 147px;" data-skill="Pandas">
+      PD
+      <div class="skill-name">Pandas</div>
+    </div>
+    <div class="app-icon numpy" style="top: 265px; left: 127px;" data-skill="NumPy">
+      NP
+      <div class="skill-name">NumPy</div>
+    </div>
+    <div class="app-icon opencv" style="top: 185px; left: 147px;" data-skill="OpenCV">
+      CV
+      <div class="skill-name">OpenCV</div>
+    </div>
+    <div class="app-icon tableau" style="top: 135px; left: 196px;" data-skill="Tableau">
+      TB
+      <div class="skill-name">Tableau</div>
+    </div>
+
+    <!-- Outer ring (6 apps) -->
+    <div class="app-icon powerbi" style="top: 55px; left: 334px;" data-skill="Power BI">
+      BI
+      <div class="skill-name">Power BI</div>
+    </div>
+    <div class="app-icon rstudio" style="top: 135px; left: 453px;" data-skill="R Studio">
+      R
+      <div class="skill-name">R Studio</div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <button class="control-btn" id="zoomOut">−</button>
+    <button class="control-btn" id="zoomIn">+</button>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const appsGrid = document.getElementById('appsGrid');
+  const zoomInBtn = document.getElementById('zoomIn');
+  const zoomOutBtn = document.getElementById('zoomOut');
+  const zoomIndicator = document.getElementById('zoomLevel');
+  const appIcons = document.querySelectorAll('.app-icon');
+  
+  let currentScale = 1;
+  let isDragging = false;
+  let startX = 0;
+  let startY = 0;
+  let translateX = 0;
+  let translateY = 0;
+
+  // Update zoom and indicator
+  function updateZoom(scale) {
+    currentScale = Math.max(0.4, Math.min(3, scale));
+    appsGrid.style.transform = `translate(${translateX}px, ${translateY}px) scale(${currentScale})`;
+    zoomIndicator.textContent = Math.round(currentScale * 100) + '%';
+  }
+
+  // Smooth zoom with easing
+  function smoothZoom(targetScale, duration = 300) {
+    const startScale = currentScale;
+    const startTime = performance.now();
+    
+    function animate(currentTime) {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      
+      // Ease out cubic
+      const easeProgress = 1 - Math.pow(1 - progress, 3);
+      const newScale = startScale + (targetScale - startScale) * easeProgress;
+      
+      updateZoom(newScale);
+      
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      }
+    }
+    
+    requestAnimationFrame(animate);
+  }
+
+  // Mouse wheel zoom with smooth animation
+  appsGrid.addEventListener('wheel', function(e) {
+    e.preventDefault();
+    const delta = e.deltaY > 0 ? -0.15 : 0.15;
+    const targetScale = Math.max(0.4, Math.min(3, currentScale + delta));
+    smoothZoom(targetScale, 200);
+  });
+
+  // Zoom buttons with smooth animation
+  zoomInBtn.addEventListener('click', () => {
+    const targetScale = Math.min(3, currentScale + 0.3);
+    smoothZoom(targetScale);
+  });
+  
+  zoomOutBtn.addEventListener('click', () => {
+    const targetScale = Math.max(0.4, currentScale - 0.3);
+    smoothZoom(targetScale);
+  });
+
+  // Drag functionality
+  appsGrid.addEventListener('mousedown', function(e) {
+    if (e.target.classList.contains('app-icon') || e.target.classList.contains('skill-name')) return;
+    isDragging = true;
+    startX = e.clientX - translateX;
+    startY = e.clientY - translateY;
+    appsGrid.style.cursor = 'grabbing';
+    e.preventDefault();
+  });
+
+  document.addEventListener('mousemove', function(e) {
+    if (!isDragging) return;
+    e.preventDefault();
+    translateX = e.clientX - startX;
+    translateY = e.clientY - startY;
+    appsGrid.style.transform = `translate(${translateX}px, ${translateY}px) scale(${currentScale})`;
+  });
+
+  document.addEventListener('mouseup', function() {
+    isDragging = false;
+    appsGrid.style.cursor = 'grab';
+  });
+
+  // App icon interactions with authentic watchOS animation
+  appIcons.forEach(icon => {
+    icon.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      // Authentic pulse animation
+      this.classList.add('pulsing');
+      
+      setTimeout(() => {
+        this.classList.remove('pulsing');
+      }, 300);
+
+      const skill = this.getAttribute('data-skill');
+      console.log(`Selected skill: ${skill}`);
+    });
+  });
+
+  // Touch support for mobile
+  let touchStartX = 0;
+  let touchStartY = 0;
+  let lastTouchTime = 0;
+
+  appsGrid.addEventListener('touchstart', function(e) {
+    const currentTime = Date.now();
+    
+    if (e.touches.length === 1) {
+      if (e.target.classList.contains('app-icon') || e.target.classList.contains('skill-name')) return;
+      touchStartX = e.touches[0].clientX - translateX;
+      touchStartY = e.touches[0].clientY - translateY;
+      lastTouchTime = currentTime;
+    }
+  }, { passive: false });
+
+  appsGrid.addEventListener('touchmove', function(e) {
+    if (e.touches.length === 1) {
+      e.preventDefault();
+      translateX = e.touches[0].clientX - touchStartX;
+      translateY = e.touches[0].clientY - touchStartY;
+      appsGrid.style.transform = `translate(${translateX}px, ${translateY}px) scale(${currentScale})`;
+    } else if (e.touches.length === 2) {
+      e.preventDefault();
+      // Pinch to zoom functionality handled below
+    }
+  }, { passive: false });
+
+  // Pinch to zoom for mobile
+  let initialDistance = 0;
+  let initialScale = 1;
+
+  appsGrid.addEventListener('touchstart', function(e) {
+    if (e.touches.length === 2) {
+      initialDistance = getDistance(e.touches[0], e.touches[1]);
+      initialScale = currentScale;
+    }
+  });
+
+  appsGrid.addEventListener('touchmove', function(e) {
+    if (e.touches.length === 2) {
+      e.preventDefault();
+      const currentDistance = getDistance(e.touches[0], e.touches[1]);
+      const scale = initialScale * (currentDistance / initialDistance);
+      updateZoom(Math.max(0.4, Math.min(3, scale)));
+    }
+  });
+
+  function getDistance(touch1, touch2) {
+    const dx = touch1.clientX - touch2.clientX;
+    const dy = touch1.clientY - touch2.clientY;
+    return Math.sqrt(dx * dx + dy * dy);
+  }
+
+  // Double tap to reset zoom and position
+  let lastTap = 0;
+  appsGrid.addEventListener('touchend', function(e) {
+    const currentTime = new Date().getTime();
+    const tapLength = currentTime - lastTap;
+    
+    if (tapLength < 500 && tapLength > 0) {
+      // Double tap detected
+      smoothZoom(1, 400);
+      translateX = 0;
+      translateY = 0;
+      appsGrid.style.transform = `translate(0px, 0px) scale(1)`;
+      e.preventDefault();
+    }
+    lastTap = currentTime;
+  });
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    switch(e.key) {
+      case '+':
+      case '=':
+        e.preventDefault();
+        smoothZoom(Math.min(3, currentScale + 0.3));
+        break;
+      case '-':
+        e.preventDefault();
+        smoothZoom(Math.max(0.4, currentScale - 0.3));
+        break;
+      case '0':
+        e.preventDefault();
+        smoothZoom(1, 400);
+        translateX = 0;
+        translateY = 0;
+        appsGrid.style.transform = `translate(0px, 0px) scale(1)`;
+        break;
+    }
+  });
+});
+</script>

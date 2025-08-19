@@ -1,0 +1,488 @@
+---
+layout: default
+title: "Software Engineering Projects"
+description: "Comprehensive showcase of software engineering projects including full-stack applications, system design, and scalable solutions"
+keywords: "software engineering, full-stack development, system design, web applications, scalable solutions, microservices"
+---
+
+<style>
+  .se-projects-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+    padding: 120px 0 80px;
+  }
+
+  .se-header {
+    text-align: center;
+    margin-bottom: 60px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+  }
+
+  .se-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #ffffff, #a0a0a0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .se-subtitle {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    margin-bottom: 40px;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .project-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .project-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  .project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+
+  .project-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+
+  .project-status {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .status-completed {
+    background: rgba(52, 211, 153, 0.2);
+    color: #34d399;
+    border: 1px solid rgba(52, 211, 153, 0.3);
+  }
+
+  .status-developing {
+    background: rgba(251, 191, 36, 0.2);
+    color: #fbbf24;
+    border: 1px solid rgba(251, 191, 36, 0.3);
+  }
+
+  .project-description {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+  }
+
+  .project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+
+  .tech-tag {
+    padding: 6px 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+  }
+
+  .project-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+  }
+
+  .project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+
+  .project-link:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+  }
+
+  .back-button {
+    position: fixed;
+    top: 40px;
+    left: 40px;
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    z-index: 100;
+  }
+
+  .back-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+  }
+
+  .section-divider {
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #ffffff, #a0a0a0);
+    border-radius: 2px;
+    margin: 0 auto 40px;
+  }
+
+  .highlight-card {
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .new-project-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-left: 10px;
+  }
+
+  @media (max-width: 768px) {
+    .se-title {
+      font-size: 2.5rem;
+    }
+    
+    .projects-grid {
+      grid-template-columns: 1fr;
+      padding: 0 15px;
+    }
+    
+    .project-card {
+      padding: 20px;
+    }
+    
+    .back-button {
+      top: 20px;
+      left: 20px;
+      padding: 10px 16px;
+    }
+  }
+</style>
+
+<div class="se-projects-container">
+  <a href="{{ '/' | relative_url }}" class="back-button">← Portfolio</a>
+  
+  <div class="se-header">
+    <h1 class="se-title">Software Engineering Projects</h1>
+    <div class="section-divider"></div>
+    <p class="se-subtitle">
+      Comprehensive showcase of full-stack applications, system design solutions, and scalable software architectures. 
+      From cloud-native microservices to intelligent automation tools, exploring the intersection of modern software engineering and emerging technologies.
+    </p>
+  </div>
+
+  <div class="projects-grid">
+    
+    <!-- AI Study Buddy -->
+    <div class="project-card highlight-card">
+      <div class="project-header">
+        <div>
+          <h3 class="project-title">AI Study Buddy</h3>
+          <div class="project-status status-developing">Developing</div>
+        </div>
+      </div>
+      <p class="project-description">
+        A production-ready React TypeScript application that uses real AI algorithms to optimize study schedules, 
+        provide adaptive learning recommendations, and enhance interview preparation through intelligent coaching. 
+        Implements scientifically-proven learning techniques including spaced repetition and cognitive load optimization.
+      </p>
+      <div class="project-tech">
+        <span class="tech-tag">React 18</span>
+        <span class="tech-tag">TypeScript</span>
+        <span class="tech-tag">Vite</span>
+        <span class="tech-tag">TailwindCSS</span>
+        <span class="tech-tag">AI Algorithms</span>
+        <span class="tech-tag">PWA</span>
+      </div>
+      <div class="project-links">
+        <a href="{{ '/projects/ai-study-buddy/' | relative_url }}" class="project-link">
+          <i class="fas fa-external-link-alt"></i>
+          View Details
+        </a>
+        <a href="https://github.com/sanketmuchhala/ai-study-buddy" class="project-link">
+          <i class="fab fa-github"></i>
+          GitHub
+        </a>
+      </div>
+    </div>
+
+    <!-- GRIM Card Game -->
+    <div class="project-card highlight-card">
+      <div class="project-header">
+        <div>
+          <h3 class="project-title">GRIM Card Game</h3>
+          <div class="project-status status-developing">Work in Progress</div>
+        </div>
+      </div>
+      <p class="project-description">
+        A complete implementation of the GRIM card game built with React + Vite + TypeScript. Features a 3-round auction system, 
+        coin toss for initial dealer determination, deterministic gameplay with seeded randomization, and comprehensive game logic. 
+        Includes trick-taking mechanics, scoring calculations, and a modern UI with Tailwind CSS.
+      </p>
+      <div class="project-tech">
+        <span class="tech-tag">React 18</span>
+        <span class="tech-tag">TypeScript</span>
+        <span class="tech-tag">Vite</span>
+        <span class="tech-tag">Tailwind CSS</span>
+        <span class="tech-tag">Zustand</span>
+        <span class="tech-tag">GitHub Pages</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/sanketmuchhala/GRIM" class="project-link">
+          <i class="fab fa-github"></i>
+          GitHub
+        </a>
+      </div>
+    </div>
+
+    <!-- Customize Resume -->
+    <div class="project-card highlight-card">
+      <div class="project-header">
+        <div>
+          <h3 class="project-title">Customize Resume</h3>
+          <div class="project-status status-completed">Completed</div>
+        </div>
+      </div>
+      <p class="project-description">
+        An AI-powered resume customization tool that adapts your resume according to job descriptions. Uses Gemini API for 
+        intelligent content analysis and optimization. Features include keyword matching, skill alignment, and format optimization. 
+        Note: Requires your own Gemini API keys for local development.
+      </p>
+      <div class="project-tech">
+        <span class="tech-tag">React</span>
+        <span class="tech-tag">Gemini API</span>
+        <span class="tech-tag">JavaScript</span>
+        <span class="tech-tag">CSS</span>
+        <span class="tech-tag">GitHub Pages</span>
+      </div>
+      <div class="project-links">
+        <a href="https://sanketmuchhala.github.io/Customize-Resume/" class="project-link">
+          <i class="fas fa-globe"></i>
+          Live Demo
+        </a>
+        <a href="https://github.com/sanketmuchhala/Customize-Resume" class="project-link">
+          <i class="fab fa-github"></i>
+          GitHub
+        </a>
+      </div>
+    </div>
+
+    <!-- AI System Design Generator -->
+    <div class="project-card highlight-card">
+      <div class="project-header">
+        <div>
+          <h3 class="project-title">AI System Design Generator</h3>
+          <div class="project-status status-completed">Completed</div>
+        </div>
+      </div>
+      <p class="project-description">
+        An intelligent system design generator that creates comprehensive architecture diagrams and documentation. 
+        Uses Gemini API to generate system designs based on requirements. Features include scalable architecture patterns, 
+        technology recommendations, and detailed documentation. Note: Requires your own Gemini API keys for local development.
+      </p>
+      <div class="project-tech">
+        <span class="tech-tag">React</span>
+        <span class="tech-tag">Gemini API</span>
+        <span class="tech-tag">JavaScript</span>
+        <span class="tech-tag">CSS</span>
+        <span class="tech-tag">GitHub Pages</span>
+      </div>
+      <div class="project-links">
+        <a href="https://sanketmuchhala.github.io/AI-System-Design-Generator/" class="project-link">
+          <i class="fas fa-globe"></i>
+          Live Demo
+        </a>
+        <a href="https://github.com/sanketmuchhala/AI-System-Design-Generator" class="project-link">
+          <i class="fab fa-github"></i>
+          GitHub
+        </a>
+      </div>
+    </div>
+
+    <!-- FileChatAI -->
+    <div class="project-card highlight-card">
+      <div class="project-header">
+        <div>
+          <h3 class="project-title">FileChatAI</h3>
+          <div class="project-status status-completed">Completed</div>
+        </div>
+      </div>
+      <p class="project-description">
+        An AI-powered file chat application that allows users to upload documents and have intelligent conversations about their content. 
+        Features document processing, semantic search, and contextual responses. Built with modern web technologies and deployed on Railway.
+      </p>
+      <div class="project-tech">
+        <span class="tech-tag">React</span>
+        <span class="tech-tag">Node.js</span>
+        <span class="tech-tag">AI/ML</span>
+        <span class="tech-tag">Railway</span>
+        <span class="tech-tag">Document Processing</span>
+      </div>
+      <div class="project-links">
+        <a href="https://filechatai-production.up.railway.app/" class="project-link">
+          <i class="fas fa-globe"></i>
+          Live Demo
+        </a>
+        <a href="https://github.com/sanketmuchhala/FileChatAI" class="project-link">
+          <i class="fab fa-github"></i>
+          GitHub
+        </a>
+      </div>
+    </div>
+
+    <!-- Location-based File Sharing System -->
+    <div class="project-card highlight-card">
+      <div class="project-header">
+        <div>
+          <h3 class="project-title">Location-Based File Sharing System</h3>
+          <div class="project-status status-completed">Completed</div>
+        </div>
+      </div>
+      <p class="project-description">
+        Engineered a serverless AWS solution using S3 and Lambda with geospatial filtering, maintaining 99% uptime 
+        with efficient access control. Integrated OpenStreetMap via Leaflet.js into a responsive JavaScript frontend. 
+        Enables proximity-based file exchange with sophisticated location intelligence.
+      </p>
+      <div class="project-tech">
+        <span class="tech-tag">AWS Lambda</span>
+        <span class="tech-tag">AWS S3</span>
+        <span class="tech-tag">Leaflet.js</span>
+        <span class="tech-tag">PostgreSQL</span>
+        <span class="tech-tag">PostGIS</span>
+        <span class="tech-tag">JavaScript</span>
+      </div>
+      <div class="project-links">
+        <a href="{{ '/projects/location-based-file-sharing/' | relative_url }}" class="project-link">
+          <i class="fas fa-external-link-alt"></i>
+          View Details
+        </a>
+        <a href="https://d3vjtmq7zqrgp7.cloudfront.net/" class="project-link">
+          <i class="fas fa-globe"></i>
+          Live Demo
+        </a>
+        <a href="https://github.com/sanketmuchhala/ECC-LBFS" class="project-link">
+          <i class="fab fa-github"></i>
+          GitHub
+        </a>
+      </div>
+    </div>
+
+    <!-- Legacy Projects Section -->
+    <div class="project-card">
+      <div class="project-header">
+        <div>
+          <h3 class="project-title">Interns Management Portal</h3>
+          <div class="project-status status-completed">Legacy</div>
+        </div>
+      </div>
+      <p class="project-description">
+        A comprehensive PHP-based internship management system with email notification functionality for job applications. 
+        Features include application tracking, automated email responses, and administrative dashboard. Built 4-5 years ago 
+        as a full-stack web application with MySQL database.
+      </p>
+      <div class="project-tech">
+        <span class="tech-tag">PHP</span>
+        <span class="tech-tag">MySQL</span>
+        <span class="tech-tag">HTML/CSS</span>
+        <span class="tech-tag">JavaScript</span>
+        <span class="tech-tag">Email Integration</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/sanketmuchhala/Interns-Management-Portal-" class="project-link">
+          <i class="fab fa-github"></i>
+          GitHub
+        </a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <div>
+          <h3 class="project-title">Scholarship Management Portal</h3>
+          <div class="project-status status-completed">Legacy</div>
+        </div>
+      </div>
+      <p class="project-description">
+        A collaborative project developed for school internal use with comprehensive scholarship application and management features. 
+        Includes student registration, application processing, and administrative tools. Hosted on internal school systems 
+        with role-based access control and reporting capabilities.
+      </p>
+      <div class="project-tech">
+        <span class="tech-tag">PHP</span>
+        <span class="tech-tag">MySQL</span>
+        <span class="tech-tag">Bootstrap</span>
+        <span class="tech-tag">jQuery</span>
+        <span class="tech-tag">Role-based Access</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/sanketmuchhala/Scholarship-Management-Portal" class="project-link">
+          <i class="fab fa-github"></i>
+          GitHub
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>

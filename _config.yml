@@ -1,11 +1,24 @@
 # Jekyll Configuration
-title: "Sanket Muchhala — AI/ML Engineer"
-description: "AI/ML engineer focused on NLP, fraud detection, and production LLM systems"
+title: "Sanket Muchhala — AI Engineer & Data Scientist | Machine Learning Expert"
+description: "AI Engineer and Data Scientist specializing in machine learning, deep learning, NLP, generative AI, and LLMs. Expert in Python, TensorFlow, PyTorch, AWS, and scalable AI solutions."
 author: "Sanket Muchhala"
 email: "sanketmuchhala@gmail.com"
 url: "https://sanketmuchhala.github.io"
 baseurl: ""
 image: "/photos/export.png"
+
+# SEO Enhancement
+keywords: "AI engineer, data scientist, machine learning engineer, artificial intelligence, deep learning, NLP, natural language processing, Python, TensorFlow, PyTorch, AWS, generative AI, LLMs, data science portfolio"
+twitter:
+  username: sanketmuchhala
+  card: summary_large_image
+social:
+  name: Sanket Muchhala
+  links:
+    - https://linkedin.com/in/sanketmuchhala
+    - https://github.com/sanketmuchhala
+    - https://twitter.com/sanketmuchhala
+logo: /photos/export.png
 
 # Build settings
 markdown: kramdown
@@ -86,3 +99,14 @@ include:
 # SEO
 lang: en_US
 locale: en_US
+timezone: America/New_York
+
+# Enhanced SEO
+seo:
+  type: Person
+  name: "Sanket Muchhala"
+  location: "United States"
+  jobTitle: "AI Engineer & Data Scientist"
+  worksFor: "Progressive Insurance"
+  alumniOf: "Indiana University Bloomington"
+  knowsAbout: "artificial intelligence, machine learning, data science, deep learning, natural language processing, computer vision, generative AI, LLMs"

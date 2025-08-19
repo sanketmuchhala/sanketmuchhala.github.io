@@ -1,7 +1,8 @@
 ---
 layout: default
-title: "Home"
-description: "AI/ML Engineer specializing in generative AI, LLMs, and scalable ML solutions"
+title: "AI Engineer & Data Scientist Portfolio"
+description: "Sanket Muchhala - AI Engineer and Data Scientist specializing in machine learning, deep learning, natural language processing, generative AI, and LLMs. Expert in Python, TensorFlow, PyTorch, AWS ML, and scalable AI solutions."
+keywords: "Sanket Muchhala, AI engineer, data scientist, machine learning engineer, artificial intelligence portfolio, deep learning, NLP, natural language processing, Python, TensorFlow, PyTorch, AWS machine learning, generative AI, LLMs, data science projects, computer vision, neural networks, predictive modeling"
 image: "/photos/export.png"
 ---
 
@@ -31,7 +32,7 @@ image: "/photos/export.png"
         </div>
         <div class="hero-image">
             <div class="profile-image">
-                <img src="https://avatars.githubusercontent.com/u/61338448?s=400&u=31d3fd7cc5e559e4924d3ef3a16d06ea31d66d8a&v=4" alt="Sanket Muchhala" class="profile-photo">
+                <img src="https://avatars.githubusercontent.com/u/61338448?s=400&u=31d3fd7cc5e559e4924d3ef3a16d06ea31d66d8a&v=4" alt="Sanket Muchhala - AI Engineer and Data Scientist portfolio profile photo" class="profile-photo">
             </div>
         </div>
     </div>
@@ -391,7 +392,7 @@ image: "/photos/export.png"
             <div class="collage-item">
                 <picture>
                     <source srcset="{{ '/photography/photos/optimized/sunset-mountains.webp' | relative_url }}" type="image/webp">
-                    <img src="{{ '/photography/photos/sunset-mountains.jpg' | relative_url }}" alt="Sunset over mountains" loading="lazy" decoding="async" 
+                    <img src="{{ '/photography/photos/sunset-mountains.jpg' | relative_url }}" alt="Sunset over mountains landscape photography by AI engineer Sanket Muchhala" loading="lazy" decoding="async" 
                          srcset="{{ '/photography/photos/sunset-mountains.jpg' | relative_url }} 800w, {{ '/photography/photos/sunset-mountains.jpg' | relative_url }} 400w" 
                          sizes="(max-width: 768px) 400px, 800px">
                 </picture>
@@ -400,7 +401,7 @@ image: "/photos/export.png"
             <div class="collage-item">
                 <picture>
                     <source srcset="{{ '/photography/photos/optimized/urban-architecture.webp' | relative_url }}" type="image/webp">
-                    <img src="{{ '/photography/photos/urban-architecture.jpg' | relative_url }}" alt="Urban architecture" loading="lazy" decoding="async"
+                    <img src="{{ '/photography/photos/urban-architecture.jpg' | relative_url }}" alt="Urban architecture photography showcasing data science perspective by Sanket Muchhala" loading="lazy" decoding="async"
                          srcset="{{ '/photography/photos/urban-architecture.jpg' | relative_url }} 800w, {{ '/photography/photos/urban-architecture.jpg' | relative_url }} 400w"
                          sizes="(max-width: 768px) 400px, 800px">
                 </picture>
@@ -409,7 +410,7 @@ image: "/photos/export.png"
             <div class="collage-item">
                 <picture>
                     <source srcset="{{ '/photography/photos/optimized/nature-closeup.webp' | relative_url }}" type="image/webp">
-                    <img src="{{ '/photography/photos/nature-closeup.jpg' | relative_url }}" alt="Nature closeup" loading="lazy" decoding="async"
+                    <img src="{{ '/photography/photos/nature-closeup.jpg' | relative_url }}" alt="Nature closeup macro photography by machine learning engineer Sanket Muchhala" loading="lazy" decoding="async"
                          srcset="{{ '/photography/photos/nature-closeup.jpg' | relative_url }} 800w, {{ '/photography/photos/nature-closeup.jpg' | relative_url }} 400w"
                          sizes="(max-width: 768px) 400px, 800px">
                 </picture>
@@ -418,7 +419,7 @@ image: "/photos/export.png"
             <div class="collage-item">
                 <picture>
                     <source srcset="{{ '/photography/photos/optimized/autumn-colors.webp' | relative_url }}" type="image/webp">
-                    <img src="{{ '/photography/photos/autumn-colors.jpg' | relative_url }}" alt="Autumn colors" loading="lazy" decoding="async"
+                    <img src="{{ '/photography/photos/autumn-colors.jpg' | relative_url }}" alt="Autumn colors landscape photography by AI engineer and data scientist" loading="lazy" decoding="async"
                          srcset="{{ '/photography/photos/autumn-colors.jpg' | relative_url }} 800w, {{ '/photography/photos/autumn-colors.jpg' | relative_url }} 400w"
                          sizes="(max-width: 768px) 400px, 800px">
                 </picture>
@@ -427,7 +428,7 @@ image: "/photos/export.png"
             <div class="collage-item">
                 <picture>
                     <source srcset="{{ '/photography/photos/optimized/IMG_20190619_160550_Original-min.webp' | relative_url }}" type="image/webp">
-                    <img src="{{ '/photography/photos/IMG_20190619_160550_Original-min.jpg' | relative_url }}" alt="Summer vibes" loading="lazy" decoding="async"
+                    <img src="{{ '/photography/photos/IMG_20190619_160550_Original-min.jpg' | relative_url }}" alt="Summer photography capturing creative perspective from AI engineer Sanket Muchhala" loading="lazy" decoding="async"
                          srcset="{{ '/photography/photos/IMG_20190619_160550_Original-min.jpg' | relative_url }} 800w, {{ '/photography/photos/IMG_20190619_160550_Original-min.jpg' | relative_url }} 400w"
                          sizes="(max-width: 768px) 400px, 800px">
                 </picture>
@@ -436,7 +437,7 @@ image: "/photos/export.png"
             <div class="collage-item">
                 <picture>
                     <source srcset="{{ '/photography/photos/optimized/IMG_5166-min.webp' | relative_url }}" type="image/webp">
-                    <img src="{{ '/photography/photos/IMG_5166-min.JPG' | relative_url }}" alt="Street photography" loading="lazy" decoding="async"
+                    <img src="{{ '/photography/photos/IMG_5166-min.JPG' | relative_url }}" alt="Street photography showcasing technical composition by machine learning expert" loading="lazy" decoding="async"
                          srcset="{{ '/photography/photos/IMG_5166-min.JPG' | relative_url }} 800w, {{ '/photography/photos/IMG_5166-min.JPG' | relative_url }} 400w"
                          sizes="(max-width: 768px) 400px, 800px">
                 </picture>
@@ -445,7 +446,7 @@ image: "/photos/export.png"
             <div class="collage-item">
                 <picture>
                     <source srcset="{{ '/photography/photos/optimized/IMG_6517-min.webp' | relative_url }}" type="image/webp">
-                    <img src="{{ '/photography/photos/IMG_6517-min.JPEG' | relative_url }}" alt="Minimalist composition" loading="lazy" decoding="async"
+                    <img src="{{ '/photography/photos/IMG_6517-min.JPEG' | relative_url }}" alt="Minimalist composition photography by data scientist and AI engineer" loading="lazy" decoding="async"
                          srcset="{{ '/photography/photos/IMG_6517-min.JPEG' | relative_url }} 800w, {{ '/photography/photos/IMG_6517-min.JPEG' | relative_url }} 400w"
                          sizes="(max-width: 768px) 400px, 800px">
                 </picture>

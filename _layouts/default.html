@@ -58,6 +58,9 @@
     <link rel="preload" href="{{ '/style.css' | relative_url }}?v=1.2" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="{{ '/style.css' | relative_url }}?v=1.2"></noscript>
     
+    <!-- Load animations CSS -->
+    <link rel="stylesheet" href="{{ '/animations.css' | relative_url }}">
+    
     <!-- Preload critical images -->
     <link rel="preload" href="{{ '/photography/photos/optimized/sunset-mountains.webp' | relative_url }}" as="image" type="image/webp">
     <link rel="preload" href="{{ '/photography/photos/optimized/urban-architecture.webp' | relative_url }}" as="image" type="image/webp">
@@ -279,6 +282,7 @@
         });
     </script>
     <script src="{{ '/script.js' | relative_url }}" defer></script>
+    <script src="{{ '/animations.js' | relative_url }}" defer></script>
     
     <!-- Page-specific scripts -->
     {% if page.scripts %}

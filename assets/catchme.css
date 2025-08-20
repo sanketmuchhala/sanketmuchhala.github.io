@@ -1,0 +1,93 @@
+
+.hero-rink {
+  position: relative;
+  overflow: hidden;
+}
+
+.dp-mover {
+  position: absolute;
+  will-change: transform;
+  pointer-events: auto;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.1s ease-out;
+}
+
+.dp-mover img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 5px solid #fff;
+}
+
+.cm-exit {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1001;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cm-exit:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.cm-toast {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px 40px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  z-index: 1002;
+  display: none;
+}
+
+.cm-toast p {
+    color: #333;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.cm-toast .coffee {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.cm-toast button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  background-color: #f0f0f0;
+}
+
+.cm-toast button:hover {
+    background-color: #e0e0e0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dp-mover {
+    transform: none !important;
+    animation: none !important;
+  }
+  .cm-exit {
+      display: none;
+  }
+}

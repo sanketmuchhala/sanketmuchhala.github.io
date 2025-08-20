@@ -5,10 +5,8 @@ description: "Sanket Muchhala - AI Engineer and Data Scientist specializing in m
 keywords: "Sanket Muchhala, AI engineer, data scientist, machine learning engineer, artificial intelligence portfolio, deep learning, NLP, natural language processing, Python, TensorFlow, PyTorch, AWS machine learning, generative AI, LLMs, data science projects, computer vision, neural networks, predictive modeling"
 image: "/photos/export.png"
 scripts: |
-  <link rel="stylesheet" href="{{ '/assets/catchme.css' | relative_url }}">
-  <script src="{{ '/assets/catchme.js' | relative_url }}" defer></script>
-  <link rel="stylesheet" href="{{ '/assets/catch.css' | relative_url }}">
-  <script src="{{ '/assets/catch.js' | relative_url }}" defer></script>
+  <link rel="stylesheet" href="/assets/catch.css">
+  <script src="/assets/catch.js" defer></script>
 ---
 
 <!-- Hero Section -->

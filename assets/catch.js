@@ -249,7 +249,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Reset game state
         gameState = 'playing';
-        startGame(); // Re-initialize positions and start loop
+        
+        // Reset position and velocity instead of calling startGame()
+        pos = { x: viewport.width / 2, y: viewport.height / 2 };
+        const speed = (Math.min(viewport.width, viewport.height) / 1000) * BASE_SPEED;
+        vel = { 
+            x: (Math.random() - 0.5) * 2 * speed,
+            y: (Math.random() - 0.5) * 2 * speed
+        };
+        
+        // Restart the game loop if motion is allowed
+        if (!prefersReducedMotion) {
+            lastTime = 0;
+            animationFrameId = requestAnimationFrame(gameLoop);
+        }
     }
 
     function exitGame() {

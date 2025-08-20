@@ -4,10 +4,15 @@ title: "AI Engineer & Data Scientist Portfolio"
 description: "Sanket Muchhala - AI Engineer and Data Scientist specializing in machine learning, deep learning, natural language processing, generative AI, and LLMs. Expert in Python, TensorFlow, PyTorch, AWS ML, and scalable AI solutions."
 keywords: "Sanket Muchhala, AI engineer, data scientist, machine learning engineer, artificial intelligence portfolio, deep learning, NLP, natural language processing, Python, TensorFlow, PyTorch, AWS machine learning, generative AI, LLMs, data science projects, computer vision, neural networks, predictive modeling"
 image: "/photos/export.png"
+scripts: |
+  <link rel="stylesheet" href="{{ '/assets/catchme.css' | relative_url }}">
+  <script src="{{ '/assets/catchme.js' | relative_url }}" defer></script>
+  <link rel="stylesheet" href="{{ '/assets/catch.css' | relative_url }}">
+  <script src="{{ '/assets/catch.js' | relative_url }}" defer></script>
 ---
 
 <!-- Hero Section -->
-<section id="home" class="hero">
+<section id="hero" class="hero">
     <div class="hero-content">
         <div class="hero-text">
             <h1 class="hero-title">
@@ -32,7 +37,7 @@ image: "/photos/export.png"
         </div>
         <div class="hero-image">
             <div class="profile-image">
-                <img src="https://avatars.githubusercontent.com/u/61338448?s=400&u=31d3fd7cc5e559e4924d3ef3a16d06ea31d66d8a&v=4" alt="Sanket Muchhala - AI Engineer and Data Scientist portfolio profile photo" class="profile-photo">
+                <img src="https://avatars.githubusercontent.com/u/61338448?s=400&u=31d3fd7cc5e559e4924d3ef3a16d06ea31d66d8a&v=4" alt="Sanket Muchhala - AI Engineer and Data Scientist portfolio profile photo" class="profile-photo" id="profile-image">
             </div>
         </div>
     </div>

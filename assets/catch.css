@@ -1,0 +1,207 @@
+/* 
+ * Catch Me If You Can Game Styles
+ */
+
+/* A utility class to hide elements accessibly */
+.is-hidden {
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+/* Tooltip for the profile image */
+.profile-image-container {
+    position: relative;
+    cursor: pointer;
+}
+
+.profile-image-tooltip {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.profile-image-container:hover .profile-image-tooltip {
+    opacity: 1;
+}
+
+
+/* Game Layer: Full-screen container for the game */
+.game-layer {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: transparent; /* Keeps the original background visible */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    overflow: hidden;
+}
+
+/* Game Title */
+.cm-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: bold;
+    color: var(--text-color, #333);
+    text-align: center;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Game Subtext/Instructions */
+.cm-sub {
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    color: var(--text-secondary, #555);
+    text-align: center;
+    max-width: 80%;
+}
+
+/* Exit Button */
+.cm-exit {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    transition: background 0.2s, transform 0.2s;
+}
+
+.cm-exit:hover {
+    background: #fff;
+    transform: scale(1.1);
+}
+
+.cm-exit:focus-visible {
+    outline: 2px solid var(--primary-color, #007bff);
+    outline-offset: 2px;
+}
+
+/* The moving display picture */
+.cm-dp {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: auto;
+    cursor: pointer;
+    will-change: transform;
+    border-radius: 50%;
+    /* The border/ring style will be copied from the original #profile-image */
+}
+
+.cm-dp img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* "You Caught Me!" Toast/Card */
+.cm-toast {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    text-align: center;
+    z-index: 1001;
+    border: 1px solid #eee;
+}
+
+.cm-toast h3 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color, #007bff);
+}
+
+.cm-toast p {
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.cm-toast .cookie-emoji {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.cm-toast-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+/* Speech Bubble for the cookie joke */
+.cm-bubble {
+    position: absolute;
+    background: #fff;
+    color: #333;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    max-width: 200px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    /* Positioned dynamically by JS */
+    z-index: 1002;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.cm-bubble.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.cm-bubble::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    /* Arrow direction set by JS */
+}
+
+/* Reduced Motion Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .cm-dp {
+        /* Freeze the DP in the center */
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+    }
+
+    .cm-exit {
+        display: none; /* Hide exit button as game is not playable */
+    }
+
+    .reduced-motion-note {
+        display: block;
+        margin-top: 1rem;
+        color: var(--text-secondary, #555);
+    }
+}

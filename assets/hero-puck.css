@@ -1,0 +1,129 @@
+/* Hero DP Puck Effect - CSS Styling */
+
+/* Hero container becomes hockey rink */
+.hero-rink {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Moving DP puck element */
+.dp-puck {
+  position: absolute;
+  width: clamp(72px, 10vw, 128px);
+  height: clamp(72px, 10vw, 128px);
+  border-radius: 50%;
+  pointer-events: none;
+  
+  /* Background image (DP source) */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  /* Subtle ring/shadow matching current style */
+  box-shadow: 
+    0 0 0 3px rgba(255, 255, 255, 0.9),
+    0 4px 16px rgba(0, 0, 0, 0.3),
+    0 0 12px rgba(255, 255, 255, 0.1);
+  
+  /* Performance optimizations */
+  will-change: transform;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  
+  /* Initial state */
+  z-index: 10;
+  opacity: 1;
+  
+  /* Accessibility */
+  aria-hidden: true;
+}
+
+/* Hide original DP when puck is active */
+.puck-active #profile-photo {
+  visibility: hidden;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .dp-puck {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* High contrast support */
+@media (prefers-contrast: high) {
+  .dp-puck {
+    box-shadow: 
+      0 0 0 3px #ffffff,
+      0 4px 16px rgba(0, 0, 0, 0.8);
+  }
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .dp-puck {
+    width: clamp(60px, 12vw, 96px);
+    height: clamp(60px, 12vw, 96px);
+    box-shadow: 
+      0 0 0 2px rgba(255, 255, 255, 0.9),
+      0 3px 12px rgba(0, 0, 0, 0.3);
+  }
+}
+
+@media (max-width: 480px) {
+  .dp-puck {
+    width: clamp(48px, 15vw, 72px);
+    height: clamp(48px, 15vw, 72px);
+    box-shadow: 
+      0 0 0 2px rgba(255, 255, 255, 0.9),
+      0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* Smooth fade in/out transitions */
+.dp-puck.fade-in {
+  opacity: 0;
+  animation: fadeInPuck 0.5s ease forwards;
+}
+
+.dp-puck.fade-out {
+  opacity: 1;
+  animation: fadeOutPuck 0.3s ease forwards;
+}
+
+@keyframes fadeInPuck {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeOutPuck {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}
+
+/* Ensure puck doesn't interfere with focus */
+.dp-puck:focus {
+  outline: none;
+}
+
+/* Debug mode (optional) */
+.hero-debug .hero-rink {
+  border: 2px dashed rgba(255, 0, 0, 0.5);
+}
+
+.hero-debug .dp-puck {
+  border: 1px solid rgba(0, 255, 0, 0.8);
+}

@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const tooltip = document.createElement('span');
             tooltip.className = 'profile-image-tooltip';
-            tooltip.textContent = 'Click me 👀';
+            tooltip.innerHTML = '🎮 Click to play!';
             wrapper.appendChild(tooltip);
         }
 
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
             movingDp.style.transform = `translate3d(${pos.x - dpSize.width/2}px, ${pos.y - dpSize.height/2}px, 0)`;
             const note = document.createElement('p');
             note.className = 'reduced-motion-note';
-            note.textContent = 'Reduced motion is enabled. The target is stationary.';
+            note.innerHTML = '🎯 Motion reduced for accessibility. I\'ll stay still—click me when ready!';
             gameLayer.appendChild(note);
         }
     }
@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const subtext = document.createElement('p');
         subtext.className = 'cm-sub';
-        subtext.innerHTML = 'Click the moving photo to catch it. Difficulty: Medium. Use your mouse (or finger) to chase!';
+        subtext.innerHTML = '✨ Click the moving photo to catch me! I\'ll try to dodge your cursor... let\'s see if you can keep up! 🏃‍♂️';
 
         const exitButton = document.createElement('button');
         exitButton.className = 'cm-exit';
@@ -201,12 +201,12 @@ document.addEventListener('DOMContentLoaded', () => {
         toast = document.createElement('div');
         toast.className = 'cm-toast';
         toast.innerHTML = `
-            <h3>You caught me!</h3>
+            <h3>🎉 You caught me!</h3>
             <span class="cookie-emoji">🍪</span>
-            <p>Have a cookie.</p>
+            <p>Impressive reflexes! Here's your well-deserved cookie 🏆</p>
             <div class="cm-toast-buttons">
-                <button id="play-again-btn" class="btn btn-primary">Play Again</button>
-                <button id="exit-game-btn" class="btn btn-secondary">Exit</button>
+                <button id="play-again-btn" class="btn btn-primary">🎮 Play Again</button>
+                <button id="exit-game-btn" class="btn btn-secondary">✨ Exit</button>
             </div>
         `;
         document.body.appendChild(toast);
@@ -217,7 +217,7 @@ document.addEventListener('DOMContentLoaded', () => {
         bubble.className = 'cm-bubble';
         bubble.setAttribute('role', 'status');
         bubble.setAttribute('aria-live', 'polite');
-        bubble.textContent = 'Don\'t worry—these aren\'t those kinds of website cookies.';
+        bubble.innerHTML = '😄 Don\'t worry—these aren\'t those kinds of website cookies! <br>This one\'s way tastier! 🍪✨';
         document.body.appendChild(bubble);
         positionBubble();
         setTimeout(() => bubble.classList.add('visible'), 100); // Animate in

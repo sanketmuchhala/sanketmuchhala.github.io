@@ -24,8 +24,8 @@ image: "/photos/export.png"
             </p>
             <div class="hero-buttons">
                 <!-- <a href="#contact" class="btn btn-primary">Get In Touch</a> -->
-                <a href="#projects" class="btn btn-secondary">View My Work</a>
-                <a href="{{ '/Sanket_Muchhala_Resume.pdf' | relative_url }}" class="btn btn-resume" download>
+                <a href="#projects" class="btn btn-secondary hover-bump">View My Work</a>
+                <a href="{{ '/Sanket_Muchhala_Resume.pdf' | relative_url }}" class="btn btn-resume hover-bump" download>
                     <i class="fas fa-download"></i> Download My Resume
                 </a>
             </div>
@@ -44,7 +44,7 @@ image: "/photos/export.png"
 </section>
 
 <!-- About Section -->
-<section id="about" class="about">
+<section id="about" class="about" data-animate>
     <div class="container">
         <div class="section-header">
             <h2 class="section-title">About Me</h2>
@@ -113,7 +113,7 @@ image: "/photos/export.png"
 </section>
 
 <!-- Skills Section -->
-<section id="skills" class="skills">
+<section id="skills" class="skills" data-animate>
     <div class="container">
         <div class="section-header">
             <h2 class="section-title">Technical Skills</h2>
@@ -183,7 +183,7 @@ image: "/photos/export.png"
 </section>
 
 <!-- Experience Section -->
-<section id="experience" class="experience">
+<section id="experience" class="experience" data-animate>
     <div class="container">
         <div class="section-header">
             <h2 class="section-title">Professional Experience</h2>
@@ -274,24 +274,24 @@ image: "/photos/export.png"
 </section>
 
 <!-- Projects Section -->
-<section id="projects" class="projects">
+<section id="projects" class="projects" data-animate>
     <div class="container">
         <div class="section-header">
             <h2 class="section-title">Featured Projects</h2>
             <div class="section-divider"></div>
             <div class="section-actions">
-                <a href="{{ '/projects.html' | relative_url }}" class="btn btn-primary">
+                <a href="{{ '/projects.html' | relative_url }}" class="btn btn-primary hover-bump">
                     <i class="fas fa-external-link-alt"></i>
                     View All Projects
                 </a>
             </div>
         </div>
         <div class="projects-grid">
-            <div class="project-card">
+            <div class="project-card hover-bump" data-animate>
                 <div class="project-header">
                     <h3>AI Study Buddy <span class="status-badge status-developing">Developing</span></h3>
                     <div class="project-links">
-                        <a href="https://github.com/sanketmuchhala/ai-study-buddy" class="project-link" aria-label="View project on GitHub">
+                        <a href="https://github.com/sanketmuchhala/ai-study-buddy" class="project-link hover-bump" aria-label="View project on GitHub">
                             <i class="fab fa-github"></i>
                         </a>
                     </div>
@@ -306,18 +306,18 @@ image: "/photos/export.png"
                     <span class="tech-tag">TailwindCSS</span>
                 </div>
                 <div class="project-actions">
-                    <a href="{{ '/projects/ai-study-buddy/' | relative_url }}" class="btn btn-primary">
+                    <a href="{{ '/projects/ai-study-buddy/' | relative_url }}" class="btn btn-primary hover-bump">
                         <span>Read More</span>
                         <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
 
-            <div class="project-card">
+            <div class="project-card hover-bump" data-animate>
                 <div class="project-header">
                     <h3>AI Job Application Agent <span class="status-badge status-developing">Developing</span></h3>
                     <div class="project-links">
-                        <a href="https://github.com/sanketmuchhala/ApplicationAgent" class="project-link" aria-label="View repository">
+                        <a href="https://github.com/sanketmuchhala/ApplicationAgent" class="project-link hover-bump" aria-label="View repository">
                             <i class="fab fa-github"></i>
                         </a>
                     </div>
@@ -332,21 +332,21 @@ image: "/photos/export.png"
                     <span class="tech-tag">Claude Desktop</span>
                 </div>
                 <div class="project-actions">
-                    <a href="{{ '/projects/mcp-project/' | relative_url }}" class="btn btn-primary">
+                    <a href="{{ '/projects/mcp-project/' | relative_url }}" class="btn btn-primary hover-bump">
                         <span>Read More</span>
                         <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
 
-            <div class="project-card">
+            <div class="project-card hover-bump" data-animate>
                 <div class="project-header">
                     <h3>Location-Based File Sharing System</h3>
                     <div class="project-links">
-                        <a href="https://d3vjtmq7zqrgp7.cloudfront.net/" class="project-link" aria-label="View live demo">
+                        <a href="https://d3vjtmq7zqrgp7.cloudfront.net/" class="project-link hover-bump" aria-label="View live demo">
                             <i class="fas fa-external-link-alt"></i>
                         </a>
-                        <a href="https://github.com/sanketmuchhala/ECC-LBFS" class="project-link" aria-label="View project on GitHub">
+                        <a href="https://github.com/sanketmuchhala/ECC-LBFS" class="project-link hover-bump" aria-label="View project on GitHub">
                             <i class="fab fa-github"></i>
                         </a>
                     </div>
@@ -362,7 +362,7 @@ image: "/photos/export.png"
                     <span class="tech-tag">JavaScript</span>
                 </div>
                 <div class="project-actions">
-                    <a href="{{ '/projects/location-based-file-sharing/' | relative_url }}" class="btn btn-primary">
+                    <a href="{{ '/projects/location-based-file-sharing/' | relative_url }}" class="btn btn-primary hover-bump">
                         <span>Read More</span>
                         <i class="fas fa-arrow-right"></i>
                     </a>
@@ -373,14 +373,14 @@ image: "/photos/export.png"
 </section>
 
 <!-- Photography Section -->
-<section id="photography" class="photography">
+<section id="photography" class="photography" data-animate>
     <div class="container">
         <div class="section-header">
             <h2 class="section-title">Through My Lens</h2>
             <div class="section-divider"></div>
             <p class="section-subtitle">Capturing moments, emotions, and the beauty of the world around us through the art of photography</p>
             <div class="section-actions">
-                <a href="{{ '/photography/photos/' | relative_url }}" class="btn btn-primary">
+                <a href="{{ '/photography/photos/' | relative_url }}" class="btn btn-primary hover-bump">
                     <i class="fas fa-external-link-alt"></i>
                     View All Photos
                 </a>
@@ -456,13 +456,13 @@ image: "/photos/export.png"
 </section>
 
 <!-- Blog Section -->
-<section id="blog" class="blog">
+<section id="blog" class="blog" data-animate>
     <div class="container">
         <div class="section-header">
             <h2 class="section-title">Latest Blog Posts</h2>
             <div class="section-divider"></div>
             <div class="section-actions">
-                <a href="{{ '/blogs.html' | relative_url }}" class="btn btn-primary">
+                <a href="{{ '/blogs.html' | relative_url }}" class="btn btn-primary hover-bump">
                     <i class="fas fa-external-link-alt"></i>
                     View All Blogs
                 </a>
@@ -492,7 +492,7 @@ image: "/photos/export.png"
 </section>
 
 <!-- Certifications Section -->
-<section id="certifications" class="certifications-section">
+<section id="certifications" class="certifications-section" data-animate>
     <div class="container">
         <div class="section-header">
             <h2 class="section-title">Certifications</h2>
@@ -518,7 +518,7 @@ image: "/photos/export.png"
                     </div>
                 </div>
                 <div class="cert-actions">
-                    <a href="https://www.credly.com/badges/8424e14a-fb0f-4af9-9707-9644f1c0d599/linked_in_profile" class="cert-link" target="_blank" rel="noopener noreferrer" aria-label="View AWS certification">
+                    <a href="https://www.credly.com/badges/8424e14a-fb0f-4af9-9707-9644f1c0d599/linked_in_profile" class="cert-link hover-bump" target="_blank" rel="noopener noreferrer" aria-label="View AWS certification">
                         <i class="fas fa-external-link-alt"></i>
                         <span>View Credential</span>
                     </a>
@@ -543,7 +543,7 @@ image: "/photos/export.png"
                     </div>
                 </div>
                 <div class="cert-actions">
-                    <a href="https://learn.microsoft.com/en-us/users/SANKETMUCHHALA-0655/achievements/XQ6FTGFY" class="cert-link" target="_blank" rel="noopener noreferrer" aria-label="View Azure certification">
+                    <a href="https://learn.microsoft.com/en-us/users/SANKETMUCHHALA-0655/achievements/XQ6FTGFY" class="cert-link hover-bump" target="_blank" rel="noopener noreferrer" aria-label="View Azure certification">
                         <i class="fas fa-external-link-alt"></i>
                         <span>View Credential</span>
                     </a>
@@ -568,7 +568,7 @@ image: "/photos/export.png"
                     </div>
                 </div>
                 <div class="cert-actions">
-                    <a href="https://credentials.databricks.com/38f5f364-567c-463a-9139-eaeda5eced80#acc.QbhpOWCx" class="cert-link" target="_blank" rel="noopener noreferrer" aria-label="View Databricks certification">
+                    <a href="https://credentials.databricks.com/38f5f364-567c-463a-9139-eaeda5eced80#acc.QbhpOWCx" class="cert-link hover-bump" target="_blank" rel="noopener noreferrer" aria-label="View Databricks certification">
                         <i class="fas fa-external-link-alt"></i>
                         <span>View Credential</span>
                     </a>
@@ -593,7 +593,7 @@ image: "/photos/export.png"
                     </div>
                 </div>
                 <div class="cert-actions">
-                    <a href="http://coursera.org/account/accomplishments/professional-cert/V6G9C6ZEJHZF?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=pdf_header_button&utm_product=prof" class="cert-link" target="_blank" rel="noopener noreferrer" aria-label="View Google certification">
+                    <a href="http://coursera.org/account/accomplishments/professional-cert/V6G9C6ZEJHZF?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=pdf_header_button&utm_product=prof" class="cert-link hover-bump" target="_blank" rel="noopener noreferrer" aria-label="View Google certification">
                         <i class="fas fa-external-link-alt"></i>
                         <span>View Credential</span>
                     </a>
@@ -604,7 +604,7 @@ image: "/photos/export.png"
 </section>
 
 <!-- Contact Section -->
-<section id="contact" class="contact">
+<section id="contact" class="contact" data-animate>
     <div class="container">
         <div class="section-header">
             <h2 class="section-title">Get In Touch</h2>
@@ -618,11 +618,11 @@ image: "/photos/export.png"
                     or just connecting with fellow AI/ML enthusiasts. Feel free to reach out!
                 </p>
                 <div class="contact-methods">
-                    <a href="mailto:sanketmuchhala1@gmail.com" class="contact-method">
+                    <a href="mailto:sanketmuchhala1@gmail.com" class="contact-method hover-bump">
                         <i class="fas fa-envelope"></i>
                         <span>sanketmuchhala1@gmail.com</span>
                     </a>
-                    <a href="tel:+18127784451" class="contact-method">
+                    <a href="tel:+18127784451" class="contact-method hover-bump">
                         <i class="fas fa-phone"></i>
                         <span>+1 812-778-4451</span>
                     </a>
@@ -635,27 +635,27 @@ image: "/photos/export.png"
                 </p>
                 <div class="social-icons">
                     <!-- LinkedIn -->
-                    <a href="https://www.linkedin.com/in/sanketmuchhala/" class="icon" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <a href="https://www.linkedin.com/in/sanketmuchhala/" class="icon hover-glow" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                       <i class="fab fa-linkedin-in"></i>
                     </a>
                   
                     <!-- GitHub -->
-                    <a href="https://github.com/sanketmuchhala" class="icon" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <a href="https://github.com/sanketmuchhala" class="icon hover-glow" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                       <i class="fab fa-github"></i>
                     </a>
                   
                     <!-- Twitter -->
-                    <a href="https://twitter.com/sanketmuchhala" class="icon" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                    <a href="https://twitter.com/sanketmuchhala" class="icon hover-glow" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
                       <i class="fab fa-twitter"></i>
                     </a>
                   
                     <!-- Instagram -->
-                    <a href="https://www.instagram.com/sanketmuchhala/" class="icon" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <a href="https://www.instagram.com/sanketmuchhala/" class="icon hover-glow" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                       <i class="fab fa-instagram"></i>
                     </a>
                   
                     <!-- LeetCode -->
-                    <a href="https://leetcode.com/sanketmuchhala/" class="icon" target="_blank" rel="noopener noreferrer" aria-label="LeetCode">
+                    <a href="https://leetcode.com/sanketmuchhala/" class="icon hover-glow" target="_blank" rel="noopener noreferrer" aria-label="LeetCode">
                       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/leetcode/leetcode-original.svg" alt="LeetCode" />
                     </a>
                 </div>

@@ -41,6 +41,7 @@ Traditional file sharing systems lack spatial context, making it difficult to sh
 
 ## Implementation Details
 
+
 ### Location-Based Access Control
 1. Users specify geographic boundaries when uploading files (radius, polygon, or custom area)
 2. Location data is stored as PostGIS geometries for efficient spatial queries

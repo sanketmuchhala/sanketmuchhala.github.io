@@ -1,0 +1,538 @@
+/* Catch Me If You Can - Game Styles */
+
+/* Profile image tooltip bubble */
+.game-tooltip {
+    position: absolute;
+    bottom: -75px;
+    left: 45%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.9);
+    color: #f8fafc;
+    padding: 12px 18px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    white-space: nowrap;
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.3s ease;
+    z-index: 10;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    max-width: 250px;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.4;
+    animation: tooltipPulse 2s ease-in-out infinite;
+}
+
+.game-tooltip::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 60%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid rgba(0, 0, 0, 0.9);
+}
+
+.game-tooltip::after {
+    content: '';
+    position: absolute;
+    top: -11px;
+    left: 60%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 11px solid transparent;
+    border-right: 11px solid transparent;
+    border-bottom: 11px solid rgba(255, 255, 255, 0.1);
+}
+
+.profile-image:hover .game-tooltip {
+    animation: tooltipBounce 0.5s ease-out, tooltipPulse 2s ease-in-out infinite;
+}
+
+@keyframes tooltipBounce {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(10px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-3px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+/* Level up notification animation */
+@keyframes levelUpPulse {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+    20% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+    40% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    90% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.9);
+    }
+}
+
+/* Tooltip pulse animation to draw attention */
+@keyframes tooltipPulse {
+    0%, 100% {
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
+    }
+    50% {
+        opacity: 0.7;
+        transform: translateX(-50%) scale(1.05);
+    }
+}
+
+/* Bounce animation for profile image */
+@keyframes profileBounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-15px);
+    }
+    60% {
+        transform: translateY(-8px);
+    }
+}
+
+/* Rotation animation for moving target */
+@keyframes targetRotate {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+    25% {
+        transform: rotate(90deg) scale(1.05);
+    }
+    50% {
+        transform: rotate(180deg) scale(1);
+    }
+    75% {
+        transform: rotate(270deg) scale(1.05);
+    }
+    100% {
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+/* Trophy rotation animation (slower, steady) */
+@keyframes trophyRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.profile-bouncing {
+    animation: profileBounce 0.6s ease-in-out;
+}
+
+/* Game overlay */
+.catch-me-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    z-index: 9999;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.catch-me-overlay.active {
+    display: flex;
+    opacity: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Game container */
+.catch-me-game {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    cursor: crosshair;
+}
+
+/* Moving profile clone */
+.catch-me-target {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    z-index: 10000;
+    box-shadow: 0 8px 32px rgba(255, 255, 255, 0.1);
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    transform: scale(1);
+    animation: targetRotate 3s linear infinite;
+    object-fit: cover;
+}
+
+/* Caught target trophy styling */
+.catch-me-trophy {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    cursor: default !important;
+    z-index: 9999; /* Lower than active target */
+    object-fit: cover;
+    pointer-events: none !important;
+    user-select: none;
+    transition: opacity 0.3s ease;
+}
+
+.catch-me-target:hover {
+    animation-duration: 1.5s;
+    box-shadow: 0 12px 40px rgba(255, 255, 255, 0.2);
+}
+
+.catch-me-target:active {
+    animation-duration: 0.3s;
+}
+
+/* Win overlay modal */
+.catch-me-win {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(20px);
+    color: #f8fafc;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    z-index: 10002;
+}
+
+.catch-me-win h2 {
+    margin: 0 0 20px 0;
+    font-size: 28px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.catch-me-win p {
+    margin: 0 0 30px 0;
+    font-size: 16px;
+    color: #e2e8f0;
+    line-height: 1.6;
+}
+
+/* CSS Cookie */
+.cookie {
+    width: 80px;
+    height: 80px;
+    background: #d2691e;
+    border-radius: 50%;
+    margin: 20px auto;
+    position: relative;
+    box-shadow: inset 0 -10px 0 0 #8b4513,
+                0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.cookie::before,
+.cookie::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+}
+
+/* Chocolate chips */
+.cookie::before {
+    width: 12px;
+    height: 12px;
+    background: #654321;
+    top: 15px;
+    left: 20px;
+    box-shadow: 
+        25px 10px 0 #654321,
+        10px 35px 0 #654321,
+        35px 40px 0 #654321,
+        45px 15px 0 #654321,
+        20px 50px 0 #654321;
+}
+
+/* Cookie texture */
+.cookie::after {
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.2) 2px, transparent 2px),
+                radial-gradient(circle at 70% 20%, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+                radial-gradient(circle at 20% 70%, rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+}
+
+/* Action buttons */
+.catch-me-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.catch-me-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: #f8fafc;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    outline: none;
+}
+
+.catch-me-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.catch-me-btn:active {
+    transform: translateY(0);
+}
+
+.catch-me-btn.primary {
+    background: rgba(59, 130, 246, 0.8);
+    border-color: rgba(59, 130, 246, 1);
+}
+
+.catch-me-btn.primary:hover {
+    background: rgba(59, 130, 246, 0.9);
+}
+
+/* Game state indicators */
+.catch-me-instructions {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #f8fafc;
+    padding: 15px 25px;
+    border-radius: 25px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 10001;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Exit button */
+.catch-me-exit {
+    background: rgba(255, 255, 255, 0.1);
+    color: #f8fafc;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    outline: none;
+    flex-shrink: 0;
+}
+
+.catch-me-exit:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-1px);
+}
+
+.catch-me-exit:focus {
+    outline: 2px solid rgba(59, 130, 246, 0.8);
+    outline-offset: 2px;
+}
+
+/* Scorecard */
+.catch-me-scorecard {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #f8fafc;
+    padding: 15px 20px;
+    border-radius: 15px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 14px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 10001;
+    min-width: 150px;
+}
+
+.score-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.score-item:last-child {
+    margin-bottom: 0;
+}
+
+.score-label {
+    font-weight: 500;
+    opacity: 0.8;
+}
+
+.score-value {
+    font-weight: 600;
+    color: #3b82f6;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .catch-me-target {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .catch-me-trophy {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .catch-me-win {
+        padding: 30px 20px;
+        margin: 20px;
+    }
+    
+    .catch-me-win h2 {
+        font-size: 24px;
+    }
+    
+    .cookie {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .cookie::before {
+        width: 8px;
+        height: 8px;
+        box-shadow: 
+            20px 8px 0 #654321,
+            8px 28px 0 #654321,
+            28px 32px 0 #654321,
+            35px 12px 0 #654321,
+            15px 40px 0 #654321;
+    }
+    
+    .game-tooltip {
+        font-size: 12px;
+        padding: 8px 14px;
+        bottom: -55px;
+        left: 40%;
+        max-width: 200px;
+    }
+    
+    .game-tooltip::before {
+        left: 65%;
+    }
+    
+    .game-tooltip::after {
+        left: 65%;
+    }
+    
+    .catch-me-instructions {
+        font-size: 14px;
+        padding: 12px 20px;
+        top: 20px;
+        max-width: 95%;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .catch-me-exit {
+        padding: 6px 14px;
+        font-size: 13px;
+    }
+    
+    .catch-me-scorecard {
+        top: 15px;
+        right: 15px;
+        padding: 12px 15px;
+        font-size: 13px;
+        min-width: 130px;
+    }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    .catch-me-target,
+    .profile-bouncing,
+    .catch-me-overlay,
+    .catch-me-btn,
+    .game-tooltip {
+        transition: none;
+        animation: none;
+    }
+    
+    .catch-me-target {
+        animation: none;
+    }
+}
+
+/* Focus styles for keyboard navigation */
+.catch-me-btn:focus {
+    outline: 2px solid rgba(59, 130, 246, 0.8);
+    outline-offset: 2px;
+}
+
+.catch-me-target:focus {
+    outline: 3px solid rgba(59, 130, 246, 0.8);
+    outline-offset: 3px;
+}

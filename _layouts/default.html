@@ -61,6 +61,9 @@
     <!-- Load animations CSS -->
     <link rel="stylesheet" href="{{ '/animations.css' | relative_url }}">
     
+    <!-- Load catch-me game CSS -->
+    <link rel="stylesheet" href="{{ '/assets/catch-me.css' | relative_url }}">
+    
     <!-- Preload critical images -->
     <link rel="preload" href="{{ '/photography/photos/optimized/sunset-mountains.webp' | relative_url }}" as="image" type="image/webp">
     <link rel="preload" href="{{ '/photography/photos/optimized/urban-architecture.webp' | relative_url }}" as="image" type="image/webp">
@@ -283,6 +286,7 @@
     </script>
     <script src="{{ '/script.js' | relative_url }}" defer></script>
     <script src="{{ '/animations.js' | relative_url }}" defer></script>
+    <script src="{{ '/assets/catch-me.js' | relative_url }}" defer></script>
     
     <!-- Page-specific scripts -->
     {% if page.scripts %}

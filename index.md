@@ -456,7 +456,7 @@ image: "/photos/export.png"
 </section>
 
 <!-- Blog Section -->
-<section id="blog" class="blog" data-animate>
+<section id="blogs" class="blog" data-animate>
     <div class="container">
         <div class="section-header">
             <h2 class="section-title">Latest Blog Posts</h2>

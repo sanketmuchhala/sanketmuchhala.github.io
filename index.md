@@ -280,7 +280,7 @@ image: "/photos/export.png"
             <h2 class="section-title">Featured Projects</h2>
             <div class="section-divider"></div>
             <div class="section-actions">
-                <a href="{{ '/projects.html' | relative_url }}" class="btn btn-primary hover-bump">
+                <a href="{{ '/projects' | relative_url }}" class="btn btn-primary hover-bump">
                     <i class="fas fa-external-link-alt"></i>
                     View All Projects
                 </a>
@@ -380,10 +380,10 @@ image: "/photos/export.png"
             <div class="section-divider"></div>
             <p class="section-subtitle">Capturing moments, emotions, and the beauty of the world around us through the art of photography</p>
             <div class="section-actions">
-                <a href="{{ '/photography/photos/' | relative_url }}" class="btn btn-primary hover-bump">
+                <!-- <a href="{{ '/photography/photos/' | relative_url }}" class="btn btn-primary hover-bump">
                     <i class="fas fa-external-link-alt"></i>
                     View All Photos
-                </a>
+                </a> -->
             </div>
         </div>
         
@@ -462,7 +462,7 @@ image: "/photos/export.png"
             <h2 class="section-title">Latest Blog Posts</h2>
             <div class="section-divider"></div>
             <div class="section-actions">
-                <a href="{{ '/blogs.html' | relative_url }}" class="btn btn-primary hover-bump">
+                <a href="{{ '/blogs' | relative_url }}" class="btn btn-primary hover-bump">
                     <i class="fas fa-external-link-alt"></i>
                     View All Blogs
                 </a>

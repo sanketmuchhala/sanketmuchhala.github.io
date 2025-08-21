@@ -1,0 +1,315 @@
+/* Catch Me If You Can - Game Styles */
+
+/* Profile image tooltip bubble */
+.game-tooltip {
+    position: absolute;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.9);
+    color: #f8fafc;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 10;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.game-tooltip::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid rgba(0, 0, 0, 0.9);
+}
+
+.profile-image:hover .game-tooltip {
+    opacity: 1;
+    visibility: visible;
+    bottom: -50px;
+}
+
+/* Bounce animation for profile image */
+@keyframes profileBounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-15px);
+    }
+    60% {
+        transform: translateY(-8px);
+    }
+}
+
+.profile-bouncing {
+    animation: profileBounce 0.6s ease-in-out;
+}
+
+/* Game overlay */
+.catch-me-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    z-index: 9999;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.catch-me-overlay.active {
+    display: flex;
+    opacity: 1;
+}
+
+/* Game container */
+.catch-me-game {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    cursor: crosshair;
+}
+
+/* Moving profile clone */
+.catch-me-target {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    z-index: 10000;
+    box-shadow: 0 8px 32px rgba(255, 255, 255, 0.1);
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    transform: scale(1);
+}
+
+.catch-me-target:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 40px rgba(255, 255, 255, 0.2);
+}
+
+.catch-me-target:active {
+    transform: scale(0.95);
+}
+
+/* Win overlay modal */
+.catch-me-win {
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(20px);
+    color: #f8fafc;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.catch-me-win h2 {
+    margin: 0 0 20px 0;
+    font-size: 28px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.catch-me-win p {
+    margin: 0 0 30px 0;
+    font-size: 16px;
+    color: #e2e8f0;
+    line-height: 1.6;
+}
+
+/* CSS Cookie */
+.cookie {
+    width: 80px;
+    height: 80px;
+    background: #d2691e;
+    border-radius: 50%;
+    margin: 20px auto;
+    position: relative;
+    box-shadow: inset 0 -10px 0 0 #8b4513,
+                0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.cookie::before,
+.cookie::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+}
+
+/* Chocolate chips */
+.cookie::before {
+    width: 12px;
+    height: 12px;
+    background: #654321;
+    top: 15px;
+    left: 20px;
+    box-shadow: 
+        25px 10px 0 #654321,
+        10px 35px 0 #654321,
+        35px 40px 0 #654321,
+        45px 15px 0 #654321,
+        20px 50px 0 #654321;
+}
+
+/* Cookie texture */
+.cookie::after {
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.2) 2px, transparent 2px),
+                radial-gradient(circle at 70% 20%, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+                radial-gradient(circle at 20% 70%, rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+}
+
+/* Action buttons */
+.catch-me-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.catch-me-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: #f8fafc;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    outline: none;
+}
+
+.catch-me-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.catch-me-btn:active {
+    transform: translateY(0);
+}
+
+.catch-me-btn.primary {
+    background: rgba(59, 130, 246, 0.8);
+    border-color: rgba(59, 130, 246, 1);
+}
+
+.catch-me-btn.primary:hover {
+    background: rgba(59, 130, 246, 0.9);
+}
+
+/* Game state indicators */
+.catch-me-instructions {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #f8fafc;
+    padding: 15px 25px;
+    border-radius: 25px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 10001;
+    text-align: center;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .catch-me-target {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .catch-me-win {
+        padding: 30px 20px;
+        margin: 20px;
+    }
+    
+    .catch-me-win h2 {
+        font-size: 24px;
+    }
+    
+    .cookie {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .cookie::before {
+        width: 8px;
+        height: 8px;
+        box-shadow: 
+            20px 8px 0 #654321,
+            8px 28px 0 #654321,
+            28px 32px 0 #654321,
+            35px 12px 0 #654321,
+            15px 40px 0 #654321;
+    }
+    
+    .game-tooltip {
+        font-size: 12px;
+        padding: 6px 12px;
+        bottom: -45px;
+    }
+    
+    .catch-me-instructions {
+        font-size: 14px;
+        padding: 12px 20px;
+        top: 20px;
+        max-width: 90%;
+    }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    .catch-me-target,
+    .profile-bouncing,
+    .catch-me-overlay,
+    .catch-me-btn {
+        transition: none;
+        animation: none;
+    }
+}
+
+/* Focus styles for keyboard navigation */
+.catch-me-btn:focus {
+    outline: 2px solid rgba(59, 130, 246, 0.8);
+    outline-offset: 2px;
+}
+
+.catch-me-target:focus {
+    outline: 3px solid rgba(59, 130, 246, 0.8);
+    outline-offset: 3px;
+}

@@ -434,79 +434,207 @@
     color: #3b82f6;
 }
 
-/* Responsive design */
+/* Responsive design - Mobile phone optimizations */
 @media (max-width: 768px) {
+    /* Remove crosshair cursor on mobile */
+    .catch-me-game {
+        cursor: default;
+    }
+    
+    /* Larger targets for better touch accuracy */
     .catch-me-target {
-        width: 100px;
-        height: 100px;
+        width: 110px;
+        height: 110px;
+        border-width: 2px;
     }
     
     .catch-me-trophy {
-        width: 100px;
-        height: 100px;
+        width: 110px;
+        height: 110px;
     }
     
     .catch-me-win {
-        padding: 30px 20px;
-        margin: 20px;
+        padding: 25px 15px;
+        margin: 10px;
+        max-width: 95%;
+        width: auto;
     }
     
     .catch-me-win h2 {
-        font-size: 24px;
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+    
+    .catch-me-win p {
+        font-size: 14px;
+        margin-bottom: 20px;
     }
     
     .cookie {
-        width: 60px;
-        height: 60px;
+        width: 55px;
+        height: 55px;
+        margin: 15px auto;
     }
     
     .cookie::before {
-        width: 8px;
-        height: 8px;
+        width: 6px;
+        height: 6px;
+        top: 10px;
+        left: 12px;
         box-shadow: 
-            20px 8px 0 #654321,
-            8px 28px 0 #654321,
-            28px 32px 0 #654321,
-            35px 12px 0 #654321,
-            15px 40px 0 #654321;
+            16px 6px 0 #654321,
+            6px 20px 0 #654321,
+            20px 22px 0 #654321,
+            26px 8px 0 #654321,
+            12px 28px 0 #654321;
     }
     
     .game-tooltip {
-        font-size: 12px;
-        padding: 8px 14px;
-        bottom: -55px;
-        left: 40%;
-        max-width: 200px;
+        font-size: 11px;
+        padding: 6px 12px;
+        bottom: -45px;
+        left: 35%;
+        max-width: 180px;
+        border-radius: 18px;
     }
     
     .game-tooltip::before {
-        left: 65%;
+        left: 70%;
+        border-left-width: 7px;
+        border-right-width: 7px;
+        border-bottom-width: 7px;
     }
     
     .game-tooltip::after {
-        left: 65%;
+        left: 70%;
+        border-left-width: 8px;
+        border-right-width: 8px;
+        border-bottom-width: 8px;
     }
     
     .catch-me-instructions {
-        font-size: 14px;
-        padding: 12px 20px;
-        top: 20px;
-        max-width: 95%;
+        font-size: 13px;
+        padding: 8px 15px;
+        top: 10px;
+        max-width: 98%;
         flex-direction: column;
-        gap: 10px;
+        gap: 8px;
+        border-radius: 18px;
     }
     
     .catch-me-exit {
-        padding: 6px 14px;
-        font-size: 13px;
+        padding: 4px 12px;
+        font-size: 12px;
+        border-radius: 15px;
+        min-height: 32px;
     }
     
     .catch-me-scorecard {
-        top: 15px;
-        right: 15px;
-        padding: 12px 15px;
+        top: 8px;
+        right: 8px;
+        padding: 8px 10px;
+        font-size: 11px;
+        min-width: 100px;
+        border-radius: 10px;
+    }
+    
+    .score-item {
+        margin-bottom: 4px;
+    }
+    
+    /* Touch-optimized buttons */
+    .catch-me-actions {
+        gap: 8px;
+        flex-direction: column;
+        margin-top: 15px;
+    }
+    
+    .catch-me-btn {
+        padding: 12px 20px;
+        width: 100%;
+        font-size: 14px;
+        border-radius: 20px;
+        min-height: 44px; /* iOS recommended touch target size */
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+    /* Better touch targets */
+    .catch-me-target {
+        transform: scale(1.05); /* Slightly larger for touch */
+        transition-duration: 0.3s; /* Faster transitions */
+    }
+    
+    .catch-me-target:active {
+        transform: scale(1.15); /* Visual feedback */
+        animation-duration: 0.1s;
+    }
+    
+    /* Remove hover effects that don't work on touch */
+    .catch-me-btn:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.2);
+        transform: none;
+        box-shadow: none;
+    }
+    
+    .catch-me-btn:active {
+        transform: scale(0.95); /* Touch feedback */
+        transition-duration: 0.1s;
+    }
+    
+    .catch-me-exit:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.2);
+        transform: none;
+    }
+}
+
+/* Small phone screens */
+@media (max-width: 480px) {
+    .catch-me-target {
+        width: 115px;
+        height: 115px;
+    }
+    
+    .catch-me-trophy {
+        width: 115px;
+        height: 115px;
+    }
+    
+    .catch-me-win {
+        padding: 20px 12px;
+        margin: 8px;
+        width: 96%;
+    }
+    
+    .catch-me-win h2 {
+        font-size: 20px;
+    }
+    
+    .catch-me-win p {
         font-size: 13px;
-        min-width: 130px;
+    }
+    
+    .cookie {
+        width: 45px;
+        height: 45px;
+        margin: 12px auto;
+    }
+    
+    .catch-me-instructions {
+        padding: 6px 12px;
+        font-size: 12px;
+        top: 5px;
+    }
+    
+    .catch-me-scorecard {
+        top: 5px;
+        right: 5px;
+        padding: 6px 8px;
+        font-size: 10px;
+        min-width: 90px;
     }
 }
 

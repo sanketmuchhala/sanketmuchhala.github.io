@@ -17,9 +17,9 @@ class CatchMeGame {
         // Game progression system
         this.catches = 0;
         this.level = 1;
-        this.catchesPerLevel = 3; // Now 3 catches per level
+        this.catchesPerLevel = 2; // 2 catches per level (temporary for testing)
         this.scorecard = null;
-        this.maxLevel = 10; // End game at 10 levels
+        this.maxLevel = 2; // End game at 2 levels (temporary for testing)
         this.caughtTargets = []; // Array to store caught targets
         
         // Pokemon data for the game

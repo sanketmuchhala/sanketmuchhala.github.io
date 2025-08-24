@@ -24,21 +24,21 @@ class CatchMeGame {
         
         // Pokemon data for the game
         this.pokemon = [
-            { name: 'Pikachu', image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png', sound: 'Pika pi!' },
-            { name: 'Charmander', image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png', sound: 'Char char!' },
-            { name: 'Squirtle', image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png', sound: 'Squirtle squirt!' },
-            { name: 'Bulbasaur', image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png', sound: 'Bulba bulba!' },
-            { name: 'Eevee', image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/133.png', sound: 'Eevee!' },
-            { name: 'Snorlax', image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/143.png', sound: 'Snorlax!' },
-            { name: 'Mewtwo', image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/150.png', sound: 'Mewtwo!' },
-            { name: 'Mew', image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/151.png', sound: 'Mew mew!' },
-            { name: 'Charizard', image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png', sound: 'Charizard!' },
-            { name: 'Blastoise', image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/9.png', sound: 'Blastoise!' },
-            { name: 'Venusaur', image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png', sound: 'Venusaur!' },
-            { name: 'Jigglypuff', image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/39.png', sound: 'Jiggly puff!' },
-            { name: 'Psyduck', image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/54.png', sound: 'Psy duck!' },
-            { name: 'Machamp', image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/68.png', sound: 'Machamp!' },
-            { name: 'Gengar', image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/94.png', sound: 'Gengar!' }
+            { name: 'Pikachu', image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png' },
+            { name: 'Charmander', image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png' },
+            { name: 'Squirtle', image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png' },
+            { name: 'Bulbasaur', image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png' },
+            { name: 'Eevee', image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/133.png' },
+            { name: 'Snorlax', image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/143.png' },
+            { name: 'Mewtwo', image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/150.png' },
+            { name: 'Mew', image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/151.png' },
+            { name: 'Charizard', image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png' },
+            { name: 'Blastoise', image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/9.png' },
+            { name: 'Venusaur', image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png' },
+            { name: 'Jigglypuff', image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/39.png' },
+            { name: 'Psyduck', image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/54.png' },
+            { name: 'Machamp', image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/68.png' },
+            { name: 'Gengar', image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/94.png' }
         ];
         this.currentPokemonIndex = 0;
         
@@ -365,45 +365,84 @@ class CatchMeGame {
             right: 0;
         `;
         
-        // Add moving behavior to No button
+        // Add enhanced moving behavior to No button
         let moveTimeout;
-        const moveNoButton = () => {
+        let panicTimeout;
+        
+        const moveNoButton = (isPanic = false) => {
             const container = actions.getBoundingClientRect();
             const button = noBtn.getBoundingClientRect();
             
-            // Calculate new position within container bounds
-            const maxX = container.width - button.width - 20;
-            const maxY = 40; // Keep within the actions container height
+            // Calculate safe boundaries within the modal
+            const maxX = Math.min(350, container.width - button.width - 20);
+            const maxY = 50; // Keep within reasonable bounds
             
-            const newX = Math.random() * Math.max(0, maxX);
-            const newY = Math.random() * maxY - 20;
+            // More dramatic movement when panicking
+            const moveDistance = isPanic ? 80 : 50;
+            const randomX = (Math.random() - 0.5) * moveDistance;
+            const randomY = (Math.random() - 0.5) * 30;
+            
+            // Ensure button stays within bounds
+            const currentTransform = noBtn.style.transform || 'translate(0px, 0px)';
+            const currentX = parseFloat(currentTransform.match(/translateX?\((-?\d+(?:\.\d+)?)px/) || [0, 0])[1];
+            const currentY = parseFloat(currentTransform.match(/translateY?\((-?\d+(?:\.\d+)?)px/) || [0, 0])[1];
+            
+            const newX = Math.max(-maxX/2, Math.min(maxX/2, currentX + randomX));
+            const newY = Math.max(-20, Math.min(20, currentY + randomY));
             
             noBtn.style.transform = `translate(${newX}px, ${newY}px)`;
+            
+            // Add panic state for more dramatic effect
+            if (isPanic) {
+                noBtn.classList.add('panic', 'sweating');
+                clearTimeout(panicTimeout);
+                panicTimeout = setTimeout(() => {
+                    noBtn.classList.remove('panic', 'sweating');
+                }, 1000);
+            }
         };
         
+        // Enhanced event listeners for No button
         noBtn.addEventListener('mouseenter', () => {
-            moveNoButton();
+            moveNoButton(true); // Panic when mouse gets close
         });
         
         noBtn.addEventListener('focus', () => {
-            moveNoButton();
+            moveNoButton(true);
         });
         
-        // Also move on attempted click
+        // Prevent clicking and move dramatically
         noBtn.addEventListener('mousedown', (e) => {
             e.preventDefault();
-            moveNoButton();
+            moveNoButton(true);
+            // Add extra movement on click attempts
+            setTimeout(() => moveNoButton(true), 200);
         });
         
-        // Move periodically to make it more challenging
+        // Also prevent right-click attempts
+        noBtn.addEventListener('contextmenu', (e) => {
+            e.preventDefault();
+            moveNoButton(true);
+        });
+        
+        // Move more frequently and add random movements
         const startMovingNo = () => {
-            moveTimeout = setInterval(moveNoButton, 2000);
+            moveTimeout = setInterval(() => {
+                // Random chance for spontaneous movement
+                if (Math.random() < 0.3) {
+                    moveNoButton();
+                }
+            }, 1500);
         };
         
         const stopMovingNo = () => {
             if (moveTimeout) {
                 clearInterval(moveTimeout);
                 moveTimeout = null;
+            }
+            if (panicTimeout) {
+                clearTimeout(panicTimeout);
+                panicTimeout = null;
             }
         };
         
@@ -662,7 +701,7 @@ class CatchMeGame {
                 You caught ${pokemonData.name}!
             </div>
             <div style="font-size: 14px; font-style: italic; opacity: 0.9;">
-                "${pokemonData.sound}"
+                Added to your collection!
             </div>
         `;
         caughtDisplay.style.cssText = `

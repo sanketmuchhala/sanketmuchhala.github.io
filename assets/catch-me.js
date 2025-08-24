@@ -19,7 +19,7 @@ class CatchMeGame {
         this.level = 1;
         this.catchesPerLevel = 3; // Now 3 catches per level
         this.scorecard = null;
-        this.maxLevel = 5; // End game at 5 levels
+        this.maxLevel = 10; // End game at 10 levels
         this.caughtTargets = []; // Array to store caught targets
         
         // Pokemon data for the game
@@ -161,6 +161,9 @@ class CatchMeGame {
         // Win modal
         this.createWinModal();
         
+        // End game modal
+        this.createEndGameModal();
+        
         // Close on Escape key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && this.isGameActive) {
@@ -294,6 +297,189 @@ class CatchMeGame {
         this.winModal.appendChild(actions);
         
         this.overlay.appendChild(this.winModal);
+    }
+    
+    createEndGameModal() {
+        this.endGameModal = document.createElement('div');
+        this.endGameModal.className = 'catch-me-end-game';
+        this.endGameModal.setAttribute('role', 'dialog');
+        this.endGameModal.setAttribute('aria-labelledby', 'end-game-title');
+        this.endGameModal.style.display = 'none';
+        
+        const title = document.createElement('h2');
+        title.id = 'end-game-title';
+        title.textContent = 'You caught me!';
+        
+        const message = document.createElement('p');
+        message.textContent = 'Did you like the game?';
+        message.style.fontSize = '18px';
+        message.style.marginBottom = '30px';
+        
+        const actions = document.createElement('div');
+        actions.className = 'end-game-actions';
+        actions.style.cssText = `
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            height: 60px;
+        `;
+        
+        const yesBtn = document.createElement('button');
+        yesBtn.className = 'catch-me-btn primary';
+        yesBtn.textContent = 'Yes';
+        yesBtn.style.cssText = `
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 8px;
+            border: none;
+            background: #10b981;
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        `;
+        yesBtn.addEventListener('mouseenter', () => {
+            yesBtn.style.background = '#059669';
+        });
+        yesBtn.addEventListener('mouseleave', () => {
+            yesBtn.style.background = '#10b981';
+        });
+        yesBtn.addEventListener('click', () => this.handleEndGameResponse(true));
+        
+        const noBtn = document.createElement('button');
+        noBtn.className = 'catch-me-btn moving-no';
+        noBtn.textContent = 'No';
+        noBtn.style.cssText = `
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 8px;
+            border: 2px solid #ef4444;
+            background: transparent;
+            color: #ef4444;
+            cursor: pointer;
+            position: absolute;
+            transition: all 0.3s ease;
+            right: 0;
+        `;
+        
+        // Add moving behavior to No button
+        let moveTimeout;
+        const moveNoButton = () => {
+            const container = actions.getBoundingClientRect();
+            const button = noBtn.getBoundingClientRect();
+            
+            // Calculate new position within container bounds
+            const maxX = container.width - button.width - 20;
+            const maxY = 40; // Keep within the actions container height
+            
+            const newX = Math.random() * Math.max(0, maxX);
+            const newY = Math.random() * maxY - 20;
+            
+            noBtn.style.transform = `translate(${newX}px, ${newY}px)`;
+        };
+        
+        noBtn.addEventListener('mouseenter', () => {
+            moveNoButton();
+        });
+        
+        noBtn.addEventListener('focus', () => {
+            moveNoButton();
+        });
+        
+        // Also move on attempted click
+        noBtn.addEventListener('mousedown', (e) => {
+            e.preventDefault();
+            moveNoButton();
+        });
+        
+        // Move periodically to make it more challenging
+        const startMovingNo = () => {
+            moveTimeout = setInterval(moveNoButton, 2000);
+        };
+        
+        const stopMovingNo = () => {
+            if (moveTimeout) {
+                clearInterval(moveTimeout);
+                moveTimeout = null;
+            }
+        };
+        
+        // Store references for cleanup
+        this.endGameModal.startMovingNo = startMovingNo;
+        this.endGameModal.stopMovingNo = stopMovingNo;
+        
+        actions.appendChild(yesBtn);
+        actions.appendChild(noBtn);
+        
+        this.endGameModal.appendChild(title);
+        this.endGameModal.appendChild(message);
+        this.endGameModal.appendChild(actions);
+        
+        this.overlay.appendChild(this.endGameModal);
+    }
+    
+    handleEndGameResponse(liked) {
+        if (liked) {
+            // Hide end game modal and show a thank you message
+            this.endGameModal.style.display = 'none';
+            this.endGameModal.stopMovingNo();
+            
+            // Show thank you message
+            const thankYou = document.createElement('div');
+            thankYou.innerHTML = `
+                <h2>Thank you!</h2>
+                <p>I'm glad you enjoyed the Pokemon game! 🎉</p>
+                <button class="catch-me-btn primary" onclick="this.parentElement.remove(); this.closest('.catch-me-overlay').classList.remove('active');">
+                    Close
+                </button>
+            `;
+            thankYou.style.cssText = `
+                background: white;
+                padding: 30px;
+                border-radius: 15px;
+                text-align: center;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 10005;
+                max-width: 400px;
+                width: 90%;
+            `;
+            thankYou.querySelector('h2').style.color = '#10b981';
+            thankYou.querySelector('h2').style.marginBottom = '15px';
+            thankYou.querySelector('p').style.fontSize = '16px';
+            thankYou.querySelector('p').style.marginBottom = '20px';
+            
+            document.body.appendChild(thankYou);
+            
+            // End the game after showing thank you
+            setTimeout(() => {
+                this.endGame();
+            }, 100);
+        }
+        // If they don't like it (No button), the button just keeps moving and they can't click it!
+    }
+    
+    showEndGameModal() {
+        // Hide the regular win modal
+        this.winModal.style.display = 'none';
+        
+        // Show the end game modal
+        this.endGameModal.style.display = 'block';
+        
+        // Start the moving No button behavior
+        this.endGameModal.startMovingNo();
+        
+        // Focus on the Yes button
+        const yesBtn = this.endGameModal.querySelector('.catch-me-btn.primary');
+        if (yesBtn) {
+            setTimeout(() => yesBtn.focus(), 100);
+        }
     }
     
     convertTargetToTrophy(target) {
@@ -549,7 +735,7 @@ class CatchMeGame {
             const remaining = currentLevelProgress === 0 && this.catches > 0 ? this.catchesPerLevel : currentLevelProgress;
             
             if (this.level >= this.maxLevel) {
-                statsLine.textContent = `Amazing! You completed all 5 levels with ${this.catches} catches! Time for a latte!`;
+                statsLine.textContent = `Amazing! You completed all 10 levels with ${this.catches} catches! Time for a latte!`;
             } else if (this.catches % this.catchesPerLevel === 0) {
                 statsLine.textContent = `Level ${this.level}! You're getting faster! Keep going!`;
             } else {
@@ -563,10 +749,9 @@ class CatchMeGame {
         const funnyLine = document.getElementById('win-funny-line');
         
         if (this.level >= this.maxLevel) {
-            // Final level - show pokedex
-            if (pokeball) pokeball.style.display = 'none';
-            if (pokedex) pokedex.style.display = 'block';
-            if (funnyLine) funnyLine.textContent = 'Congratulations! You\'ve completed your Pokedex with all 15 Pokemon!';
+            // Final level - show end game modal instead of win modal
+            this.showEndGameModal();
+            return;
         } else {
             // Regular levels - show pokeball
             if (pokeball) pokeball.style.display = 'block';
@@ -734,6 +919,13 @@ class CatchMeGame {
         // Don't reset catches/level here - let them persist until new game starts
         
         this.winModal.style.display = 'none';
+        
+        // Also hide end game modal if it's showing
+        if (this.endGameModal) {
+            this.endGameModal.style.display = 'none';
+            this.endGameModal.stopMovingNo();
+        }
+        
         this.overlay.classList.remove('active');
         
         // Show tooltip again when game ends

@@ -17,9 +17,9 @@ class CatchMeGame {
         // Game progression system
         this.catches = 0;
         this.level = 1;
-        this.catchesPerLevel = 2; // 2 catches per level (temporary for testing)
+        this.catchesPerLevel = 3; // 3 catches per level
         this.scorecard = null;
-        this.maxLevel = 2; // End game at 2 levels (temporary for testing)
+        this.maxLevel = 10; // End game at 10 levels
         this.caughtTargets = []; // Array to store caught targets
         
         // Pokemon data for the game
@@ -146,7 +146,7 @@ class CatchMeGame {
         exitButton.className = 'catch-me-exit';
         exitButton.textContent = 'Exit Game';
         exitButton.setAttribute('aria-label', 'Exit the catch me game');
-        exitButton.addEventListener('click', () => this.endGame());
+        exitButton.addEventListener('click', () => this.showEndGameModal());
         
         instructions.appendChild(instructionText);
         instructions.appendChild(exitButton);
@@ -505,8 +505,10 @@ class CatchMeGame {
     }
     
     showEndGameModal() {
-        // Hide the regular win modal
-        this.winModal.style.display = 'none';
+        // Hide the regular win modal if it's showing
+        if (this.winModal) {
+            this.winModal.style.display = 'none';
+        }
         
         // Show the end game modal
         this.endGameModal.style.display = 'block';
@@ -774,7 +776,7 @@ class CatchMeGame {
             const remaining = currentLevelProgress === 0 && this.catches > 0 ? this.catchesPerLevel : currentLevelProgress;
             
             if (this.level >= this.maxLevel) {
-                statsLine.textContent = `Amazing! You completed all 10 levels with ${this.catches} catches! Time for a latte!`;
+                statsLine.textContent = `Amazing! You completed all ${this.maxLevel} levels with ${this.catches} catches! Time for a latte!`;
             } else if (this.catches % this.catchesPerLevel === 0) {
                 statsLine.textContent = `Level ${this.level}! You're getting faster! Keep going!`;
             } else {

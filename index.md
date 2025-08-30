@@ -67,10 +67,7 @@ image: "/photos/export.png"
                     <div class="education-item">
                         <div class="education-logo">
                             <a href="https://www.indiana.edu/" target="_blank" rel="noopener noreferrer" aria-label="Indiana University">
-                                <picture>
-                                    <source srcset="{{ '/photos/1631332394799.webp' | relative_url }}" type="image/webp">
-                                    <img src="{{ '/photos/1631332394799.jpeg' | relative_url }}" alt="Indiana University Logo" height="40" style="background-color: #7d120d; padding: 6px; border-radius: 8px;" loading="lazy" decoding="async">
-                                </picture>
+                                <img src="{{ '/photos/iulogo.jpeg' | relative_url }}" alt="Indiana University Logo" height="40" style="background-color: #7d120d; padding: 6px; border-radius: 8px;" loading="lazy" decoding="async">
                             </a>
                         </div>
                         <div class="education-content">
@@ -81,10 +78,7 @@ image: "/photos/export.png"
                     <div class="education-item">
                         <div class="education-logo">
                             <a href="https://www.tcetmumbai.in/" target="_blank" rel="noopener noreferrer" aria-label="Thakur College">
-                                <picture>
-                                    <source srcset="{{ '/photos/download.webp' | relative_url }}" type="image/webp">
-                                    <img src="{{ '/photos/download.jpeg' | relative_url }}" alt="Thakur College Logo" height="40" style="background-color: #141355; padding: 6px; border-radius: 8px;" loading="lazy" decoding="async">
-                                </picture>
+                                <img src="{{ '/photos/download.jpeg' | relative_url }}" alt="Thakur College Logo" height="40" style="background-color: #141355; padding: 6px; border-radius: 8px;" loading="lazy" decoding="async">
                             </a>
                         </div>
                         <div class="education-content">
@@ -224,10 +218,7 @@ image: "/photos/export.png"
                     <div class="timeline-header">
                         <div class="company-logo">
                             <a href="https://www.indiana.edu/" target="_blank" rel="noopener noreferrer" aria-label="Indiana University" style="display: inline-block; width: 50px; height: 50px; background-color: #7d120d; border-radius: 12px; padding: 6px; box-sizing: border-box;">
-                                <picture>
-                                    <source srcset="{{ '/photos/1631332394799.webp' | relative_url }}" type="image/webp">
-                                    <img src="{{ '/photos/1631332394799.jpeg' | relative_url }}" alt="Indiana University Logo" style="width: 100%; height: 100%; object-fit: contain; border-radius: 6px;" loading="lazy" decoding="async">
-                                </picture>
+                                <img src="{{ '/photos/iulogo.jpeg' | relative_url }}" alt="Indiana University Logo" style="width: 100%; height: 100%; object-fit: contain; border-radius: 6px;" loading="lazy" decoding="async">
                             </a>                                
                         </div>
                         <div class="timeline-info">

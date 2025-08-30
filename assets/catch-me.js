@@ -226,18 +226,15 @@ class CatchMeGame {
         funnyLine.style.opacity = '0.8';
         funnyLine.style.marginTop = '10px';
         
-        // Add profile image for friendly look
-        const peekabooImg = document.createElement('img');
-        peekabooImg.src = '/photos/peekaboo.jpg';
-        peekabooImg.alt = 'Peekaboo celebration image';
-        peekabooImg.style.cssText = `
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            margin: 10px auto;
+        // Add celebration emoji instead of missing peekaboo image
+        const celebrationEmoji = document.createElement('div');
+        celebrationEmoji.textContent = '🎉';
+        celebrationEmoji.style.cssText = `
+            font-size: 64px;
+            margin: 15px auto;
             display: block;
-            object-fit: cover;
-            border: 2px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+            animation: bounce 2s infinite;
         `;
         
         // CSS Pokeball
@@ -290,7 +287,7 @@ class CatchMeGame {
         this.winModal.appendChild(title);
         this.winModal.appendChild(message);
         this.winModal.appendChild(statsLine);
-        this.winModal.appendChild(peekabooImg);
+        this.winModal.appendChild(celebrationEmoji);
         this.winModal.appendChild(funnyLine);
         this.winModal.appendChild(pokeball);
         this.winModal.appendChild(pokedex);
@@ -308,12 +305,18 @@ class CatchMeGame {
         
         const title = document.createElement('h2');
         title.id = 'end-game-title';
-        title.textContent = 'You caught me!';
+        title.textContent = 'Thanks for playing! 🎮';
         
         const message = document.createElement('p');
-        message.textContent = 'Did you like the game?';
+        message.textContent = 'How was your Pokemon adventure?';
         message.style.fontSize = '18px';
-        message.style.marginBottom = '30px';
+        message.style.marginBottom = '20px';
+        
+        const subtitle = document.createElement('p');
+        subtitle.textContent = 'Did you enjoy catching all those Pokemon?';
+        subtitle.style.fontSize = '16px';
+        subtitle.style.opacity = '0.8';
+        subtitle.style.marginBottom = '30px';
         
         const actions = document.createElement('div');
         actions.className = 'end-game-actions';
@@ -350,7 +353,7 @@ class CatchMeGame {
         
         const noBtn = document.createElement('button');
         noBtn.className = 'catch-me-btn moving-no';
-        noBtn.textContent = 'No';
+        noBtn.textContent = 'Not really';
         noBtn.style.cssText = `
             padding: 12px 24px;
             font-size: 16px;
@@ -365,84 +368,59 @@ class CatchMeGame {
             right: 0;
         `;
         
-        // Add enhanced moving behavior to No button
+        // Simplified moving behavior - just a little playful movement
         let moveTimeout;
-        let panicTimeout;
+        let moveCount = 0;
+        const maxMoves = 3; // Limit to 3 moves before it stops being playful
         
-        const moveNoButton = (isPanic = false) => {
+        const moveNoButton = () => {
+            if (moveCount >= maxMoves) {
+                // After 3 moves, make it clickable and change text
+                noBtn.textContent = 'Ok fine, it was fun! 😂';
+                noBtn.style.position = 'relative';
+                noBtn.style.transform = 'none';
+                noBtn.onclick = () => this.handleEndGameResponse(true);
+                return;
+            }
+            
             const container = actions.getBoundingClientRect();
-            const button = noBtn.getBoundingClientRect();
+            const maxX = Math.min(200, container.width - 120);
+            const randomX = (Math.random() - 0.5) * maxX;
+            const randomY = (Math.random() - 0.5) * 20;
             
-            // Calculate safe boundaries within the modal
-            const maxX = Math.min(350, container.width - button.width - 20);
-            const maxY = 50; // Keep within reasonable bounds
+            noBtn.style.transform = `translate(${randomX}px, ${randomY}px)`;
+            moveCount++;
             
-            // More dramatic movement when panicking
-            const moveDistance = isPanic ? 80 : 50;
-            const randomX = (Math.random() - 0.5) * moveDistance;
-            const randomY = (Math.random() - 0.5) * 30;
-            
-            // Ensure button stays within bounds
-            const currentTransform = noBtn.style.transform || 'translate(0px, 0px)';
-            const currentX = parseFloat(currentTransform.match(/translateX?\((-?\d+(?:\.\d+)?)px/) || [0, 0])[1];
-            const currentY = parseFloat(currentTransform.match(/translateY?\((-?\d+(?:\.\d+)?)px/) || [0, 0])[1];
-            
-            const newX = Math.max(-maxX/2, Math.min(maxX/2, currentX + randomX));
-            const newY = Math.max(-20, Math.min(20, currentY + randomY));
-            
-            noBtn.style.transform = `translate(${newX}px, ${newY}px)`;
-            
-            // Add panic state for more dramatic effect
-            if (isPanic) {
-                noBtn.classList.add('panic', 'sweating');
-                clearTimeout(panicTimeout);
-                panicTimeout = setTimeout(() => {
-                    noBtn.classList.remove('panic', 'sweating');
-                }, 1000);
+            // Change text as it moves
+            const responses = ['Not really', 'Wait, maybe...', 'Actually... 🤔'];
+            if (moveCount < responses.length) {
+                noBtn.textContent = responses[moveCount];
             }
         };
         
-        // Enhanced event listeners for No button
-        noBtn.addEventListener('mouseenter', () => {
-            moveNoButton(true); // Panic when mouse gets close
+        // Simple event listeners - just on hover/focus
+        noBtn.addEventListener('mouseenter', moveNoButton);
+        noBtn.addEventListener('focus', moveNoButton);
+        
+        // Prevent initial clicking
+        noBtn.addEventListener('click', (e) => {
+            if (moveCount < maxMoves) {
+                e.preventDefault();
+                moveNoButton();
+            }
         });
         
-        noBtn.addEventListener('focus', () => {
-            moveNoButton(true);
-        });
-        
-        // Prevent clicking and move dramatically
-        noBtn.addEventListener('mousedown', (e) => {
-            e.preventDefault();
-            moveNoButton(true);
-            // Add extra movement on click attempts
-            setTimeout(() => moveNoButton(true), 200);
-        });
-        
-        // Also prevent right-click attempts
-        noBtn.addEventListener('contextmenu', (e) => {
-            e.preventDefault();
-            moveNoButton(true);
-        });
-        
-        // Move more frequently and add random movements
         const startMovingNo = () => {
-            moveTimeout = setInterval(() => {
-                // Random chance for spontaneous movement
-                if (Math.random() < 0.3) {
-                    moveNoButton();
-                }
-            }, 1500);
+            moveCount = 0; // Reset move count
+            noBtn.textContent = 'Not really';
+            noBtn.style.position = 'absolute';
+            noBtn.onclick = null;
         };
         
         const stopMovingNo = () => {
             if (moveTimeout) {
                 clearInterval(moveTimeout);
                 moveTimeout = null;
-            }
-            if (panicTimeout) {
-                clearTimeout(panicTimeout);
-                panicTimeout = null;
             }
         };
         
@@ -455,6 +433,7 @@ class CatchMeGame {
         
         this.endGameModal.appendChild(title);
         this.endGameModal.appendChild(message);
+        this.endGameModal.appendChild(subtitle);
         this.endGameModal.appendChild(actions);
         
         this.overlay.appendChild(this.endGameModal);
@@ -469,18 +448,21 @@ class CatchMeGame {
             // Show thank you message
             const thankYou = document.createElement('div');
             thankYou.innerHTML = `
-                <h2>Thank you!</h2>
-                <p>I'm glad you enjoyed the Pokemon game! 🎉</p>
-                <button class="catch-me-btn primary" onclick="this.parentElement.remove(); this.closest('.catch-me-overlay').classList.remove('active');">
+                <h2 style="color: #ffffff; margin-bottom: 15px;">Thank you!</h2>
+                <p style="color: #f8fafc; font-size: 16px; margin-bottom: 20px;">I'm glad you enjoyed the Pokemon game! 🎉</p>
+                <button class="catch-me-btn primary" style="background: rgba(255, 255, 255, 0.9); color: #000000; border: 2px solid rgba(255, 255, 255, 1);" onclick="this.parentElement.remove(); this.closest('.catch-me-overlay').classList.remove('active');">
                     Close
                 </button>
             `;
             thankYou.style.cssText = `
-                background: white;
+                background: rgba(0, 0, 0, 0.95) !important;
+                backdrop-filter: blur(20px);
+                color: #f8fafc !important;
                 padding: 30px;
                 border-radius: 15px;
                 text-align: center;
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+                border: 2px solid rgba(255, 255, 255, 0.2);
+                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
                 position: fixed;
                 top: 50%;
                 left: 50%;
@@ -488,11 +470,8 @@ class CatchMeGame {
                 z-index: 10005;
                 max-width: 400px;
                 width: 90%;
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             `;
-            thankYou.querySelector('h2').style.color = '#10b981';
-            thankYou.querySelector('h2').style.marginBottom = '15px';
-            thankYou.querySelector('p').style.fontSize = '16px';
-            thankYou.querySelector('p').style.marginBottom = '20px';
             
             document.body.appendChild(thankYou);
             
@@ -502,6 +481,52 @@ class CatchMeGame {
             }, 100);
         }
         // If they don't like it (No button), the button just keeps moving and they can't click it!
+    }
+    
+    showFinalCompletion() {
+        // Update win message for final completion
+        const message = document.getElementById('win-message');
+        const statsLine = document.getElementById('win-stats');
+        const title = document.getElementById('win-title');
+        
+        if (title) {
+            title.textContent = 'Congratulations! 🎉';
+        }
+        
+        if (message) {
+            message.textContent = 'You completed all levels! You are a true Pokemon Master!';
+        }
+        
+        if (statsLine) {
+            statsLine.textContent = `Amazing! You completed all ${this.maxLevel} levels with ${this.catches} total catches!`;
+        }
+        
+        // Show the Pokedex as final reward
+        const pokeball = this.winModal.querySelector('.pokeball');
+        const pokedex = this.winModal.querySelector('.pokedex');
+        const funnyLine = document.getElementById('win-funny-line');
+        
+        if (pokeball) pokeball.style.display = 'none';
+        if (pokedex) pokedex.style.display = 'block';
+        if (funnyLine) funnyLine.textContent = 'You earned the complete Pokedex! All Pokemon caught!';
+        
+        // Update button text for final completion
+        const playAgainBtn = this.winModal.querySelector('.catch-me-btn.primary');
+        const closeBtn = this.winModal.querySelector('.catch-me-btn:not(.primary)');
+        
+        if (playAgainBtn && closeBtn) {
+            playAgainBtn.textContent = 'Play Again';
+            closeBtn.textContent = 'Ask me about the game';
+            
+            playAgainBtn.onclick = () => {
+                this.restartGame();
+            };
+            closeBtn.onclick = () => {
+                this.showEndGameModal();
+            };
+        }
+        
+        this.winModal.style.display = 'block';
     }
     
     showEndGameModal() {
@@ -790,8 +815,8 @@ class CatchMeGame {
         const funnyLine = document.getElementById('win-funny-line');
         
         if (this.level >= this.maxLevel) {
-            // Final level - show end game modal instead of win modal
-            this.showEndGameModal();
+            // Final level - show completion celebration
+            this.showFinalCompletion();
             return;
         } else {
             // Regular levels - show pokeball

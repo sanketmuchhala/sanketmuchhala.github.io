@@ -4,11 +4,9 @@ title: "AI Job Application Agent with DeepSeek Integration"
 description: "An intelligent job application automation tool with DeepSeek AI integration for semantic field matching and contextual response generation at ultra-low cost"
 date: 2025-01-01
 status: developing
-featured: true
 categories: ["AI/ML", "Automation", "Job Applications"]
 technologies: ["Python", "DeepSeek AI", "MCP Protocol", "Claude Desktop"]
 github_url: "https://github.com/sanketmuchhala/ApplicationAgent"
-featured_image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDgwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjMUExQTFBIi8+Cjx0ZXh0IHg9IjQwMCIgeT0iMTgwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjRkZGRkZGIiBmb250LWZhbWlseT0iSW50ZXIiIGZvbnQtd2VpZ2h0PSI2MDAiIGZvbnQtc2l6ZT0iMjgiPkFJIEpvYiBBcHBsaWNhdGlvbjwvdGV4dD4KPHRleHQgeD0iNDAwIiB5PSIyMzAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNGRkZGRkYiIGZvbnQtZmFtaWx5PSJJbnRlciIgZm9udC13ZWlnaHQ9IjUwMCIgZm9udC1zaXplPSIxOCI+QWdlbnQ8L3RleHQ+Cjx0ZXh0IHg9IjQwMCIgeT0iMjgwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjRkZGRkZGIiBmb250LWZhbWlseT0iSW50ZXIiIGZvbnQtd2VpZ2h0PSI1MDAiIGZvbnQtc2l6ZT0iMTgiPkRlZXBTZWVrIEludGVncmF0aW9uPC90ZXh0Pgo8L3N2Zz4K"
 ---
 
 <div class="lead-paragraph">

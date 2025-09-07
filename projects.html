@@ -4,46 +4,49 @@ title: "Projects"
 description: "Explore my portfolio of AI/ML projects, web applications, and innovative solutions"
 ---
 
-<!-- Projects Index Section -->
-<section class="blog-index">
+<!-- Projects Section -->
+<section id="projects" class="projects" data-animate>
     <div class="container">
         <div class="section-header">
-            <h1 class="section-title">All Projects</h1>
+            <h2 class="section-title">All Projects</h2>
             <div class="section-divider"></div>
+            <p class="section-subtitle">Explore my portfolio of AI/ML projects, web applications, and innovative solutions</p>
         </div>
         
-        <div class="blog-grid">
-            {% for project in site.projects %}
-            <article class="blog-card project-card-enhanced">
-                <div class="blog-image">
-                    {% if project.featured_image %}
-                        <img src="{{ project.featured_image | relative_url }}" alt="{{ project.title }}">
-                    {% else %}
-                        <div class="project-placeholder {{ project.name | replace: '-', '-' }}">
-                            <div class="placeholder-content">
-                                <div class="placeholder-title">{{ project.title | split: ' ' | first }}</div>
-                                <div class="placeholder-subtitle">{{ project.title | split: ' ' | slice: 1, 3 | join: ' ' }}</div>
-                            </div>
-                        </div>
-                    {% endif %}
-                    {% if project.status %}
-                    <div class="status-overlay">
-                        <span class="status-badge status-{{ project.status }}">{{ project.status | capitalize }}</span>
+        <div class="projects-grid">
+            {% assign all_projects = site.projects | sort: 'name' %}
+            {% for project in all_projects %}
+            <div class="project-card hover-bump" data-animate>
+                <div class="project-header">
+                    <h3>{{ project.title }}{% if project.status %} <span class="status-badge status-{{ project.status }}">{{ project.status | capitalize }}</span>{% endif %}</h3>
+                    <div class="project-links">
+                        {% if project.github_url %}
+                        <a href="{{ project.github_url }}" class="project-link hover-bump" aria-label="View project on GitHub" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        {% endif %}
+                        {% if project.demo_url %}
+                        <a href="{{ project.demo_url }}" class="project-link hover-bump" aria-label="View live demo" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                        {% endif %}
                     </div>
-                    {% endif %}
                 </div>
-                <div class="blog-content">
-                    <p class="blog-excerpt">{{ project.description }}</p>
-                    {% if project.technologies %}
-                    <div class="project-tech-tags">
-                        {% for tech in project.technologies limit: 3 %}
-                        <span class="tech-tag">{{ tech }}</span>
-                        {% endfor %}
-                    </div>
-                    {% endif %}
-                    <a href="{{ project.url | relative_url }}" class="blog-read-more">View Project <i class="fas fa-arrow-right"></i></a>
+                <p class="project-description">{{ project.description }}</p>
+                {% if project.technologies %}
+                <div class="project-tech">
+                    {% for tech in project.technologies limit: 4 %}
+                    <span class="tech-tag">{{ tech }}</span>
+                    {% endfor %}
                 </div>
-            </article>
+                {% endif %}
+                <div class="project-actions">
+                    <a href="{{ project.url | relative_url }}" class="btn btn-primary hover-bump">
+                        <span>Read More</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
             {% endfor %}
         </div>
     </div>

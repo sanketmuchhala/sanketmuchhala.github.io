@@ -4,9 +4,9 @@ title: "AI Study Buddy"
 description: "An intelligent learning assistant powered by advanced AI algorithms for optimizing study schedules, adaptive learning recommendations, and interview preparation coaching"
 date: 2025-01-01
 status: developing
+featured: true
 categories: ["AI/ML", "Education", "React"]
 technologies: ["React", "TypeScript", "AI Algorithms", "TailwindCSS"]
-featured_image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDgwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjMUExQTFBIi8+Cjx0ZXh0IHg9IjQwMCIgeT0iMTgwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjRkZGRkZGIiBmb250LWZhbWlseT0iSW50ZXIiIGZvbnQtd2VpZ2h0PSI2MDAiIGZvbnQtc2l6ZT0iMjgiPkFJIFN0dWR5PC90ZXh0Pgo8dGV4dCB4PSI0MDAiIHk9IjIzMCIgdGV4dC1hbmNob3I9Im1pZGdsZSIgZmlsbD0iI0ZGRkZGRiIgZm9udC1mYW1pbHk9IkludGVyIiBmb250LXdlaWdodD0iNTAwIiBmb250LXNpemU9IjE4Ij5CdWRkeTwvdGV4dD4KPHRleHQgeD0iNDAwIiB5PSIyODAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNGRkZGRkYiIGZvbnQtZmFtaWx5PSJJbnRlciIgZm9udC13ZWlnaHQ9IjUwMCIgZm9udC1zaXplPSIxOCI+SW50ZWxsaWdlbnQgTGVhcm5pbmc8L3RleHQ+Cjwvc3ZnPgo="
 ---
 
 <div class="lead-paragraph">

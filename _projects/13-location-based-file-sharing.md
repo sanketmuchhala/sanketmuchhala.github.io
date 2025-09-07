@@ -4,12 +4,10 @@ title: "Location-Based File Sharing System"
 description: "Built a location-aware file sharing system using AWS services and geospatial technologies to enable proximity-based file exchange. The system allows users to share files that are only accessible within specific geographic boundaries."
 date: 2024-08-01
 status: completed
-featured: true
 categories: ["Cloud Computing", "Geospatial"]
 technologies: ["AWS", "Lambda", "S3", "Leaflet.js"]
 github_url: "https://github.com/sanketmuchhala/ECC-LBFS"
 deployment_url: "https://d3vjtmq7zqrgp7.cloudfront.net/"
-featured_image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDgwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjMUExQTFBIi8+Cjx0ZXh0IHg9IjQwMCIgeT0iMTgwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjRkZGRkZGIiBmb250LWZhbWlseT0iSW50ZXIiIGZvbnQtd2VpZ2h0PSI2MDAiIGZvbnQtc2l6ZT0iMzIiPkxvY2F0aW9uLUJhc2VkPC90ZXh0Pgo8dGV4dCB4PSI0MDAiIHk9IjIzMCIgdGV4dC1hbmNob3I9Im1pZGdsZSIgZmlsbD0iI0ZGRkZGRiIgZm9udC1mYW1pbHk9IkludGVyIiBmb250LXdlaWdodD0iNTAwIiBmb250LXNpemU9IjE4Ij5GaWxlIFNoYXJpbmc8L3RleHQ+Cjx0ZXh0IHg9IjQwMCIgeT0iMjgwIiB0ZXh0LWFuY2hvcj0ibWlkZGdsZSIgZmlsbD0iI0ZGRkZGRiIgZm9udC1mYW1pbHk9IkludGVyIiBmb250LXdlaWdodD0iNTAwIiBmb250LXNpemU9IjE4Ij5BV1MgKyBHZW9zcGF0aWFsPC90ZXh0Pgo8L3N2Zz4="
 ---
 
 <div class="lead-paragraph">

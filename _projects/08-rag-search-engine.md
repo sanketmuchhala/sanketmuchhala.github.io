@@ -4,11 +4,9 @@ title: "RAG Search Engine"
 description: "Built a Retrieval-Augmented Generation (RAG) system using GPT-3 and LangChain for multi-source question answering. Integrated FAISS-based vector search with PDF chunking to enable fast, contextually relevant retrieval."
 date: 2024-07-01
 status: completed
-featured: true
 categories: ["AI/ML", "NLP", "Search"]
 technologies: ["GPT-3", "LangChain", "FAISS", "Python"]
 github_url: "https://github.com/sanketmuchhala/FileChatAI"
-featured_image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDgwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjMUExQTFBIi8+Cjx0ZXh0IHg9IjQwMCIgeT0iMTgwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjRkZGRkZGIiBmb250LWZhbWlseT0iSW50ZXIiIGZvbnQtd2VpZ2h0PSI2MDAiIGZvbnQtc2l6ZT0iMjgiPlJBRyBTZWFyY2g8L3RleHQ+Cjx0ZXh0IHg9IjQwMCIgeT0iMjMwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjRkZGRkZGIiBmb250LWZhbWlseT0iSW50ZXIiIGZvbnQtd2VpZ2h0PSI1MDAiIGZvbnQtc2l6ZT0iMTgiPkVuZ2luZTwvdGV4dD4KPHRleHQgeD0iNDAwIiB5PSIyODAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNGRkZGRkYiIGZvbnQtZmFtaWx5PSJJbnRlciIgZm9udC13ZWlnaHQ9IjUwMCIgZm9udC1zaXplPSIxOCI+R1BULTMgKyBMYW5nQ2hhaW48L3RleHQ+Cjwvc3ZnPgo="
 ---
 
 <div class="lead-paragraph">

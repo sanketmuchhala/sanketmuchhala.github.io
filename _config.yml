@@ -32,6 +32,8 @@ relative_links:
 sass:
   load_paths: []
   style: compressed
+  sass_dir: _sass
+  sourcemap: never
 
 # Collections
 collections:

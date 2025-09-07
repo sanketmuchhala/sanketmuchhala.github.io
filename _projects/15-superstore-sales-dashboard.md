@@ -4,12 +4,10 @@ title: "Superstore Sales Management Dashboard"
 description: "Built an interactive dashboard using R Shiny for Superstore sales data analysis, featuring advanced visualizations and forecasting tools"
 date: 2024-05-01
 status: completed
-featured: true
 categories: ["Data Science", "Business Intelligence"]
 technologies: ["R", "Shiny", "Time Series Analysis", "Forecasting", "Data Visualization"]
 github_url: "https://github.com/sanketmuchhala/Superstore-Sales-Management-Dashboard"
 deployment_url: "https://sanketmuchhala.shinyapps.io/project/"
-featured_image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDgwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjMUExQTFBIi8+Cjx0ZXh0IHg9IjQwMCIgeT0iMTgwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjRkZGRkZGIiBmb250LWZhbWlseT0iSW50ZXIiIGZvbnQtd2VpZ2h0PSI2MDAiIGZvbnQtc2l6ZT0iMzIiPlN1cGVyc3RvcmU8L3RleHQ+Cjx0ZXh0IHg9IjQwMCIgeT0iMjMwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjRkZGRkZGIiBmb250LWZhbWlseT0iSW50ZXIiIGZvbnQtd2VpZ2h0PSI1MDAiIGZvbnQtc2l6ZT0iMTgiPlNhbGVzIERhc2hib2FyZDwvdGV4dD4KPHRleHQgeD0iNDAwIiB5PSIyODAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNGRkZGRkYiIGZvbnQtZmFtaWx5PSJJbnRlciIgZm9udC13ZWlnaHQ9IjUwMCIgZm9udC1zaXplPSIxOCI+UiBTaGlueSArIEZvcmVjYXN0aW5nPC90ZXh0Pgo8L3N2Zz4K"
 ---
 
 <div class="lead-paragraph">

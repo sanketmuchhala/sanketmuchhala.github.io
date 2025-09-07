@@ -364,6 +364,7 @@ image: "/photos/export.png"
 </section>
 
 <!-- Photography Section -->
+<!--
 <section id="photography" class="photography" data-animate>
     <div class="container">
         <div class="section-header">
@@ -371,80 +372,41 @@ image: "/photos/export.png"
             <div class="section-divider"></div>
             <p class="section-subtitle">Capturing moments, emotions, and the beauty of the world around us through the art of photography</p>
             <div class="section-actions">
-                <!-- <a href="{{ '/photography/photos/' | relative_url }}" class="btn btn-primary hover-bump">
+                <a href="{{ '/photography/photos/' | relative_url }}" class="btn btn-primary hover-bump">
                     <i class="fas fa-external-link-alt"></i>
                     View All Photos
-                </a> -->
+                </a>
             </div>
         </div>
         
-        <!-- Beautiful Photo Collage -->
         <div class="photo-collage">
             <div class="collage-item">
-                <picture>
-                    <source srcset="{{ '/photography/photos/optimized/sunset-mountains.webp' | relative_url }}" type="image/webp">
-                    <img src="{{ '/photography/photos/sunset-mountains.jpg' | relative_url }}" alt="Sunset over mountains landscape photography by AI engineer Sanket Muchhala" loading="lazy" decoding="async" 
-                         srcset="{{ '/photography/photos/sunset-mountains.jpg' | relative_url }} 800w, {{ '/photography/photos/sunset-mountains.jpg' | relative_url }} 400w" 
-                         sizes="(max-width: 768px) 400px, 800px">
-                </picture>
+                <img src="{{ '/photos/peekaboo.jpg' | relative_url }}" alt="Photography showcase by AI engineer Sanket Muchhala" loading="lazy" decoding="async">
             </div>
             
             <div class="collage-item">
-                <picture>
-                    <source srcset="{{ '/photography/photos/optimized/urban-architecture.webp' | relative_url }}" type="image/webp">
-                    <img src="{{ '/photography/photos/urban-architecture.jpg' | relative_url }}" alt="Urban architecture photography showcasing data science perspective by Sanket Muchhala" loading="lazy" decoding="async"
-                         srcset="{{ '/photography/photos/urban-architecture.jpg' | relative_url }} 800w, {{ '/photography/photos/urban-architecture.jpg' | relative_url }} 400w"
-                         sizes="(max-width: 768px) 400px, 800px">
-                </picture>
+                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Mountain landscape photography" loading="lazy" decoding="async">
             </div>
             
             <div class="collage-item">
-                <picture>
-                    <source srcset="{{ '/photography/photos/optimized/nature-closeup.webp' | relative_url }}" type="image/webp">
-                    <img src="{{ '/photography/photos/nature-closeup.jpg' | relative_url }}" alt="Nature closeup macro photography by machine learning engineer Sanket Muchhala" loading="lazy" decoding="async"
-                         srcset="{{ '/photography/photos/nature-closeup.jpg' | relative_url }} 800w, {{ '/photography/photos/nature-closeup.jpg' | relative_url }} 400w"
-                         sizes="(max-width: 768px) 400px, 800px">
-                </picture>
+                <img src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Urban architecture photography" loading="lazy" decoding="async">
             </div>
             
             <div class="collage-item">
-                <picture>
-                    <source srcset="{{ '/photography/photos/optimized/autumn-colors.webp' | relative_url }}" type="image/webp">
-                    <img src="{{ '/photography/photos/autumn-colors.jpg' | relative_url }}" alt="Autumn colors landscape photography by AI engineer and data scientist" loading="lazy" decoding="async"
-                         srcset="{{ '/photography/photos/autumn-colors.jpg' | relative_url }} 800w, {{ '/photography/photos/autumn-colors.jpg' | relative_url }} 400w"
-                         sizes="(max-width: 768px) 400px, 800px">
-                </picture>
+                <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Nature photography" loading="lazy" decoding="async">
             </div>
             
             <div class="collage-item">
-                <picture>
-                    <source srcset="{{ '/photography/photos/optimized/IMG_20190619_160550_Original-min.webp' | relative_url }}" type="image/webp">
-                    <img src="{{ '/photography/photos/IMG_20190619_160550_Original-min.jpg' | relative_url }}" alt="Summer photography capturing creative perspective from AI engineer Sanket Muchhala" loading="lazy" decoding="async"
-                         srcset="{{ '/photography/photos/IMG_20190619_160550_Original-min.jpg' | relative_url }} 800w, {{ '/photography/photos/IMG_20190619_160550_Original-min.jpg' | relative_url }} 400w"
-                         sizes="(max-width: 768px) 400px, 800px">
-                </picture>
+                <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Sunset photography" loading="lazy" decoding="async">
             </div>
             
             <div class="collage-item">
-                <picture>
-                    <source srcset="{{ '/photography/photos/optimized/IMG_5166-min.webp' | relative_url }}" type="image/webp">
-                    <img src="{{ '/photography/photos/IMG_5166-min.JPG' | relative_url }}" alt="Street photography showcasing technical composition by machine learning expert" loading="lazy" decoding="async"
-                         srcset="{{ '/photography/photos/IMG_5166-min.JPG' | relative_url }} 800w, {{ '/photography/photos/IMG_5166-min.JPG' | relative_url }} 400w"
-                         sizes="(max-width: 768px) 400px, 800px">
-                </picture>
-            </div>
-            
-            <div class="collage-item">
-                <picture>
-                    <source srcset="{{ '/photography/photos/optimized/IMG_6517-min.webp' | relative_url }}" type="image/webp">
-                    <img src="{{ '/photography/photos/IMG_6517-min.JPEG' | relative_url }}" alt="Minimalist composition photography by data scientist and AI engineer" loading="lazy" decoding="async"
-                         srcset="{{ '/photography/photos/IMG_6517-min.JPEG' | relative_url }} 800w, {{ '/photography/photos/IMG_6517-min.JPEG' | relative_url }} 400w"
-                         sizes="(max-width: 768px) 400px, 800px">
-                </picture>
+                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Landscape photography" loading="lazy" decoding="async">
             </div>
         </div>
     </div>
 </section>
+-->
 
 <!-- Blog Section -->
 <section id="blogs" class="blog" data-animate>

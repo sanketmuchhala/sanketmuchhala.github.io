@@ -14,7 +14,7 @@ description: "Explore my portfolio of AI/ML projects, web applications, and inno
         </div>
         
         <div class="projects-grid">
-            {% assign all_projects = site.projects | sort: 'name' %}
+            {% assign all_projects = site.projects | sort: 'path' %}
             {% for project in all_projects %}
             <div class="project-card hover-bump" data-animate>
                 <div class="project-header">

@@ -9,9 +9,124 @@ technologies: ["Python", "DeepSeek AI", "MCP Protocol", "Claude Desktop"]
 github_url: "https://github.com/sanketmuchhala/ApplicationAgent"
 ---
 
-<div class="lead-paragraph">
-    <p>An intelligent job application automation tool that leverages DeepSeek's powerful AI API for semantic field matching, contextual response generation, and form analysis. The system operates at ultra-low cost (~$0.14 per 1M input tokens) while providing sophisticated automation capabilities for job seekers.</p>
+<div class="project-slideshow">
+  <div class="slideshow-container">
+    <div class="slide active">
+      <img src="https://github.com/user-attachments/assets/774b0192-9b83-4129-8cd4-3d8c3f4afe71" alt="Screenshot 2025-09-14 at 12 31 12 AM" width="720">
+    </div>
+    <div class="slide">
+      <img src="https://github.com/user-attachments/assets/a49a57bd-feab-456c-96dc-a8327eab27c0" alt="Screenshot 2025-09-14 at 12 33 45 AM" width="720">
+    </div>
+    <button class="prev-btn" onclick="changeSlide(-1)">&#10094;</button>
+    <button class="next-btn" onclick="changeSlide(1)">&#10095;</button>
+  </div>
+  <div class="slide-dots">
+    <span class="dot active" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+  </div>
 </div>
+
+<script>
+let slideIndex = 1;
+
+function changeSlide(n) {
+  showSlide(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlide(slideIndex = n);
+}
+
+function showSlide(n) {
+  let slides = document.getElementsByClassName("slide");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) { slideIndex = 1 }
+  if (n < 1) { slideIndex = slides.length }
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].classList.remove("active");
+  }
+  for (let i = 0; i < dots.length; i++) {
+    dots[i].classList.remove("active");
+  }
+  slides[slideIndex - 1].classList.add("active");
+  dots[slideIndex - 1].classList.add("active");
+}
+</script>
+
+<style>
+.project-slideshow {
+  position: relative;
+  max-width: 720px;
+  margin: 0 auto 2rem auto;
+}
+
+.slideshow-container {
+  position: relative;
+  width: 100%;
+  background: #000;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.slide {
+  display: none;
+  text-align: center;
+}
+
+.slide.active {
+  display: block;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.prev-btn, .next-btn {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  background: rgba(0,0,0,0.5);
+  border: none;
+  user-select: none;
+  transition: background 0.3s ease;
+}
+
+.next-btn {
+  right: 0;
+}
+
+.prev-btn:hover, .next-btn:hover {
+  background: rgba(0,0,0,0.8);
+}
+
+.slide-dots {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active, .dot:hover {
+  background-color: #717171;
+}
+</style>
 
 ## Project Overview
 

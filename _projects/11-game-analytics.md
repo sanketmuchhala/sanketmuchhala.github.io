@@ -10,10 +10,6 @@ technologies: ["Python", "Pandas", "Matplotlib", "Seaborn", "NumPy", "Streamlit"
 github_url: "https://github.com/sanketmuchhala/game-analytics"
 ---
 
-<div class="lead-paragraph">
-    <p>Built a comprehensive analytics dashboard for mobile games using Python and data visualization tools to track player behavior and game performance. The system provides insights into user engagement, retention, and monetization patterns.</p>
-</div>
-
 ## Project Overview
 
 Mobile gaming is a highly competitive industry where understanding player behavior and game performance is crucial for success. This project addresses the need for comprehensive analytics by building a dashboard that processes game telemetry data and provides actionable insights for game developers and product managers.

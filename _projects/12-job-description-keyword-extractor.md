@@ -7,12 +7,9 @@ status: completed
 featured: false
 categories: ["NLP", "AI/ML"]
 technologies: ["Python", "spaCy", "NLTK", "Scikit-learn", "BERT", "FastAPI"]
-github_url: "https://github.com/sanketmuchhala/job-keyword-extractor"
+github_url: "https://github.com/sanketmuchhala/jobfit"
 ---
 
-<div class="lead-paragraph">
-    <p>Developed an AI-powered tool that automatically extracts and categorizes key skills and requirements from job descriptions using NLP and machine learning. The system helps recruiters and job seekers quickly identify essential qualifications and skills needed for specific positions.</p>
-</div>
 
 ## Project Overview
 

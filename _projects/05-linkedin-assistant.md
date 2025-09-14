@@ -14,6 +14,162 @@ github_url: "https://github.com/sanketmuchhala/Linkedin-Assistant"
 
 LinkedIn Assistant addresses the challenges of maintaining an active and engaging professional presence on LinkedIn. The tool automates content creation, optimizes networking strategies, and provides intelligent recommendations to maximize professional visibility and engagement.
 
+<div class="project-slideshow">
+  <div class="slideshow-container">
+    <div class="slide active">
+      <img src="https://github.com/user-attachments/assets/9f3d0681-6494-42c4-b997-958c15cf2af7" alt="Screenshot 2025-09-14 at 2 39 21 PM" width="1680" />
+    </div>
+    <div class="slide">
+      <img src="https://github.com/user-attachments/assets/e13cc01e-ca36-40b6-8b66-a85dbe9ee697" alt="Screenshot 2025-09-14 at 2 39 28 PM" width="1680" />
+    </div>
+    <div class="slide">
+      <img src="https://github.com/user-attachments/assets/b8b967e6-bac6-4cf8-a01d-3a275b9871d7" alt="Screenshot 2025-09-14 at 2 39 40 PM" width="1680" />
+    </div>
+    <button class="prev-btn" onclick="changeSlide(-1)">&#10094;</button>
+    <button class="next-btn" onclick="changeSlide(1)">&#10095;</button>
+  </div>
+  <div class="slide-dots">
+    <span class="dot active" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
+</div>
+
+<script>
+let slideIndex = 1;
+
+function changeSlide(n) {
+  showSlide(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlide(slideIndex = n);
+}
+
+function showSlide(n) {
+  let slides = document.getElementsByClassName("slide");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) { slideIndex = 1 }
+  if (n < 1) { slideIndex = slides.length }
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].classList.remove("active");
+  }
+  for (let i = 0; i < dots.length; i++) {
+    dots[i].classList.remove("active");
+  }
+  slides[slideIndex - 1].classList.add("active");
+  dots[slideIndex - 1].classList.add("active");
+}
+</script>
+
+<style>
+.project-slideshow {
+  position: relative;
+  max-width: 720px;
+  margin: 0 auto 2rem auto;
+}
+
+.slideshow-container {
+  position: relative;
+  width: 100%;
+  background: #000;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.slide {
+  display: none;
+  text-align: center;
+}
+
+.slide.active {
+  display: block;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.slide img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.slide {
+  position: relative;
+}
+
+.slide::after {
+  content: '🔍 Click to view fullscreen';
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.slide:hover::after {
+  opacity: 1;
+}
+
+.prev-btn, .next-btn {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  background: rgba(0,0,0,0.5);
+  border: none;
+  user-select: none;
+  transition: background 0.3s ease;
+}
+
+.next-btn {
+  right: 0;
+}
+
+.prev-btn:hover, .next-btn:hover {
+  background: rgba(0,0,0,0.8);
+}
+
+.slide-dots {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active, .dot:hover {
+  background-color: #717171;
+}
+</style>
+
 ## Key Features
 
 ### Intelligent Content Creation

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fullscreen Slideshow Test</title>
+    <link rel="stylesheet" href="/assets/enhanced-slideshow.css">
+    <link rel="stylesheet" href="/assets/fullscreen-slideshow.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background: #f5f5f5;
+        }
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .instructions {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>Fullscreen Slideshow Test</h1>
+        
+        <div class="instructions">
+            <h3>Instructions:</h3>
+            <ul>
+                <li>Click on any image in the slideshow below to open it in fullscreen</li>
+                <li>Use arrow keys, swipe gestures, or navigation buttons to navigate</li>
+                <li>Press Escape or click outside the image to close fullscreen</li>
+                <li>Test on both desktop and mobile devices</li>
+            </ul>
+        </div>
+
+        <!-- Test Slideshow -->
+        <div class="project-slideshow">
+            <div class="slideshow-container">
+                <div class="slide active">
+                    <img src="https://github.com/user-attachments/assets/914cfd84-2f4a-42c6-8f26-dc93cb1d7ba5" alt="Test Image 1" width="720" />
+                </div>
+                <div class="slide">
+                    <img src="https://github.com/user-attachments/assets/53aa45b1-b9c9-4c29-8f9b-875065061b3d" alt="Test Image 2" width="720" />
+                </div>
+                <div class="slide">
+                    <img src="https://github.com/user-attachments/assets/2e95cd66-0875-4d7f-86e7-3b2bf9410720" alt="Test Image 3" width="720" />
+                </div>
+                <div class="slide">
+                    <img src="https://github.com/user-attachments/assets/49017d28-fba2-4d98-8c19-4e8ffd5e63ff" alt="Test Image 4" width="720" />
+                </div>
+                <button class="prev-btn" onclick="changeSlide(-1)">&#10094;</button>
+                <button class="next-btn" onclick="changeSlide(1)">&#10095;</button>
+            </div>
+            <div class="slide-dots">
+                <span class="dot active" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+            </div>
+        </div>
+
+        <!-- Original slideshow script -->
+        <script>
+        let slideIndex = 1;
+
+        function changeSlide(n) {
+            showSlide(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlide(slideIndex = n);
+        }
+
+        function showSlide(n) {
+            let slides = document.getElementsByClassName("slide");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].classList.remove("active");
+            }
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].classList.remove("active");
+            }
+            slides[slideIndex - 1].classList.add("active");
+            dots[slideIndex - 1].classList.add("active");
+        }
+        </script>
+
+        <!-- Fullscreen slideshow script -->
+        <script src="/assets/fullscreen-slideshow.js"></script>
+    </div>
+</body>
+</html>

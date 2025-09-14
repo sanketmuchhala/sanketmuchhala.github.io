@@ -1,0 +1,327 @@
+/* Fullscreen Slideshow Styles */
+.fullscreen-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 9999;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.fullscreen-overlay.active {
+  display: flex;
+}
+
+.fullscreen-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.fullscreen-slide {
+  display: none;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  transition: opacity 0.3s ease;
+}
+
+.fullscreen-slide.active {
+  display: block;
+}
+
+.fullscreen-controls {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+}
+
+.fullscreen-btn {
+  background: rgba(0, 0, 0, 0.7);
+  border: none;
+  color: white;
+  font-size: 24px;
+  padding: 15px 20px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  pointer-events: auto;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 10000;
+}
+
+.fullscreen-btn:hover {
+  background: rgba(0, 0, 0, 0.9);
+  transform: scale(1.1);
+}
+
+.fullscreen-btn:active {
+  transform: scale(0.95);
+}
+
+.fullscreen-prev {
+  margin-left: 20px;
+}
+
+.fullscreen-next {
+  margin-right: 20px;
+}
+
+.fullscreen-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  border: none;
+  color: white;
+  font-size: 28px;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  pointer-events: auto;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 10001;
+}
+
+.fullscreen-close:hover {
+  background: rgba(255, 0, 0, 0.7);
+  transform: scale(1.1);
+}
+
+.fullscreen-close:active {
+  transform: scale(0.95);
+}
+
+.fullscreen-dots {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  pointer-events: auto;
+  z-index: 10000;
+}
+
+.fullscreen-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.fullscreen-dot.active,
+.fullscreen-dot:hover {
+  background: white;
+  transform: scale(1.2);
+}
+
+.fullscreen-counter {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  color: white;
+  font-size: 14px;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 8px 16px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  pointer-events: none;
+  z-index: 10000;
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+  .fullscreen-container {
+    padding: 10px;
+  }
+  
+  .fullscreen-btn {
+    font-size: 20px;
+    padding: 12px 16px;
+  }
+  
+  .fullscreen-prev {
+    margin-left: 10px;
+  }
+  
+  .fullscreen-next {
+    margin-right: 10px;
+  }
+  
+  .fullscreen-close {
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    padding: 8px 12px;
+  }
+  
+  .fullscreen-dots {
+    bottom: 20px;
+  }
+  
+  .fullscreen-dot {
+    width: 10px;
+    height: 10px;
+  }
+  
+  .fullscreen-counter {
+    bottom: 20px;
+    right: 20px;
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .fullscreen-container {
+    padding: 5px;
+  }
+  
+  .fullscreen-btn {
+    font-size: 18px;
+    padding: 10px 14px;
+  }
+  
+  .fullscreen-prev {
+    margin-left: 5px;
+  }
+  
+  .fullscreen-next {
+    margin-right: 5px;
+  }
+  
+  .fullscreen-close {
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    padding: 6px 10px;
+  }
+  
+  .fullscreen-dots {
+    bottom: 15px;
+    gap: 8px;
+  }
+  
+  .fullscreen-dot {
+    width: 8px;
+    height: 8px;
+  }
+  
+  .fullscreen-counter {
+    bottom: 15px;
+    right: 15px;
+    font-size: 11px;
+    padding: 4px 10px;
+  }
+}
+
+/* Touch gesture indicators */
+.fullscreen-gesture-hint {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  text-align: center;
+  pointer-events: none;
+  z-index: 10000;
+  animation: fadeInOut 3s ease-in-out;
+}
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+/* Loading spinner for images */
+.fullscreen-loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 18px;
+  z-index: 10000;
+}
+
+.fullscreen-loading::after {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s ease-in-out infinite;
+  margin-left: 10px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Prevent body scroll when fullscreen is active */
+body.fullscreen-active {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
+
+/* Enhanced project slideshow styles for clickable images */
+.project-slideshow .slide img {
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-slideshow .slide img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Add click indicator */
+.project-slideshow .slide img::after {
+  content: '🔍';
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.project-slideshow .slide:hover img::after {
+  opacity: 1;
+}

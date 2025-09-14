@@ -7,11 +7,135 @@ status: completed
 featured: true
 categories: ["AI/ML", "Full-Stack", "TypeScript"]
 technologies: ["TypeScript", "React", "Node.js", "Vite", "Ollama", "IndexedDB"]
+github_url: "https://github.com/sanketmuchhala/Project-Green-Lantern"
 ---
 
-<div class="lead-paragraph">
-    <p>Lantern is a minimalist chat UI for cloud & local LLMs with built-in Prompt Analytics. It pairs a distraction-free dark UI with first-class support for BYOK cloud models and local Ollama models, plus an on-device Prompt Analytics dashboard that helps you see how prompt choices affect latency, cost, and helpfulness.</p>
+<div class="project-slideshow">
+  <div class="slideshow-container">
+    <div class="slide active">
+      <img src="https://github.com/user-attachments/assets/914cfd84-2f4a-42c6-8f26-dc93cb1d7ba5" alt="Screenshot 2025-09-13 at 10 56 50 PM" width="720">
+    </div>
+    <div class="slide">
+      <img src="https://github.com/user-attachments/assets/53aa45b1-b9c9-4c29-8f9b-875065061b3d" alt="Screenshot 2025-09-13 at 10 57 04 PM" width="720">
+    </div>
+    <div class="slide">
+      <img src="https://github.com/user-attachments/assets/2e95cd66-0875-4d7f-86e7-3b2bf9410720" alt="Screenshot 2025-09-13 at 10 57 16 PM" width="720">
+    </div>
+    <div class="slide">
+      <img src="https://github.com/user-attachments/assets/49017d28-fba2-4d98-8c19-4e8ffd5e63ff" alt="Screenshot 2025-09-13 at 10 57 31 PM" width="720">
+    </div>
+    <button class="prev-btn" onclick="changeSlide(-1)">&#10094;</button>
+    <button class="next-btn" onclick="changeSlide(1)">&#10095;</button>
+  </div>
+  <div class="slide-dots">
+    <span class="dot active" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+    <span class="dot" onclick="currentSlide(4)"></span>
+  </div>
 </div>
+
+<script>
+let slideIndex = 1;
+
+function changeSlide(n) {
+  showSlide(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlide(slideIndex = n);
+}
+
+function showSlide(n) {
+  let slides = document.getElementsByClassName("slide");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) { slideIndex = 1 }
+  if (n < 1) { slideIndex = slides.length }
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].classList.remove("active");
+  }
+  for (let i = 0; i < dots.length; i++) {
+    dots[i].classList.remove("active");
+  }
+  slides[slideIndex - 1].classList.add("active");
+  dots[slideIndex - 1].classList.add("active");
+}
+</script>
+
+<style>
+.project-slideshow {
+  position: relative;
+  max-width: 720px;
+  margin: 0 auto 2rem auto;
+}
+
+.slideshow-container {
+  position: relative;
+  width: 100%;
+  background: #000;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.slide {
+  display: none;
+  text-align: center;
+}
+
+.slide.active {
+  display: block;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.prev-btn, .next-btn {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  background: rgba(0,0,0,0.5);
+  border: none;
+  user-select: none;
+  transition: background 0.3s ease;
+}
+
+.next-btn {
+  right: 0;
+}
+
+.prev-btn:hover, .next-btn:hover {
+  background: rgba(0,0,0,0.8);
+}
+
+.slide-dots {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active, .dot:hover {
+  background-color: #717171;
+}
+</style>
 
 ## Project Overview
 

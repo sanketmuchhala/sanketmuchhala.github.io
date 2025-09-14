@@ -7,12 +7,131 @@ status: completed
 categories: ["Data Science", "Business Intelligence"]
 technologies: ["R", "Shiny", "Time Series Analysis", "Forecasting", "Data Visualization"]
 github_url: "https://github.com/sanketmuchhala/Superstore-Sales-Management-Dashboard"
-deployment_url: "https://sanketmuchhala.shinyapps.io/project/"
+demo_url: "https://sanketmuchhala.shinyapps.io/project/"
 ---
 
-<div class="lead-paragraph">
-    <p>Built an interactive dashboard using R's Shiny framework for Superstore sales data analysis, featuring advanced visualizations and forecasting tools. The app allows users to explore trends, filter and sort data, and make data-driven predictions through a web interface.</p>
+<div class="project-slideshow">
+  <div class="slideshow-container">
+    <div class="slide active">
+      <img src="https://github.com/user-attachments/assets/e5e9ac3d-0043-4e5c-a39a-0cecce8cc6b1" alt="Screenshot 2025-09-14 at 2 26 01 AM" width="720">
+    </div>
+    <div class="slide">
+      <img src="https://github.com/user-attachments/assets/68ec2df1-8ba9-40a4-8d11-50fe9c5ef2f9" alt="Screenshot 2025-09-14 at 2 24 25 AM" width="720">
+    </div>
+    <div class="slide">
+      <img src="https://github.com/user-attachments/assets/80bd52b6-8410-45bc-915d-7963f4b147f0" alt="Screenshot 2025-09-14 at 2 24 15 AM" width="720">
+    </div>
+    <button class="prev-btn" onclick="changeSlide(-1)">&#10094;</button>
+    <button class="next-btn" onclick="changeSlide(1)">&#10095;</button>
+  </div>
+  <div class="slide-dots">
+    <span class="dot active" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
 </div>
+
+<script>
+let slideIndex = 1;
+
+function changeSlide(n) {
+  showSlide(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlide(slideIndex = n);
+}
+
+function showSlide(n) {
+  let slides = document.getElementsByClassName("slide");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) { slideIndex = 1 }
+  if (n < 1) { slideIndex = slides.length }
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].classList.remove("active");
+  }
+  for (let i = 0; i < dots.length; i++) {
+    dots[i].classList.remove("active");
+  }
+  slides[slideIndex - 1].classList.add("active");
+  dots[slideIndex - 1].classList.add("active");
+}
+</script>
+
+<style>
+.project-slideshow {
+  position: relative;
+  max-width: 720px;
+  margin: 0 auto 2rem auto;
+}
+
+.slideshow-container {
+  position: relative;
+  width: 100%;
+  background: #000;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.slide {
+  display: none;
+  text-align: center;
+}
+
+.slide.active {
+  display: block;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.prev-btn, .next-btn {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  background: rgba(0,0,0,0.5);
+  border: none;
+  user-select: none;
+  transition: background 0.3s ease;
+}
+
+.next-btn {
+  right: 0;
+}
+
+.prev-btn:hover, .next-btn:hover {
+  background: rgba(0,0,0,0.8);
+}
+
+.slide-dots {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active, .dot:hover {
+  background-color: #717171;
+}
+</style>
 
 ## Project Overview
 

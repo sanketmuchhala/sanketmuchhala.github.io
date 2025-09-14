@@ -7,12 +7,135 @@ status: completed
 featured: false
 categories: ["Data Visualization", "Healthcare"]
 technologies: ["Python", "Data Visualization", "Matplotlib", "Pandas", "Seaborn", "Statistical Analysis"]
-github_url: "https://github.com/sanketmuchhala/care-coordination-healthcare"
+github_url: "https://github.com/sanketmuchhala/care-coordination"
 ---
 
-<div class="lead-paragraph">
-    <p>Access to quality healthcare shouldn't depend on where you live — yet rural hospitals across the U.S. are facing systemic financial pressures. This project analyzed and visualized disparities in healthcare cost structures, availability, and Medicare payments between rural and urban regions.</p>
+<div class="project-slideshow">
+  <div class="slideshow-container">
+    <div class="slide active">
+      <img src="https://github.com/user-attachments/assets/9aa5422d-b55d-4544-9f9a-2986eedd4b7d" alt="Screenshot 2025-09-14 at 2 01 28 AM" width="720">
+    </div>
+    <div class="slide">
+      <img src="https://github.com/user-attachments/assets/605ddb5a-5040-415d-aaed-a333ead1142b" alt="Screenshot 2025-09-14 at 2 01 21 AM" width="720">
+    </div>
+    <div class="slide">
+      <img src="https://github.com/user-attachments/assets/1cfdd11a-236f-43c4-9e6f-299a97ab173c" alt="Screenshot 2025-09-14 at 2 01 15 AM" width="720">
+    </div>
+    <div class="slide">
+      <img src="https://github.com/user-attachments/assets/0b413784-7159-4cf9-b690-d61a66fa7210" alt="Screenshot 2025-09-14 at 1 54 47 AM" width="720">
+    </div>
+    <button class="prev-btn" onclick="changeSlide(-1)">&#10094;</button>
+    <button class="next-btn" onclick="changeSlide(1)">&#10095;</button>
+  </div>
+  <div class="slide-dots">
+    <span class="dot active" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+    <span class="dot" onclick="currentSlide(4)"></span>
+  </div>
 </div>
+
+<script>
+let slideIndex = 1;
+
+function changeSlide(n) {
+  showSlide(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlide(slideIndex = n);
+}
+
+function showSlide(n) {
+  let slides = document.getElementsByClassName("slide");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) { slideIndex = 1 }
+  if (n < 1) { slideIndex = slides.length }
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].classList.remove("active");
+  }
+  for (let i = 0; i < dots.length; i++) {
+    dots[i].classList.remove("active");
+  }
+  slides[slideIndex - 1].classList.add("active");
+  dots[slideIndex - 1].classList.add("active");
+}
+</script>
+
+<style>
+.project-slideshow {
+  position: relative;
+  max-width: 720px;
+  margin: 0 auto 2rem auto;
+}
+
+.slideshow-container {
+  position: relative;
+  width: 100%;
+  background: #000;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.slide {
+  display: none;
+  text-align: center;
+}
+
+.slide.active {
+  display: block;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.prev-btn, .next-btn {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  background: rgba(0,0,0,0.5);
+  border: none;
+  user-select: none;
+  transition: background 0.3s ease;
+}
+
+.next-btn {
+  right: 0;
+}
+
+.prev-btn:hover, .next-btn:hover {
+  background: rgba(0,0,0,0.8);
+}
+
+.slide-dots {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active, .dot:hover {
+  background-color: #717171;
+}
+</style>
 
 ## Project Overview
 

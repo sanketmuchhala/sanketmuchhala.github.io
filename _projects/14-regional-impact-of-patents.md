@@ -7,12 +7,9 @@ status: completed
 featured: false
 categories: ["Data Analysis", "NLP"]
 technologies: ["BART", "Python", "Pandas", "Matplotlib", "Scikit-learn", "GeoPandas"]
-github_url: "https://github.com/sanketmuchhala/patent-regional-impact"
+github_url: "https://github.com/sanketmuchhala/Project-Patent-Classification"
 ---
 
-<div class="lead-paragraph">
-    <p>Analyzed patent data to understand regional innovation patterns and economic impact using BART model and advanced data analysis techniques. The research revealed insights into how patent activity correlates with regional economic development and innovation ecosystems.</p>
-</div>
 
 ## Project Overview
 

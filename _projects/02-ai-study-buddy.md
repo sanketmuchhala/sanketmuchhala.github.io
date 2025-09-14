@@ -7,11 +7,143 @@ status: developing
 featured: true
 categories: ["AI/ML", "Education", "React"]
 technologies: ["React", "TypeScript", "AI Algorithms", "TailwindCSS"]
+github_url: "https://github.com/sanketmuchhala/AIStudyBuddy"
 ---
 
-<div class="lead-paragraph">
-    <p>A production-ready React TypeScript application that uses real AI algorithms to optimize study schedules, provide adaptive learning recommendations, and enhance interview preparation through intelligent coaching. The system implements scientifically-proven learning techniques including spaced repetition, cognitive load optimization, and personalized study planning.</p>
+<div class="project-slideshow">
+  <div class="slideshow-container">
+    <div class="slide active">
+      <img src="https://github.com/user-attachments/assets/19d911a3-fa6f-4f9a-a3ca-370917614b23" alt="Screenshot 2025-09-13 at 11 08 53 PM" width="720">
+    </div>
+    <div class="slide">
+      <img src="https://github.com/user-attachments/assets/335a8e58-581f-485e-a745-52e9d3111c11" alt="Screenshot 2025-09-13 at 11 08 57 PM" width="720">
+    </div>
+    <div class="slide">
+      <img src="https://github.com/user-attachments/assets/c01e1acc-90c1-44d5-a70f-931a28a95a26" alt="Screenshot 2025-09-13 at 11 09 00 PM" width="720">
+    </div>
+    <div class="slide">
+      <img src="https://github.com/user-attachments/assets/6c5e587b-5bc7-4ebe-84ed-bc4bf8401d7d" alt="Screenshot 2025-09-13 at 11 09 05 PM" width="720">
+    </div>
+    <div class="slide">
+      <img src="https://github.com/user-attachments/assets/6046bef5-1aaa-4fc9-ab4a-38b96aff5798" alt="Screenshot 2025-09-13 at 11 09 10 PM" width="720">
+    </div>
+    <div class="slide">
+      <img src="https://github.com/user-attachments/assets/de25594a-b1ea-48c1-acfb-27ca3f04c07c" alt="Screenshot 2025-09-13 at 11 08 48 PM" width="720">
+    </div>
+    <button class="prev-btn" onclick="changeSlide(-1)">&#10094;</button>
+    <button class="next-btn" onclick="changeSlide(1)">&#10095;</button>
+  </div>
+  <div class="slide-dots">
+    <span class="dot active" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+    <span class="dot" onclick="currentSlide(4)"></span>
+    <span class="dot" onclick="currentSlide(5)"></span>
+    <span class="dot" onclick="currentSlide(6)"></span>
+  </div>
 </div>
+
+<script>
+let slideIndex = 1;
+
+function changeSlide(n) {
+  showSlide(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlide(slideIndex = n);
+}
+
+function showSlide(n) {
+  let slides = document.getElementsByClassName("slide");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) { slideIndex = 1 }
+  if (n < 1) { slideIndex = slides.length }
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].classList.remove("active");
+  }
+  for (let i = 0; i < dots.length; i++) {
+    dots[i].classList.remove("active");
+  }
+  slides[slideIndex - 1].classList.add("active");
+  dots[slideIndex - 1].classList.add("active");
+}
+</script>
+
+<style>
+.project-slideshow {
+  position: relative;
+  max-width: 720px;
+  margin: 0 auto 2rem auto;
+}
+
+.slideshow-container {
+  position: relative;
+  width: 100%;
+  background: #000;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.slide {
+  display: none;
+  text-align: center;
+}
+
+.slide.active {
+  display: block;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.prev-btn, .next-btn {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  background: rgba(0,0,0,0.5);
+  border: none;
+  user-select: none;
+  transition: background 0.3s ease;
+}
+
+.next-btn {
+  right: 0;
+}
+
+.prev-btn:hover, .next-btn:hover {
+  background: rgba(0,0,0,0.8);
+}
+
+.slide-dots {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active, .dot:hover {
+  background-color: #717171;
+}
+</style>
 
 ## Project Overview
 

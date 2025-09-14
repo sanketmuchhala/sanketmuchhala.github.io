@@ -7,12 +7,147 @@ status: completed
 featured: false
 categories: ["AI/ML", "DeepSeek", "RAG"]
 technologies: ["DeepSeek-R1", "LangChain", "FAISS", "Python", "Transformers", "Sentence Transformers"]
-github_url: "https://github.com/sanketmuchhala/Care-Coordination"
+github_url: "https://github.com/sanketmuchhala/RAG-Chatbot-Jupyter"
 ---
 
-<div class="lead-paragraph">
-    <p>This project is a hands-on implementation of a Retrieval-Augmented Generation (RAG) pipeline using the DeepSeek-R1 model. The goal is to explore how large language models can be combined with external data sources to build question-answering systems grounded in real information.</p>
+<div class="project-slideshow">
+  <div class="slideshow-container">
+    <div class="slide active">
+      <img src="https://github.com/user-attachments/assets/0fec9893-817e-4b2c-94d2-e635b58a6717" alt="Screenshot 2025-09-14 at 1 54 09 AM" width="720">
+    </div>
+    <div class="slide">
+      <img src="https://github.com/user-attachments/assets/483da650-44df-4221-850a-7a59b9a8f0f6" alt="Screenshot 2025-09-14 at 1 54 01 AM" width="720">
+    </div>
+    <div class="slide">
+      <img src="https://github.com/user-attachments/assets/64008b81-b060-4626-adea-87795e675e8a" alt="Screenshot 2025-09-14 at 1 53 56 AM" width="720">
+    </div>
+    <div class="slide">
+      <img src="https://github.com/user-attachments/assets/0fd6cdc9-1a86-419e-acc3-b009fa991da1" alt="Screenshot 2025-09-14 at 1 54 27 AM" width="720">
+    </div>
+    <div class="slide">
+      <img src="https://github.com/user-attachments/assets/0a616400-2497-4229-b726-f338143554fe" alt="Screenshot 2025-09-14 at 1 54 35 AM" width="720">
+    </div>
+    <div class="slide">
+      <img src="https://github.com/user-attachments/assets/03d2e2a0-8b33-430c-8452-428b1dfaccc4" alt="Screenshot 2025-09-14 at 1 54 41 AM" width="720">
+    </div>
+    <div class="slide">
+      <img src="https://github.com/user-attachments/assets/ed5f694e-2c25-4fdc-9ab8-fe863f5dd915" alt="Screenshot 2025-09-14 at 1 54 47 AM" width="720">
+    </div>
+    <button class="prev-btn" onclick="changeSlide(-1)">&#10094;</button>
+    <button class="next-btn" onclick="changeSlide(1)">&#10095;</button>
+  </div>
+  <div class="slide-dots">
+    <span class="dot active" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+    <span class="dot" onclick="currentSlide(4)"></span>
+    <span class="dot" onclick="currentSlide(5)"></span>
+    <span class="dot" onclick="currentSlide(6)"></span>
+    <span class="dot" onclick="currentSlide(7)"></span>
+  </div>
 </div>
+
+<script>
+let slideIndex = 1;
+
+function changeSlide(n) {
+  showSlide(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlide(slideIndex = n);
+}
+
+function showSlide(n) {
+  let slides = document.getElementsByClassName("slide");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) { slideIndex = 1 }
+  if (n < 1) { slideIndex = slides.length }
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].classList.remove("active");
+  }
+  for (let i = 0; i < dots.length; i++) {
+    dots[i].classList.remove("active");
+  }
+  slides[slideIndex - 1].classList.add("active");
+  dots[slideIndex - 1].classList.add("active");
+}
+</script>
+
+<style>
+.project-slideshow {
+  position: relative;
+  max-width: 720px;
+  margin: 0 auto 2rem auto;
+}
+
+.slideshow-container {
+  position: relative;
+  width: 100%;
+  background: #000;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.slide {
+  display: none;
+  text-align: center;
+}
+
+.slide.active {
+  display: block;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.prev-btn, .next-btn {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  background: rgba(0,0,0,0.5);
+  border: none;
+  user-select: none;
+  transition: background 0.3s ease;
+}
+
+.next-btn {
+  right: 0;
+}
+
+.prev-btn:hover, .next-btn:hover {
+  background: rgba(0,0,0,0.8);
+}
+
+.slide-dots {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active, .dot:hover {
+  background-color: #717171;
+}
+</style>
 
 ## Project Overview
 

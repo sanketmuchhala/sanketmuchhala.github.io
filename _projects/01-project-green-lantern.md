@@ -90,6 +90,39 @@ function showSlide(n) {
   width: 100%;
   height: auto;
   display: block;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.slide img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.slide {
+  position: relative;
+}
+
+.slide::after {
+  content: '🔍 Click to view fullscreen';
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.slide:hover::after {
+  opacity: 1;
 }
 
 .prev-btn, .next-btn {

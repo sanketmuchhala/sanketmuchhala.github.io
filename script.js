@@ -632,10 +632,9 @@ function initializeTypingAnimation() {
     if (!typingText) return;
     
     const jobTitles = [
-        'AI Engineer',
-        'ML Engineer', 
+        'AI/ML Engineer',
         'Data Analyst',
-        'Data Scientist'
+        'Data Science'
     ];
     
     let currentIndex = 0;

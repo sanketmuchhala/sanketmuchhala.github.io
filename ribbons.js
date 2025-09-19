@@ -266,7 +266,7 @@
                 point1 = new Point( startx, starty ),
                 point2 = new Point( startx, starty ),
                 point3 = null,
-                color  = Math.round( random( 0, 60 ) ), // Focus on black/gray range for dark theme
+                color  = Math.round( random( 0, 360 ) ), // Full color spectrum including red, orange, yellow, green, blue, purple, pink
                 delay  = 0;
 
             // build ribbon sections

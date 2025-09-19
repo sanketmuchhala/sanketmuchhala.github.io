@@ -634,7 +634,8 @@ function initializeTypingAnimation() {
     const jobTitles = [
         'AI Engineer',
         'ML Engineer', 
-        'Data Analyst'
+        'Data Analyst',
+        'Data Scientist'
     ];
     
     let currentIndex = 0;

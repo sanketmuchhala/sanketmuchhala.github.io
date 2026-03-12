@@ -587,83 +587,21 @@ section.visible .section-title::after {
   line-height: 1.7;
 }
 
-/* --- Education with Logos --- */
-.education {
+/* Skills within About */
+.about-skills {
   margin-top: var(--space-xl);
 }
 
-.education h3 {
+.about-skills-label {
   font-size: 0.75rem;
   font-weight: 600;
   color: var(--color-text-muted);
-  margin-bottom: var(--space-lg);
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
-.education-item {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--space-md);
+  letter-spacing: 0.1em;
   margin-bottom: var(--space-md);
-  padding: var(--space-md);
-  border-left: 2px solid var(--color-accent-border);
-  transition: all var(--transition);
-  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
 }
 
-.education-item:hover {
-  border-left-color: var(--color-accent);
-  background: var(--color-accent-light);
-  padding-left: calc(var(--space-md) + 4px);
-}
-
-.education-item:last-child {
-  margin-bottom: 0;
-}
-
-.education-logo {
-  flex-shrink: 0;
-  width: 44px;
-  height: 44px;
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.education-logo img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.education-logo--iu {
-  background-color: #7d120d;
-  padding: 5px;
-}
-
-.education-logo--thakur {
-  background-color: #141355;
-  padding: 5px;
-}
-
-.education-content h4 {
-  font-size: 0.9375rem;
-  font-weight: 600;
-  color: var(--color-text);
-  margin-bottom: 2px;
-}
-
-.education-content p {
-  font-size: 0.8125rem;
-  color: var(--color-text-muted);
-  margin-bottom: 0;
-  line-height: 1.5;
-}
-
-/* --- Skills Section --- */
+/* --- Skills --- */
 .skills-list {
   display: flex;
   flex-wrap: wrap;
@@ -1726,17 +1664,6 @@ a:focus-visible, button:focus-visible {
   .company-logo {
     width: 40px;
     height: 40px;
-  }
-
-  /* Education on mobile */
-  .education-item {
-    flex-direction: column;
-    gap: var(--space-sm);
-  }
-
-  .education-logo {
-    width: 36px;
-    height: 36px;
   }
 
   .timeline-divider-label {

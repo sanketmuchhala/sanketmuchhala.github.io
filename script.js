@@ -145,14 +145,7 @@ document.addEventListener('DOMContentLoaded', function() {
         item.style.transitionDelay = `${Math.min(i * 40, 600)}ms`;
     });
 
-    // 5. Mark education items
-    const eduItems = document.querySelectorAll('.education-item');
-    eduItems.forEach((entry, i) => {
-        entry.classList.add('animate-on-scroll');
-        entry.style.transitionDelay = `${i * 120}ms`;
-    });
-
-    // 6. Mark certification entries
+    // 5. Mark certification entries
     const certEntries = document.querySelectorAll('.cert-entry');
     certEntries.forEach((entry, i) => {
         entry.classList.add('animate-on-scroll');

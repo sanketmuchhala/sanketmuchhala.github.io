@@ -30,7 +30,7 @@ image: "/photos/export.png"
     </div>
 </section>
 
-<!-- About -->
+<!-- About & Skills -->
 <section id="about">
     <div class="container">
         <div class="section-header">
@@ -45,44 +45,38 @@ image: "/photos/export.png"
                 My work spans insurance, esports, and enterprise analytics — from research and development to production deployment of AI systems that make real-world impact.
             </p>
         </div>
-    </div>
-</section>
-
-<!-- Skills -->
-<section id="skills">
-    <div class="container">
-        <div class="section-header">
-            <h2 class="section-title">Skills</h2>
-        </div>
-        <div class="skills-list">
-            <span class="skill-item">Python</span>
-            <span class="skill-item">SQL</span>
-            <span class="skill-item">R</span>
-            <span class="skill-item">JavaScript</span>
-            <span class="skill-item">TensorFlow</span>
-            <span class="skill-item">PyTorch</span>
-            <span class="skill-item">Scikit-learn</span>
-            <span class="skill-item">FastAPI</span>
-            <span class="skill-item">MLflow</span>
-            <span class="skill-item">SpaCy</span>
-            <span class="skill-item">GPT-4</span>
-            <span class="skill-item">LangChain</span>
-            <span class="skill-item">RAG</span>
-            <span class="skill-item">Agentic AI</span>
-            <span class="skill-item">Vector DBs</span>
-            <span class="skill-item">NER</span>
-            <span class="skill-item">Text Classification</span>
-            <span class="skill-item">Summarization</span>
-            <span class="skill-item">Sentiment Analysis</span>
-            <span class="skill-item">Pandas</span>
-            <span class="skill-item">NumPy</span>
-            <span class="skill-item">PySpark</span>
-            <span class="skill-item">AWS</span>
-            <span class="skill-item">Azure Data Lake</span>
-            <span class="skill-item">Azure SQL</span>
-            <span class="skill-item">Tableau</span>
-            <span class="skill-item">Power BI</span>
-            <span class="skill-item">R Shiny</span>
+        <div class="about-skills">
+            <h3 class="about-skills-label">Technologies & Tools</h3>
+            <div class="skills-list">
+                <span class="skill-item">Python</span>
+                <span class="skill-item">SQL</span>
+                <span class="skill-item">R</span>
+                <span class="skill-item">JavaScript</span>
+                <span class="skill-item">TensorFlow</span>
+                <span class="skill-item">PyTorch</span>
+                <span class="skill-item">Scikit-learn</span>
+                <span class="skill-item">FastAPI</span>
+                <span class="skill-item">MLflow</span>
+                <span class="skill-item">SpaCy</span>
+                <span class="skill-item">GPT-4</span>
+                <span class="skill-item">LangChain</span>
+                <span class="skill-item">RAG</span>
+                <span class="skill-item">Agentic AI</span>
+                <span class="skill-item">Vector DBs</span>
+                <span class="skill-item">NER</span>
+                <span class="skill-item">Text Classification</span>
+                <span class="skill-item">Summarization</span>
+                <span class="skill-item">Sentiment Analysis</span>
+                <span class="skill-item">Pandas</span>
+                <span class="skill-item">NumPy</span>
+                <span class="skill-item">PySpark</span>
+                <span class="skill-item">AWS</span>
+                <span class="skill-item">Azure Data Lake</span>
+                <span class="skill-item">Azure SQL</span>
+                <span class="skill-item">Tableau</span>
+                <span class="skill-item">Power BI</span>
+                <span class="skill-item">R Shiny</span>
+            </div>
         </div>
     </div>
 </section>

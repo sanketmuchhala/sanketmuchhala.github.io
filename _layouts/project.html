@@ -8,36 +8,30 @@ layout: default
             <div class="blog-breadcrumb">
                 <a href="{{ '/' | relative_url }}">Home</a><span>/</span><a href="{{ '/projects/' | relative_url }}">Projects</a><span>/</span><span>{{ page.title }}</span>
             </div>
-            <h1 class="blog-post-title">{{ page.title }} {% if page.status %}<span class="status-badge status-{{ page.status }}">{{ page.status | capitalize }}</span>{% endif %}</h1>
+            <h1 class="blog-post-title">{{ page.title }}{% if page.status %} <span class="status-badge status-{{ page.status }}">{{ page.status | capitalize }}</span>{% endif %}</h1>
             <div class="blog-post-meta">
-                <div class="meta-item"><i class="fas fa-user"></i><span>{{ site.author }}</span></div>
                 {% if page.date %}
                 <div class="meta-item"><i class="fas fa-calendar"></i><span>{{ page.date | date: "%B %Y" }}</span></div>
                 {% endif %}
                 {% if page.categories %}
-                <div class="meta-item"><i class="fas fa-tag"></i><span class="blog-category">{{ page.categories | join: ", " }}</span></div>
+                <div class="meta-item"><i class="fas fa-tag"></i><span>{{ page.categories | join: ", " }}</span></div>
                 {% endif %}
                 {% if page.technologies %}
                 <div class="meta-item"><i class="fas fa-code-branch"></i><span>{{ page.technologies | join: ", " }}</span></div>
                 {% endif %}
             </div>
         </header>
-        
+
         {% if page.featured_image %}
         <div class="blog-featured-image">
             <img src="{{ page.featured_image | relative_url }}" alt="{{ page.title }}">
         </div>
         {% endif %}
-        
+
         <div class="blog-content">
             {{ content }}
         </div>
-        
-        <!-- Enhanced Slideshow Styles and Scripts -->
-        <link rel="stylesheet" href="/assets/enhanced-slideshow.css">
-        <link rel="stylesheet" href="/assets/fullscreen-slideshow.css">
-        <script src="/assets/fullscreen-slideshow.js" defer></script>
-        
+
         {% if page.github_url or page.deployment_url %}
         <div class="blog-share">
             <h3>Project Links</h3>

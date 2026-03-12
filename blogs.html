@@ -4,30 +4,20 @@ title: "Blog"
 description: "Thoughts on AI, technology, and the future of work"
 ---
 
-<!-- Blogs Index Section -->
 <section class="blog-index">
     <div class="container">
         <div class="section-header">
             <h1 class="section-title">Blog</h1>
-            <div class="section-divider"></div>
-            <p class="section-subtitle">Thoughts on AI, technology, and the future of work</p>
         </div>
-        
+
         <div class="blog-grid">
             {% for post in site.blogs %}
             <article class="blog-card">
+                {% if post.featured_image %}
                 <div class="blog-image">
-                    {% if post.featured_image %}
-                        <img src="{{ post.featured_image | relative_url }}" alt="{{ post.title }}">
-                    {% else %}
-                        <div class="blog-placeholder">
-                            <div class="placeholder-content">
-                                <div class="placeholder-title">{{ post.title | split: ' ' | first }}</div>
-                                <div class="placeholder-subtitle">{{ post.title | split: ' ' | slice: 1, 3 | join: ' ' }}</div>
-                            </div>
-                        </div>
-                    {% endif %}
+                    <img src="{{ post.featured_image | relative_url }}" alt="{{ post.title }}" loading="lazy">
                 </div>
+                {% endif %}
                 <div class="blog-content">
                     <div class="blog-meta">
                         <span class="blog-date">{{ post.date | date: "%B %d, %Y" }}</span>
@@ -44,7 +34,7 @@ description: "Thoughts on AI, technology, and the future of work"
                         {% endfor %}
                     </div>
                     {% endif %}
-                    <a href="{{ post.url | relative_url }}" class="blog-read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    <a href="{{ post.url | relative_url }}" class="blog-read-more">Read more →</a>
                 </div>
             </article>
             {% endfor %}

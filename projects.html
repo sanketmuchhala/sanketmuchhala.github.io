@@ -4,29 +4,26 @@ title: "Projects"
 description: "Explore my portfolio of AI/ML projects, web applications, and innovative solutions"
 ---
 
-<!-- Projects Section -->
-<section id="projects" class="projects" data-animate>
+<section class="blog-index">
     <div class="container">
         <div class="section-header">
-            <h2 class="section-title">All Projects</h2>
-            <div class="section-divider"></div>
-            <p class="section-subtitle">Explore my portfolio of AI/ML projects, web applications, and innovative solutions</p>
+            <h1 class="section-title">All Projects</h1>
         </div>
-        
+
         <div class="projects-grid">
             {% assign all_projects = site.projects | sort: 'path' %}
             {% for project in all_projects %}
-            <div class="project-card hover-bump" data-animate>
+            <div class="project-card">
                 <div class="project-header">
                     <h3>{{ project.title }}{% if project.status %} <span class="status-badge status-{{ project.status }}">{{ project.status | capitalize }}</span>{% endif %}</h3>
                     <div class="project-links">
                         {% if project.github_url %}
-                        <a href="{{ project.github_url }}" class="project-link hover-bump" aria-label="View project on GitHub" target="_blank" rel="noopener noreferrer">
+                        <a href="{{ project.github_url }}" class="project-link" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
                             <i class="fab fa-github"></i>
                         </a>
                         {% endif %}
                         {% if project.demo_url %}
-                        <a href="{{ project.demo_url }}" class="project-link hover-bump" aria-label="View live demo" target="_blank" rel="noopener noreferrer">
+                        <a href="{{ project.demo_url }}" class="project-link" aria-label="Live demo" target="_blank" rel="noopener noreferrer">
                             <i class="fas fa-external-link-alt"></i>
                         </a>
                         {% endif %}
@@ -41,10 +38,7 @@ description: "Explore my portfolio of AI/ML projects, web applications, and inno
                 </div>
                 {% endif %}
                 <div class="project-actions">
-                    <a href="{{ project.url | relative_url }}" class="btn btn-primary hover-bump">
-                        <span>Read More</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
+                    <a href="{{ project.url | relative_url }}">Read more →</a>
                 </div>
             </div>
             {% endfor %}

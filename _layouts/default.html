@@ -4,17 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
-    
-    <!-- Performance Optimizations -->
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
     <meta name="keywords" content="{% if page.keywords %}{{ page.keywords }}{% else %}{{ site.keywords }}{% endif %}">
     <meta name="author" content="{{ site.author }}">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    <meta name="googlebot" content="index, follow">
-    <meta name="bingbot" content="index, follow">
-    
-    <!-- Enhanced Open Graph -->
+
+    <!-- Open Graph -->
     <meta property="og:type" content="{% if page.layout == 'project' %}article{% else %}website{% endif %}">
     <meta property="og:title" content="{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}">
     <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
@@ -23,7 +20,7 @@
     <meta property="og:image:height" content="630">
     <meta property="og:url" content="{{ site.url }}{{ page.url }}">
     <meta property="og:site_name" content="{{ site.title }}">
-    
+
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@{{ site.twitter.username }}">
@@ -31,81 +28,38 @@
     <meta name="twitter:title" content="{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}">
     <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
     <meta name="twitter:image" content="{{ site.url }}{% if page.image %}{{ page.image }}{% else %}{{ site.image }}{% endif %}">
-    
-    <!-- LinkedIn Specific -->
+
+    <!-- LinkedIn -->
     <meta property="article:author" content="{{ site.social.links[0] }}">
     <meta property="profile:first_name" content="Sanket">
     <meta property="profile:last_name" content="Muchhala">
-    <meta property="profile:username" content="sanketmuchhala">
-    
-    <!-- Critical CSS for above-the-fold content -->
-    <style>
-        /* Critical CSS for immediate rendering */
-        :root {
-            --primary-color: #ffffff;
-            --background-dark: #000000;
-            --text-primary: #f8fafc;
-            --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        }
-        body { margin: 0; font-family: var(--font-family); background: var(--background-dark); color: var(--text-primary); }
-        .navbar { position: fixed; top: 0; width: 100%; z-index: 1000; background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); }
-        .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; }
-        .hero-title { font-size: 3rem; font-weight: 700; margin-bottom: 1rem; }
-        .hero-subtitle { font-size: 1.5rem; opacity: 0.8; }
-    </style>
-    
-    <!-- Preload critical resources -->
-    <link rel="preload" href="{{ '/style.css' | relative_url }}?v=1.2" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="{{ '/style.css' | relative_url }}?v=1.2"></noscript>
-    
-    <!-- Load animations CSS -->
-    <link rel="stylesheet" href="{{ '/animations.css' | relative_url }}">
-    
-    <!-- Load catch-me game CSS -->
-    <link rel="stylesheet" href="{{ '/assets/catch-me.css' | relative_url }}?v=2.0">
-    
-    <!-- Preload critical images -->
-    <link rel="preload" href="{{ '/photography/photos/optimized/sunset-mountains.webp' | relative_url }}" as="image" type="image/webp">
-    <link rel="preload" href="{{ '/photography/photos/optimized/urban-architecture.webp' | relative_url }}" as="image" type="image/webp">
-    <link rel="preload" href="{{ '/photography/photos/optimized/nature-closeup.webp' | relative_url }}" as="image" type="image/webp">
-    
+
     <!-- Canonical URL -->
     <link rel="canonical" href="{{ site.url }}{{ page.url }}">
-    
-    <!-- DNS prefetch for external resources -->
-    <link rel="dns-prefetch" href="//fonts.googleapis.com">
-    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
-    <link rel="dns-prefetch" href="//avatars.githubusercontent.com">
-    
-    <!-- Preconnect to external domains -->
+
+    <!-- Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link rel="preconnect" href="https://avatars.githubusercontent.com">
-    
-    <!-- Load fonts with display=swap for better performance -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Load Font Awesome asynchronously -->
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
-    
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="{{ '/style.css' | relative_url }}?v=3.1">
+
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="{{ '/favicon.svg' | relative_url }}" />
-    <meta name="apple-mobile-web-app-title" content="Sanket Muchhala - AI Engineer" />
-    <meta name="theme-color" content="#000000">
-    <meta name="msapplication-TileColor" content="#000000">
-    
-    <!-- Additional SEO Meta -->
-    <meta name="format-detection" content="telephone=no">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    
+    <meta name="theme-color" content="#0a0a0a">
+
     <!-- Jekyll SEO Tag -->
     {% seo %}
-    
-    <!-- Structured Data JSON-LD -->
+
+    <!-- Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -122,61 +76,32 @@
         "@type": "EducationalOrganization",
         "name": "Indiana University Bloomington"
       },
-      "knowsAbout": [
-        "Artificial Intelligence",
-        "Machine Learning",
-        "Data Science",
-        "Deep Learning",
-        "Natural Language Processing",
-        "Computer Vision",
-        "Generative AI",
-        "Large Language Models",
-        "Python Programming",
-        "TensorFlow",
-        "PyTorch",
-        "AWS",
-        "Azure"
-      ],
+      "knowsAbout": ["Artificial Intelligence", "Machine Learning", "Data Science", "Deep Learning", "NLP", "Generative AI", "LLMs"],
       "sameAs": [
         "{{ site.social.links[0] }}",
         "{{ site.social.links[1] }}",
         "{{ site.social.links[2] }}"
       ],
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "US"
-      },
       "email": "{{ site.email }}",
       "description": "{{ site.description }}"
     }
     </script>
-    
+
     {% if page.layout == 'project' %}
-    <!-- Project-specific structured data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "CreativeWork",
       "name": "{{ page.title }}",
       "description": "{{ page.description }}",
-      "author": {
-        "@type": "Person",
-        "name": "{{ site.author }}"
-      },
+      "author": { "@type": "Person", "name": "{{ site.author }}" },
       "url": "{{ site.url }}{{ page.url }}",
-      "dateCreated": "{% if page.date %}{{ page.date | date_to_xmlschema }}{% else %}{{ site.time | date_to_xmlschema }}{% endif %}",
-      "programmingLanguage": {% if page.tech %}{{ page.tech | jsonify }}{% else %}["Python", "Machine Learning", "AI"]{% endif %}
+      "dateCreated": "{% if page.date %}{{ page.date | date_to_xmlschema }}{% else %}{{ site.time | date_to_xmlschema }}{% endif %}"
     }
     </script>
     {% endif %}
-    
-    <!-- Load JavaScript asynchronously -->
-    <script src="{{ '/script.js' | relative_url }}" defer></script>
-    
-    <!-- Page-specific head content -->
-    {% if page.head %}
-        {{ page.head }}
-    {% endif %}
+
+    {% if page.head %}{{ page.head }}{% endif %}
 </head>
 <body>
     <!-- Navigation -->
@@ -187,13 +112,7 @@
             </div>
             <ul class="nav-menu" id="nav-menu">
                 <li class="nav-item">
-                    <a href="{{ '/' | relative_url }}#home" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
                     <a href="{{ '/' | relative_url }}#about" class="nav-link">About</a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ '/' | relative_url }}#skills" class="nav-link">Skills</a>
                 </li>
                 <li class="nav-item">
                     <a href="{{ '/' | relative_url }}#experience" class="nav-link">Experience</a>
@@ -203,12 +122,6 @@
                 </li>
                 <li class="nav-item">
                     <a href="{{ '/' | relative_url }}#blogs" class="nav-link">Blog</a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ '/' | relative_url }}#certifications" class="nav-link">Certifications</a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ '/' | relative_url }}#contact" class="nav-link">Contact</a>
                 </li>
                 <li class="nav-item">
                     <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
@@ -233,15 +146,19 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p>&copy; {{ 'now' | date: "%Y" }} {{ site.author }}. All rights reserved.</p>
-                <div class="footer-links">
-                    <a href="{{ '/' | relative_url }}#home">Home</a>
-                    <a href="{{ '/' | relative_url }}#about">About</a>
-                    <a href="{{ '/' | relative_url }}#skills">Skills</a>
-                    <a href="{{ '/' | relative_url }}#experience">Experience</a>
-                    <a href="{{ '/' | relative_url }}#projects">Projects</a>
-                    <a href="{{ '/' | relative_url }}#certifications">Certifications</a>
-                    <a href="{{ '/' | relative_url }}#contact">Contact</a>
+                <div class="footer-left">
+                    <p class="footer-name">Sanket Muchhala</p>
+                    <p class="footer-email">
+                        <a href="mailto:sanketmuchhala1@gmail.com">sanketmuchhala1@gmail.com</a>
+                    </p>
+                </div>
+                <div class="footer-right">
+                    <div class="footer-social">
+                        <a href="https://linkedin.com/in/sanketmuchhala" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/sanketmuchhala" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://twitter.com/sanketmuchhala" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                    <p class="footer-copy">&copy; {{ 'now' | date: "%Y" }} Sanket Muchhala</p>
                 </div>
             </div>
         </div>
@@ -250,43 +167,25 @@
     <!-- Scripts -->
     <script src="{{ '/ribbons.js' | relative_url }}"></script>
     <script>
-        // Initialize ribbons background animation
         document.addEventListener('DOMContentLoaded', function() {
             if (typeof Ribbons !== 'undefined') {
                 new Ribbons({
-                    colorSaturation: "60%",
-                    colorBrightness: "50%",
-                    colorAlpha: 0.65,
-                    colorCycleSpeed: 5,
+                    colorSaturation: "0%",
+                    colorBrightness: "100%",
+                    colorAlpha: 0.12,
+                    colorCycleSpeed: 2,
                     verticalPosition: "center",
-                    horizontalSpeed: 150,
+                    horizontalSpeed: 50,
                     ribbonCount: 3,
-                    strokeSize: 5,
-                    parallaxAmount: -0.2,
-                    animateSections: true
+                    strokeSize: 0,
+                    parallaxAmount: -0.15,
+                    animateSections: false
                 });
             }
-            
-            // Fix lazy loaded images visibility
-            const lazyImages = document.querySelectorAll('img[loading="lazy"]');
-            lazyImages.forEach(img => {
-                if (img.complete) {
-                    img.classList.add('loaded');
-                } else {
-                    img.addEventListener('load', function() {
-                        img.classList.add('loaded');
-                    });
-                }
-            });
         });
     </script>
     <script src="{{ '/script.js' | relative_url }}" defer></script>
-    <script src="{{ '/animations.js' | relative_url }}" defer></script>
-    <script src="{{ '/assets/catch-me.js' | relative_url }}?v=2.0" defer></script>
-    
-    <!-- Page-specific scripts -->
-    {% if page.scripts %}
-        {{ page.scripts }}
-    {% endif %}
+
+    {% if page.scripts %}{{ page.scripts }}{% endif %}
 </body>
 </html>

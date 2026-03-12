@@ -85,17 +85,12 @@ exclude:
 
 # Include files that should be processed
 include:
-  - _sass
-  - _assets
-  - photography
   - photos
   - resume
   - favicon.svg
   - ribbons.js
   - script.js
-  - script.min.js
   - style.css
-  - style.min.css
   - Sanket_Muchhala_Resume.pdf
 
 # SEO

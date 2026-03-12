@@ -9,8 +9,11 @@ image: "/photos/export.png"
 <!-- Hero -->
 <section id="home" class="hero">
     <div class="hero-content">
-        <div class="hero-photo">
-            <img src="https://avatars.githubusercontent.com/u/61338448?s=400&u=31d3fd7cc5e559e4924d3ef3a16d06ea31d66d8a&v=4" alt="Sanket Muchhala - AI Engineer and Data Scientist" loading="eager">
+        <div class="hero-photo-wrap" id="open-claudos">
+            <div class="hero-photo">
+                <img src="https://avatars.githubusercontent.com/u/61338448?s=400&u=31d3fd7cc5e559e4924d3ef3a16d06ea31d66d8a&v=4" alt="Sanket Muchhala - AI Engineer and Data Scientist" loading="eager">
+            </div>
+            <span class="hero-photo-tooltip">See what's on my screen</span>
         </div>
         <div class="hero-text">
             <p class="hero-greeting">Hello, I'm</p>
@@ -335,3 +338,26 @@ image: "/photos/export.png"
         </div>
     </div>
 </section>
+
+<!-- ClaudOS MacBook Pro 13" Modal -->
+<div class="claudos-overlay" id="claudos-overlay">
+    <div class="macbook-frame">
+        <div class="macbook-screen">
+            <div class="macbook-bezel">
+                <div class="macbook-camera"></div>
+            </div>
+            <div class="macbook-display">
+                <iframe src="about:blank" data-src="https://sanketmuchhala.github.io/claudos/" id="claudos-iframe" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="macbook-chin">
+            <div class="macbook-touchbar">
+                <div class="touchbar-strip"></div>
+            </div>
+        </div>
+        <div class="macbook-base">
+            <div class="macbook-notch"></div>
+        </div>
+    </div>
+    <button class="claudos-close" id="claudos-close" aria-label="Close">&times;</button>
+</div>

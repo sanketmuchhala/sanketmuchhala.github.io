@@ -176,4 +176,44 @@ document.addEventListener('DOMContentLoaded', function() {
     timelineItems.forEach(item => {
         animationObserver.observe(item);
     });
+
+    // ---- ClaudOS MacBook Modal ----
+    const claudosOverlay = document.getElementById('claudos-overlay');
+    const claudosIframe = document.getElementById('claudos-iframe');
+    const claudosClose = document.getElementById('claudos-close');
+    const heroPhoto = document.querySelector('.hero-photo-wrap') || document.querySelector('.hero-photo');
+
+    function closeClaudos() {
+        if (claudosOverlay) {
+            claudosOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    }
+
+    if (heroPhoto && claudosOverlay) {
+        heroPhoto.addEventListener('click', function() {
+            // Lazy-load iframe on first open
+            if (claudosIframe && !claudosIframe.src.includes('claudos')) {
+                claudosIframe.src = claudosIframe.dataset.src;
+            }
+            claudosOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        if (claudosClose) {
+            claudosClose.addEventListener('click', closeClaudos);
+        }
+
+        claudosOverlay.addEventListener('click', function(e) {
+            if (e.target === claudosOverlay) {
+                closeClaudos();
+            }
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && claudosOverlay.classList.contains('active')) {
+                closeClaudos();
+            }
+        });
+    }
 });

@@ -203,6 +203,7 @@ ul, ol {
 
 /* --- Container --- */
 .container {
+  width: 100%;
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 var(--space-lg);
@@ -511,6 +512,9 @@ ul, ol {
 
 /* --- Sections Common --- */
 section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
   padding: var(--space-2xl) 0;
   position: relative;
 }
@@ -599,6 +603,85 @@ section.visible .section-title::after {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-bottom: var(--space-md);
+}
+
+/* --- Education Section --- */
+.education-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  max-width: 720px;
+}
+
+.education-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-lg);
+  padding: var(--space-lg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  transition: all var(--transition-slow);
+}
+
+.education-item:hover {
+  border-color: var(--color-accent-border);
+  box-shadow: var(--shadow-md);
+  transform: translateX(4px);
+}
+
+.education-logo {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.education-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.education-logo--iu {
+  background-color: #7d120d;
+  padding: 6px;
+}
+
+.education-logo--thakur {
+  background-color: #141355;
+  padding: 6px;
+}
+
+.education-content h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 2px;
+}
+
+.education-school {
+  font-size: 0.875rem;
+  color: var(--color-accent);
+  font-weight: 500;
+}
+
+.education-period {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  display: block;
+  margin-top: 2px;
+}
+
+.education-detail {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-top: var(--space-sm);
 }
 
 /* --- Skills --- */
@@ -794,60 +877,6 @@ section.visible .section-title::after {
 
 .timeline-card li:last-child {
   margin-bottom: 0;
-}
-
-/* Timeline divider between work and education */
-.timeline-divider {
-  position: relative;
-  margin-bottom: var(--space-lg);
-  padding: var(--space-sm) 0;
-}
-
-.timeline-divider-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: var(--color-accent-secondary);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  background: var(--color-bg);
-  padding-right: var(--space-md);
-  position: relative;
-  z-index: 1;
-}
-
-.timeline-divider::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  height: 1px;
-  background: linear-gradient(to right, var(--color-accent-secondary), transparent);
-  opacity: 0.3;
-}
-
-/* Education timeline items */
-.timeline-item--education::before {
-  border-color: var(--color-accent-secondary);
-}
-
-.timeline-item--education:hover::before {
-  background: var(--color-accent-secondary);
-  box-shadow: 0 0 12px rgba(139, 92, 246, 0.4);
-}
-
-.timeline-item--education .timeline-card {
-  border-style: dashed;
-}
-
-.timeline-education-detail {
-  font-size: 0.875rem;
-  color: var(--color-text-muted);
-  line-height: 1.6;
-  margin: 0;
 }
 
 /* --- Projects Section --- */
@@ -1666,8 +1695,24 @@ a:focus-visible, button:focus-visible {
     height: 40px;
   }
 
-  .timeline-divider-label {
-    font-size: 0.6875rem;
+  /* Education on mobile */
+  .education-item {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .education-item:hover {
+    transform: none;
+  }
+
+  .education-logo {
+    width: 44px;
+    height: 44px;
+  }
+
+  /* Full-height sections relax on mobile */
+  section {
+    min-height: auto;
   }
 
   .project-card:hover { transform: none; }

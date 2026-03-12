@@ -81,11 +81,44 @@ image: "/photos/export.png"
     </div>
 </section>
 
+<!-- Education -->
+<section id="education">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Education</h2>
+        </div>
+        <div class="education-list">
+            <div class="education-item">
+                <div class="education-logo education-logo--iu">
+                    <img src="{{ '/photos/iulogo.jpeg' | relative_url }}" alt="Indiana University Logo" loading="lazy">
+                </div>
+                <div class="education-content">
+                    <h3>MS in Data Science</h3>
+                    <span class="education-school">Indiana University Bloomington</span>
+                    <span class="education-period">Aug 2022 – May 2024</span>
+                    <p class="education-detail">Machine Learning, Deep Learning, NLP, Computer Vision, Applied Database Technologies, Data Mining</p>
+                </div>
+            </div>
+            <div class="education-item">
+                <div class="education-logo education-logo--thakur">
+                    <img src="{{ '/photos/download.jpeg' | relative_url }}" alt="Thakur College Logo" loading="lazy">
+                </div>
+                <div class="education-content">
+                    <h3>B.Tech in Computer Engineering</h3>
+                    <span class="education-school">Thakur College of Engineering & Technology</span>
+                    <span class="education-period">Jun 2017 – Jun 2021</span>
+                    <p class="education-detail">Data Structures, Algorithms, Database Systems, Operating Systems, Computer Networks</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- Experience -->
 <section id="experience">
     <div class="container">
         <div class="section-header">
-            <h2 class="section-title">Experience & Education</h2>
+            <h2 class="section-title">Experience</h2>
         </div>
         <div class="experience-timeline">
 
@@ -147,42 +180,6 @@ image: "/photos/export.png"
                         <li>Refactored ETL workflows using Azure Data Lake and SQL, improving data availability and cutting processing time by 15%</li>
                         <li>Deployed ML models to Azure ML environments with CI/CD support, accelerating release cycles by 25%</li>
                     </ul>
-                </div>
-            </div>
-
-            <div class="timeline-divider">
-                <span class="timeline-divider-label"><i class="fas fa-graduation-cap"></i> Education</span>
-            </div>
-
-            <div class="timeline-item timeline-item--education">
-                <div class="timeline-card">
-                    <div class="timeline-header">
-                        <div class="company-logo company-logo--iu">
-                            <img src="{{ '/photos/iulogo.jpeg' | relative_url }}" alt="Indiana University Logo" loading="lazy">
-                        </div>
-                        <div class="timeline-info">
-                            <h3>MS in Data Science</h3>
-                            <span class="company">Indiana University Bloomington</span>
-                            <span class="period">Aug 2022 – May 2024</span>
-                        </div>
-                    </div>
-                    <p class="timeline-education-detail">Coursework: Machine Learning, Deep Learning, NLP, Computer Vision, Applied Database Technologies, Data Mining</p>
-                </div>
-            </div>
-
-            <div class="timeline-item timeline-item--education">
-                <div class="timeline-card">
-                    <div class="timeline-header">
-                        <div class="company-logo company-logo--thakur">
-                            <img src="{{ '/photos/download.jpeg' | relative_url }}" alt="Thakur College Logo" loading="lazy">
-                        </div>
-                        <div class="timeline-info">
-                            <h3>B.Tech in Computer Engineering</h3>
-                            <span class="company">Thakur College of Engineering & Technology</span>
-                            <span class="period">Jun 2017 – Jun 2021</span>
-                        </div>
-                    </div>
-                    <p class="timeline-education-detail">Coursework: Data Structures, Algorithms, Database Systems, Operating Systems, Computer Networks</p>
                 </div>
             </div>
 

@@ -133,9 +133,11 @@ document.addEventListener('DOMContentLoaded', function() {
         item.style.transitionDelay = `${i * 150}ms`;
     });
 
-    // 3b. Mark timeline dividers for animation
-    document.querySelectorAll('.timeline-divider').forEach(el => {
-        el.classList.add('animate-on-scroll');
+    // 3b. Mark education items for staggered animation
+    const eduItems = document.querySelectorAll('.education-item');
+    eduItems.forEach((item, i) => {
+        item.classList.add('animate-on-scroll');
+        item.style.transitionDelay = `${i * 150}ms`;
     });
 
     // 4. Mark skill items for cascading entrance

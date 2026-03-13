@@ -126,4 +126,4 @@ featured_image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjQwM
 
 <p>
     The future belongs to those who can work effectively with AI, not those who fear it or try to compete with it. Because in the end, the most powerful combination will always be human creativity augmented by artificial intelligence.
-</p>
+</p> 

@@ -119,12 +119,19 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // 2. Mark cards for staggered entrance
-    const staggerContainers = document.querySelectorAll('.projects-grid, .blog-grid');
-    staggerContainers.forEach(container => {
-        container.classList.add('stagger-children');
-        container.querySelectorAll('.project-card, .blog-card').forEach(card => {
+    const projectsGrid = document.querySelector('.projects-grid');
+    if (projectsGrid) {
+        projectsGrid.classList.add('stagger-children');
+        projectsGrid.querySelectorAll('.project-card').forEach(card => {
             card.classList.add('animate-on-scroll');
         });
+    }
+
+    // Blog list items
+    const blogItems = document.querySelectorAll('.blog-list-item');
+    blogItems.forEach((item, i) => {
+        item.classList.add('animate-on-scroll');
+        item.style.transitionDelay = `${i * 60}ms`;
     });
 
     // 3. Mark timeline items for staggered animation
@@ -147,11 +154,11 @@ document.addEventListener('DOMContentLoaded', function() {
         item.style.transitionDelay = `${Math.min(i * 40, 600)}ms`;
     });
 
-    // 5. Mark certification entries
-    const certEntries = document.querySelectorAll('.cert-entry');
-    certEntries.forEach((entry, i) => {
-        entry.classList.add('animate-on-scroll');
-        entry.style.transitionDelay = `${i * 80}ms`;
+    // 5. Mark certification list items
+    const certItems = document.querySelectorAll('.cert-list-item');
+    certItems.forEach((item, i) => {
+        item.classList.add('animate-on-scroll');
+        item.style.transitionDelay = `${i * 60}ms`;
     });
 
     // 7. Create intersection observer

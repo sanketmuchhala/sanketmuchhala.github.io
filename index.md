@@ -294,25 +294,14 @@ image: "/photos/export.png"
         <div class="section-header">
             <h2 class="section-title">Blog</h2>
         </div>
-        <div class="blog-grid">
-            {% assign latest_blogs = site.blogs | sort: 'date' | reverse | limit: 3 %}
+        <div class="blog-list">
+            {% assign latest_blogs = site.blogs | sort: 'date' | reverse | limit: 5 %}
             {% for blog in latest_blogs %}
-            <article class="blog-card">
-                {% if blog.featured_image %}
-                <div class="blog-image">
-                    <img src="{{ blog.featured_image }}" alt="{{ blog.title }}" loading="lazy">
-                </div>
-                {% endif %}
-                <div class="blog-content">
-                    <div class="blog-meta">
-                        <span class="blog-date">{{ blog.date | date: "%B %d, %Y" }}</span>
-                        <span class="blog-category">{{ blog.categories | first }}</span>
-                    </div>
-                    <h3 class="blog-title">{{ blog.title }}</h3>
-                    <p class="blog-excerpt">{{ blog.description }}</p>
-                    <a href="{{ blog.url | relative_url }}" class="blog-read-more">Read more →</a>
-                </div>
-            </article>
+            <a href="{{ blog.url | relative_url }}" class="blog-list-item">
+                <span class="blog-list-date">{{ blog.date | date: "%b %d, %Y" }}</span>
+                <span class="blog-list-title">{{ blog.title }}</span>
+                <span class="blog-list-category">{{ blog.categories | first }}</span>
+            </a>
             {% endfor %}
         </div>
         <div class="section-actions">
@@ -327,27 +316,47 @@ image: "/photos/export.png"
         <div class="section-header">
             <h2 class="section-title">Certifications</h2>
         </div>
-        <div class="certifications-list">
-            <div class="cert-entry">
-                <span class="cert-name">AWS Certified Machine Learning Engineer Associate</span>
-                <span class="cert-meta-info">Amazon Web Services, 2024</span>
-                <a href="https://www.credly.com/badges/8424e14a-fb0f-4af9-9707-9644f1c0d599/linked_in_profile" class="cert-link" target="_blank" rel="noopener noreferrer">View →</a>
-            </div>
-            <div class="cert-entry">
-                <span class="cert-name">Azure AI Fundamentals (AI-900)</span>
-                <span class="cert-meta-info">Microsoft, 2024</span>
-                <a href="https://learn.microsoft.com/en-us/users/SANKETMUCHHALA-0655/achievements/XQ6FTGFY" class="cert-link" target="_blank" rel="noopener noreferrer">View →</a>
-            </div>
-            <div class="cert-entry">
-                <span class="cert-name">Databricks Generative AI Foundations</span>
-                <span class="cert-meta-info">Databricks, 2024</span>
-                <a href="https://credentials.databricks.com/38f5f364-567c-463a-9139-eaeda5eced80#acc.QbhpOWCx" class="cert-link" target="_blank" rel="noopener noreferrer">View →</a>
-            </div>
-            <div class="cert-entry">
-                <span class="cert-name">Google Data Analytics Professional Certificate</span>
-                <span class="cert-meta-info">Google, 2021</span>
-                <a href="http://coursera.org/account/accomplishments/professional-cert/V6G9C6ZEJHZF" class="cert-link" target="_blank" rel="noopener noreferrer">View →</a>
-            </div>
+        <div class="cert-list">
+            <a href="https://www.credly.com/badges/8424e14a-fb0f-4af9-9707-9644f1c0d599/linked_in_profile" class="cert-list-item" target="_blank" rel="noopener noreferrer">
+                <div class="cert-list-icon" data-provider="aws">
+                    <i class="fab fa-aws"></i>
+                </div>
+                <div class="cert-list-content">
+                    <span class="cert-list-title">AWS Certified Machine Learning Engineer Associate</span>
+                    <span class="cert-list-meta">Amazon Web Services • 2024</span>
+                </div>
+                <i class="fas fa-external-link-alt cert-list-link"></i>
+            </a>
+            <a href="https://learn.microsoft.com/en-us/users/SANKETMUCHHALA-0655/achievements/XQ6FTGFY" class="cert-list-item" target="_blank" rel="noopener noreferrer">
+                <div class="cert-list-icon" data-provider="microsoft">
+                    <i class="fab fa-microsoft"></i>
+                </div>
+                <div class="cert-list-content">
+                    <span class="cert-list-title">Azure AI Fundamentals (AI-900)</span>
+                    <span class="cert-list-meta">Microsoft • 2024</span>
+                </div>
+                <i class="fas fa-external-link-alt cert-list-link"></i>
+            </a>
+            <a href="https://credentials.databricks.com/38f5f364-567c-463a-9139-eaeda5eced80#acc.QbhpOWCx" class="cert-list-item" target="_blank" rel="noopener noreferrer">
+                <div class="cert-list-icon" data-provider="databricks">
+                    <i class="fas fa-database"></i>
+                </div>
+                <div class="cert-list-content">
+                    <span class="cert-list-title">Databricks Generative AI Foundations</span>
+                    <span class="cert-list-meta">Databricks • 2024</span>
+                </div>
+                <i class="fas fa-external-link-alt cert-list-link"></i>
+            </a>
+            <a href="http://coursera.org/account/accomplishments/professional-cert/V6G9C6ZEJHZF" class="cert-list-item" target="_blank" rel="noopener noreferrer">
+                <div class="cert-list-icon" data-provider="google">
+                    <i class="fab fa-google"></i>
+                </div>
+                <div class="cert-list-content">
+                    <span class="cert-list-title">Google Data Analytics Professional Certificate</span>
+                    <span class="cert-list-meta">Google • 2021</span>
+                </div>
+                <i class="fas fa-external-link-alt cert-list-link"></i>
+            </a>
         </div>
     </div>
 </section>

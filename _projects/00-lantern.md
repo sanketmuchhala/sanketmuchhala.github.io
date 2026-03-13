@@ -1,13 +1,13 @@
 ---
 layout: project
-title: "Project Green Lantern"
+title: "Lantern"
 description: "Minimalist chat UI for cloud & local LLMs with built-in Prompt Analytics - Build better prompts, faster responses, and clearer insights"
 date: 2025-01-01
 status: completed
 featured: true
 categories: ["AI/ML", "Full-Stack", "TypeScript"]
 technologies: ["TypeScript", "React", "Node.js", "Vite", "Ollama", "IndexedDB"]
-github_url: "https://github.com/sanketmuchhala/Project-Green-Lantern"
+github_url: "https://github.com/sanketmuchhala/Nerdplexity"
 ---
 
 <div class="project-slideshow">

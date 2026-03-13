@@ -258,27 +258,24 @@ image: "/photos/export.png"
 
             <div class="project-card">
                 <div class="project-header">
-                    <h3>Location-Based File Sharing</h3>
+                    <h3>Lantern</h3>
                     <div class="project-links">
-                        <a href="https://d3vjtmq7zqrgp7.cloudfront.net/" class="project-link" aria-label="Live demo" target="_blank" rel="noopener noreferrer">
-                            <i class="fas fa-external-link-alt"></i>
-                        </a>
-                        <a href="https://github.com/sanketmuchhala/ECC-LBFS" class="project-link" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+                        <a href="https://github.com/sanketmuchhala/Nerdplexity" class="project-link" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
                             <i class="fab fa-github"></i>
                         </a>
                     </div>
                 </div>
                 <p class="project-description">
-                    Serverless AWS solution using S3 and Lambda with geospatial filtering, maintaining 99% uptime. Integrated OpenStreetMap via Leaflet.js into a responsive frontend.
+                    Minimalist chat UI for cloud & local LLMs with built-in Prompt Analytics. Build better prompts, faster responses, and clearer insights.
                 </p>
                 <div class="project-tech">
-                    <span class="tech-tag">AWS S3</span>
-                    <span class="tech-tag">Lambda</span>
-                    <span class="tech-tag">Leaflet.js</span>
-                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">TypeScript</span>
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">Vite</span>
                 </div>
                 <div class="project-actions">
-                    <a href="{{ '/projects/location-based-file-sharing/' | relative_url }}">Read more →</a>
+                    <a href="{{ '/projects/00-lantern/' | relative_url }}">Read more →</a>
                 </div>
             </div>
         </div>

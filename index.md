@@ -58,7 +58,7 @@ image: "/photos/export.png"
             </p>
             <p>
                 I specialize in designing agentic systems, document intelligence workflows, and ML pipelines deployed at scale.
-                My work spans insurance, esports, and enterprise analytics — from research and development to production deployment of AI systems that make real-world impact.
+                My work spans insurance, esports, and enterprise analytics, from research and development to production deployment of AI systems that make real-world impact.
             </p>
         </div>
         <div class="about-skills">
@@ -166,7 +166,7 @@ image: "/photos/export.png"
                             <img src="{{ '/photos/iulogo.jpeg' | relative_url }}" alt="Indiana University Logo" loading="lazy">
                         </div>
                         <div class="timeline-info">
-                            <h3>Research Assistant — Generative AI</h3>
+                            <h3>Research Assistant, Generative AI</h3>
                             <span class="company">Indiana University Bloomington</span>
                             <span class="period">Dec 2023 – May 2024</span>
                         </div>

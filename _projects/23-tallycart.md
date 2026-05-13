@@ -11,7 +11,7 @@ github_url: "https://github.com/sanketmuchhala/TallyCart"
 
 ## Overview
 
-TallyCart is a native iOS app that makes grocery shopping smarter. It goes beyond a simple list — tracking prices over time, learning what you regularly buy, and helping you stay on budget.
+TallyCart is a native iOS app that makes grocery shopping smarter. It goes beyond a simple list: tracking prices over time, learning what you regularly buy, and helping you stay on budget.
 
 ## Key Features
 

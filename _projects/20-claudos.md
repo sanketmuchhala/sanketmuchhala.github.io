@@ -14,7 +14,7 @@ demo_url: "https://sanketmuchhala.github.io/claudos/"
 
 ## Overview
 
-ClaudOS is a pixel-perfect macOS desktop simulator that runs entirely in your browser. Experience a fully functional desktop environment with window management, system apps, and authentic macOS aesthetics — all built with vanilla JavaScript and CSS.
+ClaudOS is a pixel-perfect macOS desktop simulator that runs entirely in your browser. Experience a fully functional desktop environment with window management, system apps, and authentic macOS aesthetics, all built with vanilla JavaScript and CSS.
 
 ## Key Features
 

@@ -11,7 +11,7 @@ demo_url: "https://ruthierealty.com/"
 
 ## Overview
 
-A fully custom real estate website built for a private client. The goal was a clean, professional online presence that converts visitors into leads — built on WordPress for easy content management by a non-technical owner.
+A fully custom real estate website built for a private client. The goal was a clean, professional online presence that converts visitors into leads, built on WordPress for easy content management by a non-technical owner.
 
 ## Key Features
 

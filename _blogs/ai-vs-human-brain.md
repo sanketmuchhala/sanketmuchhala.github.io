@@ -57,7 +57,7 @@ read_time: 12
 <h2>The Human Brain: A Different Kind of Computer</h2>
 
 <p>
-    Your brain, on the other hand, is something entirely different. It's not just processing information—it's experiencing it. When you read these words, you're not just recognizing patterns of letters. You're understanding meaning, connecting ideas, forming thoughts, and experiencing consciousness.
+    Your brain, on the other hand, is something entirely different. It's not just processing information. It's experiencing it. When you read these words, you're not just recognizing patterns of letters. You're understanding meaning, connecting ideas, forming thoughts, and experiencing consciousness.
 </p>
 
 <p>
@@ -116,7 +116,7 @@ read_time: 12
 <h2>Conclusion</h2>
 
 <p>
-    AI is not going to replace humans. It's going to change how we work, think, and create. But it will always be a tool—a very powerful tool—that we use to enhance our own capabilities.
+    AI is not going to replace humans. It's going to change how we work, think, and create. But it will always be a tool we use to enhance our own capabilities.
 </p>
 
 <p>

@@ -11,7 +11,7 @@ github_url: "https://github.com/sanketmuchhala/Linkedin-Connections"
 
 ## Overview
 
-LinkedIn Connections is an intelligent networking tool that helps you leverage your existing LinkedIn network more strategically. Instead of cold outreach, it identifies the best people in your connections to approach for specific roles or companies — surfacing warm paths you didn't know you had.
+LinkedIn Connections is an intelligent networking tool that helps you leverage your existing LinkedIn network more strategically. Instead of cold outreach, it identifies the best people in your connections to approach for specific roles or companies, surfacing warm paths you didn't know you had.
 
 ## Key Features
 

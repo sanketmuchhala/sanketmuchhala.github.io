@@ -2283,3 +2283,100 @@ section:not(.hero) .section-header::before {
     -webkit-backdrop-filter: blur(16px) saturate(160%);
   }
 }
+
+/* ============================================================
+   MOBILE POLISH
+   Well-considered touch interactions, layout fixes, performance
+   ============================================================ */
+
+@media (max-width: 768px) {
+
+  /* Nav menu: glass (matches card material, not opaque black) */
+  .nav-menu {
+    background: rgba(6, 6, 8, 0.90);
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.07);
+  }
+  [data-theme="light"] .nav-menu {
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.06);
+  }
+
+  /* Tooltip is a desktop affordance — hide on touch */
+  .hero-photo-tooltip { display: none; }
+
+  /* 44×44 minimum touch targets for social icons */
+  .hero-social-link { width: 44px; height: 44px; }
+
+  /* Nav links: comfortable tap height */
+  .nav-link { padding: 0.875rem 0; min-height: 44px; }
+
+  /* Hero stagger: tighter on mobile (full reveal in ~400ms not ~700ms) */
+  .hero-photo-wrap  { animation-delay: 0.04s; }
+  .hero-greeting    { animation-delay: 0.10s; }
+  .hero-title       { animation-delay: 0.17s; }
+  .hero-subtitle    { animation-delay: 0.24s; }
+  .hero-description { animation-delay: 0.30s; }
+  .hero-links       { animation-delay: 0.37s; }
+
+  /* Hero description: uncap max-width, slightly smaller body */
+  .hero-description { max-width: 100%; font-size: 1rem; }
+
+  /* Hero: a bit less tall on short phones */
+  .hero { min-height: 80vh; padding-bottom: var(--space-lg); }
+
+  /* Sections: reduce vertical padding on mobile */
+  section { padding: var(--space-xl) 0; }
+
+  /* Skill tags: use the lighter enter-up instead of bouncy pop-in */
+  .skill-item.animate-on-scroll.visible {
+    animation: enter-up 0.35s ease both;
+  }
+
+  /* Blog list: title first, then date + category on same row */
+  .blog-list-item {
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    gap: 3px var(--space-sm);
+    padding: 0.875rem 0;
+  }
+  .blog-list-title    { grid-column: 1 / -1; grid-row: 1; font-size: 0.9375rem; }
+  .blog-list-date     { grid-column: 1;      grid-row: 2; }
+  .blog-list-category { grid-column: 2;      grid-row: 2; align-self: center; }
+
+  /* Blog & cert items: vertical slide only on touch (no horizontal jank) */
+  .blog-list-item.animate-on-scroll,
+  .cert-list-item.animate-on-scroll {
+    transform: translateY(10px);
+  }
+  .blog-list-item.animate-on-scroll.visible,
+  .cert-list-item.animate-on-scroll.visible {
+    transform: translateY(0);
+  }
+
+  /* Education items: vertical slide on mobile */
+  .education-item:nth-child(1).animate-on-scroll { transform: translateY(16px); transition-delay: 0s; }
+  .education-item:nth-child(2).animate-on-scroll { transform: translateY(16px); transition-delay: 0.10s; }
+  .education-item.animate-on-scroll.visible      { transform: translateY(0) !important; }
+
+  /* Timeline header: keep logo + info side by side (row) on mobile */
+  .timeline-header { flex-direction: row; align-items: center; }
+
+  /* Skill items: slightly larger touch area */
+  .skill-item { padding: 0.4rem 0.9rem; }
+
+}
+
+/* ── Tiny screens 375px and below (iPhone SE, budget Androids) ── */
+@media (max-width: 375px) {
+  .hero-title      { font-size: clamp(1.875rem, 9.5vw, 2.5rem); }
+  .hero-socials    { gap: 0.5rem; }
+  .hero-social-link { width: 40px; height: 40px; }
+  .skill-item      { padding: 0.3rem 0.75rem; font-size: 0.75rem; }
+  .skills-list     { gap: 0.375rem; }
+  .container       { padding: 0 var(--space-md); }
+  section:not(.hero) .section-header::before { display: none; }
+}

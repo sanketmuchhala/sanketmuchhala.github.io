@@ -1,13 +1,11 @@
 ---
 layout: project
 rank: 16
-title: "Game Analytics Dashboard"
-description: "Built a comprehensive analytics dashboard for mobile games using Python and data visualization tools to track player behavior and game performance"
+title: "Live Chat and Gameplay Correlation"
+description: "Research studying how live chat activity correlates with player performance in Valorant streams. Analyzed YouTube gaming livestreams to find patterns between viewer chat behavior and in-game outcomes."
 date: 2024-09-01
-status: completed
-featured: false
-categories: ["Data Analytics", "Gaming"]
-technologies: ["Python", "Pandas", "Matplotlib", "Seaborn", "NumPy", "Streamlit"]
+categories: ["Data Science", "NLP", "Gaming"]
+technologies: ["Python", "Pandas", "Matplotlib", "Seaborn", "NumPy", "YouTube API"]
 github_url: "https://github.com/sanketmuchhala/game-analytics"
 ---
 

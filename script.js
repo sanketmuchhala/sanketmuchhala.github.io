@@ -184,6 +184,67 @@ document.addEventListener('DOMContentLoaded', function() {
         animationObserver.observe(item);
     });
 
+    // ---- Motion Design ----
+
+    // Cursor spotlight: a large soft radial glow that lazily follows the pointer
+    (function initCursorSpotlight() {
+        if (!window.matchMedia('(pointer: fine)').matches) return;
+        const el = document.createElement('div');
+        el.className = 'cursor-spotlight';
+        document.body.appendChild(el);
+        let mx = window.innerWidth / 2, my = window.innerHeight / 2;
+        let cx = mx, cy = my;
+        document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+        (function loop() {
+            cx += (mx - cx) * 0.075;
+            cy += (my - cy) * 0.075;
+            el.style.left = cx + 'px';
+            el.style.top  = cy + 'px';
+            requestAnimationFrame(loop);
+        })();
+    })();
+
+    // Card 3D tilt: project / timeline / education cards respond to cursor position
+    (function initCardTilt() {
+        if (!window.matchMedia('(pointer: fine)').matches) return;
+        document.querySelectorAll('.project-card, .timeline-card, .education-item').forEach(card => {
+            card.classList.add('js-tilt');
+            card.addEventListener('mouseenter', () => {
+                card.style.transition = 'transform 0.1s ease, border-color 0.3s ease, box-shadow 0.3s ease';
+            });
+            card.addEventListener('mousemove', e => {
+                const r = card.getBoundingClientRect();
+                const x = (e.clientX - r.left)  / r.width  - 0.5;
+                const y = (e.clientY - r.top)    / r.height - 0.5;
+                card.style.transform = `perspective(900px) rotateY(${x * 8}deg) rotateX(${-y * 8}deg) translateZ(8px)`;
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transition = 'transform 0.65s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease';
+                card.style.transform = '';
+            });
+        });
+    })();
+
+    // Magnetic social links: icons follow the cursor slightly within their hit area
+    (function initMagneticLinks() {
+        if (!window.matchMedia('(pointer: fine)').matches) return;
+        document.querySelectorAll('.hero-social-link').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                el.style.transition = 'transform 0.1s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease';
+            });
+            el.addEventListener('mousemove', e => {
+                const r  = el.getBoundingClientRect();
+                const dx = (e.clientX - (r.left + r.width  / 2)) * 0.36;
+                const dy = (e.clientY - (r.top  + r.height / 2)) * 0.36;
+                el.style.transform = `translate(${dx}px, ${dy}px) scale(1.12)`;
+            });
+            el.addEventListener('mouseleave', () => {
+                el.style.transition = 'transform 0.55s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease';
+                el.style.transform = '';
+            });
+        });
+    })();
+
     // ---- ClaudOS MacBook Modal ----
     const claudosOverlay = document.getElementById('claudos-overlay');
     const claudosIframe = document.getElementById('claudos-iframe');

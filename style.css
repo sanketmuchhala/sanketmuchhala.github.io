@@ -2005,3 +2005,281 @@ a:focus-visible, button:focus-visible {
   .container { padding: 0 var(--space-md); }
   h1, h2, h3, h4 { word-wrap: break-word; }
 }
+
+/* ============================================
+   MOTION DESIGN LAYER
+   ============================================ */
+
+/* ============================================================
+   MOTION DESIGN — cursor spotlight, 3D tilt, staggered enters
+   ============================================================ */
+
+/* --- Cursor Spotlight --- */
+.cursor-spotlight {
+  position: fixed;
+  pointer-events: none;
+  width: 900px;
+  height: 900px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at center,
+    rgba(99, 102, 241, 0.048) 0%,
+    rgba(99, 102, 241, 0.012) 38%,
+    transparent 62%
+  );
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  will-change: left, top;
+}
+
+/* --- Hero Entrance Sequence (overrides original slideUp) --- */
+@keyframes enter-up {
+  from { opacity: 0; transform: translateY(24px); filter: blur(6px); }
+  to   { opacity: 1; transform: translateY(0);    filter: blur(0px); }
+}
+
+.hero-content       { animation: none; }
+.hero-photo-wrap    { animation: enter-up 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.05s both; }
+.hero-greeting      { animation: enter-up 0.7s  cubic-bezier(0.16, 1, 0.3, 1) 0.18s both; }
+.hero-title         { animation: enter-up 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.30s both; }
+.hero-subtitle      { animation: enter-up 0.7s  cubic-bezier(0.16, 1, 0.3, 1) 0.43s both; }
+.hero-description   { animation: enter-up 0.7s  cubic-bezier(0.16, 1, 0.3, 1) 0.55s both; }
+.hero-links         { animation: enter-up 0.7s  cubic-bezier(0.16, 1, 0.3, 1) 0.67s both; }
+
+/* --- Card 3D Tilt (JS adds .js-tilt, disabling CSS hover transform) --- */
+.project-card,
+.timeline-card,
+.education-item {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.js-tilt.project-card:hover,
+.js-tilt.timeline-card:hover,
+.js-tilt.education-item:hover {
+  transform: none;
+}
+
+/* --- Skill Tags: Bouncy Pop-In --- */
+@keyframes pop-in {
+  0%   { opacity: 0; transform: scale(0.6) translateY(10px); }
+  62%  { opacity: 1; transform: scale(1.1) translateY(-3px); }
+  100% { opacity: 1; transform: scale(1)   translateY(0); }
+}
+
+.skill-item.animate-on-scroll              { transition: none; }
+.skill-item.animate-on-scroll.visible      { opacity: 1; transform: none; animation: pop-in 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both; }
+
+/* --- Timeline: Left/Right Alternating Slide-In --- */
+.timeline-item:nth-child(odd)  { transform: translateX(-28px); }
+.timeline-item:nth-child(even) { transform: translateX(28px); }
+.timeline-item.visible {
+  opacity: 1;
+  transform: translateX(0) !important;
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* --- Education Items: Alternating Slide --- */
+.education-item:nth-child(1).animate-on-scroll { transform: translateX(-20px); }
+.education-item:nth-child(2).animate-on-scroll { transform: translateX(20px); }
+.education-item.animate-on-scroll.visible      { opacity: 1; transform: translateX(0) !important; }
+
+/* --- Blog + Cert Items: Horizontal Slide-In --- */
+.blog-list-item.animate-on-scroll  { transform: translateX(-10px); }
+.blog-list-item.animate-on-scroll.visible { transform: translateX(0); }
+.cert-list-item.animate-on-scroll  { transform: translateX(-10px); }
+.cert-list-item.animate-on-scroll.visible { transform: translateX(0); }
+
+/* --- Navbar: Hairline Rainbow Gradient --- */
+.navbar { border-bottom: none; }
+.navbar::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(99, 102, 241, 0.55) 20%,
+    rgba(6, 182, 212, 0.6)  40%,
+    rgba(16, 185, 129, 0.4) 55%,
+    rgba(244, 63, 94, 0.45) 72%,
+    rgba(139, 92, 246, 0.55) 88%,
+    transparent 100%
+  );
+}
+
+/* --- Ghost Section Numbers --- */
+.section-header { position: relative; }
+body            { counter-reset: section-num; }
+section:not(.hero) .section-header  { counter-increment: section-num; }
+section:not(.hero) .section-header::before {
+  content: counter(section-num, decimal-leading-zero);
+  position: absolute;
+  right: 0; top: -1rem;
+  font-size: 5rem;
+  font-weight: 800;
+  color: currentColor;
+  opacity: 0.04;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: -0.06em;
+}
+
+/* --- Cert Icon Colour-Matched Borders + Hover Glow --- */
+.cert-list-icon[data-provider="aws"]        { border-color: rgba(255, 153,   0, 0.3); }
+.cert-list-icon[data-provider="microsoft"]  { border-color: rgba(  0, 164, 239, 0.3); }
+.cert-list-icon[data-provider="databricks"] { border-color: rgba(255,  54,  33, 0.3); }
+.cert-list-icon[data-provider="google"]     { border-color: rgba( 66, 133, 244, 0.3); }
+
+.cert-list-item:hover .cert-list-icon[data-provider="aws"]        { box-shadow: 0 0 16px rgba(255, 153,   0, 0.3); transform: scale(1.08); }
+.cert-list-item:hover .cert-list-icon[data-provider="microsoft"]  { box-shadow: 0 0 16px rgba(  0, 164, 239, 0.3); transform: scale(1.08); }
+.cert-list-item:hover .cert-list-icon[data-provider="databricks"] { box-shadow: 0 0 16px rgba(255,  54,  33, 0.3); transform: scale(1.08); }
+.cert-list-item:hover .cert-list-icon[data-provider="google"]     { box-shadow: 0 0 16px rgba( 66, 133, 244, 0.3); transform: scale(1.08); }
+
+/* --- Footer: Gradient Top Line --- */
+.footer { border-top: none; position: relative; }
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(99, 102, 241, 0.35) 25%,
+    rgba(6, 182, 212, 0.35)  50%,
+    rgba(139, 92, 246, 0.35) 75%,
+    transparent 100%
+  );
+}
+
+/* --- Reduced Motion Safeguards --- */
+@media (prefers-reduced-motion: reduce) {
+  .hero-photo-wrap, .hero-greeting, .hero-title,
+  .hero-subtitle, .hero-description, .hero-links {
+    animation: none !important;
+    opacity: 1; filter: none;
+  }
+  .cursor-spotlight { display: none; }
+  .timeline-item:nth-child(odd),
+  .timeline-item:nth-child(even)   { transform: translateY(20px); }
+  .timeline-item.visible           { transform: translateY(0) !important; }
+  .skill-item.animate-on-scroll    { transition: opacity 0.5s ease, transform 0.5s ease; }
+  .skill-item.animate-on-scroll.visible { animation: none; }
+}
+
+/* --- Mobile: disable expensive effects --- */
+@media (max-width: 768px) {
+  .cursor-spotlight { display: none; }
+  .timeline-item:nth-child(odd),
+  .timeline-item:nth-child(even) { transform: translateY(14px); }
+  .timeline-item.visible         { transform: translateY(0) !important; }
+  section:not(.hero) .section-header::before { font-size: 3.5rem; }
+}
+
+/* ============================================================
+   APPLE GLASS LAYER
+   Mirrors Apple's material design system:
+   - Semi-transparent dark/light fill
+   - Heavy blur + saturate (makes ribbon colours vivid behind glass)
+   - Hairline border (0.5px) for the "edge of glass" effect
+   - Inset top highlight to simulate a glass lip
+   ============================================================ */
+
+/* Dark mode glass — cards */
+.timeline-card,
+.project-card,
+.education-item {
+  background: rgba(18, 18, 20, 0.60);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  border: 0.5px solid rgba(255, 255, 255, 0.10);
+  box-shadow:
+    0 4px 28px rgba(0, 0, 0, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.timeline-card:hover,
+.project-card:hover,
+.education-item:hover {
+  background: rgba(26, 26, 28, 0.68);
+  border-color: rgba(255, 255, 255, 0.16);
+  box-shadow:
+    0 10px 48px rgba(0, 0, 0, 0.42),
+    inset 0 1px 0 rgba(255, 255, 255, 0.11);
+}
+
+/* Navbar glass */
+.navbar {
+  background: rgba(6, 6, 8, 0.58);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+}
+.navbar.scrolled {
+  background: rgba(6, 6, 8, 0.80);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+}
+
+/* Skill items: whisper of glass on hover */
+.skill-item:hover {
+  background: rgba(99, 102, 241, 0.10);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-color: rgba(99, 102, 241, 0.35);
+}
+
+/* Light mode glass */
+[data-theme="light"] .timeline-card,
+[data-theme="light"] .project-card,
+[data-theme="light"] .education-item {
+  background: rgba(255, 255, 255, 0.70);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  border: 0.5px solid rgba(0, 0, 0, 0.07);
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+[data-theme="light"] .timeline-card:hover,
+[data-theme="light"] .project-card:hover,
+[data-theme="light"] .education-item:hover {
+  background: rgba(255, 255, 255, 0.82);
+  border-color: rgba(0, 0, 0, 0.1);
+  box-shadow:
+    0 8px 36px rgba(0, 0, 0, 0.09),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+}
+
+[data-theme="light"] .navbar {
+  background: rgba(255, 255, 255, 0.70);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+}
+[data-theme="light"] .navbar.scrolled {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+}
+
+[data-theme="light"] .skill-item:hover {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Mobile: reduce blur cost */
+@media (max-width: 768px) {
+  .timeline-card,
+  .project-card,
+  .education-item {
+    backdrop-filter: blur(16px) saturate(160%);
+    -webkit-backdrop-filter: blur(16px) saturate(160%);
+  }
+  .navbar {
+    backdrop-filter: blur(16px) saturate(160%);
+    -webkit-backdrop-filter: blur(16px) saturate(160%);
+  }
+}

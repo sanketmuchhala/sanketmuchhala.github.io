@@ -7,7 +7,7 @@ date: 2024-07-01
 categories: ["Games", "Game AI", "SWE"]
 technologies: ["Python", "Game AI", "Minimax", "Web Game"]
 github_url: "https://github.com/sanketmuchhala/Raichu"
-demo_url: "https://www.waichu.live"
+demo_url: "https://raichu.live"
 ---
 
 ## Overview

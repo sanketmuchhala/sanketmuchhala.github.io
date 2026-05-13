@@ -9,7 +9,6 @@ featured: true
 categories: ["Language Design", "Compiler", "Education"]
 technologies: ["Python", "Compiler Design", "Language Design", "CLI"]
 github_url: "https://github.com/sanketmuchhala/Gujju.py"
-demo_url: "https://kemlang.dev"
 ---
 
 ## Overview

@@ -32,8 +32,9 @@ description: "Explore my portfolio of AI/ML projects, software engineering work,
                             <i class="fab fa-github"></i>
                         </a>
                         {% endif %}
-                        {% if project.demo_url %}
-                        <a href="{{ project.demo_url }}" class="project-link" aria-label="Live demo" target="_blank" rel="noopener noreferrer">
+                        {% assign live_url = project.demo_url | default: project.deployment_url %}
+                        {% if live_url %}
+                        <a href="{{ live_url }}" class="project-link" aria-label="Live demo" target="_blank" rel="noopener noreferrer">
                             <i class="fas fa-external-link-alt"></i>
                         </a>
                         {% endif %}

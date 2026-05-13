@@ -28,15 +28,16 @@ layout: default
                 {% endif %}
             </div>
 
-            {% if page.github_url or page.demo_url %}
+            {% assign live_url = page.demo_url | default: page.deployment_url %}
+            {% if page.github_url or live_url %}
             <div class="project-header-links">
                 {% if page.github_url %}
                 <a href="{{ page.github_url }}" class="btn btn-outline" target="_blank" rel="noopener noreferrer">
                     <i class="fab fa-github"></i> Source
                 </a>
                 {% endif %}
-                {% if page.demo_url %}
-                <a href="{{ page.demo_url }}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                {% if live_url %}
+                <a href="{{ live_url }}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
                     <i class="fas fa-external-link-alt"></i> Live Demo
                 </a>
                 {% endif %}

@@ -9,7 +9,7 @@ featured: true
 categories: ["SWE", "UI/UX"]
 technologies: ["JavaScript", "CSS", "UI/UX", "Desktop Simulation"]
 github_url: "https://github.com/sanketmuchhala/claudos"
-demo_url: "https://sanketmuchhala.github.io/claudos/"
+demo_url: "https://sanketmuchhala.com/claudos/"
 ---
 
 ## Overview
@@ -40,7 +40,7 @@ ClaudOS is a pixel-perfect macOS desktop simulator that runs entirely in your br
 
 ## Try It Live
 
-Experience the full macOS simulation at [sanketmuchhala.github.io/claudos](https://sanketmuchhala.github.io/claudos/)
+Experience the full macOS simulation at [https://sanketmuchhala.com/claudos](https://sanketmuchhala.com/claudos/)
 
 ## Technical Highlights
 

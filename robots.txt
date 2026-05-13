@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://sanketmuchhala.github.io/sitemap.xml
+Sitemap: https://sanketmuchhala.com/sitemap.xml
 
 # Allow all search engines to crawl the site
 User-agent: Googlebot

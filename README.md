@@ -32,8 +32,8 @@ A modern, responsive personal portfolio website built with Jekyll. Features a cl
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/sanketmuchhala/sanketmuchhala.github.io.git
-   cd sanketmuchhala.github.io
+   git clone <repository-url>
+   cd portfolio-site
    ```
 
 2. **Install Jekyll and dependencies**
@@ -52,7 +52,7 @@ A modern, responsive personal portfolio website built with Jekyll. Features a cl
 ## Project Structure
 
 ```
-sanketmuchhala.github.io/
+portfolio-site/
 ├── _layouts/              # Jekyll layouts
 │   ├── default.html      # Base layout
 │   ├── project.html      # Project page layout
@@ -142,7 +142,7 @@ This site is configured for GitHub Pages deployment:
 
 1. Push your changes to the main branch
 2. GitHub Pages will automatically build and deploy your site
-3. Your site will be available at `https://sanketmuchhala.github.io`
+3. Your site will be available at `https://sanketmuchhala.com`
 
 ### Other Hosting
 

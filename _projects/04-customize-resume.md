@@ -8,7 +8,7 @@ status: completed
 categories: ["AI/ML", "SWE"]
 technologies: ["JavaScript", "HTML", "CSS", "Gemini API", "PDF.js"]
 github_url: "https://github.com/sanketmuchhala/Customize-Resume"
-demo_url: "https://sanketmuchhala.github.io/Customize-Resume/"
+demo_url: "https://sanketmuchhala.com/Customize-Resume/"
 ---
 
 <div class="project-slideshow">

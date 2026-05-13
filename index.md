@@ -365,7 +365,7 @@ image: "/photos/export.png"
                 <div class="macbook-camera"></div>
             </div>
             <div class="macbook-display">
-                <iframe src="about:blank" data-src="https://sanketmuchhala.github.io/claudos/" id="claudos-iframe" allowfullscreen></iframe>
+                <iframe src="about:blank" data-src="https://sanketmuchhala.com/claudos/" id="claudos-iframe" allowfullscreen></iframe>
             </div>
         </div>
         <div class="macbook-chin">

@@ -6,7 +6,7 @@ description: "AI-vs-human text classifier with training, evaluation, and inferen
 date: 2024-11-01
 status: active
 featured: true
-categories: ["AI/ML", "NLP", "Python"]
+categories: ["AI/ML", "NLP"]
 technologies: ["Python", "Machine Learning", "FastAPI", "NLP"]
 github_url: "https://github.com/sanketmuchhala/ai-slop-detector-model"
 ---

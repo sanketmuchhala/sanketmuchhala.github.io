@@ -4,7 +4,7 @@ rank: 9
 title: "LinkedIn Connections"
 description: "AI-powered networking assistant that analyzes your LinkedIn connections to surface who to reach out to for specific roles. Maps your network to job opportunities and suggests warm introduction paths."
 date: 2024-10-01
-categories: ["AI/ML", "Python", "Networking"]
+categories: ["AI/ML", "Networking"]
 technologies: ["Python", "LinkedIn API", "NLP", "NetworkX", "pandas"]
 github_url: "https://github.com/sanketmuchhala/Linkedin-Connections"
 ---

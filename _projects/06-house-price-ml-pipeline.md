@@ -5,7 +5,7 @@ title: "House Price ML Pipeline"
 description: "End-to-end machine learning pipeline for real estate price prediction using advanced feature engineering, model selection, and deployment automation"
 date: 2025-01-01
 status: completed
-categories: ["AI/ML", "Data Science", "Python"]
+categories: ["AI/ML", "Data Science"]
 technologies: ["Python", "Scikit-learn", "Pandas", "NumPy", "MLflow", "Docker"]
 github_url: "https://github.com/sanketmuchhala/house-price-ml-pipeline"
 ---

@@ -6,7 +6,7 @@ description: "An intelligent learning assistant powered by advanced AI algorithm
 date: 2025-01-01
 status: developing
 featured: true
-categories: ["AI/ML", "Education", "React"]
+categories: ["AI/ML", "Education"]
 technologies: ["React", "TypeScript", "AI Algorithms", "TailwindCSS"]
 github_url: "https://github.com/sanketmuchhala/AIStudyBuddy"
 ---

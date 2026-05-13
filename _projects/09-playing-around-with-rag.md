@@ -6,7 +6,7 @@ description: "A hands-on implementation of a Retrieval-Augmented Generation (RAG
 date: 2024-11-01
 status: completed
 featured: false
-categories: ["AI/ML", "DeepSeek", "RAG"]
+categories: ["AI/ML", "NLP"]
 technologies: ["DeepSeek-R1", "LangChain", "FAISS", "Python", "Transformers", "Sentence Transformers"]
 github_url: "https://github.com/sanketmuchhala/RAG-Chatbot-Jupyter"
 ---

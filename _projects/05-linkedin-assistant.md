@@ -5,7 +5,7 @@ title: "LinkedIn Assistant"
 description: "AI-powered LinkedIn automation tool for intelligent content creation, networking, and profile optimization using advanced natural language processing"
 date: 2025-01-01
 status: completed
-categories: ["AI/ML", "Automation", "Python"]
+categories: ["AI/ML", "Automation"]
 technologies: ["Python", "JavaScript", "HTML", "LinkedIn API", "NLP"]
 github_url: "https://github.com/sanketmuchhala/Linkedin-Assistant"
 ---

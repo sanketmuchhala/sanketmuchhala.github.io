@@ -5,7 +5,7 @@ title: "AI Resume Customizer"
 description: "AI-powered web application that customizes resumes for specific job postings using Google's Gemini API with multi-format support and professional PDF generation"
 date: 2025-01-01
 status: completed
-categories: ["AI/ML", "Web Development", "JavaScript"]
+categories: ["AI/ML", "SWE"]
 technologies: ["JavaScript", "HTML", "CSS", "Gemini API", "PDF.js"]
 github_url: "https://github.com/sanketmuchhala/Customize-Resume"
 demo_url: "https://sanketmuchhala.github.io/Customize-Resume/"

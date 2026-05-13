@@ -6,7 +6,7 @@ description: "Analyzed patent data to understand regional innovation patterns an
 date: 2024-07-01
 status: completed
 featured: false
-categories: ["Data Analysis", "NLP"]
+categories: ["Data Science", "Geospatial"]
 technologies: ["BART", "Python", "Pandas", "Matplotlib", "Scikit-learn", "GeoPandas"]
 github_url: "https://github.com/sanketmuchhala/Project-Patent-Classification"
 ---

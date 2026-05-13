@@ -6,7 +6,7 @@ description: "A fully functional macOS desktop simulator in the browser. Complet
 date: 2024-08-01
 status: active
 featured: true
-categories: ["UI/UX", "JavaScript", "Desktop Simulation"]
+categories: ["SWE", "UI/UX"]
 technologies: ["JavaScript", "CSS", "UI/UX", "Desktop Simulation"]
 github_url: "https://github.com/sanketmuchhala/claudos"
 demo_url: "https://sanketmuchhala.github.io/claudos/"

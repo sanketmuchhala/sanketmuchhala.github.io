@@ -6,7 +6,7 @@ description: "Intelligent system design diagram generator using AI to create com
 date: 2025-01-01
 status: completed
 featured: true
-categories: ["AI/ML", "System Design", "Python"]
+categories: ["AI/ML", "SWE"]
 technologies: ["Python", "AI/ML", "Diagram Generation", "System Architecture"]
 github_url: "https://github.com/sanketmuchhala/AI-System-Design-Generator"
 demo_url: "https://sanketmuchhala.github.io/AI-System-Design-Generator/"

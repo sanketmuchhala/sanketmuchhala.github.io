@@ -20,8 +20,7 @@ image: "/photos/export.png"
             <h1 class="hero-title">Sanket Muchhala</h1>
             <p class="hero-subtitle">AI/ML Engineer</p>
             <p class="hero-description">
-                Building production AI systems at Progressive Insurance.
-                MS in Data Science from Indiana University Bloomington.
+                I build AI that ships. MS in Data Science from Indiana University Bloomington.
             </p>
             <div class="hero-links">
                 <div class="hero-socials">

@@ -1,5 +1,6 @@
 ---
 layout: project
+rank: 13
 title: "LinkedIn Assistant"
 description: "AI-powered LinkedIn automation tool for intelligent content creation, networking, and profile optimization using advanced natural language processing"
 date: 2025-01-01

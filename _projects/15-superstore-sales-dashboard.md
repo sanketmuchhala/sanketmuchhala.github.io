@@ -1,5 +1,6 @@
 ---
 layout: project
+rank: 19
 title: "Superstore Sales Management Dashboard"
 description: "Built an interactive dashboard using R Shiny for Superstore sales data analysis, featuring advanced visualizations and forecasting tools"
 date: 2024-05-01

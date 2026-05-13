@@ -1,5 +1,6 @@
 ---
 layout: project
+rank: 17
 title: "Care Coordination Healthcare"
 description: "Analyzed healthcare disparities between rural and urban regions, visualizing cost structures, availability, and Medicare payment differences across the U.S."
 date: 2024-06-01

@@ -1,5 +1,6 @@
 ---
 layout: project
+rank: 9
 title: "LinkedIn Connections"
 description: "AI-powered networking assistant that analyzes your LinkedIn connections to surface who to reach out to for specific roles. Maps your network to job opportunities and suggests warm introduction paths."
 date: 2024-10-01

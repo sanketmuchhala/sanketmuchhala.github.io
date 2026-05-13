@@ -1,5 +1,6 @@
 ---
 layout: project
+rank: 21
 title: "KemLang"
 description: "A Gujarati-flavored programming language featuring Gujarati keywords while maintaining English syntax. Educational interpreter with modular architecture, lexer, parser, and runtime"
 date: 2024-10-01

@@ -1,5 +1,6 @@
 ---
 layout: project
+rank: 23
 title: "TallyCart"
 description: "iOS shopping assistant that intelligently manages grocery lists, tracks per-item spending, and learns your buying patterns. Built natively for iPhone with SwiftUI."
 date: 2024-05-01

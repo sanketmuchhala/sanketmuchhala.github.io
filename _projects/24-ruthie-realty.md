@@ -1,5 +1,6 @@
 ---
 layout: project
+rank: 24
 title: "Ruthie Realty"
 description: "Professional real estate website built for a private client. Features property listings, agent profile, and lead capture forms. Custom WordPress theme with responsive design."
 date: 2024-02-01

@@ -1,5 +1,6 @@
 ---
 layout: project
+rank: 18
 title: "LanguageLineage"
 description: "Interactive programming language lineage graph and timeline. Explore how languages evolved, influenced each other, and were implemented. Dual DAG/force-directed layouts with smart filtering by language family."
 date: 2024-09-01

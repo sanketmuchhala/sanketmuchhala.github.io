@@ -1,5 +1,6 @@
 ---
 layout: project
+rank: 16
 title: "Game Analytics Dashboard"
 description: "Built a comprehensive analytics dashboard for mobile games using Python and data visualization tools to track player behavior and game performance"
 date: 2024-09-01

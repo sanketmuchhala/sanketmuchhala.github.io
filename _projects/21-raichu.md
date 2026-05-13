@@ -1,5 +1,6 @@
 ---
 layout: project
+rank: 22
 title: "Raichu"
 description: "Chess meets checkers — a strategic board game blending both rulesets with a Pokemon theme. AI opponent powered by minimax with alpha-beta pruning. Play it live at waichu.live."
 date: 2024-07-01

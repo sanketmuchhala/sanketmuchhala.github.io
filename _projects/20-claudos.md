@@ -1,5 +1,6 @@
 ---
 layout: project
+rank: 15
 title: "ClaudOS"
 description: "A fully functional macOS desktop simulator in the browser. Complete window management, dock, Finder, system apps, and authentic macOS UI/UX built with vanilla JavaScript"
 date: 2024-08-01

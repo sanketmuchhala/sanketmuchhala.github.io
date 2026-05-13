@@ -1,5 +1,6 @@
 ---
 layout: project
+rank: 11
 title: "AI System Design Generator"
 description: "Intelligent system design diagram generator using AI to create comprehensive architecture diagrams, flowcharts, and technical documentation for software systems"
 date: 2025-01-01

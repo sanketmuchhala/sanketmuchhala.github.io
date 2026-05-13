@@ -20,7 +20,7 @@ description: "Explore my portfolio of AI/ML projects, software engineering work,
         </div>
 
         <div class="projects-grid" id="projects-grid">
-            {% assign all_projects = site.projects | sort: 'path' %}
+            {% assign all_projects = site.projects | sort: 'rank' %}
             {% for project in all_projects %}
             {% assign cats = project.categories | join: ',' | downcase %}
             <div class="project-card" data-cats="{{ cats }}">

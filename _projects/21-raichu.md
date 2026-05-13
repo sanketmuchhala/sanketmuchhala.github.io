@@ -1,14 +1,12 @@
 ---
 layout: project
 title: "Raichu"
-description: "Pokemon-themed chess strategy game with AI opponent. Features Pichu, Pikachu, and Raichu pieces with unique movement patterns. Powered by minimax algorithm with alpha-beta pruning"
+description: "Chess meets checkers — a strategic board game blending both rulesets with a Pokemon theme. AI opponent powered by minimax with alpha-beta pruning. Play it live at waichu.live."
 date: 2024-07-01
-status: active
-featured: false
-categories: ["Game AI", "Python", "Web Game"]
+categories: ["Games", "Game AI", "SWE"]
 technologies: ["Python", "Game AI", "Minimax", "Web Game"]
 github_url: "https://github.com/sanketmuchhala/Raichu"
-demo_url: "https://raichu-web-game.vercel.app/"
+demo_url: "https://www.waichu.live"
 ---
 
 ## Overview

@@ -1,21 +1,31 @@
 ---
 layout: default
 title: "Projects"
-description: "Explore my portfolio of AI/ML projects, web applications, and innovative solutions"
+description: "Explore my portfolio of AI/ML projects, software engineering work, and open-source tools"
 ---
 
 <section class="blog-index">
     <div class="container">
         <div class="section-header">
-            <h1 class="section-title">All Projects</h1>
+            <h1 class="section-title">Projects</h1>
         </div>
 
-        <div class="projects-grid">
+        <div class="project-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="ai/ml">AI / ML</button>
+            <button class="filter-btn" data-filter="swe">SWE</button>
+            <button class="filter-btn" data-filter="nlp">NLP</button>
+            <button class="filter-btn" data-filter="data">Data Science</button>
+            <button class="filter-btn" data-filter="games">Games</button>
+        </div>
+
+        <div class="projects-grid" id="projects-grid">
             {% assign all_projects = site.projects | sort: 'path' %}
             {% for project in all_projects %}
-            <div class="project-card">
+            {% assign cats = project.categories | join: ',' | downcase %}
+            <div class="project-card" data-cats="{{ cats }}">
                 <div class="project-header">
-                    <h3>{{ project.title }}{% if project.status %} <span class="status-badge status-{{ project.status }}">{{ project.status | capitalize }}</span>{% endif %}</h3>
+                    <h3>{{ project.title }}</h3>
                     <div class="project-links">
                         {% if project.github_url %}
                         <a href="{{ project.github_url }}" class="project-link" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
@@ -45,3 +55,35 @@ description: "Explore my portfolio of AI/ML projects, web applications, and inno
         </div>
     </div>
 </section>
+
+<script>
+(function () {
+    var swe   = ['full-stack','web development','javascript','ios','mobile','cloud computing','desktop simulation','language design','compiler','ui/ux','wordpress','graph theory','client work','swe'];
+    var data  = ['data science','data analytics','data visualization','business intelligence','healthcare'];
+    var games = ['game ai','gaming','web game','game design','games'];
+
+    var filterMap = {
+        'ai/ml': function(c) { return c.indexOf('ai/ml') !== -1; },
+        'swe':   function(c) { return swe.some(function(k)  { return c.indexOf(k) !== -1; }); },
+        'nlp':   function(c) { return c.indexOf('nlp') !== -1; },
+        'data':  function(c) { return data.some(function(k) { return c.indexOf(k) !== -1; }); },
+        'games': function(c) { return games.some(function(k){ return c.indexOf(k) !== -1; }); }
+    };
+
+    document.querySelectorAll('.filter-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+            btn.classList.add('active');
+
+            var filter = btn.dataset.filter;
+            var fn = filterMap[filter];
+
+            document.querySelectorAll('#projects-grid .project-card').forEach(function(card) {
+                var cats = card.dataset.cats || '';
+                var show = filter === 'all' || (fn && fn(cats));
+                card.style.display = show ? '' : 'none';
+            });
+        });
+    });
+})();
+</script>

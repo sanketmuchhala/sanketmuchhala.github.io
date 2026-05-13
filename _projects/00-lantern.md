@@ -1,6 +1,6 @@
 ---
 layout: project
-title: "Lantern"
+title: "Nerdplexity"
 description: "Minimalist chat UI for cloud & local LLMs with built-in Prompt Analytics - Build better prompts, faster responses, and clearer insights"
 date: 2025-01-01
 status: completed

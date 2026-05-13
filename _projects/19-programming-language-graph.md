@@ -1,13 +1,12 @@
 ---
 layout: project
-title: "Programming Language Graph"
-description: "Interactive visualization of programming language lineage and implementation relationships. Dual layouts (DAG/force-directed), smart filtering, and cluster visualization by language families"
+title: "LanguageLineage"
+description: "Interactive programming language lineage graph and timeline. Explore how languages evolved, influenced each other, and were implemented. Dual DAG/force-directed layouts with smart filtering by language family."
 date: 2024-09-01
-status: active
-featured: false
-categories: ["Data Visualization", "Graph Theory", "Education"]
+categories: ["SWE", "Data Visualization", "Graph Theory"]
 technologies: ["TypeScript", "D3.js", "Data Visualization", "Graph Theory"]
-github_url: "https://github.com/sanketmuchhala/ProgrammingLanguageGraph"
+github_url: "https://github.com/sanketmuchhala/LanguageLineage"
+demo_url: "https://www.languagelineage.org/"
 ---
 
 ## Overview

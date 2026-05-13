@@ -207,7 +207,7 @@ image: "/photos/export.png"
 <section id="projects">
     <div class="container">
         <div class="section-header">
-            <h2 class="section-title">Selected Projects</h2>
+            <h2 class="section-title">Projects</h2>
         </div>
         <div class="projects-grid">
             <div class="project-card">
@@ -258,7 +258,7 @@ image: "/photos/export.png"
 
             <div class="project-card">
                 <div class="project-header">
-                    <h3>Lantern</h3>
+                    <h3>Nerdplexity</h3>
                     <div class="project-links">
                         <a href="https://github.com/sanketmuchhala/Nerdplexity" class="project-link" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
                             <i class="fab fa-github"></i>

@@ -165,6 +165,7 @@
     </footer>
 
     <!-- Scripts -->
+    {% unless page.layout == 'blog' or page.layout == 'project' %}
     <script src="{{ '/ribbons.js' | relative_url }}"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -184,6 +185,7 @@
             }
         });
     </script>
+    {% endunless %}
     <script src="{{ '/script.js' | relative_url }}" defer></script>
 
     {% if page.scripts %}{{ page.scripts }}{% endif %}

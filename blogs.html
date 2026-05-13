@@ -1,43 +1,41 @@
 ---
 layout: default
 title: "Blog"
-description: "Thoughts on AI, technology, and the future of work"
+description: "Thoughts on AI, machine learning, and building things"
 ---
 
 <section class="blog-index">
     <div class="container">
-        <div class="section-header">
+        <div class="section-header blog-index-header">
             <h1 class="section-title">Blog</h1>
+            <p class="blog-index-subtitle">Thoughts on AI, machine learning, and building things.</p>
         </div>
 
-        <div class="blog-grid">
-            {% for post in site.blogs %}
-            <article class="blog-card">
-                {% if post.featured_image %}
-                <div class="blog-image">
-                    <img src="{{ post.featured_image | relative_url }}" alt="{{ post.title }}" loading="lazy">
+        <div class="blog-roll">
+            {% assign posts_sorted = site.blogs | sort: 'date' | reverse %}
+            {% for post in posts_sorted %}
+            <a href="{{ post.url | relative_url }}" class="blog-roll-item">
+                <div class="blog-roll-date">
+                    <span class="blog-roll-month">{{ post.date | date: "%b" }}</span>
+                    <span class="blog-roll-year">{{ post.date | date: "%Y" }}</span>
                 </div>
-                {% endif %}
-                <div class="blog-content">
-                    <div class="blog-meta">
-                        <span class="blog-date">{{ post.date | date: "%B %d, %Y" }}</span>
-                        {% if post.read_time %}
-                        <span class="blog-read-time">{{ post.read_time }} min read</span>
-                        {% endif %}
-                    </div>
-                    <h2 class="blog-title">{{ post.title }}</h2>
-                    <p class="blog-excerpt">{{ post.description }}</p>
-                    {% if post.categories %}
-                    <div class="blog-categories">
-                        {% for category in post.categories %}
-                        <span class="category-tag">{{ category }}</span>
-                        {% endfor %}
-                    </div>
+                <div class="blog-roll-body">
+                    <h2 class="blog-roll-title">{{ post.title }}</h2>
+                    {% if post.description %}
+                    <p class="blog-roll-desc">{{ post.description }}</p>
                     {% endif %}
-                    <a href="{{ post.url | relative_url }}" class="blog-read-more">Read more →</a>
+                    <div class="blog-roll-meta">
+                        {% for cat in post.categories %}<span class="blog-roll-cat">{{ cat }}</span>{% endfor %}
+                        {% if post.read_time %}<span class="blog-roll-time">{{ post.read_time }} min read</span>{% endif %}
+                    </div>
                 </div>
-            </article>
+                <span class="blog-roll-arrow" aria-hidden="true">→</span>
+            </a>
             {% endfor %}
+
+            {% if site.blogs.size == 0 %}
+            <p class="blog-empty">No posts yet — check back soon.</p>
+            {% endif %}
         </div>
     </div>
 </section>

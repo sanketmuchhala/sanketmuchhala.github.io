@@ -1,5 +1,6 @@
 ---
 layout: project
+rank: 12
 title: "AI Resume Customizer"
 description: "AI-powered web application that customizes resumes for specific job postings using Google's Gemini API with multi-format support and professional PDF generation"
 date: 2025-01-01

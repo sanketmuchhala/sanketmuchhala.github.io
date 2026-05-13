@@ -1,5 +1,6 @@
 ---
 layout: project
+rank: 8
 title: "Funny News Aggregator"
 description: "A modern, AI-powered news aggregation platform that discovers and curates the funniest, most absurd news stories from across the internet with interactive network graph visualization"
 date: 2025-09-14

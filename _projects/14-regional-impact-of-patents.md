@@ -1,5 +1,6 @@
 ---
 layout: project
+rank: 14
 title: "Regional Impact of Patents"
 description: "Analyzed patent data to understand regional innovation patterns and economic impact using BART model and advanced data analysis techniques"
 date: 2024-07-01

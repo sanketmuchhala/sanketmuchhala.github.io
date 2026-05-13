@@ -1,5 +1,6 @@
 ---
 layout: project
+rank: 10
 title: "AI Study Buddy"
 description: "An intelligent learning assistant powered by advanced AI algorithms for optimizing study schedules, adaptive learning recommendations, and interview preparation coaching"
 date: 2025-01-01

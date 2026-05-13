@@ -6,7 +6,6 @@ date: 2025-08-03
 categories: ["AI/Philosophy"]
 tags: ["AI", "Philosophy", "Machine Learning", "Human Cognition"]
 read_time: 12
-featured_image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDgwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjMUExQTFBIi8+Cjx0ZXh0IHg9IjQwMCIgeT0iMTgwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjRkZGRkZGIiBmb250LWZhbWlseT0iSW50ZXIiIGZvbnQtd2VpZ2h0PSI3MDAiIGZvbnQtc2l6ZT0iMzYiPkFJIHZzIEh1bWFuIEJyYWluPC90ZXh0Pgo8dGV4dCB4PSI0MDAiIHk9IjI0MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI0ZGRkZGRiIgZm9udC1mYW1pbHk9IkludGVyIiBmb250LXdlaWdodD0iNDAwIiBmb250LXNpemU9IjE4Ij5FeHBsb3JpbmcgdGhlIEZ1bmRhbWVudGFsIERpZmZlcmVuY2VzPC90ZXh0Pgo8L3N2Zz4K"
 ---
 
 <p class="lead-paragraph">
@@ -126,4 +125,4 @@ featured_image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjQwM
 
 <p>
     The future belongs to those who can work effectively with AI, not those who fear it or try to compete with it. Because in the end, the most powerful combination will always be human creativity augmented by artificial intelligence.
-</p>
+</p> 

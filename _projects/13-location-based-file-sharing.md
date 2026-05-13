@@ -1,5 +1,6 @@
 ---
 layout: project
+rank: 20
 title: "Location-Based File Sharing System"
 description: "Built a location-aware file sharing system using AWS services and geospatial technologies to enable proximity-based file exchange. The system allows users to share files that are only accessible within specific geographic boundaries."
 date: 2024-08-01

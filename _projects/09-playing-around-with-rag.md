@@ -1,6 +1,6 @@
 ---
 layout: project
-rank: 7
+rank: 9
 title: "Playing around with RAG: DeepSeek-R1 Implementation"
 description: "A hands-on implementation of a Retrieval-Augmented Generation (RAG) pipeline using the DeepSeek-R1 model"
 date: 2024-11-01

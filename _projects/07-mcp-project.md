@@ -1,6 +1,6 @@
 ---
 layout: project
-rank: 3
+rank: 6
 title: "AI Job Application Agent with DeepSeek Integration"
 description: "An intelligent job application automation tool with DeepSeek AI integration for semantic field matching and contextual response generation at ultra-low cost"
 date: 2025-01-01

@@ -211,70 +211,71 @@ image: "/photos/export.png"
         <div class="projects-grid">
             <div class="project-card">
                 <div class="project-header">
-                    <h3>AI Study Buddy</h3>
+                    <h3>LexOrchestrator</h3>
                     <div class="project-links">
-                        <a href="https://github.com/sanketmuchhala/ai-study-buddy" class="project-link" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+                        <a href="https://github.com/sanketmuchhala/LexOrchestrator" class="project-link" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
                             <i class="fab fa-github"></i>
                         </a>
                     </div>
                 </div>
                 <p class="project-description">
-                    An intelligent learning assistant powered by advanced AI algorithms for optimizing study schedules, adaptive learning recommendations, and interview preparation coaching.
+                    Litigation workflow agent demo with a multi-agent orchestration pipeline. Features hybrid RAG retrieval, citation verification, adversarial review, and eval scoring.
                 </p>
                 <div class="project-tech">
-                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">Next.js</span>
                     <span class="tech-tag">TypeScript</span>
-                    <span class="tech-tag">AI Algorithms</span>
-                    <span class="tech-tag">TailwindCSS</span>
+                    <span class="tech-tag">Supabase</span>
+                    <span class="tech-tag">RAG</span>
+                    <span class="tech-tag">MCP</span>
                 </div>
                 <div class="project-actions">
-                    <a href="{{ '/projects/ai-study-buddy/' | relative_url }}">Read more →</a>
+                    <a href="{{ '/projects/26-lex-orchestrator/' | relative_url }}">Read more →</a>
                 </div>
             </div>
 
             <div class="project-card">
                 <div class="project-header">
-                    <h3>AI Job Application Agent</h3>
+                    <h3>GTM Simulator</h3>
                     <div class="project-links">
-                        <a href="https://github.com/sanketmuchhala/ApplicationAgent" class="project-link" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+                        <a href="https://github.com/sanketmuchhala/GTM-SImulator" class="project-link" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
                             <i class="fab fa-github"></i>
                         </a>
                     </div>
                 </div>
                 <p class="project-description">
-                    An intelligent job application automation tool using DeepSeek AI for semantic field matching, contextual response generation, and form analysis at ultra-low cost.
+                    An open-source AI simulation engine for B2B founders. Simulates Go-To-Market strategies using Mirofish swarm intelligence to test messaging against buyer personas.
                 </p>
                 <div class="project-tech">
+                    <span class="tech-tag">Vue 3</span>
+                    <span class="tech-tag">Flask</span>
                     <span class="tech-tag">Python</span>
-                    <span class="tech-tag">DeepSeek AI</span>
-                    <span class="tech-tag">MCP Protocol</span>
-                    <span class="tech-tag">Claude Desktop</span>
+                    <span class="tech-tag">Docker</span>
                 </div>
                 <div class="project-actions">
-                    <a href="{{ '/projects/mcp-project/' | relative_url }}">Read more →</a>
+                    <a href="{{ '/projects/25-gtm-simulator/' | relative_url }}">Read more →</a>
                 </div>
             </div>
 
             <div class="project-card">
                 <div class="project-header">
-                    <h3>Nerdplexity</h3>
+                    <h3>Mirofish API Server</h3>
                     <div class="project-links">
-                        <a href="https://github.com/sanketmuchhala/Nerdplexity" class="project-link" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+                        <a href="https://github.com/sanketmuchhala/mirofish-api-server" class="project-link" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
                             <i class="fab fa-github"></i>
                         </a>
                     </div>
                 </div>
                 <p class="project-description">
-                    Minimalist chat UI for cloud & local LLMs with built-in Prompt Analytics. Build better prompts, faster responses, and clearer insights.
+                    A monetized prediction API powered by the MiroFish swarm intelligence engine. Spawns multi-agent simulations where diverse AI agents debate and collectively predict outcomes.
                 </p>
                 <div class="project-tech">
-                    <span class="tech-tag">TypeScript</span>
-                    <span class="tech-tag">React</span>
-                    <span class="tech-tag">Node.js</span>
-                    <span class="tech-tag">Vite</span>
+                    <span class="tech-tag">FastAPI</span>
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Web3</span>
+                    <span class="tech-tag">Docker</span>
                 </div>
                 <div class="project-actions">
-                    <a href="{{ '/projects/00-lantern/' | relative_url }}">Read more →</a>
+                    <a href="{{ '/projects/27-mirofish-api-server/' | relative_url }}">Read more →</a>
                 </div>
             </div>
         </div>

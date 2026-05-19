@@ -1,6 +1,6 @@
 ---
 layout: project
-rank: 2
+rank: 7
 title: "RAG Search Engine"
 description: "Built a Retrieval-Augmented Generation (RAG) system using GPT-3 and LangChain for multi-source question answering. Integrated FAISS-based vector search with PDF chunking to enable fast, contextually relevant retrieval."
 date: 2024-07-01

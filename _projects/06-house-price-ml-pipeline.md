@@ -1,6 +1,6 @@
 ---
 layout: project
-rank: 4
+rank: 8
 title: "House Price ML Pipeline"
 description: "End-to-end machine learning pipeline for real estate price prediction using advanced feature engineering, model selection, and deployment automation"
 date: 2025-01-01

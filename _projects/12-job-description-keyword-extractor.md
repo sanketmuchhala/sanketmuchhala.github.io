@@ -1,6 +1,6 @@
 ---
 layout: project
-rank: 6
+rank: 11
 title: "Job Description Keyword Extractor"
 description: "Developed an AI-powered tool that automatically extracts and categorizes key skills and requirements from job descriptions using NLP and machine learning"
 date: 2024-10-01

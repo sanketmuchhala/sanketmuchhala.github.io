@@ -1,6 +1,6 @@
 ---
 layout: project
-rank: 1
+rank: 4
 title: "AI Slop Detector"
 description: "AI-vs-human text classifier with training, evaluation, and inference APIs. Built for browser and server deployment with REST endpoints for real-time classification"
 date: 2024-11-01

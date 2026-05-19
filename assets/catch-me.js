@@ -205,7 +205,7 @@ class CatchMeGame {
         
         const title = document.createElement('h2');
         title.id = 'win-title';
-        title.textContent = 'Congrats — have a cookie';
+        title.textContent = 'Congrats - have a cookie';
         
         const message = document.createElement('p');
         message.id = 'win-message';

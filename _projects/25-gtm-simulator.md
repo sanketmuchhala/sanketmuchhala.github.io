@@ -12,7 +12,7 @@ demo_url: "https://gtm-s-imulator.vercel.app/"
 
 ## Overview
 
-Most GTM failures happen because founders never test their assumptions. This tool simulates what happens when your message hits real buyer types — at zero cost, in minutes. Built on top of the Mirofish swarm intelligence engine. This project is a customized fork of the MiroFish engine; please check out original repo as well: [MiroFish](https://github.com/666ghj/MiroFish).
+Most GTM failures happen because founders never test their assumptions. This tool simulates what happens when your message hits real buyer types - at zero cost, in minutes. Built on top of the Mirofish swarm intelligence engine. This project is a customized fork of the MiroFish engine; please check out original repo as well: [MiroFish](https://github.com/666ghj/MiroFish).
 
 ## Key Features
 

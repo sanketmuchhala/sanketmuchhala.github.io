@@ -13,7 +13,7 @@ github_url: "https://github.com/sanketmuchhala/mirofish-api-server"
 
 A monetized prediction API powered by the MiroFish swarm intelligence engine. Mirofish is incredibly impactful and can be used for a wide variety of use cases. However, setting up a new project every time I wanted to use its swarm intelligence capabilities felt redundant. The best solution was to convert it into a standalone API endpoint with keys and a ready-to-use setup. I found an existing implementation and forked it to suit my needs, configuring it to host Mirofish as a seamless endpoint.
 
-It spawns multi-agent simulations where diverse AI agents debate, analyze, and collectively predict outcomes — then returns a structured prediction report. This setup is a customized fork of the swarm-prediction-api project; please check out original repo as well: [swarm-prediction-api](https://github.com/JStuBran/swarm-prediction-api).
+It spawns multi-agent simulations where diverse AI agents debate, analyze, and collectively predict outcomes - then returns a structured prediction report. This setup is a customized fork of the swarm-prediction-api project; please check out original repo as well: [swarm-prediction-api](https://github.com/JStuBran/swarm-prediction-api).
 
 ## Key Features
 

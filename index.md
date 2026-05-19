@@ -229,7 +229,7 @@ image: "/photos/export.png"
                     <span class="tech-tag">MCP</span>
                 </div>
                 <div class="project-actions">
-                    <a href="{{ '/projects/26-lex-orchestrator/' | relative_url }}">Read more →</a>
+                    <a href="{{ '/projects/26-lex-orchestrator/' | relative_url }}">Read more ></a>
                 </div>
             </div>
 
@@ -252,7 +252,7 @@ image: "/photos/export.png"
                     <span class="tech-tag">Docker</span>
                 </div>
                 <div class="project-actions">
-                    <a href="{{ '/projects/25-gtm-simulator/' | relative_url }}">Read more →</a>
+                    <a href="{{ '/projects/25-gtm-simulator/' | relative_url }}">Read more ></a>
                 </div>
             </div>
 
@@ -275,12 +275,12 @@ image: "/photos/export.png"
                     <span class="tech-tag">Docker</span>
                 </div>
                 <div class="project-actions">
-                    <a href="{{ '/projects/27-mirofish-api-server/' | relative_url }}">Read more →</a>
+                    <a href="{{ '/projects/27-mirofish-api-server/' | relative_url }}">Read more ></a>
                 </div>
             </div>
         </div>
         <div class="section-actions">
-            <a href="{{ '/projects' | relative_url }}" class="view-all">View all projects →</a>
+            <a href="{{ '/projects' | relative_url }}" class="view-all">View all projects ></a>
         </div>
     </div>
 </section>
@@ -302,7 +302,7 @@ image: "/photos/export.png"
             {% endfor %}
         </div>
         <div class="section-actions">
-            <a href="{{ '/blogs' | relative_url }}" class="view-all">View all posts →</a>
+            <a href="{{ '/blogs' | relative_url }}" class="view-all">View all posts ></a>
         </div>
     </div>
 </section>

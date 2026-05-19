@@ -196,7 +196,7 @@ Lantern addresses the need for a clean, efficient interface for interacting with
 
 ### Thinking HUD
 - Abstract progress indicators during model generation
-- Phases: Planning → Drafting → Refining
+- Phases: Planning > Drafting > Refining
 - Metrics: Elapsed time, tokens/second estimates
 - Safe: No raw chain-of-thought exposure
 

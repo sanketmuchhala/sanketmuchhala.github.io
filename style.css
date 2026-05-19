@@ -1,5 +1,5 @@
 /* ============================================
-   Sanket Muchhala — Minimal Portfolio
+   Sanket Muchhala - Minimal Portfolio
    ============================================ */
 
 /* --- Design Tokens --- */
@@ -372,7 +372,7 @@ ul, ol {
   text-align: left;
 }
 
-/* Profile photo wrapper — allows tooltip to escape overflow */
+/* Profile photo wrapper - allows tooltip to escape overflow */
 .hero-photo-wrap {
   position: relative;
   flex-shrink: 0;
@@ -1338,7 +1338,7 @@ section.visible .section-title::after {
 }
 
 /* ============================================================
-   BLOG LISTING — Editorial List Layout
+   BLOG LISTING - Editorial List Layout
    ============================================================ */
 
 .blog-index {
@@ -1484,7 +1484,7 @@ section.visible .section-title::after {
 }
 
 /* ============================================================
-   READING PAGES — blog posts & project detail
+   READING PAGES - blog posts & project detail
    Solid black, no ribbons, clean editorial column
    ============================================================ */
 
@@ -2058,7 +2058,7 @@ a:focus-visible, button:focus-visible {
     0 0 3px rgba(0, 0, 0, 0.5);
 }
 
-/* Screen area — 16:10 aspect ratio */
+/* Screen area - 16:10 aspect ratio */
 .macbook-display {
   position: relative;
   width: 100%;
@@ -2075,13 +2075,13 @@ a:focus-visible, button:focus-visible {
   display: block;
 }
 
-/* Bottom chin — thicker than sides (24.6mm vs 8.8mm) */
+/* Bottom chin - thicker than sides (24.6mm vs 8.8mm) */
 .macbook-chin {
   background: #1d1d1f;
   padding: 0 2.9%;
 }
 
-/* Touch Bar — ~6mm real, sits in the chin area */
+/* Touch Bar - ~6mm real, sits in the chin area */
 .macbook-touchbar {
   background: #1d1d1f;
   padding: 5px 15% 6px;
@@ -2105,7 +2105,7 @@ a:focus-visible, button:focus-visible {
     0 0.5px 0 rgba(255, 255, 255, 0.03);
 }
 
-/* Base / keyboard deck — tapers slightly */
+/* Base / keyboard deck - tapers slightly */
 .macbook-base {
   height: 12px;
   background: linear-gradient(
@@ -2354,7 +2354,7 @@ a:focus-visible, button:focus-visible {
    ============================================ */
 
 /* ============================================================
-   MOTION DESIGN — cursor spotlight, 3D tilt, staggered enters
+   MOTION DESIGN - cursor spotlight, 3D tilt, staggered enters
    ============================================================ */
 
 /* --- Cursor Spotlight --- */
@@ -2531,7 +2531,7 @@ section:not(.hero) .section-header::before {
    - Inset top highlight to simulate a glass lip
    ============================================================ */
 
-/* Dark mode glass — cards */
+/* Dark mode glass - cards */
 .timeline-card,
 .project-card,
 .education-item {

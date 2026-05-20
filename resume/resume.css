@@ -209,32 +209,35 @@
     flex-shrink: 0;
 }
 
-/* ── Skills ────────────────────────────────────────────────── */
-.rp-skills {
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
+/* ── Skills (invisible table) ─────────────────────────────── */
+.rp-skills-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: none;
+    font-size: 0.875rem;
+    line-height: 1.55;
 }
 
-.rp-skill-row {
-    display: flex;
-    flex-direction: row;  /* ALWAYS row - never column */
-    align-items: baseline;
-    font-size: 0.875rem;
-    line-height: 1.5;
+.rp-skills-table tr {
+    border: none;
+}
+
+.rp-skills-table td {
+    border: none;
+    padding: 0.18rem 0;
+    vertical-align: top;
 }
 
 .rp-skill-label {
     font-weight: 600;
     color: var(--color-text);
     white-space: nowrap;
-    min-width: 230px;
-    flex-shrink: 0;
+    padding-right: 0.75rem;
+    width: 210px;
 }
 
 .rp-skill-value {
     color: var(--color-text-secondary);
-    flex: 1;
 }
 
 /* ── Experience & Jobs ─────────────────────────────────────── */
@@ -421,8 +424,9 @@
     .rp-institution { font-size: 0.76rem; }
     .rp-date        { font-size: 0.72rem; }
     .rp-section-title { font-size: 0.65rem; }
-    .rp-skill-row   { font-size: 0.8rem; }
-    .rp-skill-label { min-width: 175px; }
+    /* Skills table: just scale font, table layout stays intact */
+    .rp-skills-table   { font-size: 0.79rem; }
+    .rp-skill-label    { width: 175px; padding-right: 0.5rem; }
     .rp-job-title   { font-size: 0.82rem; }
     .rp-company     { font-size: 0.77rem; }
     .rp-bullets li  { font-size: 0.79rem; }
@@ -433,8 +437,9 @@
 @media (max-width: 420px) {
     .resume-paper   { padding: 1.1rem 0.85rem; }
     .rp-name        { font-size: 1.2rem; }
-    .rp-skill-label { min-width: 155px; }
-    .rp-bullets li, .rp-summary, .rp-skill-row { font-size: 0.75rem; }
+    .rp-skills-table { font-size: 0.74rem; }
+    .rp-skill-label  { width: 150px; }
+    .rp-bullets li, .rp-summary { font-size: 0.75rem; }
 }
 
 /* ── Print ─────────────────────────────────────────────────── */

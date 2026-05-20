@@ -3,280 +3,294 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sanket Muchhala - Resume</title>
-    <meta name="description" content="Resume for Sanket Muchhala, AI and machine learning engineer.">
-    <meta property="og:url" content="https://sanketmuchhala.com/" />
-    <meta name="twitter:url" content="https://sanketmuchhala.com/" />
-    <link rel="canonical" href="https://sanketmuchhala.com/" />
-    <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="resume.css">
+    <title>Sanket Muchhala – Resume</title>
+    <meta name="description" content="Resume of Sanket Muchhala, AI/ML Engineer with 3+ years of experience building production-grade AI systems.">
+    <meta property="og:title" content="Sanket Muchhala – Resume" />
+    <meta property="og:url" content="https://sanketmuchhala.com/resume/" />
+    <link rel="canonical" href="https://sanketmuchhala.com/resume/" />
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <meta name="apple-mobile-web-app-title" content="Sanket" />
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
-    <meta name="apple-mobile-web-app-title" content="Sanket" />
+
+    <!-- Site base styles (gives us CSS vars + navbar + theme) -->
+    <link rel="stylesheet" href="../style.css">
+
+    <!-- Resume-specific styles -->
+    <link rel="stylesheet" href="resume.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="../" style="text-decoration: none; color: inherit;">
-                    <span>SM</span>
-                </a>
+
+<!-- ── Navbar ─────────────────────────────────────── -->
+<nav class="navbar" id="navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <a href="../" aria-label="Home">SM</a>
+        </div>
+        <ul class="nav-menu" id="nav-menu">
+            <li class="nav-item"><a href="../" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="index.html" class="nav-link active">Resume</a></li>
+            <li class="nav-item">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-sun" id="theme-icon"></i>
+                </button>
+            </li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </div>
+</nav>
+
+<!-- ── Resume Page ────────────────────────────────── -->
+<main class="resume-page">
+
+    <!-- Toolbar above the paper -->
+    <div class="resume-toolbar">
+        <a href="../" class="resume-toolbar-btn">
+            <i class="fas fa-arrow-left"></i> Portfolio
+        </a>
+        <a href="../Sanket_Muchhala_Resume.pdf" download class="resume-toolbar-btn primary">
+            <i class="fas fa-download"></i> Download PDF
+        </a>
+    </div>
+
+    <!-- The Paper -->
+    <div class="resume-paper">
+
+        <!-- ══ HEADER ══ -->
+        <header class="rp-header">
+            <h1 class="rp-name">SANKET MUCHHALA</h1>
+            <p class="rp-title">AI / ML Engineer</p>
+            <div class="rp-contact">
+                <a href="tel:+18127784451"><i class="fas fa-phone"></i> +1 812-778-4451</a>
+                <span class="rp-sep">|</span>
+                <a href="mailto:muchhalasanket@gmail.com"><i class="fas fa-envelope"></i> muchhalasanket@gmail.com</a>
+                <span class="rp-sep">|</span>
+                <a href="https://www.linkedin.com/in/sanketmuchhala/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <span class="rp-sep">|</span>
+                <a href="https://github.com/sanketmuchhala" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+                <span class="rp-sep">|</span>
+                <span><i class="fas fa-map-marker-alt"></i> Bloomington, IN</span>
             </div>
-            <ul class="nav-menu" id="nav-menu">
-                <li class="nav-item">
-                    <a href="index.html" class="nav-link active">Resume</a>
+        </header>
+
+        <!-- ══ PROFESSIONAL SUMMARY ══ -->
+        <section class="rp-section">
+            <h2 class="rp-section-title">Professional Summary</h2>
+            <p class="rp-summary">
+                AI/ML Engineer with 3+ years of experience building production-grade AI systems using generative AI, NLP, and machine learning. Skilled in agentic AI, LLM pipelines, and scalable APIs. Experienced in delivering AWS-based AI solutions and collaborating with stakeholders across insurance and analytics domains.
+            </p>
+        </section>
+
+        <!-- ══ EDUCATION ══ -->
+        <section class="rp-section">
+            <h2 class="rp-section-title">Education</h2>
+
+            <div class="rp-edu-item">
+                <div class="rp-row">
+                    <span class="rp-degree">Master of Science in Data Science</span>
+                    <span class="rp-date">Aug 2022 – May 2024</span>
+                </div>
+                <div class="rp-institution">Indiana University Bloomington, USA</div>
+            </div>
+
+            <div class="rp-edu-item">
+                <div class="rp-row">
+                    <span class="rp-degree">Bachelor of Technology in Information Technology</span>
+                    <span class="rp-date">Aug 2018 – May 2022</span>
+                </div>
+                <div class="rp-institution">Thakur College of Engineering and Technology, India</div>
+            </div>
+        </section>
+
+        <!-- ══ TECHNICAL SKILLS ══ -->
+        <section class="rp-section">
+            <h2 class="rp-section-title">Technical Skills</h2>
+            <div class="rp-skills">
+                <div class="rp-skill-row">
+                    <span class="rp-skill-label">Programming Languages:</span>
+                    <span class="rp-skill-value">Python, SQL, R, JavaScript</span>
+                </div>
+                <div class="rp-skill-row">
+                    <span class="rp-skill-label">AI/ML Frameworks &amp; Tools:</span>
+                    <span class="rp-skill-value">Scikit-learn, TensorFlow, PyTorch, FastAPI, MLflow, SpaCy</span>
+                </div>
+                <div class="rp-skill-row">
+                    <span class="rp-skill-label">Generative AI &amp; LLMs:</span>
+                    <span class="rp-skill-value">GPT-4 (via OpenAI APIs), LangChain, RAG, Agentic AI tools, Vector DBs (FAISS)</span>
+                </div>
+                <div class="rp-skill-row">
+                    <span class="rp-skill-label">NLP &amp; Document Intelligence:</span>
+                    <span class="rp-skill-value">Named entity recognition (NER), text classification, summarization, sentiment analysis</span>
+                </div>
+                <div class="rp-skill-row">
+                    <span class="rp-skill-label">Data Engineering &amp; Storage:</span>
+                    <span class="rp-skill-value">Pandas, NumPy, PySpark, AWS (SQS, Step Functions), Azure Data Lake, Azure SQL</span>
+                </div>
+                <div class="rp-skill-row">
+                    <span class="rp-skill-label">Databases:</span>
+                    <span class="rp-skill-value">PostgreSQL, MySQL, Snowflake, Teradata</span>
+                </div>
+                <div class="rp-skill-row">
+                    <span class="rp-skill-label">Visualization &amp; BI:</span>
+                    <span class="rp-skill-value">Tableau, Power BI, R Shiny</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══ PROFESSIONAL EXPERIENCE ══ -->
+        <section class="rp-section">
+            <h2 class="rp-section-title">Professional Experience</h2>
+
+            <!-- Progressive Insurance -->
+            <div class="rp-job">
+                <div class="rp-row rp-job-header">
+                    <div class="rp-job-left">
+                        <span class="rp-job-title">AI Engineer</span>
+                        <span class="rp-job-sep">|</span>
+                        <span class="rp-company">Progressive Insurance, Remote, USA</span>
+                    </div>
+                    <span class="rp-date">May 2024 – Present</span>
+                </div>
+                <ul class="rp-bullets">
+                    <li>Built NLP workflows for claims data intake using Python and Azure ML, streamlining processing tasks by 25%.</li>
+                    <li>Designed Agentic AI workflows for document processing and decision support, enabling multi-step reasoning across claims data pipelines.</li>
+                    <li>Deployed GPT-4 based document summarization tools, reducing review cycles for compliance and legal teams by 40%.</li>
+                    <li>Designed executive-facing Tableau dashboards for AI outputs, supporting underwriting and fraud detection strategy.</li>
+                    <li>Improved fraud detection precision by 22% through real-time anomaly models integrated with SQL-based data streams.</li>
+                    <li>Built AWS-based MLOps pipelines (Step Functions, SQS) for model monitoring, retraining, and deployment, reducing drift incidents by 35%.</li>
+                    <li>Developed FastAPI APIs to integrate LLM services into enterprise workflows, enabling deployment across claims and legal platforms.</li>
+                    <li>Partnered with business stakeholders (compliance, legal, underwriting) to define LLM explainability and deployment standards.</li>
+                    <li>Led cross-functional sessions to communicate AI system behavior and outputs, improving adoption and stakeholder trust by 35%.</li>
+                    <li>Implemented a governance framework for LLM usage with prompt logging, version control, and access auditing for audit readiness.</li>
+                </ul>
+            </div>
+
+            <!-- Indiana University -->
+            <div class="rp-job">
+                <div class="rp-row rp-job-header">
+                    <div class="rp-job-left">
+                        <span class="rp-job-title">Research Assistant – Generative AI</span>
+                        <span class="rp-job-sep">|</span>
+                        <span class="rp-company">Indiana University Bloomington, IN, USA</span>
+                    </div>
+                    <span class="rp-date">Dec 2023 – May 2024</span>
+                </div>
+                <ul class="rp-bullets">
+                    <li>Improved transcript accuracy by 18pp using a GPT-4 RAG pipeline deployed on BigRed200, processing over 200 hours of esports video.</li>
+                    <li>Built and optimized real-time LLM-based microservices, reducing latency by 40% for large-scale chat systems.</li>
+                    <li>Automated retraining pipelines using SLURM on HPC systems, cutting manual ETL effort by 6 hours per match.</li>
+                    <li>Documented GenAI workflows, adopted by two graduate cohorts for ongoing esports psychology research.</li>
+                </ul>
+            </div>
+
+            <!-- IBM -->
+            <div class="rp-job">
+                <div class="rp-row rp-job-header">
+                    <div class="rp-job-left">
+                        <span class="rp-job-title">Data Analyst</span>
+                        <span class="rp-job-sep">|</span>
+                        <span class="rp-company">IBM, MH, India</span>
+                    </div>
+                    <span class="rp-date">Sep 2020 – Jun 2022</span>
+                </div>
+                <ul class="rp-bullets">
+                    <li>Led end-to-end development of a churn prediction model using Python and Scikit-learn, driving a 20% reduction in customer attrition.</li>
+                    <li>Refactored ETL workflows using Azure Data Lake and SQL, improving data availability and cutting processing time by 15%.</li>
+                    <li>Built automated data validation pipelines with SQL and Python, raising dashboard reporting accuracy by 18%.</li>
+                    <li>Deployed ML models to Azure ML environments with CI/CD support, accelerating release cycles by 25% across internal products.</li>
+                    <li>Authored reproducible model documentation and Jupyter-based reports to align analytics delivery with stakeholder needs.</li>
+                    <li>Collaborated with stakeholders and solution architects to align ML models with business objectives and deployment constraints.</li>
+                    <li>Introduced versioning standards for ML pipelines and datasets, increasing transparency in model updates and audits.</li>
+                    <li>Conducted internal training sessions on Python-based analytics tooling, improving team adoption of reusable code modules.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ══ PROJECTS ══ -->
+        <section class="rp-section">
+            <h2 class="rp-section-title">Projects</h2>
+
+            <div class="rp-project">
+                <div class="rp-row rp-project-header">
+                    <span class="rp-project-title">Nerdplexity</span>
+                    <a href="https://github.com/sanketmuchhala" target="_blank" rel="noopener" class="rp-project-link">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                </div>
+                <ul class="rp-bullets">
+                    <li>Built end-to-end ML pipelines for production, improving model accuracy by 22% and reducing drift incidents by 35% through automation.</li>
+                    <li>Designed RAG-based AI systems using embeddings and vector search, cutting response time by 35% and boosting personalization accuracy by 30%.</li>
+                </ul>
+            </div>
+
+            <div class="rp-project">
+                <div class="rp-row rp-project-header">
+                    <span class="rp-project-title">kemlang.cloud</span>
+                    <a href="https://github.com/sanketmuchhala" target="_blank" rel="noopener" class="rp-project-link">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                </div>
+                <ul class="rp-bullets">
+                    <li>Built KemLang, a custom programming language in Python with lexical analysis, parsing, AST generation, and interpretation.</li>
+                    <li>Shipped a full developer experience for KemLang with CLI commands, web playground, VS Code syntax support, and test automation.</li>
+                </ul>
+            </div>
+
+            <div class="rp-project">
+                <div class="rp-row rp-project-header">
+                    <span class="rp-project-title">LexOrchestrator</span>
+                    <a href="https://github.com/sanketmuchhala" target="_blank" rel="noopener" class="rp-project-link">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                </div>
+                <ul class="rp-bullets">
+                    <li>Built multi-agent legal AI workflows for citation validation, RAG retrieval, and hallucination reduction in document review pipelines.</li>
+                    <li>Designed orchestrator and sub-agent pipelines with eval loops and tool routing for high-reliability legal reasoning tasks in production.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ══ CERTIFICATIONS ══ -->
+        <section class="rp-section">
+            <h2 class="rp-section-title">Certifications</h2>
+            <ul class="rp-cert-list">
+                <li>
+                    <i class="fas fa-certificate rp-cert-icon"></i>
+                    <a href="https://www.credly.com/badges/8424e14a-fb0f-4af9-9707-9644f1c0d599/linked_in_profile" target="_blank" rel="noopener">AWS Certified MLE Associate</a>
                 </li>
-                <li class="nav-item">
-                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
-                        <i class="fas fa-sun" id="theme-icon"></i>
-                    </button>
+                <li>
+                    <i class="fas fa-certificate rp-cert-icon"></i>
+                    <a href="https://learn.microsoft.com/en-us/users/sanketmuchhala-0655/achievements/xq6ftgfy" target="_blank" rel="noopener">Azure AI Fundamentals (AI-900)</a>
+                </li>
+                <li>
+                    <i class="fas fa-certificate rp-cert-icon"></i>
+                    <a href="https://credentials.databricks.com/38f5f364-567c-463a-9139-eaeda5eced80" target="_blank" rel="noopener">Databricks Generative AI Foundations</a>
+                </li>
+                <li>
+                    <i class="fas fa-certificate rp-cert-icon"></i>
+                    <a href="https://www.coursera.org/account/accomplishments/professional-cert/V6G9C6ZEJHZF" target="_blank" rel="noopener">Google Data Analytics</a>
                 </li>
             </ul>
-            <div class="hamburger" id="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
-    </nav>
+        </section>
 
-    <!-- Resume Content -->
-    <main class="resume-container">
-        <div class="resume-content">
-            <!-- Header -->
-            <header class="resume-header">
-                <div class="header-top">
-                    <a href="../" class="back-link">
-                        <i class="fas fa-arrow-left"></i> Back to Portfolio
-                    </a>
-                    <a href="../Sanket_Muchhala_Resume.pdf" download class="download-link" title="Download PDF">
-                        <i class="fas fa-download"></i>
-                    </a>
-                </div>
-                <h1>SANKET MUCHHALA</h1>
-                <h2>AI /ML Engineer</h2>
-                <div class="contact-info">
-                    <span>+1 812-778-4451</span>
-                    <span class="separator">|</span>
-                    <a href="mailto:muchhalasanket@gmail.com" rel="noopener noreferrer">muchhalasanket@gmail.com</a>
-                    <span class="separator">|</span>
-                    <a href="https://www.linkedin.com/in/sanketmuchhala/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                    <span class="separator">|</span>
-                    <a href="https://github.com/sanketmuchhala" target="_blank" rel="noopener noreferrer">GitHub</a>
-                    <span class="separator">|</span>
-                    <span>Bloomington, IN</span>
-                </div>
-            </header>
+    </div><!-- /.resume-paper -->
+</main>
 
-            <!-- Summary -->
-            <section class="resume-section">
-                <h2>PROFESSIONAL SUMMARY</h2>
-                <p>AI/ML Engineer with 3+ years of experience in building scalable solutions using generative AI, NLP , and machine learning. Skilled in developing agentic AI systems, document processing pipelines, and LLM-backed services. Expert in learning, driving automation and intelligence across diverse domains like insurance and esports analytics.</p>
-            </section>
+<!-- Footer -->
+<footer class="resume-footer">
+    <p>© 2025 Sanket Muchhala · <a href="../">Portfolio</a></p>
+</footer>
 
-            <!-- Education -->
-            <section class="resume-section">
-                <h2>EDUCATION</h2>
-                <div class="experiance-item">
-                    <div class="education-header">
-                        <h3>Master of Science in Data Science</h3>
-                        <div class="institution-dates">
-                            <span class="institution">Indiana University Bloomington, USA</span>
-                            <span class="dates">Aug 2022 – May 2024</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="experiance-item">
-                    <div class="education-header">
-                        <h3>Bachelor of Technology in Information Technology</h3>
-                        <div class="institution-dates">
-                            <span class="institution">Thakur College of Engineering and Technology, India</span>
-                            <span class="dates">Aug 2018 – May 2022</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Technical Skills -->
-            <section class="resume-section">
-                <h2>TECHNICAL SKILLS</h2>
-                <table class="skills-table">
-                    <tr>
-                        <td class="skill-label">Programming Languages:</td>
-                        <td class="skill-content">Python, SQL, R, JavaScript</td>
-                    </tr>
-                    <tr>
-                        <td class="skill-label">AI/ML Frameworks & Tools:</td>
-                        <td class="skill-content">Scikit-learn, TensorFlow, PyTorch, FastAPI, MLflow, SpaCy</td>
-                    </tr>
-                    <tr>
-                        <td class="skill-label">Generative AI & LLMs:</td>
-                        <td class="skill-content">GPT-4 (via OpenAI APIs), LangChain, RAG, Agentic AI tools, Vector DBs(FAISS)</td>
-                    </tr>
-                    <tr>
-                        <td class="skill-label">NLP & Document Intelligence:</td>
-                        <td class="skill-content">Named entity recognition (NER), text classification, summarization, sentiment analysis</td>
-                    </tr>
-                    <tr>
-                        <td class="skill-label">Data Engineering & Storage:</td>
-                        <td class="skill-content">Pandas, NumPy, PySpark, AWS (SQS, Step Functions), Azure Data Lake, Azure SQL</td>
-                    </tr>
-                    <tr>
-                        <td class="skill-label">Databases:</td>
-                        <td class="skill-content">PostgreSQL, MySQL, Snowflake, Teradata</td>
-                    </tr>
-                    <tr>
-                        <td class="skill-label">Visualization & BI:</td>
-                        <td class="skill-content">Tableau, Power BI, R Shiny</td>
-                    </tr>
-                </table>
-            </section>
-
-            <!-- Experience -->
-            <section class="resume-section">
-                <h2>PROFESSIONAL EXPERIENCE</h2>
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <h3>AI Engineer</h3>
-                        <span class="company">Progressive Insurance, Remote, USA</span>
-                        <span class="dates">May 2024 – Present</span>
-                    </div>
-                    <ul>
-                        <li>Built NLP workflows for claims data intake using Python and Azure ML, streamlining processing tasks by 25%.</li>
-                        <li>Deployed GPT- 4 based document summarization tools, reducing review cycles for compliance and legal teams by 40%.</li>
-                        <li>Designed executive-facing Tableau dashboards for AI outputs, supporting underwriting and fraud detection strategy.</li>
-                        <li>Improved fraud detection precision by 22% through real-time anomaly models integrated with SQL-based data streams.</li>
-                        <li>Centralized model performance tracking and automated retraining with AWS Step Functions, cutting drift incidents by 35%.</li>
-                        <li>Developed a modular FastAPI service layer for scalable integration of AI features across claims and legal review platforms.</li>
-                        <li>Collaborated with compliance and legal teams to define explainability thresholds for LLM outputs, aligning with internal risk standards.</li>
-                        <li>Led a cross-functional workshop series to train teams on interpreting AI outputs, improving adoption and trust in AI tools by 35%.</li>
-                        <li>Implemented a governance framework for LLM usage with prompt logging, version control, and access auditing for audit readiness.</li>
-                    </ul>
-                </div>
-                
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <h3>Research Assistant – Generative AI</h3>
-                        <span class="company">Indiana University Bloomington, IN, USA</span>
-                        <span class="dates">Dec 2023 – May 2024</span>
-                    </div>
-                    <ul>
-                        <li>Improved transcript accuracy by 18pp using a GPT-4 RAG pipeline deployed on BigRed200, processing over 200 hours of esports video.</li>
-                        <li>Reduced latency 40% in chat feature via GPT-4 sentiment analysis microservice, processing 1.3M+ messages in near real-time.</li>
-                        <li>Automated retraining pipelines using SLURM on HPC systems, cutting manual ETL effort by 6 hours per match.</li>
-                        <li>Documented GenAI workflows, adopted by two graduate cohorts for ongoing esports psychology research.</li>
-                    </ul>
-                </div>
-                
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <h3>Data Analyst</h3>
-                        <span class="company">IBM, MH, India</span>
-                        <span class="dates">Sep 2020 – Jun 2022</span>
-                    </div>
-                    <ul>
-                        <li>Led end-to-end development of a churn prediction model using Python and Scikit-learn, driving a 20% reduction in customer attrition.</li>
-                        <li>Refactored ETL workflows using Azure Data Lake and SQL, improving data availability and cutting processing time by 15%.</li>
-                        <li>Built automated data validation pipelines with SQL and Python, raising dashboard reporting accuracy by 18%.</li>
-                        <li>Deployed ML models to Azure ML environments with CI/CD support, accelerating release cycles by 25% across internal products.</li>
-                        <li>Authored reproducible model documentation and Jupyter-based reports to align analytics delivery with stakeholder needs.</li>
-                        <li>Partnered with business analysts and solution architects to prioritize model features based on customer behavior data trends.</li>
-                        <li>Introduced versioning standards for ML pipelines and datasets, increasing transparency in model updates and audits.</li>
-                        <li>Conducted internal training sessions on Python-based analytics tooling, improving team adoption of reusable code modules.</li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- Projects -->
-            <section class="resume-section">
-                <h2>PROJECTS</h2>
-                <div class="project-item">
-                    <div class="project-header">
-                        <h3>RAG Search Engine:</h3>
-                    </div>
-                    <p>Built a retrieval-augmented generation (RAG) system using GPT-3 for multi-source question answering, with REST API deployment. Implemented chunking and vector embedding with FAISS to enable retrieval from PDF ensuring high relevance and speed.</p>
-                </div>
-                
-                <div class="project-item">
-                    <div class="project-header">
-                        <h3>Job Description Keyword Extractor:</h3>
-                    </div>
-                    <p>Developed a SpaCy-driven NLP tool within a LangChain web app, improving ATS optimization by 15% across 500+ users. Enabled real-time extraction of role-specific keywords from job postings, enhancing resume-tailoring accuracy through context-aware parsing.</p>
-                </div>
-                
-                <div class="project-item">
-                    <div class="project-header">
-                        <h3>Location-Based File Sharing System:</h3>
-                        <span class="project-link">Deployment |GitHub</span>
-                    </div>
-                    <p>Engineered a serverless AWS solution using S3 and Lambda with geospatial filtering, maintaining 99% uptime with efficient access control. Integrated OpenStreetMap via Leaflet.js into a responsive JavaScript frontend, enabling real-time file discovery within user-defined radii.</p>
-                </div>
-            </section>
-
-            <!-- Certifications -->
-            <section class="resume-section">
-                <h2>CERTIFICATIONS</h2>
-                <ul>
-                    <li><a href="https://www.credly.com/badges/8424e14a-fb0f-4af9-9707-9644f1c0d599/linked_in_profile" target="_blank" rel="noopener noreferrer">AWS Certified MLE Associate</a></li>
-                    <li><a href="https://learn.microsoft.com/en-us/users/sanketmuchhala-0655/achievements/xq6ftgfy" target="_blank" rel="noopener noreferrer">Azure AI Fundamentals (AI-900)</a></li>
-                    <li><a href="https://credentials.databricks.com/38f5f364-567c-463a-9139-eaeda5eced80#acc.QbhpOWCx" target="_blank" rel="noopener noreferrer">Databricks Generative AI Foundations</a></li>
-                    <li><a href="https://www.coursera.org/account/accomplishments/professional-cert/V6G9C6ZEJHZF?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=pdf_header_button&utm_product=prof" target="_blank" rel="noopener noreferrer">Google Data Analytics</a></li>
-                </ul>
-            </section>
-
-            <!-- Publications -->
-            <section class="resume-section">
-                <h2>PUBLICATIONS</h2>
-                <div class="publication-item">
-                    <h3><a href="https://www.irjet.net/archives/V8/i11/IRJET-V8I11219.pdf" target="_blank" rel="noopener noreferrer">Smart Road Maintenance: A Machine Learning and IoT based Approach</a></h3>
-                    <p class="publication-journal">International Research Journal of Engineering and Technology (IRJET) - Volume: 08 | Issue: 11 | November 2021 - e-ISSN: 2395-0056 p-ISSN: 2395-0072 · Nov 30, 2021</p>
-                </div>
-                
-                <div class="publication-item">
-                    <h3><a href="https://www.irjet.net/archives/V8/i11/IRJET-V8I11227.pdf" target="_blank" rel="noopener noreferrer">Tracking Software with Hologram Technology to Secure Goods</a></h3>
-                    <p class="publication-journal">International Research Journal of Engineering and Technology (IRJET) - Volume: 08 | Issue: 11 | November 2021 - e-ISSN: 2395-0056 p-ISSN: 2395-0072 · Nov 30, 2021</p>
-                </div>
-                
-                <div class="publication-item">
-                    <h3><a href="http://www.ijaresm.com/reddit-post-popularity-predicting-using-ml" target="_blank" rel="noopener noreferrer">Reddit Post Popularity Prediction using ML</a></h3>
-                    <p class="publication-journal">International Journal of All Research and Scientific Methods - Volume 9 | Issue 11 | November-2021 - ISSN: 2455-6211 · Nov 17, 2021</p>
-                </div>
-                
-                <div class="publication-item">
-                    <h3><a href="https://www.jetir.org/view?paper=JETIR2111058" target="_blank" rel="noopener noreferrer">Disease prediction using ML</a></h3>
-                    <p class="publication-journal">Journal of Emerging Technologies and Innovative Research - Volume 8 | Issue 12 | December 2021 - ISSN: 2349-5162 · Nov 12, 2021</p>
-                </div>
-                
-                <div class="publication-item">
-                    <h3><a href="https://www.jetir.org/view?paper=JETIR2111073" target="_blank" rel="noopener noreferrer">Fake News Detection using ML</a></h3>
-                    <p class="publication-journal">Journal of Emerging Technologies and Innovative Research - Volume 8 | Issue 12 | December 2021 - ISSN: 2349-5162 · Nov 12, 2021</p>
-                </div>
-                
-                <div class="publication-item">
-                    <h3><a href="https://www.tcetmumbai.in/IT/EC-AIML-2020.pdf" target="_blank" rel="noopener noreferrer">Health-Bot (Healthcare Chatbot)</a></h3>
-                    <p class="publication-journal">TCET E-Conference for Artificial Intelligence and Machine Learning - 2020 · Nov 16, 2020 | Pg - 153-155</p>
-                </div>
-            </section>
-        </div>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2024 Sanket Muchhala. All rights reserved.</p>
-                <div class="footer-links">
-                    <a href="index.html">Resume</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="../script.js"></script>
-    <script src="resume.js"></script>
+<script src="../script.js"></script>
 </body>
 </html>

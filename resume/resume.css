@@ -322,6 +322,17 @@
     color: var(--color-accent-secondary);
 }
 
+.rp-project-title-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.rp-project-title-link:hover .rp-project-title {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
 /* ── Bullet Lists ──────────────────────────────────────────── */
 .rp-bullets {
     margin: 0;

@@ -63,34 +63,34 @@ image: "/photos/export.png"
         <div class="about-skills">
             <h3 class="about-skills-label">Technologies & Tools</h3>
             <div class="skills-list">
-                <span class="skill-item"><i class="devicon-python-original colored"></i>Python</span>
-                <span class="skill-item"><i class="fas fa-database"></i>SQL</span>
-                <span class="skill-item"><i class="devicon-r-plain colored"></i>R</span>
-                <span class="skill-item"><i class="devicon-javascript-plain colored"></i>JavaScript</span>
-                <span class="skill-item"><i class="devicon-tensorflow-original colored"></i>TensorFlow</span>
-                <span class="skill-item"><i class="devicon-pytorch-original colored"></i>PyTorch</span>
-                <span class="skill-item"><i class="devicon-scikitlearn-plain colored"></i>Scikit-learn</span>
-                <span class="skill-item"><i class="devicon-fastapi-plain colored"></i>FastAPI</span>
-                <span class="skill-item"><i class="fas fa-chart-line"></i>MLflow</span>
-                <span class="skill-item"><i class="fas fa-language"></i>SpaCy</span>
-                <span class="skill-item"><i class="fas fa-robot"></i>GPT-4</span>
-                <span class="skill-item"><i class="fas fa-link"></i>LangChain</span>
+                <span class="skill-item"><img class="skill-logo" src="https://cdn.simpleicons.org/python" alt="Python">Python</span>
+                <span class="skill-item"><img class="skill-logo" src="https://cdn.simpleicons.org/postgresql/6b8cba" alt="SQL">SQL</span>
+                <span class="skill-item"><img class="skill-logo" src="https://cdn.simpleicons.org/r/276DC3" alt="R">R</span>
+                <span class="skill-item"><img class="skill-logo" src="https://cdn.simpleicons.org/javascript" alt="JavaScript">JavaScript</span>
+                <span class="skill-item"><img class="skill-logo" src="https://cdn.simpleicons.org/tensorflow" alt="TensorFlow">TensorFlow</span>
+                <span class="skill-item"><img class="skill-logo" src="https://cdn.simpleicons.org/pytorch" alt="PyTorch">PyTorch</span>
+                <span class="skill-item"><img class="skill-logo" src="https://cdn.simpleicons.org/scikitlearn" alt="Scikit-learn">Scikit-learn</span>
+                <span class="skill-item"><img class="skill-logo" src="https://cdn.simpleicons.org/fastapi" alt="FastAPI">FastAPI</span>
+                <span class="skill-item"><img class="skill-logo" src="https://cdn.simpleicons.org/mlflow" alt="MLflow">MLflow</span>
+                <span class="skill-item"><img class="skill-logo" src="https://cdn.simpleicons.org/spacy" alt="SpaCy">SpaCy</span>
+                <span class="skill-item"><img class="skill-logo" src="https://cdn.simpleicons.org/openai/888888" alt="GPT-4">GPT-4</span>
+                <span class="skill-item"><img class="skill-logo" src="https://cdn.simpleicons.org/langchain/16a34a" alt="LangChain">LangChain</span>
                 <span class="skill-item"><i class="fas fa-magnifying-glass"></i>RAG</span>
                 <span class="skill-item"><i class="fas fa-microchip"></i>Agentic AI</span>
-                <span class="skill-item"><i class="fas fa-database"></i>Vector DBs</span>
+                <span class="skill-item"><img class="skill-logo" src="https://cdn.simpleicons.org/pinecone/22c55e" alt="Vector DBs">Vector DBs</span>
                 <span class="skill-item"><i class="fas fa-tags"></i>NER</span>
                 <span class="skill-item"><i class="fas fa-list-check"></i>Text Classification</span>
                 <span class="skill-item"><i class="fas fa-file-lines"></i>Summarization</span>
                 <span class="skill-item"><i class="fas fa-chart-simple"></i>Sentiment Analysis</span>
-                <span class="skill-item"><i class="devicon-pandas-original colored"></i>Pandas</span>
-                <span class="skill-item"><i class="devicon-numpy-original colored"></i>NumPy</span>
-                <span class="skill-item"><i class="devicon-apachespark-original colored"></i>PySpark</span>
-                <span class="skill-item"><i class="devicon-amazonwebservices-original colored"></i>AWS</span>
-                <span class="skill-item"><i class="devicon-azure-plain colored"></i>Azure Data Lake</span>
-                <span class="skill-item"><i class="devicon-azure-plain colored"></i>Azure SQL</span>
-                <span class="skill-item"><i class="fas fa-chart-bar"></i>Tableau</span>
-                <span class="skill-item"><i class="fas fa-chart-pie"></i>Power BI</span>
-                <span class="skill-item"><i class="devicon-r-plain colored"></i>R Shiny</span>
+                <span class="skill-item"><img class="skill-logo" src="https://cdn.simpleicons.org/pandas/9b59b6" alt="Pandas">Pandas</span>
+                <span class="skill-item"><img class="skill-logo" src="https://cdn.simpleicons.org/numpy/4dabcf" alt="NumPy">NumPy</span>
+                <span class="skill-item"><img class="skill-logo" src="https://cdn.simpleicons.org/apachespark" alt="PySpark">PySpark</span>
+                <span class="skill-item"><img class="skill-logo" src="https://cdn.simpleicons.org/amazonaws/FF9900" alt="AWS">AWS</span>
+                <span class="skill-item"><img class="skill-logo" src="https://cdn.simpleicons.org/microsoftazure" alt="Azure">Azure Data Lake</span>
+                <span class="skill-item"><img class="skill-logo" src="https://cdn.simpleicons.org/microsoftazure" alt="Azure">Azure SQL</span>
+                <span class="skill-item"><img class="skill-logo" src="https://cdn.simpleicons.org/tableau" alt="Tableau">Tableau</span>
+                <span class="skill-item"><img class="skill-logo" src="https://cdn.simpleicons.org/powerbi" alt="Power BI">Power BI</span>
+                <span class="skill-item"><img class="skill-logo" src="https://cdn.simpleicons.org/r/276DC3" alt="R Shiny">R Shiny</span>
             </div>
         </div>
     </div>

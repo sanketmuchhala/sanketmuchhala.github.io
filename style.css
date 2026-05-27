@@ -749,13 +749,24 @@ section.visible .section-title::after {
   transition: opacity var(--transition);
 }
 
+.skill-logo {
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
+  flex-shrink: 0;
+  display: block;
+  opacity: 0.88;
+  transition: opacity var(--transition);
+}
+
 .skill-item:hover {
   border-color: var(--color-accent-border);
   color: var(--color-accent);
   background: var(--color-accent-light);
 }
 
-.skill-item:hover i {
+.skill-item:hover i,
+.skill-item:hover .skill-logo {
   opacity: 1;
 }
 

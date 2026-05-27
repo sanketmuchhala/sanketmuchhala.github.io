@@ -63,34 +63,34 @@ image: "/photos/export.png"
         <div class="about-skills">
             <h3 class="about-skills-label">Technologies & Tools</h3>
             <div class="skills-list">
-                <span class="skill-item"><img class="skill-logo" src="https://cdn.simpleicons.org/python" alt="Python">Python</span>
-                <span class="skill-item"><img class="skill-logo" src="https://cdn.simpleicons.org/postgresql/6b8cba" alt="SQL">SQL</span>
-                <span class="skill-item"><img class="skill-logo" src="https://cdn.simpleicons.org/r/276DC3" alt="R">R</span>
-                <span class="skill-item"><img class="skill-logo" src="https://cdn.simpleicons.org/javascript" alt="JavaScript">JavaScript</span>
-                <span class="skill-item"><img class="skill-logo" src="https://cdn.simpleicons.org/tensorflow" alt="TensorFlow">TensorFlow</span>
-                <span class="skill-item"><img class="skill-logo" src="https://cdn.simpleicons.org/pytorch" alt="PyTorch">PyTorch</span>
-                <span class="skill-item"><img class="skill-logo" src="https://cdn.simpleicons.org/scikitlearn" alt="Scikit-learn">Scikit-learn</span>
-                <span class="skill-item"><img class="skill-logo" src="https://cdn.simpleicons.org/fastapi" alt="FastAPI">FastAPI</span>
-                <span class="skill-item"><img class="skill-logo" src="https://cdn.simpleicons.org/mlflow" alt="MLflow">MLflow</span>
-                <span class="skill-item"><img class="skill-logo" src="https://cdn.simpleicons.org/spacy" alt="SpaCy">SpaCy</span>
-                <span class="skill-item"><img class="skill-logo" src="https://cdn.simpleicons.org/openai/888888" alt="GPT-4">GPT-4</span>
-                <span class="skill-item"><img class="skill-logo" src="https://cdn.simpleicons.org/langchain/16a34a" alt="LangChain">LangChain</span>
+                <span class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="" onerror="this.style.display='none'">Python</span>
+                <span class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" alt="" onerror="this.style.display='none'">SQL</span>
+                <span class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/r/r-original.svg" alt="" onerror="this.style.display='none'">R</span>
+                <span class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="" onerror="this.style.display='none'">JavaScript</span>
+                <span class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg" alt="" onerror="this.style.display='none'">TensorFlow</span>
+                <span class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg" alt="" onerror="this.style.display='none'">PyTorch</span>
+                <span class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/scikitlearn/scikitlearn-original.svg" alt="" onerror="this.style.display='none'">Scikit-learn</span>
+                <span class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg" alt="" onerror="this.style.display='none'">FastAPI</span>
+                <span class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mlflow/mlflow-original.svg" alt="" onerror="this.style.display='none'">MLflow</span>
+                <span class="skill-item"><i class="fas fa-language"></i>SpaCy</span>
+                <span class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/openai/openai-original.svg" alt="" onerror="this.style.display='none'" style="filter:invert(0.5) brightness(1.5)">GPT-4</span>
+                <span class="skill-item"><i class="fas fa-link"></i>LangChain</span>
                 <span class="skill-item"><i class="fas fa-magnifying-glass"></i>RAG</span>
                 <span class="skill-item"><i class="fas fa-microchip"></i>Agentic AI</span>
-                <span class="skill-item"><img class="skill-logo" src="https://cdn.simpleicons.org/pinecone/22c55e" alt="Vector DBs">Vector DBs</span>
+                <span class="skill-item"><i class="fas fa-database"></i>Vector DBs</span>
                 <span class="skill-item"><i class="fas fa-tags"></i>NER</span>
                 <span class="skill-item"><i class="fas fa-list-check"></i>Text Classification</span>
                 <span class="skill-item"><i class="fas fa-file-lines"></i>Summarization</span>
                 <span class="skill-item"><i class="fas fa-chart-simple"></i>Sentiment Analysis</span>
-                <span class="skill-item"><img class="skill-logo" src="https://cdn.simpleicons.org/pandas/9b59b6" alt="Pandas">Pandas</span>
-                <span class="skill-item"><img class="skill-logo" src="https://cdn.simpleicons.org/numpy/4dabcf" alt="NumPy">NumPy</span>
-                <span class="skill-item"><img class="skill-logo" src="https://cdn.simpleicons.org/apachespark" alt="PySpark">PySpark</span>
-                <span class="skill-item"><img class="skill-logo" src="https://cdn.simpleicons.org/amazonaws/FF9900" alt="AWS">AWS</span>
-                <span class="skill-item"><img class="skill-logo" src="https://cdn.simpleicons.org/microsoftazure" alt="Azure">Azure Data Lake</span>
-                <span class="skill-item"><img class="skill-logo" src="https://cdn.simpleicons.org/microsoftazure" alt="Azure">Azure SQL</span>
-                <span class="skill-item"><img class="skill-logo" src="https://cdn.simpleicons.org/tableau" alt="Tableau">Tableau</span>
-                <span class="skill-item"><img class="skill-logo" src="https://cdn.simpleicons.org/powerbi" alt="Power BI">Power BI</span>
-                <span class="skill-item"><img class="skill-logo" src="https://cdn.simpleicons.org/r/276DC3" alt="R Shiny">R Shiny</span>
+                <span class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg" alt="" onerror="this.style.display='none'">Pandas</span>
+                <span class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg" alt="" onerror="this.style.display='none'">NumPy</span>
+                <span class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/apachespark/apachespark-original.svg" alt="" onerror="this.style.display='none'">PySpark</span>
+                <span class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" alt="" onerror="this.style.display='none'">AWS</span>
+                <span class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg" alt="" onerror="this.style.display='none'">Azure Data Lake</span>
+                <span class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg" alt="" onerror="this.style.display='none'">Azure SQL</span>
+                <span class="skill-item"><img class="skill-logo" src="https://cdn.simpleicons.org/tableau" alt="" onerror="this.style.display='none'">Tableau</span>
+                <span class="skill-item"><img class="skill-logo" src="https://cdn.simpleicons.org/powerbi" alt="" onerror="this.style.display='none'">Power BI</span>
+                <span class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/r/r-original.svg" alt="" onerror="this.style.display='none'">R Shiny</span>
             </div>
         </div>
     </div>

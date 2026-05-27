@@ -82,9 +82,9 @@
 
     function r(d) {
       const k = deg[d.id] || 0;
-      if (d.group === 'experience') return Math.min(24, 18 + Math.max(0, k - 3) * 0.5);
-      if (d.group === 'project')    return Math.min(19, 12 + Math.max(0, k - 2) * 0.50);
-      return Math.min(12, 5  + Math.max(0, k - 1) * 0.90);
+      if (d.group === 'experience') return Math.min(26, 20 + Math.max(0, k - 3) * 0.55);
+      if (d.group === 'project')    return Math.min(21, 14 + Math.max(0, k - 2) * 0.50);
+      return Math.min(14,  8 + Math.max(0, k - 1) * 0.85);
     }
 
     /* ── Mutable copies ── */
@@ -162,10 +162,13 @@
     hm.append('feMergeNode').attr('in','b');
     hm.append('feMergeNode').attr('in','SourceGraphic');
 
-    /* Link glow */
+    /* Link glow — blurred halo BEHIND crisp line (SourceGraphic last in feMerge) */
     const lgf = defs.append('filter').attr('id','link-glow')
-      .attr('x','-10%').attr('y','-300%').attr('width','120%').attr('height','700%');
-    lgf.append('feGaussianBlur').attr('in','SourceGraphic').attr('stdDeviation','1.6');
+      .attr('x','-15%').attr('y','-400%').attr('width','130%').attr('height','900%');
+    lgf.append('feGaussianBlur').attr('in','SourceGraphic').attr('stdDeviation','2.5').attr('result','gblur');
+    const lgm = lgf.append('feMerge');
+    lgm.append('feMergeNode').attr('in','gblur');
+    lgm.append('feMergeNode').attr('in','SourceGraphic'); /* crisp line on top */
 
     /* Experience node gradient (subtle radial) */
     const expGrad = defs.append('radialGradient').attr('id','exp-grad')
@@ -215,8 +218,8 @@
         const tech = (sn && sn.group !== 'project' && sn.group !== 'experience') ? sn : tn;
         return COLORS[(tech && tech.group) || 'tool'];
       })
-      .attr('stroke-opacity', 0.12)
-      .attr('stroke-width', 0.8)
+      .attr('stroke-opacity', 0.28)
+      .attr('stroke-width', 1.1)
       .attr('stroke-linecap', 'round')
       .attr('x1', d => d.source.x).attr('y1', d => d.source.y)
       .attr('x2', d => d.target.x).attr('y2', d => d.target.y);
@@ -274,10 +277,10 @@
     node.append('circle').attr('class', 'n-base')
       .attr('r', 0)
       .attr('fill', d => COLORS[d.group])
-      .attr('fill-opacity', d => d.group === 'experience' ? 0.14 : 0.09)
+      .attr('fill-opacity', d => ({ experience: 0.16, project: 0.12 }[d.group] || 0.11))
       .attr('stroke', d => COLORS[d.group])
-      .attr('stroke-width', d => ({ experience: 1.6, project: 1.3 }[d.group] || 0.85))
-      .attr('stroke-opacity', 0.58);
+      .attr('stroke-width', d => ({ experience: 1.8, project: 1.5 }[d.group] || 1.1))
+      .attr('stroke-opacity', d => ({ experience: 0.75, project: 0.65 }[d.group] || 0.55));
 
     /* Glass sheen overlay */
     node.append('circle').attr('class', 'n-sheen')
@@ -329,19 +332,19 @@
       .attr('text-anchor', 'middle')
       .attr('dy', d => r(d) + 10.5)
       .attr('font-family', "'Bricolage Grotesque', system-ui, sans-serif")
-      .attr('font-size', d => ({ experience: '10px', project: '9px' }[d.group] || '7px'))
-      .attr('font-weight', d => d.group === 'experience' ? '700' : (d.group === 'project' ? '600' : '400'))
+      .attr('font-size', d => ({ experience: '10.5px', project: '9.5px' }[d.group] || '8px'))
+      .attr('font-weight', d => d.group === 'experience' ? '700' : (d.group === 'project' ? '600' : '500'))
       .attr('fill', d => ({
-        experience: 'rgba(255,255,255,0.88)',
-        project:    'rgba(255,255,255,0.82)',
-      }[d.group] || 'rgba(255,255,255,0.34)'))
+        experience: 'rgba(255,255,255,0.90)',
+        project:    'rgba(255,255,255,0.85)',
+      }[d.group] || 'rgba(255,255,255,0.50)'))
       .attr('pointer-events', 'none')
       .attr('opacity', 0)
       .text(d => d.name)
       .transition()
       .delay((d, i) => 280 + i * 9)
       .duration(380)
-      .attr('opacity', d => ({ experience: 1, project: 1 }[d.group] || 0.48));
+      .attr('opacity', d => ({ experience: 1, project: 1 }[d.group] || 0.72));
 
     /* ════════════════════════════════════════════════════════════
        TICK
@@ -391,32 +394,32 @@
         .attr('r', d => on && d.id === activeId ? r(d) + 7 : 0);
 
       node.select('.n-base')
-        .attr('fill-opacity',   d => active(d) ? (d.group === 'experience' ? 0.14 : 0.09) : 0.015)
-        .attr('stroke-opacity', d => active(d) ? 0.58 : 0.06);
+        .attr('fill-opacity',   d => active(d) ? ({ experience: 0.16, project: 0.12 }[d.group] || 0.11) : 0.02)
+        .attr('stroke-opacity', d => active(d) ? ({ experience: 0.75, project: 0.65 }[d.group] || 0.55) : 0.07);
       node.select('.n-ring')
-        .attr('stroke-opacity', d => active(d) ? (d.group === 'experience' ? 0.35 : 0.18) : 0.03);
+        .attr('stroke-opacity', d => active(d) ? (d.group === 'experience' ? 0.38 : 0.22) : 0.03);
       node.select('.n-sheen')
-        .attr('opacity', d => active(d) ? 1 : 0.04);
+        .attr('opacity', d => active(d) ? 1 : 0.05);
       node.select('.n-icon')
-        .attr('opacity', d => active(d) ? 0.82 : 0.06);
+        .attr('opacity', d => active(d) ? 0.84 : 0.06);
       node.select('.n-exp-icon')
-        .attr('fill-opacity', d => active(d) ? 0.72 : 0.08);
+        .attr('fill-opacity', d => active(d) ? 0.75 : 0.08);
       node.select('.n-label')
         .attr('opacity', d => {
-          if (!on) return { experience: 1, project: 1 }[d.group] || 0.48;
-          return activeNbrs.has(d.id) ? 1 : 0.04;
+          if (!on) return { experience: 1, project: 1 }[d.group] || 0.72;
+          return activeNbrs.has(d.id) ? 1 : 0.05;
         });
 
       link
         .attr('stroke-opacity', d => {
-          if (!on) return 0.12;
+          if (!on) return 0.28;
           const s = d.source.id ?? d.source, t = d.target.id ?? d.target;
-          return activeNbrs.has(s) && activeNbrs.has(t) ? 0.82 : 0.02;
+          return activeNbrs.has(s) && activeNbrs.has(t) ? 0.92 : 0.04;
         })
         .attr('stroke-width', d => {
-          if (!on) return 0.8;
+          if (!on) return 1.1;
           const s = d.source.id ?? d.source, t = d.target.id ?? d.target;
-          return activeNbrs.has(s) && activeNbrs.has(t) ? 1.8 : 0.8;
+          return activeNbrs.has(s) && activeNbrs.has(t) ? 2.2 : 1.1;
         })
         .attr('filter', d => {
           if (!on) return null;

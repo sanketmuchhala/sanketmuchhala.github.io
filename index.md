@@ -63,34 +63,34 @@ image: "/photos/export.png"
         <div class="about-skills">
             <h3 class="about-skills-label">Technologies & Tools</h3>
             <div class="skills-list">
-                <span class="skill-item">Python</span>
-                <span class="skill-item">SQL</span>
-                <span class="skill-item">R</span>
-                <span class="skill-item">JavaScript</span>
-                <span class="skill-item">TensorFlow</span>
-                <span class="skill-item">PyTorch</span>
-                <span class="skill-item">Scikit-learn</span>
-                <span class="skill-item">FastAPI</span>
-                <span class="skill-item">MLflow</span>
-                <span class="skill-item">SpaCy</span>
-                <span class="skill-item">GPT-4</span>
-                <span class="skill-item">LangChain</span>
-                <span class="skill-item">RAG</span>
-                <span class="skill-item">Agentic AI</span>
-                <span class="skill-item">Vector DBs</span>
-                <span class="skill-item">NER</span>
-                <span class="skill-item">Text Classification</span>
-                <span class="skill-item">Summarization</span>
-                <span class="skill-item">Sentiment Analysis</span>
-                <span class="skill-item">Pandas</span>
-                <span class="skill-item">NumPy</span>
-                <span class="skill-item">PySpark</span>
-                <span class="skill-item">AWS</span>
-                <span class="skill-item">Azure Data Lake</span>
-                <span class="skill-item">Azure SQL</span>
-                <span class="skill-item">Tableau</span>
-                <span class="skill-item">Power BI</span>
-                <span class="skill-item">R Shiny</span>
+                <span class="skill-item"><i class="devicon-python-original colored"></i>Python</span>
+                <span class="skill-item"><i class="fas fa-database"></i>SQL</span>
+                <span class="skill-item"><i class="devicon-r-plain colored"></i>R</span>
+                <span class="skill-item"><i class="devicon-javascript-plain colored"></i>JavaScript</span>
+                <span class="skill-item"><i class="devicon-tensorflow-original colored"></i>TensorFlow</span>
+                <span class="skill-item"><i class="devicon-pytorch-original colored"></i>PyTorch</span>
+                <span class="skill-item"><i class="devicon-scikitlearn-plain colored"></i>Scikit-learn</span>
+                <span class="skill-item"><i class="devicon-fastapi-plain colored"></i>FastAPI</span>
+                <span class="skill-item"><i class="fas fa-chart-line"></i>MLflow</span>
+                <span class="skill-item"><i class="fas fa-language"></i>SpaCy</span>
+                <span class="skill-item"><i class="fas fa-robot"></i>GPT-4</span>
+                <span class="skill-item"><i class="fas fa-link"></i>LangChain</span>
+                <span class="skill-item"><i class="fas fa-magnifying-glass"></i>RAG</span>
+                <span class="skill-item"><i class="fas fa-microchip"></i>Agentic AI</span>
+                <span class="skill-item"><i class="fas fa-database"></i>Vector DBs</span>
+                <span class="skill-item"><i class="fas fa-tags"></i>NER</span>
+                <span class="skill-item"><i class="fas fa-list-check"></i>Text Classification</span>
+                <span class="skill-item"><i class="fas fa-file-lines"></i>Summarization</span>
+                <span class="skill-item"><i class="fas fa-chart-simple"></i>Sentiment Analysis</span>
+                <span class="skill-item"><i class="devicon-pandas-original colored"></i>Pandas</span>
+                <span class="skill-item"><i class="devicon-numpy-original colored"></i>NumPy</span>
+                <span class="skill-item"><i class="devicon-apachespark-original colored"></i>PySpark</span>
+                <span class="skill-item"><i class="devicon-amazonwebservices-original colored"></i>AWS</span>
+                <span class="skill-item"><i class="devicon-azure-plain colored"></i>Azure Data Lake</span>
+                <span class="skill-item"><i class="devicon-azure-plain colored"></i>Azure SQL</span>
+                <span class="skill-item"><i class="fas fa-chart-bar"></i>Tableau</span>
+                <span class="skill-item"><i class="fas fa-chart-pie"></i>Power BI</span>
+                <span class="skill-item"><i class="devicon-r-plain colored"></i>R Shiny</span>
             </div>
         </div>
     </div>

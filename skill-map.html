@@ -1,0 +1,1050 @@
+---
+layout: default
+title: "Ecosystem"
+description: "Interactive force-directed network graph of skills, technologies, and projects"
+---
+
+<style>
+/* ════════════════════════════════════════════════════════════════
+   ECOSYSTEM PAGE  —  "Deep Space Observatory"
+   Pure black void. Luminous orb nodes. Surgical glass chrome.
+   ════════════════════════════════════════════════════════════════ */
+
+/* Force absolute black, kill footer, own the viewport */
+html, body { overflow: hidden !important; }
+body { background: #000 !important; }
+footer.footer { display: none !important; }
+
+/* Remove the ribbon canvas for this page — keep pure void */
+body > canvas { display: none !important; }
+
+/* ── Page shell ───────────────────────────────────────────────── */
+.eco-page {
+  position: fixed;
+  inset: var(--nav-height) 0 0 0;
+  background: #000000;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  font-family: var(--font-sans);
+}
+
+/* Subtle radial vignette — edges are darker than center */
+.eco-page::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 85% 80% at 50% 50%,
+    transparent 40%,
+    rgba(0, 0, 0, 0.55) 100%
+  );
+  pointer-events: none;
+  z-index: 50;
+}
+
+/* ── Header strip ─────────────────────────────────────────────── */
+.eco-header {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem 0.25rem;
+  animation: eco-slide-down 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.eco-title {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.eco-title-label {
+  font-size: 0.5625rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.22);
+}
+
+.eco-title-main {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.88);
+  letter-spacing: -0.025em;
+  line-height: 1;
+}
+
+.eco-stats {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  border: 0.5px solid rgba(255, 255, 255, 0.06);
+  border-radius: 100px;
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.eco-stat {
+  display: flex;
+  align-items: baseline;
+  gap: 0.3rem;
+  padding: 0.3rem 0.875rem;
+  border-right: 0.5px solid rgba(255, 255, 255, 0.06);
+}
+.eco-stat:last-child { border-right: none; }
+
+.eco-stat-num {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.80);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.03em;
+  transition: color 300ms ease;
+}
+
+.eco-stat-lbl {
+  font-size: 0.5625rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.24);
+}
+
+/* ── Controls bar ─────────────────────────────────────────────── */
+.eco-controls {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 1rem 0.625rem;
+  animation: eco-slide-down 0.55s 0.07s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.eco-controls-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.125rem;
+  padding: 0.25rem;
+  border-radius: 100px;
+  background: linear-gradient(135deg,
+    rgba(255, 255, 255, 0.058) 0%,
+    rgba(255, 255, 255, 0.018) 100%
+  );
+  backdrop-filter: blur(28px) saturate(200%);
+  -webkit-backdrop-filter: blur(28px) saturate(200%);
+  border: 0.5px solid rgba(255, 255, 255, 0.075);
+  box-shadow:
+    inset 0 0.5px 0 rgba(255, 255, 255, 0.14),
+    inset 0 -0.5px 0 rgba(0, 0, 0, 0.12),
+    0 12px 40px rgba(0, 0, 0, 0.60),
+    0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+.eco-filter {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  padding: 0.3125rem 0.8125rem;
+  border-radius: 100px;
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.33);
+  cursor: pointer;
+  transition: all 150ms ease;
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+  position: relative;
+}
+
+.eco-filter:hover {
+  color: rgba(255, 255, 255, 0.68);
+  background: rgba(255, 255, 255, 0.045);
+}
+
+.eco-filter.active {
+  color: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.09);
+  box-shadow:
+    inset 0 0.5px 0 rgba(255, 255, 255, 0.20),
+    inset 0 -0.5px 0 rgba(0, 0, 0, 0.08);
+}
+
+/* Per-group active tint */
+.eco-filter.active[data-group="project"]  { color: #a5b4fc; background: rgba(99,102,241,0.18); }
+.eco-filter.active[data-group="language"] { color: #fde68a; background: rgba(245,158,11,0.14); }
+.eco-filter.active[data-group="ai"]       { color: #fbcfe8; background: rgba(236,72,153,0.14); }
+.eco-filter.active[data-group="data"]     { color: #a7f3d0; background: rgba(16,185,129,0.13); }
+.eco-filter.active[data-group="cloud"]    { color: #bae6fd; background: rgba(14,165,233,0.13); }
+.eco-filter.active[data-group="tool"]     { color: #ddd6fe; background: rgba(167,139,250,0.13); }
+
+.eco-sep {
+  width: 0.5px;
+  height: 16px;
+  background: rgba(255, 255, 255, 0.07);
+  flex-shrink: 0;
+  margin: 0 0.075rem;
+}
+
+.eco-reset {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 0.5px solid rgba(255, 255, 255, 0.07);
+  background: transparent;
+  color: rgba(255, 255, 255, 0.33);
+  cursor: pointer;
+  transition: all 200ms ease;
+  flex-shrink: 0;
+  font-size: 0.65rem;
+}
+
+.eco-reset:hover {
+  color: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.14);
+  transform: rotate(-30deg);
+}
+
+/* ── Graph canvas ─────────────────────────────────────────────── */
+#graph-wrapper {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+}
+
+#skill-graph {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* ── Tooltip ──────────────────────────────────────────────────── */
+#graph-tooltip {
+  position: absolute;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.10s ease;
+  min-width: 155px;
+  max-width: 230px;
+}
+
+.tt-inner {
+  border-left: 2.5px solid;
+  border-radius: 0 10px 10px 0;
+  background: rgba(4, 4, 4, 0.92);
+  border-top: 0.5px solid rgba(255, 255, 255, 0.08);
+  border-right: 0.5px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  padding: 0.625rem 0.875rem 0.625rem 0.75rem;
+  box-shadow:
+    0 16px 40px rgba(0, 0, 0, 0.65),
+    0 4px 12px rgba(0, 0, 0, 0.40);
+}
+
+.tt-name {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.92);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.tt-badge {
+  display: inline-block;
+  margin-top: 0.3rem;
+  font-size: 0.5625rem;
+  font-weight: 700;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  padding: 0.15rem 0.45rem;
+  border-radius: 100px;
+  border: 0.5px solid;
+}
+
+.tt-desc {
+  margin-top: 0.45rem;
+  padding-top: 0.4rem;
+  border-top: 0.5px solid rgba(255, 255, 255, 0.06);
+  font-size: 0.6875rem;
+  color: rgba(255, 255, 255, 0.38);
+  line-height: 1.45;
+}
+
+/* ── Legend ───────────────────────────────────────────────────── */
+.eco-legend {
+  position: absolute;
+  bottom: 1.375rem;
+  right: 1.375rem;
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  gap: 0.425rem;
+  padding: 0.625rem 0.875rem;
+  background: linear-gradient(148deg,
+    rgba(255,255,255,0.042) 0%,
+    rgba(255,255,255,0.012) 100%
+  );
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 0.5px solid rgba(255,255,255,0.055);
+  border-radius: 10px;
+  box-shadow:
+    inset 0 0.5px 0 rgba(255,255,255,0.10),
+    0 8px 24px rgba(0,0,0,0.50);
+  animation: eco-slide-up 0.55s 0.20s cubic-bezier(0.16,1,0.3,1) both;
+}
+
+.eco-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.625rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.32);
+  text-transform: uppercase;
+  cursor: default;
+  transition: color 150ms ease;
+}
+.eco-legend-item:hover { color: rgba(255,255,255,0.72); }
+
+.eco-legend-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 0 6px currentColor;
+}
+
+.eco-legend-ring {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  border: 1.5px solid;
+  flex-shrink: 0;
+  background: transparent;
+}
+
+/* ── Bottom hint ─────────────────────────────────────────────── */
+.eco-hint {
+  position: absolute;
+  bottom: 1.375rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 40;
+  font-size: 0.5625rem;
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.14);
+  pointer-events: none;
+  white-space: nowrap;
+  text-transform: uppercase;
+  animation: eco-slide-up 0.55s 0.28s cubic-bezier(0.16,1,0.3,1) both;
+}
+
+/* ── Enter animations ─────────────────────────────────────────── */
+@keyframes eco-slide-down {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes eco-slide-up {
+  from { opacity: 0; transform: translateY(10px) translateX(-50%); }
+  to   { opacity: 1; transform: translateY(0) translateX(-50%); }
+}
+@keyframes eco-slide-up-abs {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.eco-legend { animation-name: eco-slide-up-abs; }
+
+/* ── Mobile ──────────────────────────────────────────────────── */
+@media (max-width: 680px) {
+  .eco-header  { padding: 0.625rem 1rem 0.2rem; }
+  .eco-stats   { display: none; }
+  .eco-title-main { font-size: 0.875rem; }
+  .eco-controls { overflow-x: auto; justify-content: flex-start;
+                  -webkit-overflow-scrolling: touch; }
+  .eco-controls-pill { padding-right: 0.75rem; }
+  .eco-legend  { display: none; }
+  .eco-hint    { display: none; }
+}
+</style>
+
+<!-- Page: Ecosystem -->
+<div class="eco-page" id="eco-page">
+
+  <!-- ── Header ── -->
+  <div class="eco-header">
+    <div class="eco-title">
+      <span class="eco-title-label">Sanket Muchhala</span>
+      <span class="eco-title-main">Skills &amp; Projects Ecosystem</span>
+    </div>
+    <div class="eco-stats">
+      <div class="eco-stat">
+        <span class="eco-stat-num" id="stat-projects">12</span>
+        <span class="eco-stat-lbl">Projects</span>
+      </div>
+      <div class="eco-stat">
+        <span class="eco-stat-num" id="stat-tech">29</span>
+        <span class="eco-stat-lbl">Technologies</span>
+      </div>
+      <div class="eco-stat">
+        <span class="eco-stat-num" id="stat-links">42</span>
+        <span class="eco-stat-lbl">Connections</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Controls ── -->
+  <div class="eco-controls">
+    <div class="eco-controls-pill">
+      <button class="eco-filter active" data-group="all">All</button>
+      <button class="eco-filter" data-group="project">Projects</button>
+      <button class="eco-filter" data-group="language">Languages</button>
+      <button class="eco-filter" data-group="ai">AI · ML</button>
+      <button class="eco-filter" data-group="data">Data</button>
+      <button class="eco-filter" data-group="cloud">Cloud</button>
+      <button class="eco-filter" data-group="tool">Tools</button>
+      <div class="eco-sep"></div>
+      <button class="eco-reset" id="reset-graph" title="Reset graph">
+        <i class="fas fa-rotate"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- ── Graph ── -->
+  <div id="graph-wrapper">
+    <svg id="skill-graph"></svg>
+    <div id="graph-tooltip"></div>
+
+    <!-- Legend -->
+    <div class="eco-legend">
+      <div class="eco-legend-item">
+        <div class="eco-legend-ring" style="border-color:#6366f1;color:#6366f1"></div>
+        <span>Project</span>
+      </div>
+      <div class="eco-legend-item">
+        <div class="eco-legend-dot" style="background:#f59e0b;color:#f59e0b"></div>
+        <span>Language</span>
+      </div>
+      <div class="eco-legend-item">
+        <div class="eco-legend-dot" style="background:#ec4899;color:#ec4899"></div>
+        <span>AI / ML</span>
+      </div>
+      <div class="eco-legend-item">
+        <div class="eco-legend-dot" style="background:#10b981;color:#10b981"></div>
+        <span>Data</span>
+      </div>
+      <div class="eco-legend-item">
+        <div class="eco-legend-dot" style="background:#38bdf8;color:#38bdf8"></div>
+        <span>Cloud</span>
+      </div>
+      <div class="eco-legend-item">
+        <div class="eco-legend-dot" style="background:#a78bfa;color:#a78bfa"></div>
+        <span>Tool</span>
+      </div>
+    </div>
+
+    <!-- Hint -->
+    <div class="eco-hint">Drag &nbsp;·&nbsp; Scroll to zoom &nbsp;·&nbsp; Click to explore &nbsp;·&nbsp; Click canvas to reset</div>
+  </div>
+
+</div><!-- /.eco-page -->
+
+<!-- D3.js v7 -->
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script>
+(function () {
+  /* ════════════════════════════════════════════════════════════
+     DATA
+  ════════════════════════════════════════════════════════════ */
+  const graphData = {
+    nodes: [
+      // Projects
+      { id: 'p-nerdplexity', name: 'Nerdplexity',            group: 'project',  val: 20, desc: 'LLM chat UI with Prompt Analytics' },
+      { id: 'p-news',        name: 'Funny News Aggregator',   group: 'project',  val: 20, desc: 'AI-curated news with network graphs' },
+      { id: 'p-rag',         name: 'RAG Search Engine',       group: 'project',  val: 20, desc: 'GPT-3 + LangChain + FAISS pipeline' },
+      { id: 'p-job-agent',   name: 'Job Application Agent',   group: 'project',  val: 20, desc: 'DeepSeek-powered job automation' },
+      { id: 'p-house-ml',    name: 'House Price ML',          group: 'project',  val: 20, desc: 'End-to-end ML pipeline with MLflow' },
+      { id: 'p-keyword',     name: 'Job Keyword Extractor',   group: 'project',  val: 20, desc: 'NLP + BERT keyword mining' },
+      { id: 'p-location',    name: 'Location File Share',     group: 'project',  val: 20, desc: 'AWS geospatial file sharing system' },
+      { id: 'p-resume',      name: 'AI Resume Customizer',    group: 'project',  val: 20, desc: 'Gemini-powered resume tailoring' },
+      { id: 'p-linkedin',    name: 'LinkedIn Assistant',      group: 'project',  val: 20, desc: 'NLP automation for LinkedIn' },
+      { id: 'p-study',       name: 'AI Study Buddy',          group: 'project',  val: 20, desc: 'Adaptive learning AI assistant' },
+      { id: 'p-rag2',        name: 'RAG with DeepSeek-R1',    group: 'project',  val: 20, desc: 'RAG pipeline on DeepSeek-R1' },
+      { id: 'p-care',        name: 'Care Coordination',       group: 'project',  val: 18, desc: 'Healthcare disparity analysis' },
+      // Languages
+      { id: 't-python',     name: 'Python',      group: 'language', val: 15 },
+      { id: 't-js',         name: 'JavaScript',  group: 'language', val: 11 },
+      { id: 't-ts',         name: 'TypeScript',  group: 'language', val: 11 },
+      { id: 't-r',          name: 'R',           group: 'language', val: 9  },
+      { id: 't-sql',        name: 'SQL',         group: 'language', val: 9  },
+      // AI / ML
+      { id: 't-langchain',  name: 'LangChain',   group: 'ai', val: 13 },
+      { id: 't-pytorch',    name: 'PyTorch',     group: 'ai', val: 11 },
+      { id: 't-tensorflow', name: 'TensorFlow',  group: 'ai', val: 11 },
+      { id: 't-gpt4',       name: 'GPT-4',       group: 'ai', val: 11 },
+      { id: 't-deepseek',   name: 'DeepSeek',    group: 'ai', val: 10 },
+      { id: 't-gemini',     name: 'Gemini AI',   group: 'ai', val: 10 },
+      { id: 't-bert',       name: 'BERT',        group: 'ai', val: 10 },
+      { id: 't-faiss',      name: 'FAISS',       group: 'ai', val: 10 },
+      { id: 't-spacy',      name: 'spaCy',       group: 'ai', val: 10 },
+      { id: 't-transformers',name:'Transformers', group: 'ai', val: 10 },
+      // Data
+      { id: 't-pandas',     name: 'Pandas',       group: 'data', val: 13 },
+      { id: 't-numpy',      name: 'NumPy',        group: 'data', val: 12 },
+      { id: 't-sklearn',    name: 'Scikit-learn', group: 'data', val: 13 },
+      { id: 't-mlflow',     name: 'MLflow',       group: 'data', val: 10 },
+      { id: 't-matplotlib', name: 'Matplotlib',   group: 'data', val: 10 },
+      { id: 't-seaborn',    name: 'Seaborn',      group: 'data', val: 9  },
+      // Cloud
+      { id: 't-aws',        name: 'AWS',          group: 'cloud', val: 13 },
+      { id: 't-azure',      name: 'Azure',        group: 'cloud', val: 12 },
+      { id: 't-docker',     name: 'Docker',       group: 'cloud', val: 11 },
+      // Tools
+      { id: 't-react',      name: 'React',        group: 'tool', val: 12 },
+      { id: 't-nodejs',     name: 'Node.js',      group: 'tool', val: 11 },
+      { id: 't-fastapi',    name: 'FastAPI',      group: 'tool', val: 11 },
+      { id: 't-nextjs',     name: 'Next.js',      group: 'tool', val: 11 },
+      { id: 't-postgresql', name: 'PostgreSQL',   group: 'tool', val: 10 },
+    ],
+    links: [
+      { source: 'p-nerdplexity', target: 't-ts'         },
+      { source: 'p-nerdplexity', target: 't-react'      },
+      { source: 'p-nerdplexity', target: 't-nodejs'     },
+      { source: 'p-news',        target: 't-nextjs'     },
+      { source: 'p-news',        target: 't-ts'         },
+      { source: 'p-news',        target: 't-postgresql' },
+      { source: 'p-news',        target: 't-gemini'     },
+      { source: 'p-rag',         target: 't-python'     },
+      { source: 'p-rag',         target: 't-langchain'  },
+      { source: 'p-rag',         target: 't-faiss'      },
+      { source: 'p-rag',         target: 't-gpt4'       },
+      { source: 'p-rag2',        target: 't-python'     },
+      { source: 'p-rag2',        target: 't-langchain'  },
+      { source: 'p-rag2',        target: 't-faiss'      },
+      { source: 'p-rag2',        target: 't-deepseek'   },
+      { source: 'p-rag2',        target: 't-transformers'},
+      { source: 'p-job-agent',   target: 't-python'     },
+      { source: 'p-job-agent',   target: 't-deepseek'   },
+      { source: 'p-house-ml',    target: 't-python'     },
+      { source: 'p-house-ml',    target: 't-sklearn'    },
+      { source: 'p-house-ml',    target: 't-pandas'     },
+      { source: 'p-house-ml',    target: 't-numpy'      },
+      { source: 'p-house-ml',    target: 't-mlflow'     },
+      { source: 'p-house-ml',    target: 't-docker'     },
+      { source: 'p-keyword',     target: 't-python'     },
+      { source: 'p-keyword',     target: 't-spacy'      },
+      { source: 'p-keyword',     target: 't-sklearn'    },
+      { source: 'p-keyword',     target: 't-bert'       },
+      { source: 'p-keyword',     target: 't-fastapi'    },
+      { source: 'p-location',    target: 't-aws'        },
+      { source: 'p-location',    target: 't-docker'     },
+      { source: 'p-resume',      target: 't-js'         },
+      { source: 'p-resume',      target: 't-gemini'     },
+      { source: 'p-linkedin',    target: 't-python'     },
+      { source: 'p-linkedin',    target: 't-js'         },
+      { source: 'p-linkedin',    target: 't-spacy'      },
+      { source: 'p-study',       target: 't-react'      },
+      { source: 'p-study',       target: 't-ts'         },
+      { source: 'p-care',        target: 't-python'     },
+      { source: 'p-care',        target: 't-pandas'     },
+      { source: 'p-care',        target: 't-matplotlib' },
+      { source: 'p-care',        target: 't-seaborn'    },
+    ]
+  };
+
+  /* ════════════════════════════════════════════════════════════
+     VISUAL CONSTANTS
+  ════════════════════════════════════════════════════════════ */
+  const COLORS = {
+    project:  '#6366f1',
+    language: '#f59e0b',
+    ai:       '#ec4899',
+    data:     '#10b981',
+    cloud:    '#38bdf8',
+    tool:     '#a78bfa',
+  };
+
+  // Radial gradient: [center highlight, outer deep]
+  const GRAD = {
+    project:  ['#c7d2fe', '#3730a3'],
+    language: ['#fef08a', '#92400e'],
+    ai:       ['#fbcfe8', '#831843'],
+    data:     ['#a7f3d0', '#064e3b'],
+    cloud:    ['#bae6fd', '#075985'],
+    tool:     ['#ede9fe', '#4c1d95'],
+  };
+
+  const RADIUS = {
+    project:  19,
+    language: 11,
+    ai:       10,
+    data:     10,
+    cloud:    11,
+    tool:     10,
+  };
+
+  const GROUP_LABELS = {
+    project:  'Project',
+    language: 'Language',
+    ai:       'AI / ML',
+    data:     'Data',
+    cloud:    'Cloud',
+    tool:     'Tool',
+  };
+
+  /* ════════════════════════════════════════════════════════════
+     SVG SETUP
+  ════════════════════════════════════════════════════════════ */
+  const wrapper = document.getElementById('graph-wrapper');
+  const tooltip = document.getElementById('graph-tooltip');
+  let W = wrapper.clientWidth;
+  let H = wrapper.clientHeight;
+
+  const svg = d3.select('#skill-graph')
+    .attr('width', W)
+    .attr('height', H);
+
+  /* ── SVG defs: gradients + filters ──────────────────────── */
+  const defs = svg.append('defs');
+
+  // Per-group radial gradient for orb look
+  Object.entries(GRAD).forEach(([group, [inner, outer]]) => {
+    const g = defs.append('radialGradient')
+      .attr('id', `orb-${group}`)
+      .attr('cx', '32%').attr('cy', '26%').attr('r', '72%')
+      .attr('fx', '32%').attr('fy', '26%');
+    g.append('stop').attr('offset', '0%')
+      .attr('stop-color', inner).attr('stop-opacity', 0.95);
+    g.append('stop').attr('offset', '100%')
+      .attr('stop-color', outer).attr('stop-opacity', 1.0);
+  });
+
+  // Specular highlight gradient (top-left white glow inside orb)
+  const spec = defs.append('radialGradient')
+    .attr('id', 'specular')
+    .attr('cx', '28%').attr('cy', '22%').attr('r', '55%');
+  spec.append('stop').attr('offset', '0%')
+    .attr('stop-color', '#fff').attr('stop-opacity', 0.42);
+  spec.append('stop').attr('offset', '100%')
+    .attr('stop-color', '#fff').attr('stop-opacity', 0);
+
+  // Bloom filter for node ambient glow
+  const bloom = defs.append('filter')
+    .attr('id', 'bloom')
+    .attr('x', '-80%').attr('y', '-80%')
+    .attr('width', '260%').attr('height', '260%');
+  bloom.append('feGaussianBlur')
+    .attr('in', 'SourceGraphic')
+    .attr('stdDeviation', '6')
+    .attr('result', 'blur');
+  const bloomMerge = bloom.append('feMerge');
+  bloomMerge.append('feMergeNode').attr('in', 'blur');
+  bloomMerge.append('feMergeNode').attr('in', 'blur');
+
+  // Sharper glow filter for hovered nodes
+  const hoverGlow = defs.append('filter')
+    .attr('id', 'hover-glow')
+    .attr('x', '-60%').attr('y', '-60%')
+    .attr('width', '220%').attr('height', '220%');
+  hoverGlow.append('feGaussianBlur')
+    .attr('in', 'SourceGraphic')
+    .attr('stdDeviation', '4')
+    .attr('result', 'hb');
+  const hgMerge = hoverGlow.append('feMerge');
+  hgMerge.append('feMergeNode').attr('in', 'hb');
+  hgMerge.append('feMergeNode').attr('in', 'hb');
+  hgMerge.append('feMergeNode').attr('in', 'SourceGraphic');
+
+  // Faint glow filter for active links
+  const linkGlow = defs.append('filter')
+    .attr('id', 'link-glow')
+    .attr('x', '-10%').attr('y', '-200%')
+    .attr('width', '120%').attr('height', '500%');
+  linkGlow.append('feGaussianBlur')
+    .attr('in', 'SourceGraphic')
+    .attr('stdDeviation', '2');
+
+  /* ── Pure black background ───────────────────────────────── */
+  svg.append('rect')
+    .attr('width', '100%').attr('height', '100%')
+    .attr('fill', '#000000');
+
+  /* ── Zoom group ──────────────────────────────────────────── */
+  const g = svg.append('g').attr('class', 'zoom-group');
+
+  const zoom = d3.zoom()
+    .scaleExtent([0.2, 5])
+    .on('zoom', e => g.attr('transform', e.transform));
+  svg.call(zoom);
+  svg.on('click', e => {
+    if (e.target === svg.node() || e.target.tagName === 'rect') clearHighlight();
+  });
+
+  /* ════════════════════════════════════════════════════════════
+     DATA COPY + SIMULATION
+  ════════════════════════════════════════════════════════════ */
+  const nodes = graphData.nodes.map(d => ({ ...d }));
+  const links = graphData.links.map(d => ({ ...d }));
+
+  const sim = d3.forceSimulation(nodes)
+    .force('link', d3.forceLink(links).id(d => d.id)
+      .distance(d => {
+        if (d.source.group === 'project' || d.target.group === 'project') return 105;
+        return 58;
+      })
+      .strength(0.42))
+    .force('charge', d3.forceManyBody()
+      .strength(d => d.group === 'project' ? -520 : -165))
+    .force('center', d3.forceCenter(W / 2, H / 2).strength(0.055))
+    .force('collision', d3.forceCollide()
+      .radius(d => RADIUS[d.group] + 14).strength(0.88));
+
+  /* ════════════════════════════════════════════════════════════
+     LINKS
+  ════════════════════════════════════════════════════════════ */
+  const linkGroup = g.append('g').attr('class', 'links');
+
+  const link = linkGroup.selectAll('line')
+    .data(links).join('line')
+    .attr('class', 'graph-link')
+    .attr('stroke', d => {
+      const src = nodes.find(n => n.id === (d.source.id || d.source));
+      const tgt = nodes.find(n => n.id === (d.target.id || d.target));
+      const tech = src?.group !== 'project' ? src : tgt;
+      return COLORS[tech?.group || 'tool'];
+    })
+    .attr('stroke-opacity', 0.18)
+    .attr('stroke-width', 1.0)
+    .attr('stroke-linecap', 'round');
+
+  /* ════════════════════════════════════════════════════════════
+     NODES
+  ════════════════════════════════════════════════════════════ */
+  const nodeGroup = g.append('g').attr('class', 'nodes');
+
+  const node = nodeGroup.selectAll('g.node')
+    .data(nodes).join('g')
+    .attr('class', 'node')
+    .style('cursor', 'pointer')
+    .call(makeDrag(sim));
+
+  // ── 1. Ambient bloom halo (behind everything) ──────────────
+  node.append('circle')
+    .attr('class', 'node-halo')
+    .attr('r', d => RADIUS[d.group] * 2.2)
+    .attr('fill', d => COLORS[d.group])
+    .attr('fill-opacity', 0.06)
+    .attr('filter', 'url(#bloom)');
+
+  // ── 2. Project nodes: SMIL pulsing sonar ring ──────────────
+  node.filter(d => d.group === 'project').each(function(d) {
+    const el = d3.select(this);
+    const ring = el.append('circle')
+      .attr('class', 'node-pulse')
+      .attr('r', RADIUS[d.group] + 2)
+      .attr('fill', 'none')
+      .attr('stroke', COLORS[d.group])
+      .attr('stroke-width', 1.2)
+      .attr('stroke-opacity', 0.5);
+
+    ring.append('animate')
+      .attr('attributeName', 'r')
+      .attr('from', RADIUS[d.group] + 2)
+      .attr('to',   RADIUS[d.group] + 22)
+      .attr('dur',  `${2.2 + Math.random() * 1.2}s`)
+      .attr('repeatCount', 'indefinite')
+      .attr('begin', `${Math.random() * 2}s`);
+
+    ring.append('animate')
+      .attr('attributeName', 'stroke-opacity')
+      .attr('from', 0.45)
+      .attr('to',   0)
+      .attr('dur',  `${2.2 + Math.random() * 1.2}s`)
+      .attr('repeatCount', 'indefinite')
+      .attr('begin', `${Math.random() * 2}s`);
+  });
+
+  // ── 3. Outer crisp ring (project only) ─────────────────────
+  node.filter(d => d.group === 'project')
+    .append('circle')
+    .attr('class', 'node-ring')
+    .attr('r', d => RADIUS[d.group] + 3.5)
+    .attr('fill', 'none')
+    .attr('stroke', d => COLORS[d.group])
+    .attr('stroke-width', 0.75)
+    .attr('stroke-opacity', 0.30);
+
+  // ── 4. Main orb: gradient fill ─────────────────────────────
+  node.append('circle')
+    .attr('class', 'node-circle')
+    .attr('r', 0)                         // start at 0 for entrance anim
+    .attr('fill', d => `url(#orb-${d.group})`)
+    .attr('stroke', d => COLORS[d.group])
+    .attr('stroke-width', d => d.group === 'project' ? 1.0 : 0.6)
+    .attr('stroke-opacity', 0.55);
+
+  // Entrance: scale in with stagger
+  node.select('.node-circle')
+    .transition()
+    .delay((d, i) => 80 + i * 18)
+    .duration(540)
+    .ease(d3.easeBackOut.overshoot(1.15))
+    .attr('r', d => RADIUS[d.group]);
+
+  // ── 5. Specular highlight (glass sphere illusion) ──────────
+  node.append('circle')
+    .attr('class', 'node-spec')
+    .attr('r', d => RADIUS[d.group] * 0.55)
+    .attr('cx', d => -RADIUS[d.group] * 0.20)
+    .attr('cy', d => -RADIUS[d.group] * 0.26)
+    .attr('fill', 'url(#specular)')
+    .attr('pointer-events', 'none');
+
+  // ── 6. Label ───────────────────────────────────────────────
+  node.append('text')
+    .attr('class', 'node-label')
+    .attr('dy', d => RADIUS[d.group] + 13)
+    .attr('text-anchor', 'middle')
+    .attr('font-family', "'Bricolage Grotesque', system-ui, sans-serif")
+    .attr('font-size',   d => d.group === 'project' ? '10.5px' : '8px')
+    .attr('font-weight', d => d.group === 'project' ? '600' : '400')
+    .attr('fill',        d => d.group === 'project' ? 'rgba(255,255,255,0.88)' : 'rgba(255,255,255,0.42)')
+    .attr('pointer-events', 'none')
+    .attr('opacity', 0)
+    .text(d => d.name)
+    // Fade labels in after orbs appear
+    .transition()
+    .delay((d, i) => 300 + i * 18)
+    .duration(400)
+    .attr('opacity', d => d.group === 'project' ? 1 : 0.55);
+
+  /* ════════════════════════════════════════════════════════════
+     SIMULATION TICK
+  ════════════════════════════════════════════════════════════ */
+  sim.on('tick', () => {
+    link
+      .attr('x1', d => d.source.x).attr('y1', d => d.source.y)
+      .attr('x2', d => d.target.x).attr('y2', d => d.target.y);
+    node.attr('transform', d => `translate(${d.x},${d.y})`);
+  });
+
+  /* ════════════════════════════════════════════════════════════
+     HIGHLIGHT STATE
+  ════════════════════════════════════════════════════════════ */
+  let activeId   = null;
+  let activeNbrs = new Set();
+
+  function setHighlight(d) {
+    if (activeId === d.id) { clearHighlight(); return; }
+    activeId   = d.id;
+    activeNbrs = new Set([d.id]);
+    links.forEach(l => {
+      const s = l.source.id ?? l.source;
+      const t = l.target.id ?? l.target;
+      if (s === d.id) activeNbrs.add(t);
+      if (t === d.id) activeNbrs.add(s);
+    });
+    applyHighlight();
+  }
+
+  function clearHighlight() {
+    activeId   = null;
+    activeNbrs = new Set();
+    applyHighlight();
+  }
+
+  function applyHighlight() {
+    const on = activeId !== null;
+
+    node.select('.node-circle')
+      .attr('fill-opacity', d => !on || activeNbrs.has(d.id) ? 1 : 0.06)
+      .attr('stroke-opacity', d => !on || activeNbrs.has(d.id) ? 0.55 : 0.06);
+
+    node.select('.node-halo')
+      .attr('fill-opacity', d => !on || activeNbrs.has(d.id) ? 0.06 : 0.01);
+
+    node.select('.node-ring')
+      .attr('stroke-opacity', d => !on || activeNbrs.has(d.id) ? 0.30 : 0.04);
+
+    node.select('.node-spec')
+      .attr('opacity', d => !on || activeNbrs.has(d.id) ? 1 : 0.05);
+
+    node.select('.node-label')
+      .attr('opacity', d => {
+        if (!on) return d.group === 'project' ? 1 : 0.55;
+        return activeNbrs.has(d.id) ? 1 : 0.04;
+      });
+
+    link
+      .attr('stroke-opacity', d => {
+        if (!on) return 0.18;
+        const s = d.source.id ?? d.source;
+        const t = d.target.id ?? d.target;
+        return activeNbrs.has(s) && activeNbrs.has(t) ? 0.88 : 0.03;
+      })
+      .attr('stroke-width', d => {
+        if (!on) return 1.0;
+        const s = d.source.id ?? d.source;
+        const t = d.target.id ?? d.target;
+        return activeNbrs.has(s) && activeNbrs.has(t) ? 2.0 : 1.0;
+      })
+      .attr('filter', d => {
+        if (!on) return null;
+        const s = d.source.id ?? d.source;
+        const t = d.target.id ?? d.target;
+        return activeNbrs.has(s) && activeNbrs.has(t) ? 'url(#link-glow)' : null;
+      });
+  }
+
+  /* ════════════════════════════════════════════════════════════
+     MOUSE EVENTS
+  ════════════════════════════════════════════════════════════ */
+  node
+    .on('mouseenter', (e, d) => {
+      showTooltip(e, d);
+      d3.select(e.currentTarget).select('.node-halo')
+        .attr('fill-opacity', 0.16);
+      d3.select(e.currentTarget).select('.node-circle')
+        .transition().duration(100)
+        .attr('r', RADIUS[d.group] + 2.5);
+    })
+    .on('mousemove', e => moveTooltip(e))
+    .on('mouseleave', (e, d) => {
+      hideTooltip();
+      d3.select(e.currentTarget).select('.node-halo')
+        .attr('fill-opacity', 0.06);
+      d3.select(e.currentTarget).select('.node-circle')
+        .transition().duration(220)
+        .attr('r', RADIUS[d.group]);
+    })
+    .on('click', (e, d) => { e.stopPropagation(); setHighlight(d); });
+
+  /* ════════════════════════════════════════════════════════════
+     TOOLTIP
+  ════════════════════════════════════════════════════════════ */
+  function showTooltip(e, d) {
+    const gl = GROUP_LABELS[d.group] || d.group;
+    const c  = COLORS[d.group];
+    const bg = c + '22'; // 13% alpha
+    tooltip.innerHTML =
+      `<div class="tt-inner" style="border-left-color:${c}">` +
+        `<div class="tt-name">${d.name}</div>` +
+        `<div class="tt-badge" style="color:${c};border-color:${c}44;background:${bg}">${gl}</div>` +
+        (d.desc ? `<div class="tt-desc">${d.desc}</div>` : '') +
+      `</div>`;
+    tooltip.style.opacity = '1';
+    moveTooltip(e);
+  }
+  function moveTooltip(e) {
+    const r = wrapper.getBoundingClientRect();
+    const x = e.clientX - r.left + 18;
+    const y = e.clientY - r.top  - 14;
+    tooltip.style.left = `${Math.min(x, r.width  - 245)}px`;
+    tooltip.style.top  = `${Math.max(y, 6)}px`;
+  }
+  function hideTooltip() { tooltip.style.opacity = '0'; }
+
+  /* ════════════════════════════════════════════════════════════
+     DRAG
+  ════════════════════════════════════════════════════════════ */
+  function makeDrag(simulation) {
+    return d3.drag()
+      .on('start', (e, d) => {
+        if (!e.active) simulation.alphaTarget(0.3).restart();
+        d.fx = d.x; d.fy = d.y;
+      })
+      .on('drag',  (e, d) => { d.fx = e.x; d.fy = e.y; })
+      .on('end',   (e, d) => {
+        if (!e.active) simulation.alphaTarget(0);
+        d.fx = null; d.fy = null;
+      });
+  }
+
+  /* ════════════════════════════════════════════════════════════
+     GROUP FILTER
+  ════════════════════════════════════════════════════════════ */
+  let activeFilter = 'all';
+
+  document.querySelectorAll('.eco-filter').forEach(btn => {
+    btn.addEventListener('click', () => {
+      activeFilter = btn.dataset.group;
+      document.querySelectorAll('.eco-filter').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      clearHighlight();
+      applyFilter();
+    });
+  });
+
+  function applyFilter() {
+    const all = activeFilter === 'all';
+    const visible = new Set(
+      nodes.filter(n => all || n.group === activeFilter).map(n => n.id)
+    );
+    if (!all && activeFilter !== 'project') {
+      links.forEach(l => {
+        const s = l.source.id ?? l.source;
+        const t = l.target.id ?? l.target;
+        const sn = nodes.find(n => n.id === s);
+        const tn = nodes.find(n => n.id === t);
+        if (sn?.group === activeFilter && tn?.group === 'project') visible.add(t);
+        if (tn?.group === activeFilter && sn?.group === 'project') visible.add(s);
+      });
+    }
+
+    node
+      .attr('opacity', d => visible.has(d.id) ? 1 : 0.04)
+      .attr('pointer-events', d => visible.has(d.id) ? 'all' : 'none');
+    link.attr('opacity', d => {
+      const s = d.source.id ?? d.source;
+      const t = d.target.id ?? d.target;
+      return visible.has(s) && visible.has(t) ? 1 : 0.03;
+    });
+
+    // Update stat counters
+    const visProj = [...visible].filter(id => id.startsWith('p-')).length;
+    const visTech = [...visible].filter(id => id.startsWith('t-')).length;
+    const visLinks = links.filter(l => {
+      const s = l.source.id ?? l.source;
+      const t = l.target.id ?? l.target;
+      return visible.has(s) && visible.has(t);
+    }).length;
+    document.getElementById('stat-projects').textContent = visProj;
+    document.getElementById('stat-tech').textContent = visTech;
+    document.getElementById('stat-links').textContent = visLinks;
+  }
+
+  /* ════════════════════════════════════════════════════════════
+     RESET
+  ════════════════════════════════════════════════════════════ */
+  document.getElementById('reset-graph').addEventListener('click', () => {
+    clearHighlight();
+    activeFilter = 'all';
+    document.querySelectorAll('.eco-filter').forEach(b => b.classList.remove('active'));
+    document.querySelector('.eco-filter[data-group="all"]').classList.add('active');
+    applyFilter();
+    svg.transition().duration(700).ease(d3.easeCubicOut)
+      .call(zoom.transform, d3.zoomIdentity);
+  });
+
+  /* ════════════════════════════════════════════════════════════
+     RESIZE
+  ════════════════════════════════════════════════════════════ */
+  const ro = new ResizeObserver(() => {
+    W = wrapper.clientWidth;
+    H = wrapper.clientHeight;
+    svg.attr('width', W).attr('height', H);
+    sim.force('center', d3.forceCenter(W / 2, H / 2).strength(0.055));
+    sim.alpha(0.20).restart();
+  });
+  ro.observe(wrapper);
+
+})();
+</script>

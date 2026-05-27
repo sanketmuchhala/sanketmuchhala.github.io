@@ -63,17 +63,17 @@ image: "/photos/export.png"
         <div class="about-skills">
             <h3 class="about-skills-label">Technologies & Tools</h3>
             <div class="skills-list">
-                <span class="skill-item"><i class="devicon-python-original colored"></i>Python</span>
-                <span class="skill-item"><i class="fas fa-database"></i>SQL</span>
-                <span class="skill-item"><i class="devicon-r-plain colored"></i>R</span>
-                <span class="skill-item"><i class="devicon-javascript-plain colored"></i>JavaScript</span>
-                <span class="skill-item"><i class="devicon-tensorflow-original colored"></i>TensorFlow</span>
-                <span class="skill-item"><i class="devicon-pytorch-original colored"></i>PyTorch</span>
-                <span class="skill-item"><i class="devicon-scikitlearn-plain colored"></i>Scikit-learn</span>
-                <span class="skill-item"><i class="devicon-fastapi-plain colored"></i>FastAPI</span>
-                <span class="skill-item"><i class="fas fa-chart-line"></i>MLflow</span>
+                <span class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="" onerror="this.style.display='none'">Python</span>
+                <span class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" alt="" onerror="this.style.display='none'">SQL</span>
+                <span class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/r/r-original.svg" alt="" onerror="this.style.display='none'">R</span>
+                <span class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="" onerror="this.style.display='none'">JavaScript</span>
+                <span class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg" alt="" onerror="this.style.display='none'">TensorFlow</span>
+                <span class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg" alt="" onerror="this.style.display='none'">PyTorch</span>
+                <span class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/scikitlearn/scikitlearn-original.svg" alt="" onerror="this.style.display='none'">Scikit-learn</span>
+                <span class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg" alt="" onerror="this.style.display='none'">FastAPI</span>
+                <span class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mlflow/mlflow-original.svg" alt="" onerror="this.style.display='none'">MLflow</span>
                 <span class="skill-item"><i class="fas fa-language"></i>SpaCy</span>
-                <span class="skill-item"><i class="fas fa-robot"></i>GPT-4</span>
+                <span class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/openai/openai-original.svg" alt="" onerror="this.style.display='none'" style="filter:invert(0.5) brightness(1.5)">GPT-4</span>
                 <span class="skill-item"><i class="fas fa-link"></i>LangChain</span>
                 <span class="skill-item"><i class="fas fa-magnifying-glass"></i>RAG</span>
                 <span class="skill-item"><i class="fas fa-microchip"></i>Agentic AI</span>
@@ -82,15 +82,15 @@ image: "/photos/export.png"
                 <span class="skill-item"><i class="fas fa-list-check"></i>Text Classification</span>
                 <span class="skill-item"><i class="fas fa-file-lines"></i>Summarization</span>
                 <span class="skill-item"><i class="fas fa-chart-simple"></i>Sentiment Analysis</span>
-                <span class="skill-item"><i class="devicon-pandas-original colored"></i>Pandas</span>
-                <span class="skill-item"><i class="devicon-numpy-original colored"></i>NumPy</span>
-                <span class="skill-item"><i class="devicon-apachespark-original colored"></i>PySpark</span>
-                <span class="skill-item"><i class="devicon-amazonwebservices-original colored"></i>AWS</span>
-                <span class="skill-item"><i class="devicon-azure-plain colored"></i>Azure Data Lake</span>
-                <span class="skill-item"><i class="devicon-azure-plain colored"></i>Azure SQL</span>
-                <span class="skill-item"><i class="fas fa-chart-bar"></i>Tableau</span>
-                <span class="skill-item"><i class="fas fa-chart-pie"></i>Power BI</span>
-                <span class="skill-item"><i class="devicon-r-plain colored"></i>R Shiny</span>
+                <span class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg" alt="" onerror="this.style.display='none'">Pandas</span>
+                <span class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg" alt="" onerror="this.style.display='none'">NumPy</span>
+                <span class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/apachespark/apachespark-original.svg" alt="" onerror="this.style.display='none'">PySpark</span>
+                <span class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" alt="" onerror="this.style.display='none'">AWS</span>
+                <span class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg" alt="" onerror="this.style.display='none'">Azure Data Lake</span>
+                <span class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg" alt="" onerror="this.style.display='none'">Azure SQL</span>
+                <span class="skill-item"><img class="skill-logo" src="https://cdn.simpleicons.org/tableau" alt="" onerror="this.style.display='none'">Tableau</span>
+                <span class="skill-item"><img class="skill-logo" src="https://cdn.simpleicons.org/powerbi" alt="" onerror="this.style.display='none'">Power BI</span>
+                <span class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/r/r-original.svg" alt="" onerror="this.style.display='none'">R Shiny</span>
             </div>
         </div>
     </div>

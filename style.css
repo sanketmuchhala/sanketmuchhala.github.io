@@ -749,13 +749,33 @@ section.visible .section-title::after {
   transition: opacity var(--transition);
 }
 
+.skill-logo {
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
+  flex-shrink: 0;
+  display: block;
+  opacity: 0.88;
+  transition: opacity var(--transition), filter var(--transition);
+}
+
+/* Boost dark brand logos so they're visible on pure black glass */
+:root .skill-logo {
+  filter: brightness(1.15) saturate(1.1);
+}
+
+[data-theme="light"] .skill-logo {
+  filter: none;
+}
+
 .skill-item:hover {
   border-color: var(--color-accent-border);
   color: var(--color-accent);
   background: var(--color-accent-light);
 }
 
-.skill-item:hover i {
+.skill-item:hover i,
+.skill-item:hover .skill-logo {
   opacity: 1;
 }
 

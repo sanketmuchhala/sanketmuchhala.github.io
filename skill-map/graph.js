@@ -330,21 +330,21 @@
     /* ── Label ── */
     node.append('text').attr('class', 'n-label')
       .attr('text-anchor', 'middle')
-      .attr('dy', d => r(d) + 10.5)
+      .attr('dy', d => r(d) + 14)
       .attr('font-family', "'Bricolage Grotesque', system-ui, sans-serif")
-      .attr('font-size', d => ({ experience: '10.5px', project: '9.5px' }[d.group] || '8px'))
+      .attr('font-size', d => ({ experience: '13px', project: '11.5px' }[d.group] || '10px'))
       .attr('font-weight', d => d.group === 'experience' ? '700' : (d.group === 'project' ? '600' : '500'))
       .attr('fill', d => ({
-        experience: 'rgba(255,255,255,0.90)',
-        project:    'rgba(255,255,255,0.85)',
-      }[d.group] || 'rgba(255,255,255,0.50)'))
+        experience: 'rgba(255,255,255,0.92)',
+        project:    'rgba(255,255,255,0.88)',
+      }[d.group] || 'rgba(255,255,255,0.58)'))
       .attr('pointer-events', 'none')
       .attr('opacity', 0)
       .text(d => d.name)
       .transition()
       .delay((d, i) => 280 + i * 9)
       .duration(380)
-      .attr('opacity', d => ({ experience: 1, project: 1 }[d.group] || 0.72));
+      .attr('opacity', d => ({ experience: 1, project: 1 }[d.group] || 0.78));
 
     /* ════════════════════════════════════════════════════════════
        TICK
@@ -355,7 +355,7 @@
       linkHit.attr('x1', d => d.source.x).attr('y1', d => d.source.y)
              .attr('x2', d => d.target.x).attr('y2', d => d.target.y);
       node.attr('transform', d => `translate(${d.x ?? 0},${d.y ?? 0})`);
-      node.select('.n-label').attr('dy', d => r(d) + 10.5);
+      node.select('.n-label').attr('dy', d => r(d) + 14);
     });
 
     /* Resume simulation with low alpha for final settling */
@@ -406,7 +406,7 @@
         .attr('fill-opacity', d => active(d) ? 0.75 : 0.08);
       node.select('.n-label')
         .attr('opacity', d => {
-          if (!on) return { experience: 1, project: 1 }[d.group] || 0.72;
+          if (!on) return { experience: 1, project: 1 }[d.group] || 0.78;
           return activeNbrs.has(d.id) ? 1 : 0.05;
         });
 
@@ -453,7 +453,7 @@
           .attr('fill-opacity', dim ? 0.015 : (d.group === 'experience' ? 0.14 : 0.09));
         nd.select('.n-sheen').transition().duration(200).attr('r', rad);
         nd.select('.n-ring').transition().duration(200).attr('r', rad + 5.5);
-        nd.select('.n-label').attr('opacity', dim ? 0.04 : ({ experience: 1, project: 1 }[d.group] || 0.48));
+        nd.select('.n-label').attr('opacity', dim ? 0.04 : ({ experience: 1, project: 1 }[d.group] || 0.78));
       })
       .on('click', (e, d) => { e.stopPropagation(); setHighlight(d); });
 

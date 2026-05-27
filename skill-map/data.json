@@ -1,0 +1,185 @@
+{
+  "nodes": [
+    { "id": "p-nerdplexity",   "name": "Nerdplexity",                  "group": "project", "desc": "Minimalist chat UI for cloud & local LLMs with built-in Prompt Analytics",                         "url": "/projects/00-lantern/" },
+    { "id": "p-funny-news",    "name": "Funny News Aggregator",         "group": "project", "desc": "AI-powered news platform curating absurd stories with network graph visualization",                 "url": "/projects/01-funny-news-aggregator/" },
+    { "id": "p-study-buddy",   "name": "AI Study Buddy",                "group": "project", "desc": "Intelligent learning assistant powered by AI for adaptive, personalized education",                "url": "/projects/02-ai-study-buddy/" },
+    { "id": "p-sys-design",    "name": "AI System Design Generator",    "group": "project", "desc": "AI tool to generate comprehensive system design diagrams and architecture docs",                    "url": "/projects/03-ai-system-design-generator/" },
+    { "id": "p-resume",        "name": "AI Resume Customizer",          "group": "project", "desc": "Gemini-powered web app that tailors resumes for specific job postings using PDF.js",               "url": "/projects/04-customize-resume/" },
+    { "id": "p-linkedin",      "name": "LinkedIn Assistant",            "group": "project", "desc": "AI-powered LinkedIn automation for intelligent content creation and networking",                    "url": "/projects/05-linkedin-assistant/" },
+    { "id": "p-house-ml",      "name": "House Price ML Pipeline",       "group": "project", "desc": "End-to-end ML pipeline for real estate price prediction with MLflow experiment tracking",          "url": "/projects/06-house-price-ml-pipeline/" },
+    { "id": "p-job-agent",     "name": "AI Job Application Agent",      "group": "project", "desc": "Intelligent job automation tool with DeepSeek AI and MCP protocol integration",                   "url": "/projects/07-mcp-project/" },
+    { "id": "p-rag",           "name": "RAG Search Engine",             "group": "project", "desc": "Retrieval-Augmented Generation system using GPT-3 and LangChain with FAISS vector store",         "url": "/projects/08-rag-search-engine/" },
+    { "id": "p-rag2",          "name": "RAG with DeepSeek-R1",          "group": "project", "desc": "Hands-on RAG pipeline using DeepSeek-R1, Sentence Transformers, and FAISS",                       "url": "/projects/09-playing-around-with-rag/" },
+    { "id": "p-care",          "name": "Care Coordination",             "group": "project", "desc": "Healthcare disparity analysis between rural and urban regions with cost visualizations",           "url": "/projects/10-care-coordination/" },
+    { "id": "p-game",          "name": "Live Chat & Gameplay",          "group": "project", "desc": "Research on live chat activity correlation with player performance in Valorant",                   "url": "/projects/11-game-analytics/" },
+    { "id": "p-keyword",       "name": "Job Keyword Extractor",         "group": "project", "desc": "AI-powered NLP tool extracting and categorizing skills from job descriptions using BERT",          "url": "/projects/12-job-description-keyword-extractor/" },
+    { "id": "p-location",      "name": "Location File Sharing",         "group": "project", "desc": "Location-aware file sharing system built on AWS Lambda, S3, and Leaflet.js",                      "url": "/projects/13-location-based-file-sharing/" },
+    { "id": "p-patents",       "name": "Regional Impact of Patents",    "group": "project", "desc": "Patent data analysis revealing regional innovation patterns and economic impact via BART",          "url": "/projects/14-regional-impact-of-patents/" },
+    { "id": "p-sales-dash",    "name": "Superstore Sales Dashboard",    "group": "project", "desc": "Interactive R Shiny dashboard for Superstore sales analysis with time-series forecasting",         "url": "/projects/15-superstore-sales-dashboard/" },
+    { "id": "p-slop",          "name": "AI Slop Detector",              "group": "project", "desc": "AI-vs-human text classifier with training, evaluation, and REST inference API",                    "url": "/projects/16-ai-slop-detector/" },
+    { "id": "p-kemlang",       "name": "KemLang",                       "group": "project", "desc": "A Gujarati-flavored programming language with Gujarati keywords and Python-compatible syntax",     "url": "/projects/17-kemlang/" },
+    { "id": "p-lang-graph",    "name": "LanguageLineage",               "group": "project", "desc": "Interactive programming language lineage graph and timeline built with D3.js",                     "url": "/projects/19-programming-language-graph/" },
+    { "id": "p-claudos",       "name": "ClaudOS",                       "group": "project", "desc": "Fully functional macOS desktop simulator in the browser with window management",                   "url": "/projects/20-claudos/" },
+    { "id": "p-raichu",        "name": "Raichu",                        "group": "project", "desc": "Chess meets checkers: strategic board game with minimax AI and Pokémon-inspired design",           "url": "/projects/21-raichu/" },
+    { "id": "p-linkedin-conn", "name": "LinkedIn Connections",          "group": "project", "desc": "AI-powered networking assistant analyzing LinkedIn connections graph for career insights",          "url": "/projects/22-linkedin-connections/" },
+    { "id": "p-tallycart",     "name": "TallyCart",                     "group": "project", "desc": "iOS shopping assistant with smart grocery list management and per-item budget tracking",            "url": "/projects/23-tallycart/" },
+    { "id": "p-ruthie",        "name": "Ruthie Realty",                 "group": "project", "desc": "Professional real estate website with property listings, contact forms, and SEO",                  "url": "/projects/24-ruthie-realty/" },
+    { "id": "p-gtm",           "name": "GTM Simulator",                 "group": "project", "desc": "AI simulation engine for B2B founders testing Go-To-Market strategies via swarm intelligence",    "url": "/projects/25-gtm-simulator/" },
+    { "id": "p-lex",           "name": "LexOrchestrator",               "group": "project", "desc": "Litigation workflow agent with multi-agent orchestration, hybrid RAG, and citation verification",  "url": "/projects/26-lex-orchestrator/" },
+    { "id": "p-mirofish",      "name": "Mirofish API Server",           "group": "project", "desc": "Monetized prediction API powered by MiroFish swarm intelligence multi-agent simulations",         "url": "/projects/27-mirofish-api-server/" },
+
+    { "id": "t-python",       "name": "Python",        "group": "language" },
+    { "id": "t-typescript",   "name": "TypeScript",    "group": "language" },
+    { "id": "t-javascript",   "name": "JavaScript",    "group": "language" },
+    { "id": "t-r",            "name": "R",             "group": "language" },
+    { "id": "t-sql",          "name": "SQL",           "group": "language" },
+    { "id": "t-swift",        "name": "Swift",         "group": "language" },
+
+    { "id": "t-tensorflow",   "name": "TensorFlow",    "group": "ai" },
+    { "id": "t-pytorch",      "name": "PyTorch",       "group": "ai" },
+    { "id": "t-sklearn",      "name": "Scikit-learn",  "group": "ai" },
+    { "id": "t-spacy",        "name": "spaCy",         "group": "ai" },
+    { "id": "t-transformers", "name": "Transformers",  "group": "ai" },
+    { "id": "t-nltk",         "name": "NLTK",          "group": "ai" },
+    { "id": "t-langchain",    "name": "LangChain",     "group": "ai" },
+    { "id": "t-faiss",        "name": "FAISS",         "group": "ai" },
+    { "id": "t-openai",       "name": "OpenAI",        "group": "ai" },
+    { "id": "t-gemini",       "name": "Gemini AI",     "group": "ai" },
+    { "id": "t-deepseek",     "name": "DeepSeek",      "group": "ai" },
+    { "id": "t-ollama",       "name": "Ollama",        "group": "ai" },
+
+    { "id": "t-pandas",       "name": "Pandas",        "group": "data" },
+    { "id": "t-numpy",        "name": "NumPy",         "group": "data" },
+    { "id": "t-matplotlib",   "name": "Matplotlib",    "group": "data" },
+    { "id": "t-seaborn",      "name": "Seaborn",       "group": "data" },
+    { "id": "t-mlflow",       "name": "MLflow",        "group": "data" },
+    { "id": "t-networkx",     "name": "NetworkX",      "group": "data" },
+
+    { "id": "t-aws",          "name": "AWS",           "group": "cloud" },
+    { "id": "t-azure",        "name": "Azure",         "group": "cloud" },
+    { "id": "t-docker",       "name": "Docker",        "group": "cloud" },
+    { "id": "t-supabase",     "name": "Supabase",      "group": "cloud" },
+
+    { "id": "t-react",        "name": "React",         "group": "tool" },
+    { "id": "t-nextjs",       "name": "Next.js",       "group": "tool" },
+    { "id": "t-vuejs",        "name": "Vue.js",        "group": "tool" },
+    { "id": "t-fastapi",      "name": "FastAPI",       "group": "tool" },
+    { "id": "t-flask",        "name": "Flask",         "group": "tool" },
+    { "id": "t-nodejs",       "name": "Node.js",       "group": "tool" },
+    { "id": "t-postgresql",   "name": "PostgreSQL",    "group": "tool" },
+    { "id": "t-d3",           "name": "D3.js",         "group": "tool" },
+    { "id": "t-rshiny",       "name": "R Shiny",       "group": "tool" },
+    { "id": "t-mcp",          "name": "MCP Protocol",  "group": "tool" },
+    { "id": "t-web3",         "name": "Web3",          "group": "tool" }
+  ],
+  "links": [
+    { "source": "p-nerdplexity",   "target": "t-typescript"   },
+    { "source": "p-nerdplexity",   "target": "t-react"        },
+    { "source": "p-nerdplexity",   "target": "t-nodejs"       },
+    { "source": "p-nerdplexity",   "target": "t-ollama"       },
+
+    { "source": "p-funny-news",    "target": "t-typescript"   },
+    { "source": "p-funny-news",    "target": "t-nextjs"       },
+    { "source": "p-funny-news",    "target": "t-gemini"       },
+    { "source": "p-funny-news",    "target": "t-postgresql"   },
+    { "source": "p-funny-news",    "target": "t-d3"           },
+
+    { "source": "p-study-buddy",   "target": "t-react"        },
+    { "source": "p-study-buddy",   "target": "t-typescript"   },
+
+    { "source": "p-sys-design",    "target": "t-python"       },
+
+    { "source": "p-resume",        "target": "t-javascript"   },
+    { "source": "p-resume",        "target": "t-gemini"       },
+
+    { "source": "p-linkedin",      "target": "t-python"       },
+    { "source": "p-linkedin",      "target": "t-javascript"   },
+    { "source": "p-linkedin",      "target": "t-spacy"        },
+
+    { "source": "p-house-ml",      "target": "t-python"       },
+    { "source": "p-house-ml",      "target": "t-sklearn"      },
+    { "source": "p-house-ml",      "target": "t-pandas"       },
+    { "source": "p-house-ml",      "target": "t-numpy"        },
+    { "source": "p-house-ml",      "target": "t-mlflow"       },
+    { "source": "p-house-ml",      "target": "t-docker"       },
+
+    { "source": "p-job-agent",     "target": "t-python"       },
+    { "source": "p-job-agent",     "target": "t-deepseek"     },
+    { "source": "p-job-agent",     "target": "t-mcp"          },
+
+    { "source": "p-rag",           "target": "t-python"       },
+    { "source": "p-rag",           "target": "t-langchain"    },
+    { "source": "p-rag",           "target": "t-faiss"        },
+    { "source": "p-rag",           "target": "t-openai"       },
+
+    { "source": "p-rag2",          "target": "t-python"       },
+    { "source": "p-rag2",          "target": "t-langchain"    },
+    { "source": "p-rag2",          "target": "t-faiss"        },
+    { "source": "p-rag2",          "target": "t-deepseek"     },
+    { "source": "p-rag2",          "target": "t-transformers" },
+
+    { "source": "p-care",          "target": "t-python"       },
+    { "source": "p-care",          "target": "t-pandas"       },
+    { "source": "p-care",          "target": "t-matplotlib"   },
+    { "source": "p-care",          "target": "t-seaborn"      },
+
+    { "source": "p-game",          "target": "t-python"       },
+    { "source": "p-game",          "target": "t-pandas"       },
+    { "source": "p-game",          "target": "t-matplotlib"   },
+    { "source": "p-game",          "target": "t-seaborn"      },
+    { "source": "p-game",          "target": "t-numpy"        },
+
+    { "source": "p-keyword",       "target": "t-python"       },
+    { "source": "p-keyword",       "target": "t-spacy"        },
+    { "source": "p-keyword",       "target": "t-nltk"         },
+    { "source": "p-keyword",       "target": "t-sklearn"      },
+    { "source": "p-keyword",       "target": "t-transformers" },
+    { "source": "p-keyword",       "target": "t-fastapi"      },
+
+    { "source": "p-location",      "target": "t-aws"          },
+    { "source": "p-location",      "target": "t-docker"       },
+
+    { "source": "p-patents",       "target": "t-python"       },
+    { "source": "p-patents",       "target": "t-pandas"       },
+    { "source": "p-patents",       "target": "t-matplotlib"   },
+    { "source": "p-patents",       "target": "t-sklearn"      },
+
+    { "source": "p-sales-dash",    "target": "t-r"            },
+    { "source": "p-sales-dash",    "target": "t-rshiny"       },
+
+    { "source": "p-slop",          "target": "t-python"       },
+    { "source": "p-slop",          "target": "t-fastapi"      },
+
+    { "source": "p-kemlang",       "target": "t-python"       },
+
+    { "source": "p-lang-graph",    "target": "t-typescript"   },
+    { "source": "p-lang-graph",    "target": "t-d3"           },
+
+    { "source": "p-claudos",       "target": "t-javascript"   },
+
+    { "source": "p-raichu",        "target": "t-python"       },
+
+    { "source": "p-linkedin-conn", "target": "t-python"       },
+    { "source": "p-linkedin-conn", "target": "t-networkx"     },
+    { "source": "p-linkedin-conn", "target": "t-pandas"       },
+
+    { "source": "p-tallycart",     "target": "t-swift"        },
+
+    { "source": "p-ruthie",        "target": "t-javascript"   },
+
+    { "source": "p-gtm",           "target": "t-python"       },
+    { "source": "p-gtm",           "target": "t-vuejs"        },
+    { "source": "p-gtm",           "target": "t-flask"        },
+    { "source": "p-gtm",           "target": "t-docker"       },
+
+    { "source": "p-lex",           "target": "t-typescript"   },
+    { "source": "p-lex",           "target": "t-nextjs"       },
+    { "source": "p-lex",           "target": "t-supabase"     },
+    { "source": "p-lex",           "target": "t-mcp"          },
+
+    { "source": "p-mirofish",      "target": "t-python"       },
+    { "source": "p-mirofish",      "target": "t-fastapi"      },
+    { "source": "p-mirofish",      "target": "t-web3"         },
+    { "source": "p-mirofish",      "target": "t-docker"       }
+  ]
+}

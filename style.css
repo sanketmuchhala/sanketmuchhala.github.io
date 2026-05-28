@@ -243,7 +243,10 @@ ul, ol {
 }
 
 .nav-logo a span {
-  color: var(--color-text);
+  background: linear-gradient(135deg, #ffffff 35%, var(--color-accent-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .nav-menu {
@@ -429,7 +432,10 @@ ul, ol {
   letter-spacing: -0.04em;
   line-height: 1.05;
   margin-bottom: var(--space-md);
-  color: var(--color-text);
+  background: linear-gradient(175deg, #ffffff 0%, rgba(255, 255, 255, 0.74) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .hero-subtitle {
@@ -438,6 +444,7 @@ ul, ol {
   font-weight: 500;
   margin-bottom: var(--space-md);
   letter-spacing: 0.01em;
+  text-shadow: 0 0 52px rgba(99, 102, 241, 0.44);
 }
 
 .hero-description {
@@ -590,6 +597,22 @@ section + section {
 .animate-on-scroll.visible .section-title::after,
 section.visible .section-title::after {
   transform: scaleX(1);
+}
+
+/* Subtle editorial section numbering via CSS counters */
+main { counter-reset: section-counter; }
+.section { counter-increment: section-counter; }
+.section-title::before {
+  content: '0' counter(section-counter) ' /';
+  display: block;
+  font-size: 0.5rem;
+  font-weight: 700;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 0.55rem;
+  line-height: 1;
+  opacity: 0.55;
 }
 
 .section-actions {
@@ -823,20 +846,22 @@ section.visible .section-title::after {
 .timeline-item::before {
   content: '';
   position: absolute;
-  left: -33px;
-  top: 28px;
-  width: 12px;
-  height: 12px;
+  left: -34px;
+  top: 27px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
-  background: var(--color-bg);
-  border: 2px solid var(--color-accent);
+  background: linear-gradient(var(--color-bg), var(--color-bg)) padding-box,
+              linear-gradient(135deg, var(--color-accent), var(--color-accent-secondary)) border-box;
+  border: 2px solid transparent;
   z-index: 2;
   transition: all var(--transition);
 }
 
 .timeline-item:hover::before {
   background: var(--color-accent);
-  box-shadow: 0 0 12px rgba(99, 102, 241, 0.4);
+  border-color: var(--color-accent);
+  box-shadow: 0 0 16px rgba(99, 102, 241, 0.48);
 }
 
 /* Timeline card */
@@ -978,9 +1003,10 @@ section.visible .section-title::after {
   right: 0;
   height: 3px;
   background: linear-gradient(90deg, var(--color-accent), var(--color-accent-secondary));
-  transform: scaleX(0);
+  transform: scaleX(0.18);
+  opacity: 0.40;
   transform-origin: left;
-  transition: transform var(--transition-slow);
+  transition: transform var(--transition-slow), opacity var(--transition-slow);
 }
 
 .project-card:hover {
@@ -991,6 +1017,7 @@ section.visible .section-title::after {
 
 .project-card:hover::before {
   transform: scaleX(1);
+  opacity: 1;
 }
 
 .project-header {
@@ -2389,14 +2416,14 @@ a:focus-visible, button:focus-visible {
 .cursor-spotlight {
   position: fixed;
   pointer-events: none;
-  width: 900px;
-  height: 900px;
+  width: 1050px;
+  height: 1050px;
   border-radius: 50%;
   background: radial-gradient(
     circle at center,
-    rgba(99, 102, 241, 0.048) 0%,
-    rgba(99, 102, 241, 0.012) 38%,
-    transparent 62%
+    rgba(99, 102, 241, 0.065) 0%,
+    rgba(99, 102, 241, 0.020) 40%,
+    transparent 65%
   );
   transform: translate(-50%, -50%);
   z-index: -1;
@@ -2737,11 +2764,13 @@ section:not(.hero) .section-header::before {
   box-shadow:
     0 0 0 1px   rgba(255, 255, 255, 0.04),
     0 0 0 3px   rgba(255, 255, 255, 0.02),
+    0 0 0 8px   rgba(99, 102, 241, 0.06),
     inset 0 0.5px 0 rgba(255, 255, 255, 0.18),
+    0 0  52px rgba(99, 102, 241, 0.12),
     0 12px 36px rgba(0, 0, 0, 0.50),
     0 4px  12px rgba(0, 0, 0, 0.34);
 }
-.hero-photo::after { opacity: 0.32; }
+.hero-photo::after { opacity: 0.40; }
 .hero-photo-wrap:hover .hero-photo::after { opacity: 1; }
 
 /* --- Cert icons: glass circle --- */
@@ -2977,4 +3006,52 @@ section:not(.hero) .section-header::before {
   .blog-roll-desc { display: none; }
   .blog-roll-arrow { display: none; }
   .project-header-links { flex-direction: column; align-items: center; }
+}
+
+/* ============================================================
+   QUIET LUXURY POLISH — grain, light-mode gradient overrides
+   ============================================================ */
+
+/* A. Animated film grain (dark mode only — adds depth to pure black) */
+body:not([data-theme="light"])::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  pointer-events: none;
+  opacity: 0.022;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+  animation: grain-drift 8s steps(10) infinite;
+}
+@keyframes grain-drift {
+  0%,  100% { transform: translate( 0%,  0%); }
+  10%       { transform: translate(-2%, -2%); }
+  30%       { transform: translate( 3%,  2%); }
+  50%       { transform: translate(-1%,  3%); }
+  70%       { transform: translate( 2%, -1%); }
+  90%       { transform: translate(-3%,  1%); }
+}
+
+/* B. Light mode: flip gradient text directions */
+[data-theme="light"] .hero-title {
+  background: linear-gradient(175deg, #000000 0%, rgba(0, 0, 0, 0.72) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+[data-theme="light"] .nav-logo a span {
+  background: linear-gradient(135deg, #000000 35%, var(--color-accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+[data-theme="light"] .hero-subtitle {
+  text-shadow: none;
+}
+[data-theme="light"] .hero-photo {
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.04),
+    0 12px 36px rgba(0, 0, 0, 0.14),
+    0 4px  12px rgba(0, 0, 0, 0.10);
 }

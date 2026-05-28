@@ -298,6 +298,52 @@ body > canvas    { display: none !important; }
 .ip-cta span { display: inline-block; transition: transform 150ms; }
 .ip-cta:hover span { transform: translateX(3px); }
 
+/* ── Info panel: context list ───────────────────────────────── */
+.ip-ctx-list {
+  padding: 0.45rem 0.875rem 0.1rem;
+  border-top: 0.5px solid rgba(255,255,255,0.05);
+  margin-top: 0.35rem;
+  display: flex; flex-direction: column; gap: 0.3rem;
+}
+.ip-ctx-item {
+  display: flex; flex-direction: column; gap: 0.1rem;
+}
+.ip-ctx-name {
+  font-size: 0.5625rem; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  line-height: 1;
+}
+.ip-ctx-text {
+  font-size: 0.75rem; color: rgba(255,255,255,0.42);
+  line-height: 1.4; font-style: italic;
+}
+
+/* ── Search input ───────────────────────────────────────────── */
+.eco-search-wrap {
+  display: flex; align-items: center; gap: 0.35rem;
+  padding: 0 0.2rem 0 0.5rem;
+}
+.eco-search-input {
+  background: transparent; border: none;
+  border-bottom: 0.5px solid rgba(255,255,255,0.14);
+  color: rgba(255,255,255,0.80); font-family: var(--font);
+  font-size: 0.75rem; width: 110px; outline: none;
+  padding: 0.22rem 0; letter-spacing: 0.01em;
+  caret-color: rgba(255,255,255,0.65);
+  transition: border-color 150ms, width 200ms;
+}
+.eco-search-input:focus {
+  border-bottom-color: rgba(255,255,255,0.38);
+  width: 140px;
+}
+.eco-search-input::placeholder { color: rgba(255,255,255,0.22); }
+#search-count {
+  font-family: var(--font); font-size: 0.5625rem;
+  letter-spacing: 0.06em; white-space: nowrap;
+  min-width: 3rem; color: rgba(255,255,255,0.38);
+  transition: color 180ms;
+}
+
 /* ── Legend ─────────────────────────────────────────────────── */
 .eco-legend {
   position: absolute; bottom: 1.375rem; right: 1.375rem; z-index: 40;
@@ -366,11 +412,11 @@ body > canvas    { display: none !important; }
         <span class="eco-stat-lbl">Roles</span>
       </div>
       <div class="eco-stat">
-        <span class="eco-stat-num" id="stat-tech">40</span>
+        <span class="eco-stat-num" id="stat-tech">43</span>
         <span class="eco-stat-lbl">Technologies</span>
       </div>
       <div class="eco-stat">
-        <span class="eco-stat-num" id="stat-links">102</span>
+        <span class="eco-stat-num" id="stat-links">115</span>
         <span class="eco-stat-lbl">Connections</span>
       </div>
     </div>
@@ -388,7 +434,13 @@ body > canvas    { display: none !important; }
       <button class="eco-filter" data-group="cloud">Cloud</button>
       <button class="eco-filter" data-group="tool">Tools</button>
       <div class="eco-sep"></div>
-      <button class="eco-reset" id="reset-graph" title="Reset view">
+      <div class="eco-search-wrap">
+        <input id="eco-search" class="eco-search-input" type="text"
+               placeholder="Search…" autocomplete="off" spellcheck="false">
+        <span id="search-count"></span>
+      </div>
+      <div class="eco-sep"></div>
+      <button class="eco-reset" id="reset-graph" title="Reset view (or press Esc)">
         <i class="fas fa-rotate"></i>
       </button>
     </div>
@@ -430,7 +482,7 @@ body > canvas    { display: none !important; }
 
     <!-- Hint -->
     <div class="eco-hint">
-      Drag &nbsp;·&nbsp; Scroll to zoom &nbsp;·&nbsp; Click node to explore &nbsp;·&nbsp; Hover edges for context
+      Drag &nbsp;·&nbsp; Scroll to zoom &nbsp;·&nbsp; Click to explore &nbsp;·&nbsp; Hover edges for context &nbsp;·&nbsp; F to search &nbsp;·&nbsp; Esc to reset
     </div>
   </div>
 

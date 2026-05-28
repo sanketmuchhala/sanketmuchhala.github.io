@@ -1,7 +1,7 @@
 /* ═══════════════════════════════════════════════════════════════════
    Ecosystem Graph  —  D3 v7 force-directed network
    Enhanced: clustered layout, logos, experience nodes,
-             link context tooltips, info panel, auto-fit
+             link context tooltips, info panel, search, zoom-to-node
 ═══════════════════════════════════════════════════════════════════ */
 (function () {
   'use strict';
@@ -29,13 +29,13 @@
 
   /* ── Cluster center positions (as fractions of W/H) ─────────── */
   const CLUSTER = {
-    experience: { x: 0.11, y: 0.50 },
-    project:    { x: 0.50, y: 0.48 },
-    language:   { x: 0.28, y: 0.16 },
-    ai:         { x: 0.76, y: 0.16 },
-    data:       { x: 0.22, y: 0.80 },
-    cloud:      { x: 0.80, y: 0.80 },
-    tool:       { x: 0.88, y: 0.46 },
+    experience: { x: 0.12, y: 0.46 },
+    project:    { x: 0.50, y: 0.50 },
+    language:   { x: 0.26, y: 0.14 },
+    ai:         { x: 0.74, y: 0.14 },
+    data:       { x: 0.20, y: 0.82 },
+    cloud:      { x: 0.80, y: 0.82 },
+    tool:       { x: 0.88, y: 0.48 },
   };
 
   /* ── Icon URL resolver ──────────────────────────────────────── */
@@ -53,8 +53,8 @@
   }
 
   /* ── DOM refs ───────────────────────────────────────────────── */
-  const wrapper    = document.getElementById('graph-wrapper');
-  const tooltipEl  = document.getElementById('graph-tooltip');
+  const wrapper     = document.getElementById('graph-wrapper');
+  const tooltipEl   = document.getElementById('graph-tooltip');
   const infoPanelEl = document.getElementById('info-panel');
 
   /* ── Fetch data ─────────────────────────────────────────────── */
@@ -95,6 +95,15 @@
     const nodeMap = {};
     nodes.forEach(n => { nodeMap[n.id] = n; });
 
+    /* ── Link base style helpers (experience links are heavier) ── */
+    function isExpLink(d) {
+      const sn = nodeMap[d.source.id || d.source];
+      const tn = nodeMap[d.target.id || d.target];
+      return sn?.group === 'experience' || tn?.group === 'experience';
+    }
+    function linkBaseOpacity(d) { return isExpLink(d) ? 0.42 : 0.28; }
+    function linkBaseWidth(d)   { return isExpLink(d) ? 1.6  : 1.1;  }
+
     /* ── Dimensions ── */
     let W = wrapper.clientWidth;
     let H = wrapper.clientHeight;
@@ -132,8 +141,9 @@
       nodes.forEach(n => {
         const c = CLUSTER[n.group];
         if (!c) return;
-        n.vx += (c.x * W - n.x) * alpha * 0.045;
-        n.vy += (c.y * H - n.y) * alpha * 0.045;
+        const strength = (n.group === 'project' || n.group === 'experience') ? 0.038 : 0.06;
+        n.vx += (c.x * W - n.x) * alpha * strength;
+        n.vy += (c.y * H - n.y) * alpha * strength;
       });
     }
 
@@ -146,7 +156,7 @@
     /* ── Defs ── */
     const defs = svg.append('defs');
 
-    /* Glass sheen (top-lit linear gradient) */
+    /* Glass sheen */
     const sheen = defs.append('linearGradient')
       .attr('id', 'node-sheen').attr('x1','0%').attr('y1','0%').attr('x2','0%').attr('y2','100%');
     sheen.append('stop').attr('offset','0%').attr('stop-color','#fff').attr('stop-opacity', 0.12);
@@ -162,15 +172,15 @@
     hm.append('feMergeNode').attr('in','b');
     hm.append('feMergeNode').attr('in','SourceGraphic');
 
-    /* Link glow — blurred halo BEHIND crisp line (SourceGraphic last in feMerge) */
+    /* Link glow — blurred halo BEHIND crisp line */
     const lgf = defs.append('filter').attr('id','link-glow')
       .attr('x','-15%').attr('y','-400%').attr('width','130%').attr('height','900%');
     lgf.append('feGaussianBlur').attr('in','SourceGraphic').attr('stdDeviation','2.5').attr('result','gblur');
     const lgm = lgf.append('feMerge');
     lgm.append('feMergeNode').attr('in','gblur');
-    lgm.append('feMergeNode').attr('in','SourceGraphic'); /* crisp line on top */
+    lgm.append('feMergeNode').attr('in','SourceGraphic');
 
-    /* Experience node gradient (subtle radial) */
+    /* Experience node gradient */
     const expGrad = defs.append('radialGradient').attr('id','exp-grad')
       .attr('cx','38%').attr('cy','30%').attr('r','68%');
     expGrad.append('stop').attr('offset','0%').attr('stop-color','#fed7aa').attr('stop-opacity',0.18);
@@ -218,8 +228,8 @@
         const tech = (sn && sn.group !== 'project' && sn.group !== 'experience') ? sn : tn;
         return COLORS[(tech && tech.group) || 'tool'];
       })
-      .attr('stroke-opacity', 0.28)
-      .attr('stroke-width', 1.1)
+      .attr('stroke-opacity', d => linkBaseOpacity(d))
+      .attr('stroke-width',   d => linkBaseWidth(d))
       .attr('stroke-linecap', 'round')
       .attr('x1', d => d.source.x).attr('y1', d => d.source.y)
       .attr('x2', d => d.target.x).attr('y2', d => d.target.y);
@@ -249,7 +259,7 @@
       .attr('transform', d => `translate(${d.x ?? 0},${d.y ?? 0})`)
       .call(makeDrag(sim));
 
-    /* Selection ring (shows which node is active-clicked) */
+    /* Selection ring */
     node.append('circle').attr('class', 'n-sel')
       .attr('r', 0).attr('fill', 'none')
       .attr('stroke', d => COLORS[d.group])
@@ -325,7 +335,7 @@
       .attr('dominant-baseline', 'central')
       .attr('dy', d => `-${r(d) * 0.08}px`)
       .attr('pointer-events', 'none')
-      .text('');
+      .text('');
 
     /* ── Label ── */
     node.append('text').attr('class', 'n-label')
@@ -379,6 +389,7 @@
       });
       applyHighlight();
       showInfoPanel(d);
+      zoomToNeighborhood();
     }
 
     function clearHighlight() {
@@ -388,14 +399,33 @@
 
     function applyHighlight() {
       const on = activeId !== null;
+
+      /* Compute second-hop neighbors (neighbors-of-neighbors) */
+      const secondHop = new Set();
+      if (on) {
+        links.forEach(l => {
+          const s = l.source.id ?? l.source, t = l.target.id ?? l.target;
+          if (activeNbrs.has(s) && !activeNbrs.has(t)) secondHop.add(t);
+          if (activeNbrs.has(t) && !activeNbrs.has(s)) secondHop.add(s);
+        });
+      }
+
       const active = d => !on || activeNbrs.has(d.id);
 
       node.select('.n-sel').transition().duration(180)
         .attr('r', d => on && d.id === activeId ? r(d) + 7 : 0);
 
       node.select('.n-base')
-        .attr('fill-opacity',   d => active(d) ? ({ experience: 0.16, project: 0.12 }[d.group] || 0.11) : 0.02)
-        .attr('stroke-opacity', d => active(d) ? ({ experience: 0.75, project: 0.65 }[d.group] || 0.55) : 0.07);
+        .attr('fill-opacity', d => {
+          if (!on) return { experience: 0.16, project: 0.12 }[d.group] || 0.11;
+          if (activeNbrs.has(d.id)) return { experience: 0.16, project: 0.12 }[d.group] || 0.11;
+          return 0.02;
+        })
+        .attr('stroke-opacity', d => {
+          if (!on) return { experience: 0.75, project: 0.65 }[d.group] || 0.55;
+          if (activeNbrs.has(d.id)) return { experience: 0.75, project: 0.65 }[d.group] || 0.55;
+          return 0.07;
+        });
       node.select('.n-ring')
         .attr('stroke-opacity', d => active(d) ? (d.group === 'experience' ? 0.38 : 0.22) : 0.03);
       node.select('.n-sheen')
@@ -407,25 +437,54 @@
       node.select('.n-label')
         .attr('opacity', d => {
           if (!on) return { experience: 1, project: 1 }[d.group] || 0.78;
-          return activeNbrs.has(d.id) ? 1 : 0.05;
+          if (activeNbrs.has(d.id)) return 1;
+          if (secondHop.has(d.id)) return 0.22;
+          return 0.05;
         });
+
+      /* Node group opacity for second-hop */
+      node.attr('opacity', d => {
+        if (!on) return null;
+        if (activeNbrs.has(d.id)) return 1;
+        if (secondHop.has(d.id)) return 0.38;
+        return 0.06;
+      });
 
       link
         .attr('stroke-opacity', d => {
-          if (!on) return 0.28;
+          if (!on) return linkBaseOpacity(d);
           const s = d.source.id ?? d.source, t = d.target.id ?? d.target;
-          return activeNbrs.has(s) && activeNbrs.has(t) ? 0.92 : 0.04;
+          if (activeNbrs.has(s) && activeNbrs.has(t)) return 0.92;
+          if ((activeNbrs.has(s) && secondHop.has(t)) || (activeNbrs.has(t) && secondHop.has(s))) return 0.14;
+          return 0.04;
         })
         .attr('stroke-width', d => {
-          if (!on) return 1.1;
+          if (!on) return linkBaseWidth(d);
           const s = d.source.id ?? d.source, t = d.target.id ?? d.target;
-          return activeNbrs.has(s) && activeNbrs.has(t) ? 2.2 : 1.1;
+          return activeNbrs.has(s) && activeNbrs.has(t) ? 2.2 : linkBaseWidth(d);
         })
         .attr('filter', d => {
           if (!on) return null;
           const s = d.source.id ?? d.source, t = d.target.id ?? d.target;
           return activeNbrs.has(s) && activeNbrs.has(t) ? 'url(#link-glow)' : null;
         });
+    }
+
+    /* ── Zoom to active neighborhood ── */
+    function zoomToNeighborhood() {
+      const nbrs = [...activeNbrs].map(id => nodeMap[id]).filter(n => n?.x != null);
+      if (nbrs.length < 2) return;
+      let x0 = Infinity, x1 = -Infinity, y0 = Infinity, y1 = -Infinity;
+      nbrs.forEach(n => {
+        const pad = r(n) + 32;
+        x0 = Math.min(x0, n.x - pad); x1 = Math.max(x1, n.x + pad);
+        y0 = Math.min(y0, n.y - pad); y1 = Math.max(y1, n.y + pad);
+      });
+      const scale = Math.min(W / (x1 - x0), H / (y1 - y0)) * 0.82;
+      const tx = (W - scale * (x0 + x1)) / 2;
+      const ty = (H - scale * (y0 + y1)) / 2;
+      svg.transition().duration(500).ease(d3.easeQuadOut)
+        .call(zoom.transform, d3.zoomIdentity.translate(tx, ty).scale(scale));
     }
 
     /* ════════════════════════════════════════════════════════════
@@ -443,8 +502,8 @@
         nd.select('.n-label').attr('opacity', 1);
         nd.raise();
       })
-      .on('mousemove',  e        => moveTooltip(e))
-      .on('mouseleave', (e, d)  => {
+      .on('mousemove',  e       => moveTooltip(e))
+      .on('mouseleave', (e, d) => {
         hideTooltip();
         const nd = d3.select(e.currentTarget), rad = r(d);
         const on = activeId !== null, dim = on && !activeNbrs.has(d.id);
@@ -463,19 +522,15 @@
     function showNodeTooltip(e, d) {
       const label = GROUP_LABELS[d.group] || d.group;
       const c     = COLORS[d.group];
-      const connIds = links
-        .filter(l => (l.source.id||l.source) === d.id || (l.target.id||l.target) === d.id)
-        .map(l => {
-          const oid = (l.source.id||l.source) === d.id ? (l.target.id||l.target) : (l.source.id||l.source);
-          return nodeMap[oid]?.name || oid;
-        });
-      const conn = connIds.length;
+      const conn  = links.filter(l =>
+        (l.source.id||l.source) === d.id || (l.target.id||l.target) === d.id
+      ).length;
       let html =
         `<div class="tt-inner" style="border-left-color:${c}">` +
         `<div class="tt-name">${d.name}</div>` +
         `<span class="tt-badge" style="color:${c};border-color:${c}44;background:${c}1a">${label}</span>` +
         `<span class="tt-badge tt-badge-conn">${conn} connection${conn !== 1 ? 's' : ''}</span>`;
-      if (d.desc)   html += `<p class="tt-desc">${d.desc}</p>`;
+      if (d.desc) html += `<p class="tt-desc">${d.desc}</p>`;
       html += `</div>`;
       tooltipEl.innerHTML = html;
       tooltipEl.style.opacity = '1';
@@ -506,7 +561,7 @@
       const rect = wrapper.getBoundingClientRect();
       const x = e.clientX - rect.left + 16;
       const y = e.clientY - rect.top  - 10;
-      tooltipEl.style.left = `${Math.min(x, rect.width  - 258)}px`;
+      tooltipEl.style.left = `${Math.min(x, rect.width  - 280)}px`;
       tooltipEl.style.top  = `${Math.max(y, 8)}px`;
     }
     function hideTooltip() { tooltipEl.style.opacity = '0'; }
@@ -520,14 +575,15 @@
       const label = GROUP_LABELS[d.group] || d.group;
 
       /* Gather connected nodes */
-      const connNodes = links
-        .filter(l => (l.source.id||l.source) === d.id || (l.target.id||l.target) === d.id)
-        .map(l => {
-          const oid = (l.source.id||l.source) === d.id ? (l.target.id||l.target) : (l.source.id||l.source);
-          return nodeMap[oid];
-        })
-        .filter(Boolean);
+      const connLinks = links.filter(l =>
+        (l.source.id||l.source) === d.id || (l.target.id||l.target) === d.id
+      );
+      const connNodes = connLinks.map(l => {
+        const oid = (l.source.id||l.source) === d.id ? (l.target.id||l.target) : (l.source.id||l.source);
+        return nodeMap[oid];
+      }).filter(Boolean);
 
+      /* Tags */
       let tagHtml = '';
       if (connNodes.length) {
         tagHtml = '<div class="ip-tags">' +
@@ -538,8 +594,30 @@
           '</div>';
       }
 
+      /* Context links — surface the "why" */
+      const ctxLinks = connLinks
+        .filter(l => l.context)
+        .slice(0, 5)
+        .map(l => {
+          const oid = (l.source.id||l.source) === d.id ? (l.target.id||l.target) : (l.source.id||l.source);
+          const nbr = nodeMap[oid];
+          return { name: nbr?.name || oid, ctx: l.context, color: COLORS[nbr?.group || 'tool'] };
+        });
+
+      let ctxHtml = '';
+      if (ctxLinks.length) {
+        ctxHtml = '<div class="ip-ctx-list">' +
+          ctxLinks.map(cl =>
+            `<div class="ip-ctx-item">` +
+            `<span class="ip-ctx-name" style="color:${cl.color}">${cl.name}</span>` +
+            `<span class="ip-ctx-text">${cl.ctx}</span>` +
+            `</div>`
+          ).join('') +
+          '</div>';
+      }
+
       const linkHtml = d.url
-        ? `<a class="ip-cta" href="${d.url}">View project <span>→</span></a>` : '';
+        ? `<a class="ip-cta" href="${d.url}" target="_blank" rel="noopener noreferrer">View project <span>→</span></a>` : '';
 
       infoPanelEl.innerHTML =
         `<div class="ip-header">` +
@@ -550,6 +628,7 @@
         (d.desc   ? `<p class="ip-desc">${d.desc}</p>` : '') +
         (d.detail ? `<p class="ip-detail">${d.detail}</p>` : '') +
         tagHtml +
+        ctxHtml +
         linkHtml;
 
       infoPanelEl.style.setProperty('--ip-accent', c);
@@ -594,6 +673,7 @@
         btn.classList.add('active');
         clearHighlight();
         hideInfoPanel();
+        clearSearch();
         applyFilter();
       });
     });
@@ -627,7 +707,10 @@
       const vP = [...visible].filter(id => id.startsWith('p-')).length;
       const vT = [...visible].filter(id => id.startsWith('t-')).length;
       const vE = [...visible].filter(id => id.startsWith('e-')).length;
-      const vL = links.filter(l => { const s = l.source.id??l.source, t = l.target.id??l.target; return visible.has(s)&&visible.has(t); }).length;
+      const vL = links.filter(l => {
+        const s = l.source.id??l.source, t = l.target.id??l.target;
+        return visible.has(s) && visible.has(t);
+      }).length;
       if ($('stat-projects')) $('stat-projects').textContent = vP;
       if ($('stat-tech'))     $('stat-tech').textContent     = vT;
       if ($('stat-links'))    $('stat-links').textContent    = vL;
@@ -635,16 +718,94 @@
     }
 
     /* ════════════════════════════════════════════════════════════
+       SEARCH
+    ════════════════════════════════════════════════════════════ */
+    let searchActive = false;
+
+    function filterBySearch(query) {
+      const q = query.trim().toLowerCase();
+      if (!q) { clearSearch(); return; }
+
+      searchActive = true;
+      clearHighlight();
+
+      const matches = new Set(nodes.filter(n => n.name.toLowerCase().includes(q)).map(n => n.id));
+
+      /* Also include direct neighbors of matched nodes */
+      const matchAndNeighbors = new Set(matches);
+      links.forEach(l => {
+        const s = l.source.id ?? l.source, t = l.target.id ?? l.target;
+        if (matches.has(s)) matchAndNeighbors.add(t);
+        if (matches.has(t)) matchAndNeighbors.add(s);
+      });
+
+      node.attr('opacity', d => matches.has(d.id) ? 1 : (matchAndNeighbors.has(d.id) ? 0.35 : 0.05))
+          .attr('pointer-events', 'all');
+      node.select('.n-base')
+        .attr('stroke-width', d => matches.has(d.id)
+          ? ({ experience: 2.5, project: 2.2 }[d.group] || 2.0)
+          : ({ experience: 1.8, project: 1.5 }[d.group] || 1.1))
+        .attr('stroke-opacity', d => matches.has(d.id) ? 0.95 : 0.18);
+      node.select('.n-sel').attr('r', d => matches.has(d.id) ? r(d) + 5 : 0);
+      node.select('.n-label').attr('opacity', d => matches.has(d.id) ? 1 : (matchAndNeighbors.has(d.id) ? 0.28 : 0.04));
+
+      link.attr('opacity', d => {
+        const s = d.source.id ?? d.source, t = d.target.id ?? d.target;
+        if (matches.has(s) && matches.has(t)) return 0.8;
+        if (matchAndNeighbors.has(s) && matchAndNeighbors.has(t)) return 0.25;
+        return 0.03;
+      });
+
+      const countEl = document.getElementById('search-count');
+      if (countEl) {
+        countEl.textContent = matches.size ? `${matches.size} found` : 'no match';
+        countEl.style.color = matches.size ? 'rgba(255,255,255,0.45)' : 'rgba(255,100,100,0.7)';
+      }
+    }
+
+    function clearSearch() {
+      if (!searchActive) return;
+      searchActive = false;
+      const input = document.getElementById('eco-search');
+      if (input) input.value = '';
+      const countEl = document.getElementById('search-count');
+      if (countEl) countEl.textContent = '';
+      node.select('.n-base')
+        .attr('stroke-width', d => ({ experience: 1.8, project: 1.5 }[d.group] || 1.1))
+        .attr('stroke-opacity', d => ({ experience: 0.75, project: 0.65 }[d.group] || 0.55));
+      node.select('.n-sel').attr('r', 0);
+      applyFilter();
+    }
+
+    document.getElementById('eco-search')?.addEventListener('input', e => {
+      filterBySearch(e.target.value);
+    });
+
+    /* ════════════════════════════════════════════════════════════
        RESET
     ════════════════════════════════════════════════════════════ */
     document.getElementById('reset-graph')?.addEventListener('click', () => {
-      clearHighlight(); hideInfoPanel();
+      clearHighlight(); hideInfoPanel(); clearSearch();
       activeFilter = 'all';
       document.querySelectorAll('.eco-filter').forEach(b => b.classList.remove('active'));
       document.querySelector('.eco-filter[data-group="all"]')?.classList.add('active');
       applyFilter();
       svg.transition().duration(680).ease(d3.easeCubicOut)
         .call(zoom.transform, d3.zoomIdentity);
+    });
+
+    /* ════════════════════════════════════════════════════════════
+       KEYBOARD SHORTCUTS
+    ════════════════════════════════════════════════════════════ */
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        if (searchActive) { clearSearch(); return; }
+        clearHighlight(); hideInfoPanel();
+      }
+      if (e.key === 'f' && !e.metaKey && !e.ctrlKey && e.target.tagName !== 'INPUT') {
+        e.preventDefault();
+        document.getElementById('eco-search')?.focus();
+      }
     });
 
     /* ════════════════════════════════════════════════════════════

@@ -92,6 +92,11 @@ image: "/photos/export.png"
                 <span class="skill-item"><img class="skill-logo" src="https://cdn.simpleicons.org/powerbi" alt="" onerror="this.style.display='none'">Power BI</span>
                 <span class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/r/r-original.svg" alt="" onerror="this.style.display='none'">R Shiny</span>
             </div>
+            <a href="{{ '/skill-map/' | relative_url }}" class="about-ecosystem-cta">
+                <i class="fas fa-circle-nodes"></i>
+                Explore full skills &amp; projects ecosystem
+                <span class="about-ecosystem-arrow">→</span>
+            </a>
         </div>
     </div>
 </section>

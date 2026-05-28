@@ -151,7 +151,8 @@
     for (let i = 0; i < 140; i++) sim.tick();
 
     /* ── SVG setup ── */
-    const svg = d3.select('#skill-graph').attr('width', W).attr('height', H);
+    const svg = d3.select('#skill-graph').attr('width', W).attr('height', H)
+      .style('touch-action', 'none');
 
     /* ── Defs ── */
     const defs = svg.append('defs');

@@ -28,12 +28,18 @@ body > canvas { opacity: 0.55 !important; }
   align-items: center !important;
   max-width: 980px;
 }
-@media (max-width: 760px) {
+@media (max-width: 768px) {
   .hero-content {
     grid-template-columns: 1fr !important;
     gap: 1.75rem !important;
+    text-align: center;
   }
-  .hero-photo-wrap { justify-self: start; }
+  .hero-photo-wrap    { justify-self: center; }
+  .status-pill        { margin-left: auto; margin-right: auto; }
+  .hero-annotation    { text-align: center; }
+  .hero-links         { justify-content: center; }
+  .hero-socials       { justify-content: center; }
+  .hero-description   { margin-left: auto; margin-right: auto; }
 }
 
 /* ── Status pill ──────────────────────────────────────────────────── */
@@ -158,7 +164,6 @@ body > canvas { opacity: 0.55 !important; }
 /* ── Ghost section number (override existing small ::before counter) ── */
 .section-title {
   position: relative;
-  overflow: visible;
 }
 
 .section-title::before {
@@ -242,6 +247,19 @@ body > canvas { opacity: 0.55 !important; }
   mix-blend-mode: screen;
 }
 .project-card:hover::after { opacity: 1; }
+
+/* ── Mobile fixes ───────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  /* Hide ghost numbers — too large and cause horizontal scroll */
+  .section-title::before { display: none !important; }
+
+  /* Eyebrow line takes remaining space cleanly on narrow screens */
+  .polish-eyebrow { gap: 0.5rem; }
+  .eyebrow-text   { font-size: 0.45rem; letter-spacing: 0.18em; }
+
+  /* Don't let the specular highlight card ::after break layout */
+  .project-card::after { display: none; }
+}
 
 /* ── Reduced motion guard ───────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {

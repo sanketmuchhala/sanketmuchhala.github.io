@@ -26,7 +26,7 @@ body > canvas { opacity: 0.55 !important; }
   grid-template-columns: auto 1fr !important;
   gap: 3rem !important;
   align-items: center !important;
-  max-width: 980px;
+  max-width: var(--max-width);
 }
 @media (max-width: 768px) {
   .hero-content {

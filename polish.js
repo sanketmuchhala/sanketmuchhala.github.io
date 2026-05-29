@@ -93,7 +93,7 @@
     pill.className = 'status-pill';
     pill.innerHTML =
       '<span class="status-dot"></span>' +
-      '<span>Available for work&nbsp;&middot;&nbsp;NYC</span>';
+      '<span>Available for work&nbsp;&middot;&nbsp;USA&nbsp;&mdash;&nbsp;NYC focus</span>';
 
     /* Insert as first child of .hero-text so it appears above the title */
     heroText.insertBefore(pill, heroText.firstChild);

@@ -82,8 +82,11 @@
   --shadow-glow-accent: 0 4px 20px rgba(79, 70, 229, 0.12);
 }
 
-[data-theme="light"] .nav-menu {
-  background-color: var(--color-surface);
+/* Light mode nav-menu background only applies on mobile overlay */
+@media (max-width: 768px) {
+  [data-theme="light"] .nav-menu {
+    background-color: var(--color-surface);
+  }
 }
 
 /* --- Animations --- */

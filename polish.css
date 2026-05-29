@@ -1,0 +1,272 @@
+/* ======================================================================
+   POLISH — additive layer, loaded after style.css
+   Liquid glass · editorial typography · constrained Apple-tier motion
+   Fonts: Instrument Serif (italic accent) · JetBrains Mono (mono label)
+====================================================================== */
+
+/* ── Canvas tone-down (ribbons stay, just softer behind glass) ──────── */
+body > canvas { opacity: 0.55 !important; }
+
+/* ── Scroll progress hairline ──────────────────────────────────────── */
+#scroll-progress {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #6366f1 0%, #22d3ee 100%);
+  transform-origin: left;
+  transform: scaleX(0);
+  z-index: 9999;
+  pointer-events: none;
+  will-change: transform;
+}
+
+/* ── Hero layout — CSS grid for proper vertical centering ──────────── */
+.hero-content {
+  display: grid !important;
+  grid-template-columns: auto 1fr !important;
+  gap: 3rem !important;
+  align-items: center !important;
+  max-width: 980px;
+}
+@media (max-width: 760px) {
+  .hero-content {
+    grid-template-columns: 1fr !important;
+    gap: 1.75rem !important;
+  }
+  .hero-photo-wrap { justify-self: start; }
+}
+
+/* ── Status pill ──────────────────────────────────────────────────── */
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.625rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: rgba(255,255,255,0.50);
+  background: rgba(255,255,255,0.035);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 0.5px solid rgba(255,255,255,0.09);
+  border-radius: 100px;
+  padding: 0.3rem 0.75rem 0.3rem 0.5rem;
+  margin-bottom: 0.625rem;
+  box-shadow: inset 0 0.5px 0 rgba(255,255,255,0.08);
+  animation: enter-up 0.7s cubic-bezier(0.16,1,0.3,1) 0.05s both;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #22c55e;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.status-dot::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background: #22c55e;
+  opacity: 0.35;
+  animation: status-ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes status-ping {
+  0%        { transform: scale(1);   opacity: 0.35; }
+  75%, 100% { transform: scale(2.8); opacity: 0;    }
+}
+
+/* ── Hero title — italic last word with gradient drift ─────────────── */
+.hero-title .ital {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  background: linear-gradient(
+    90deg,
+    #c7d2fe 0%,
+    #a5b4fc 22%,
+    #22d3ee 52%,
+    #a5b4fc 78%,
+    #c7d2fe 100%
+  );
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-drift 11s linear infinite;
+}
+
+@keyframes gradient-drift {
+  from { background-position:   0% center; }
+  to   { background-position: 250% center; }
+}
+
+/* ── Hero annotation — italic serif whisper under subtitle ─────────── */
+.hero-annotation {
+  display: block;
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: rgba(255,255,255,0.32);
+  margin-top: -0.2rem;
+  margin-bottom: 1rem;
+  letter-spacing: 0.005em;
+  line-height: 1.45;
+  animation: enter-up 0.7s cubic-bezier(0.16,1,0.3,1) 0.50s both;
+}
+
+/* ── Section eyebrow label + drawing hairline ───────────────────────── */
+.polish-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+}
+
+.eyebrow-text {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.5rem;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.28);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.eyebrow-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(99,102,241,0.55) 0%,
+    rgba(34,211,238,0.20) 100%
+  );
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.section-header.in-view .eyebrow-line { transform: scaleX(1); }
+
+/* ── Ghost section number (override existing small ::before counter) ── */
+.section-title {
+  position: relative;
+  overflow: visible;
+}
+
+.section-title::before {
+  content: '0' counter(section-counter);
+  position: absolute;
+  right: -0.25rem;
+  top: -0.4em;
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-size: 4rem;
+  font-weight: 400;
+  color: rgba(255,255,255,0.04);
+  letter-spacing: -0.04em;
+  pointer-events: none;
+  user-select: none;
+  line-height: 1;
+  /* reset inherited from style.css tiny-label version */
+  display: block;
+  text-transform: none;
+  opacity: 1;
+  margin-bottom: 0;
+}
+
+/* ── JetBrains Mono for tech chips and skill items ─────────────────── */
+.tech-tag {
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 0.6875rem !important;
+  letter-spacing: 0.01em !important;
+  text-transform: lowercase !important;
+}
+
+.skill-item {
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 0.75rem !important;
+  letter-spacing: 0.01em !important;
+}
+
+/* ── Timeline bullet dash → extends + turns cyan on hover ──────────── */
+.timeline-card li {
+  position: relative;
+  padding-left: 1.1em;
+  transition: color 0.2s ease;
+}
+.timeline-card li::before {
+  content: '–';
+  position: absolute;
+  left: 0;
+  color: rgba(99,102,241,0.5);
+  transition: color 0.2s ease, letter-spacing 0.25s cubic-bezier(0.16,1,0.3,1);
+  display: inline-block;
+}
+.timeline-card:hover li::before {
+  color: #22d3ee;
+  letter-spacing: 0.08em;
+}
+
+/* ── Blog rows: title turns cyan on hover ───────────────────────────── */
+.blog-list-item:hover .blog-list-title {
+  color: #22d3ee;
+  transition: color 0.18s ease;
+}
+
+/* ── Project card specular highlight follows cursor ────────────────── */
+.project-card {
+  --mx: 50%;
+  --my: 50%;
+}
+.project-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    400px circle at var(--mx) var(--my),
+    rgba(255,255,255,0.055),
+    transparent 65%
+  );
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+.project-card:hover::after { opacity: 1; }
+
+/* ── Reduced motion guard ───────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .hero-title .ital        { animation: none !important; }
+  .status-dot::after       { animation: none !important; }
+  #scroll-progress         { transition: none !important; }
+  .eyebrow-line            {
+    transition: none !important;
+    transform: scaleX(1);
+  }
+  .status-pill             { animation: none !important; opacity: 1; }
+  .hero-annotation         { animation: none !important; opacity: 1; }
+}
+
+/* ── Tab-visibility safety net ──────────────────────────────────────── */
+/* If animations get trapped at opacity:0 on hidden tab, force visible */
+body.force-visible .hero-title,
+body.force-visible .hero-subtitle,
+body.force-visible .hero-description,
+body.force-visible .hero-links,
+body.force-visible .hero-photo-wrap,
+body.force-visible .status-pill,
+body.force-visible .hero-annotation {
+  animation: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+  filter: none !important;
+}

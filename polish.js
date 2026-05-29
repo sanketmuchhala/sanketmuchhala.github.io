@@ -286,40 +286,7 @@
      LINK FIXES
   ────────────────────────────────────────────────────────────────── */
   function fixLinks() {
-    /* 1. Project card "Read more >" → point to the card's GitHub repo */
-    document.querySelectorAll('.project-card').forEach(function (card) {
-      var ghLink   = card.querySelector('.project-links a[href*="github.com"]');
-      var readMore = card.querySelector('.project-actions a');
-      if (!ghLink || !readMore) return;
-
-      readMore.href       = ghLink.href;
-      readMore.textContent = 'View on GitHub →';
-      readMore.target     = '_blank';
-      readMore.rel        = 'noopener noreferrer';
-    });
-
-    /* 2. "View all projects" → GitHub repos tab */
-    document.querySelectorAll('.view-all').forEach(function (a) {
-      var t = (a.textContent || '').trim().toLowerCase();
-      if (t.indexOf('project') !== -1) {
-        a.href   = 'https://github.com/sanketmuchhala?tab=repositories';
-        a.target = '_blank';
-        a.rel    = 'noopener noreferrer';
-        a.textContent = 'View all projects →';
-      }
-      if (t.indexOf('post') !== -1) {
-        a.textContent = 'View all posts →';
-      }
-    });
-
-    /* 3. Project card "Read more" fallback text cleanup */
-    document.querySelectorAll('.project-actions a').forEach(function (a) {
-      if (a.textContent.trim() === 'Read more >') {
-        a.textContent = 'Read more →';
-      }
-    });
-
-    /* 4. Cursor-following specular highlight on project cards */
+    /* Cursor-following specular highlight on project cards (visual only) */
     if (window.matchMedia('(pointer: fine)').matches) {
       document.querySelectorAll('.project-card').forEach(function (card) {
         card.addEventListener('mousemove', function (e) {

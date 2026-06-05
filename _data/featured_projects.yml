@@ -1,0 +1,40 @@
+- id: "kemlang"
+  title: "kemlang.cloud"
+  domain: "kemlang.cloud"
+  liveUrl: "https://kemlang.cloud"
+  description: "A polished AI-powered language learning platform focused on practical learning flows, interactive study, and modern web delivery."
+  techStack: ["Next.js", "TypeScript", "TailwindCSS", "Node.js"]
+  screenshots:
+    - "/public/projects/kemlang/1.png"
+    - "/public/projects/kemlang/2.png"
+  detailsUrl: "#"
+  status: "Live"
+  featured: true
+
+- id: "raichu"
+  title: "raichu.live"
+  domain: "raichu.live"
+  liveUrl: "https://raichu.live"
+  description: "A live, interactive web project built with a fast product-focused interface, clean deployment, and real user access through a dedicated domain."
+  techStack: ["React", "TypeScript", "Vite", "TailwindCSS"]
+  screenshots:
+    - "/public/projects/raichu/raichu01.png"
+    - "/public/projects/raichu/raichu02.png"
+    - "/public/projects/raichu/raichu03.png"
+  detailsUrl: "#"
+  status: "Live"
+  featured: true
+
+- id: "language-lineage"
+  title: "languagelineage.org"
+  domain: "languagelineage.org"
+  liveUrl: "https://languagelineage.org"
+  description: "A language exploration platform that presents linguistic relationships, history, and discovery through an accessible web experience."
+  techStack: ["Vue.js", "TypeScript", "D3.js", "Firebase"]
+  screenshots:
+    - "/public/projects/language-lineage/ll1.png"
+    - "/public/projects/language-lineage/ll2.png"
+    - "/public/projects/language-lineage/ll3.png"
+  detailsUrl: "#"
+  status: "Live"
+  featured: true

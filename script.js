@@ -284,4 +284,56 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    // ---- Project Screenshot Carousel ----
+    const carousels = document.querySelectorAll('.project-carousel');
+    
+    carousels.forEach(carousel => {
+        const slides = carousel.querySelectorAll('.carousel-slide');
+        const indicators = carousel.querySelectorAll('.indicator');
+        const nextBtn = carousel.querySelector('.next');
+        const prevBtn = carousel.querySelector('.prev');
+        let currentIndex = 0;
+        let interval;
+        
+        if (slides.length <= 1) return; // No need for carousel logic if only 1 image
+        
+        function goToSlide(index) {
+            slides[currentIndex].classList.remove('active');
+            indicators[currentIndex].classList.remove('active');
+            
+            currentIndex = (index + slides.length) % slides.length;
+            
+            slides[currentIndex].classList.add('active');
+            indicators[currentIndex].classList.add('active');
+        }
+        
+        function nextSlide() { goToSlide(currentIndex + 1); }
+        function prevSlide() { goToSlide(currentIndex - 1); }
+        
+        if (nextBtn) nextBtn.addEventListener('click', (e) => { e.preventDefault(); nextSlide(); });
+        if (prevBtn) prevBtn.addEventListener('click', (e) => { e.preventDefault(); prevSlide(); });
+        
+        indicators.forEach((indicator, i) => {
+            indicator.addEventListener('click', (e) => {
+                e.preventDefault();
+                goToSlide(i);
+            });
+        });
+        
+        // Auto rotate
+        function startAuto() {
+            interval = setInterval(nextSlide, 5000);
+        }
+        
+        function stopAuto() {
+            clearInterval(interval);
+        }
+        
+        carousel.addEventListener('mouseenter', stopAuto);
+        carousel.addEventListener('mouseleave', startAuto);
+        
+        startAuto();
+    });
 });
+

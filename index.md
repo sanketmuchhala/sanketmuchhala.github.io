@@ -207,11 +207,59 @@ image: "/photos/export.png"
     </div>
 </section>
 
-<!-- Projects -->
+<!-- Featured Projects -->
+<section id="featured-projects">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Featured Projects</h2>
+        </div>
+        <div class="featured-projects-list stagger-children">
+            {% for project in site.data.featured_projects %}
+            <div class="featured-project-card animate-on-scroll">
+                <div class="fp-carousel-wrap">
+                    {% include project_carousel.html project=project %}
+                </div>
+                <div class="fp-content">
+                    <div class="fp-header">
+                        <div class="fp-title-wrap">
+                            <h3 class="fp-title">{{ project.title }}</h3>
+                            {% if project.status == 'Live' %}
+                            <span class="fp-status-badge"><span class="status-dot"></span>Live</span>
+                            {% endif %}
+                        </div>
+                        <a href="{{ project.liveUrl }}" target="_blank" rel="noopener noreferrer" class="fp-domain" aria-label="Visit {{ project.domain }}">{{ project.domain }} <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                    <p class="fp-description">
+                        {{ project.description }}
+                    </p>
+                    <div class="fp-tech">
+                        {% for tech in project.techStack %}
+                        <span class="tech-tag">{{ tech }}</span>
+                        {% endfor %}
+                    </div>
+                    <div class="fp-actions">
+                        <a href="{{ project.liveUrl }}" class="btn" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-globe"></i> Visit Live Site
+                        </a>
+                        <a href="{{ project.detailsUrl }}" class="btn btn-outline">
+                            <i class="fas fa-arrow-right"></i> Case Study
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="section-actions" style="text-align: center; margin-top: var(--space-xl);">
+            <a href="{{ '/projects' | relative_url }}" class="view-all" style="font-size: 1.1rem;">View all projects ></a>
+        </div>
+    </div>
+</section>
+
+<!-- Other Projects -->
 <section id="projects">
     <div class="container">
         <div class="section-header">
-            <h2 class="section-title">Projects</h2>
+            <h2 class="section-title">Other Projects</h2>
         </div>
         <div class="projects-grid">
             <div class="project-card">

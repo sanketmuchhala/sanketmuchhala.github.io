@@ -239,10 +239,7 @@ image: "/photos/export.png"
                     </div>
                     <div class="fp-actions">
                         <a href="{{ project.liveUrl }}" class="btn" target="_blank" rel="noopener noreferrer">
-                            <i class="fas fa-globe"></i> Visit Live Site
-                        </a>
-                        <a href="{{ project.detailsUrl }}" class="btn btn-outline">
-                            <i class="fas fa-arrow-right"></i> Case Study
+                            Read more >
                         </a>
                     </div>
                 </div>

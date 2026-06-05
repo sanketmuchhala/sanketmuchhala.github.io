@@ -2,66 +2,78 @@
 layout: default
 ---
 
-<article class="blog-post reading-page project-detail-page">
+<article class="project-detail-page split-project-page">
     <div class="container">
-
-        <a href="{{ '/projects/' | relative_url }}" class="project-back-pill">
-            <i class="fas fa-arrow-left"></i> All Projects
-        </a>
-
-        <header class="blog-header">
-            <div class="blog-breadcrumb">
-                <a href="{{ '/' | relative_url }}">Home</a><span>/</span><a href="{{ '/projects/' | relative_url }}">Projects</a><span>/</span><span>{{ page.title }}</span>
-            </div>
-
-            {% if page.categories %}
-            <div class="blog-category-badge">
-                {% for cat in page.categories %}<span class="blog-cat-tag">{{ cat }}</span>{% endfor %}
-            </div>
-            {% endif %}
-
-            <h1 class="blog-post-title">{{ page.title }}</h1>
-
-            {% if page.description %}
-            <p class="blog-post-description">{{ page.description }}</p>
-            {% endif %}
-
-            <div class="blog-post-meta">
-                {% if page.date %}
-                <div class="meta-item"><i class="fas fa-calendar"></i><span>{{ page.date | date: "%B %Y" }}</span></div>
-                {% endif %}
-            </div>
-
-            {% assign live_url = page.demo_url | default: page.deployment_url %}
-            {% if page.github_url or live_url %}
-            <div class="project-header-links">
-                {% if page.github_url %}
-                <a href="{{ page.github_url }}" class="btn btn-outline" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-github"></i> Source
+        <div class="project-split-layout">
+            
+            <!-- Left Sidebar (Sticky) -->
+            <aside class="project-sidebar">
+                <a href="{{ '/projects/' | relative_url }}" class="project-back-link">
+                    &larr; All Projects
                 </a>
+                
+                <h1 class="project-title">{{ page.title }}</h1>
+                
+                {% if page.description %}
+                <p class="project-subtitle">{{ page.description }}</p>
                 {% endif %}
-                {% if live_url %}
-                <a href="{{ live_url }}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-                    <i class="fas fa-external-link-alt"></i> Live Demo
-                </a>
-                {% endif %}
-            </div>
-            {% endif %}
-
-            {% if page.technologies %}
-            <div class="project-tech-header">
-                {% for tech in page.technologies %}
-                <span class="tech-tag">{{ tech }}</span>
-                {% endfor %}
-            </div>
-            {% endif %}
-
-            <div class="blog-header-rule"></div>
-        </header>
-
-        <div class="blog-content">
-            {{ content }}
+                
+                <div class="project-meta-list">
+                    {% if page.technologies %}
+                    <div class="meta-item">
+                        <h4>Built With</h4>
+                        <div class="tech-stack-flex">
+                            {% for tech in page.technologies %}
+                            <span class="tech-tag">{{ tech }}</span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endif %}
+                    
+                    {% if page.categories %}
+                    <div class="meta-item">
+                        <h4>Domain</h4>
+                        <div class="tech-stack-flex">
+                            {% for cat in page.categories %}
+                            <span class="cat-tag">{{ cat }}</span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endif %}
+                    
+                    {% if page.date %}
+                    <div class="meta-item">
+                        <h4>Timeline</h4>
+                        <p class="meta-text">{{ page.date | date: "%B %Y" }}</p>
+                    </div>
+                    {% endif %}
+                    
+                    {% assign live_url = page.demo_url | default: page.deployment_url %}
+                    {% if page.github_url or live_url %}
+                    <div class="meta-item meta-actions">
+                        <h4>Links</h4>
+                        <div class="project-actions-sidebar">
+                            {% if live_url %}
+                            <a href="{{ live_url }}" class="btn" target="_blank" rel="noopener noreferrer">
+                                <i class="fas fa-external-link-alt"></i> Live Project
+                            </a>
+                            {% endif %}
+                            {% if page.github_url %}
+                            <a href="{{ page.github_url }}" class="btn btn-outline" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-github"></i> View Source
+                            </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+            </aside>
+            
+            <!-- Right Content (Scrollable) -->
+            <main class="project-main-content prose">
+                {{ content }}
+            </main>
+            
         </div>
-
     </div>
 </article>

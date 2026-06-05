@@ -38,3 +38,17 @@
   detailsUrl: "#"
   status: "Live"
   featured: true
+
+- id: "funnynews"
+  title: "funnynews.club"
+  domain: "funnynews.club"
+  liveUrl: "https://funnynews.club"
+  description: "A modern, AI-powered news aggregation platform that discovers and curates the funniest, most absurd news stories from across the internet."
+  techStack: ["Next.js 14", "TypeScript", "Google Gemini AI", "Tailwind CSS", "PostgreSQL", "vis-network"]
+  screenshots:
+    - "/public/projects/funnynews/1.png"
+    - "/public/projects/funnynews/2.png"
+    - "/public/projects/funnynews/3.png"
+  detailsUrl: "/projects/01-funny-news-aggregator/"
+  status: "Live"
+  featured: true

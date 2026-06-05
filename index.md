@@ -238,7 +238,7 @@ image: "/photos/export.png"
                         {% endfor %}
                     </div>
                     <div class="fp-actions">
-                        <a href="{{ project.liveUrl }}" class="btn" target="_blank" rel="noopener noreferrer">
+                        <a href="{{ project.detailsUrl | relative_url }}" class="btn">
                             Read more >
                         </a>
                     </div>

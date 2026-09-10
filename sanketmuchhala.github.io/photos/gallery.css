@@ -1,0 +1,112 @@
+/* Pure CSS responsive hex grid adapted to local gallery */
+
+body { container-type: inline-size }
+
+main {
+	--w: 100cqw; /* container content-box width */
+	--u: 6em; /* unit column width */
+	--s: max(.25rem, 1vmin); /* gap size */
+	--p: calc(var(--w) + var(--s)); /* numerator */
+	--q: calc(var(--u) + var(--s)); /* denominator */
+	--f: var(--p)/var(--q);
+	/* number of columns of width u that fit in w 
+	 * when having a gap space s between them */
+	--n: max(1, round(down, var(--f)));
+	display: grid;
+	/* compute row gap out of column one */
+	grid-gap: calc(.5*var(--s)*sqrt(3)) var(--s);
+	grid-template-columns: repeat(var(--n), 1fr);
+	justify-content: center;
+	margin: calc(.5*var(--u)) 0;
+	
+	a {
+		/* how many hex fit on odd (1st, 3rd...) rows
+		 * (a sort of mid index) */
+		--m: round(down, .5*var(--n));
+		/* index of hex among a pair of odd + even rows */
+		--j: mod(var(--i), var(--n) - 1);
+		/* 1 if on an even row (j > m) */
+		--e: clamp(0, var(--j) - var(--m) + 1, 1);
+		display: grid;
+		grid-column: 
+			/* mod() is index on every row, odd or even;
+			 * double it since ever hex spans 2 columns
+			 * add 1 since index is 0-based 
+			 * and column numbering is 1-based;
+			 * finally, add e to column start, 
+			 * which is 0 on odd rows, 1 on even ones */
+			calc(2*mod(var(--j), var(--m)) + 1 + var(--e))/
+			/* every hex stretches across two columns */
+			span 2;
+		overflow: hidden;
+		margin: calc(-25%/sqrt(3)) 0;
+		clip-path: 
+			polygon(50% 0, 150% 50%, 50% 100%, -50% 50%);
+	}
+}
+
+img {
+	width: 100%;
+	aspect-ratio: calc(sqrt(3) / 2);
+	object-fit: cover
+}
+
+/* only needed if dividing lengths not supported */
+@supports not (scale: calc(100cqh/3lh)) {
+	@property --p { /* numerator */
+		syntax: '<length-percentage>';
+		initial-value: 0px;
+		inherits: true
+	}
+
+	@property --q { /* denominator */
+		syntax: '<length-percentage>';
+		initial-value: 0px;
+		inherits: true
+	}
+	
+	main {
+		--f: round(tan(atan2(var(--p), var(--q))), .00001)
+	}
+}
+
+/* JUST OVERALL PAGE LAYOUT & PRETTIFYING */
+* { margin: 0 }
+
+html, body { display: grid }
+
+html {
+	overflow-x: hidden;
+	padding: .5em;
+	background: #1a1212;
+	color: #ededed
+}
+
+body {
+	justify-self: center;
+	width: clamp(200px, 100%, 1400px);
+	font: clamp(.625em, 3vmin, 1.25em)/ 1.25 'Saira', sans-serif;
+	text-align: center
+}
+
+h1, b {
+	font-family: 'Sour Gummy', system-ui, sans-serif;
+	text-wrap: balance
+}
+
+main { filter: drop-shadow(2px 2px 5px #000) }
+
+a:is(:hover, :focus) { --hov: 1 }
+
+img {	
+	scale: calc(1 + var(--hov)*.25);
+	filter: saturate(var(--hov, 0));
+	transition: .65s ease-out
+}
+
+footer {
+	margin: 0 auto;
+	width: min(100%, 50em);
+	
+	a { color: gold }
+}

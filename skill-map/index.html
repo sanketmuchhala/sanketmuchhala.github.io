@@ -751,6 +751,13 @@ html.no-js .eco-seo-fallback {
 
 <script src="https://d3js.org/d3.v7.min.js"></script>
 <script>
-  window.ECOSYSTEM_DATA_URL = '{{ "/skill-map/data.generated.json" | relative_url }}';
+  {%- comment -%}
+    Cache-bust on every build. GitHub Pages serves graph.js with
+    max-age=14400 but the data with max-age=600, so without this a
+    returning visitor can pair a 4-hour-old script with fresh data —
+    which is exactly how a schema change breaks the page for people who
+    had visited before.
+  {%- endcomment -%}
+  window.ECOSYSTEM_DATA_URL = '{{ "/skill-map/data.generated.json" | relative_url }}?v={{ site.time | date: "%s" }}';
 </script>
-<script src="{{ '/skill-map/graph.js' | relative_url }}"></script>
+<script src="{{ '/skill-map/graph.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>

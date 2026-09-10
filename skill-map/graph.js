@@ -134,17 +134,44 @@
   const dataUrl = window.ECOSYSTEM_DATA_URL || '/skill-map/data.generated.json';
   const embedded = document.getElementById('graph-data');
   if (embedded) {
-    try { initGraph(JSON.parse(embedded.textContent)); } catch (err) { failed(err); }
+    try { start(JSON.parse(embedded.textContent)); } catch (err) { failed('load', err); }
   } else {
     fetch(dataUrl)
       .then(r => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
-      .then(initGraph)
-      .catch(failed);
+      .then(raw => start(raw))
+      .catch(err => failed('load', err));
   }
-  function failed(err) {
-    console.error('Knowledge graph: data load failed —', err);
-    if (wrapper) wrapper.innerHTML =
-      '<p style="color:rgba(255,255,255,0.25);text-align:center;padding:5rem 2rem;font-family:system-ui">Could not load graph data.</p>';
+
+  /* Keep loading and rendering failures distinct. Lumping them together
+     means a rendering bug reports itself as "could not load data", which
+     sends you debugging the network instead of the code. */
+  function start(raw) {
+    if (!raw || !Array.isArray(raw.nodes) || !Array.isArray(raw.edges)) {
+      failed('schema', new Error(
+        `expected {nodes:[], edges:[]}, got keys: ${raw ? Object.keys(raw).join(', ') : typeof raw}`));
+      return;
+    }
+    try {
+      initGraph(raw);
+    } catch (err) {
+      failed('render', err);
+    }
+  }
+
+  function failed(stage, err) {
+    const message = {
+      load:   'Could not load the graph data.',
+      schema: 'The graph data is in an unexpected format. If you have visited before, a cached script may be out of date — a hard refresh should fix it.',
+      render: 'The graph data loaded, but rendering failed.',
+    }[stage];
+    console.error(`Knowledge graph: ${stage} failed —`, err);
+    if (wrapper) {
+      wrapper.innerHTML =
+        '<p style="color:rgba(255,255,255,0.3);text-align:center;padding:5rem 2rem;' +
+        'font-family:system-ui;line-height:1.6;max-width:32rem;margin:0 auto">' +
+        message.replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c])) +
+        '</p>';
+    }
   }
 
   /* ══════════════════════════════════════════════════════════════ */

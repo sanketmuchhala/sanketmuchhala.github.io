@@ -1,0 +1,366 @@
+# Manual curation layer for the skill-map knowledge graph.
+#
+# Holds everything the pipeline can't reliably infer: which tier a
+# project belongs in, what capabilities it actually demonstrates,
+# corrected descriptions, accurate fork provenance, and curated
+# narrative relationships.
+#
+# Key rules:
+#   * `capabilities:` is AUTHORITATIVE. When present, keyword inference
+#     for that project is discarded rather than merged — capabilities
+#     are the primary layer of the graph, so a stray README keyword must
+#     not be able to add a claim.
+#   * `tier: core` = the default view (target ~15-20 projects).
+#     Everything else defaults to `extended` (Full Ecosystem mode).
+#   * Forks record real provenance (origin/upstream/substantially_modified)
+#     and their descriptions describe MY contribution, never the
+#     upstream author's work.
+#
+# See docs/skill-map-updating.md for the workflow.
+
+projects:
+  LexOrchestrator:
+    tier: core
+    rank: 1
+    domains: [legal-tech]
+    capabilities:
+      - agent-orchestration
+      - rag
+      - hybrid-retrieval
+      - mcp
+      - tool-calling
+      - evaluation-systems
+      - observability
+      - citation-verification
+      - llm-applications
+    capability_notes:
+      agent-orchestration: >
+        Eight sequential specialist agents — intake, retrieval, drafting,
+        citation verification, adversarial review, local rules review,
+        judge brief prep, eval scoring — each building on prior context.
+      hybrid-retrieval: >
+        Ranking combines keyword scoring, vector cosine similarity, and
+        authority boosts over indexed court opinions.
+      mcp: >
+        Ships a stdio MCP server exposing nine litigation tools.
+      observability: >
+        Per-run agent trace viewer and an observability dashboard over
+        every step of the workflow.
+    description: >
+      Litigation workflow agent: a legal drafting request moves through
+      eight sequential specialist agents, grounded in hybrid RAG over
+      indexed court opinions, with every citation checked back against
+      the source and every run inspectable in a trace viewer.
+
+
+  Nerdplexity:
+    tier: core
+    rank: 3
+    domains: [developer-tooling]
+    capabilities: [llm-applications, observability, evaluation-systems]
+    capability_notes:
+      observability: >
+        Prompt analytics layer that surfaces which prompts perform and
+        why, across both cloud and local models.
+    description: >
+      Analytics-first chat client for cloud and local LLMs — conversation
+      quality and performance insights layered over a minimal React/Node
+      chat UI running local inference through Ollama.
+
+  LanguageLineage:
+    tier: core
+    rank: 4
+    domains: [linguistics, developer-tooling]
+    capabilities: [graph-systems, data-engineering, schema-constrained-generation]
+    capability_notes:
+      graph-systems: >
+        152 languages and tools modeled as a citation-backed implementation
+        graph, rendered with Cytoscape.js and D3.
+    tech_corrections:
+      remove: [vuejs, firebase]   # neither appears in the real package.json — see audit §3
+    description: >
+      An interactive, citation-backed atlas of what 152 programming
+      languages were themselves implemented in — every edge carries a
+      source and an evidence grade, and the whole dataset is downloadable.
+
+  GTM-SImulator:
+    tier: core
+    rank: 5
+    origin: fork
+    upstream: 666ghj/MiroFish
+    substantially_modified: true
+    include_in_portfolio: true
+    contribution_note: >
+      Forked from the upstream MiroFish swarm-simulation engine. My work
+      is the GTM productization layer: buyer-persona generation, message
+      reaction simulation, objection ranking, the outbound experiment
+      planner, and the deployed web app — not the underlying simulation
+      engine, which is upstream work.
+    domains: [developer-tooling]
+    capabilities: [agent-orchestration, simulation, llm-applications]
+    description: >
+      A go-to-market simulation lab built on the upstream MiroFish swarm
+      engine: enter a product brief, ICP, and messaging strategy, and get
+      back generated buyer personas, simulated message reactions, ranked
+      objections, and a seven-day outbound experiment plan.
+
+  mirofish-api-server:
+    tier: core
+    rank: 6
+    display_name: Mirofish Swarm API
+    domains: [finance]
+    upstream: 666ghj/MiroFish
+    contribution_note: >
+      Original API and productization layer around the upstream MiroFish
+      swarm engine — the Railway-deployable service, the x402/USDC
+      payment gating, and the structured prediction report format are
+      mine; the simulation engine itself is upstream work.
+    capabilities: [api-engineering, agent-orchestration, simulation, llm-applications]
+    description: >
+      A monetized prediction API over a multi-agent swarm: 10-500 agents
+      with distinct roles debate a question across several rounds and
+      return a structured prediction report, metered per call with
+      on-chain USDC payments.
+
+  ai-slop-detector-model:
+    tier: core
+    rank: 7
+    display_name: AI Slop Detector
+    capabilities: [classification, nlp, mlops, evaluation-systems, api-engineering]
+    capability_notes:
+      evaluation-systems: >
+        Benchmarked against RAID with calibrated probabilities rather
+        than raw scores, so the threshold is a deliberate choice.
+    description: >
+      A binary AI-vs-human text classifier with calibrated probabilities
+      and threshold-based labels, trained on a Wikipedia human/AI corpus
+      and benchmarked against RAID, exported as both a Hugging Face
+      checkpoint and an ONNX artifact for in-browser inference.
+
+  Project-AirNet:
+    tier: core
+    rank: 8
+    display_name: AirNet
+    domains: [transportation, social-network-analysis]
+    capabilities: [graph-systems]
+    capability_notes:
+      graph-systems: >
+        Degrees of separation, clustering coefficients, preferential
+        attachment, and targeted-removal vulnerability analysis over the
+        real US domestic route network.
+    description: >
+      The US domestic airport network as an explorable graph — surfacing
+      hub structure, degrees of separation, and how the network degrades
+      when its most connected airports are removed.
+
+  US-Metro-Transit-Network-Mega-Visualization:
+    tier: core
+    rank: 9
+    display_name: Metro Transit Network
+    domains: [transportation]
+    capabilities: [graph-systems]
+    capability_notes:
+      graph-systems: >
+        Pathfinding and disruption simulation across ten cities' real
+        transit topology.
+    description: >
+      A map-first view of ten US metro systems as networks — routing
+      between any two stations, and simulating what breaks downstream
+      when a line or station goes out.
+
+  AIStudyBuddy:
+    tier: core
+    rank: 10
+    domains: [education]
+    capabilities: [llm-applications]
+    description: >
+      An AI study companion combining tutoring chat, interview practice,
+      and SM-2 spaced-repetition flashcards in one Next.js app.
+
+  house-price-ml-pipeline:
+    tier: core
+    rank: 11
+    domains: [real-estate]
+    capabilities: [mlops, data-engineering, evaluation-systems]
+    capability_notes:
+      mlops: >
+        MLflow experiment tracking and a model registry, with the whole
+        training run reproducible inside Docker.
+    description: >
+      An end-to-end California house-price pipeline — feature
+      engineering, Random Forest and XGBoost with cross-validation,
+      MLflow experiment tracking, and a Docker-reproducible training run.
+
+  FileChatAI:
+    tier: core
+    rank: 12
+    display_name: RAG Document Chatbot
+    capabilities: [rag, information-retrieval, llm-applications]
+    description: >
+      Upload a document and interrogate it: DeepSeek handles generation,
+      Google Gemini produces the embeddings, and FAISS serves retrieval
+      behind a Streamlit interface.
+
+  RAG-Chatbot-Jupyter:
+    tier: core
+    rank: 13
+    display_name: RAG Notebooks
+    capabilities: [rag, information-retrieval]
+    description: >
+      The earliest hands-on RAG work in the portfolio — notebook
+      implementations pairing DeepSeek-R1 generation with Sentence
+      Transformers embeddings over a FAISS index.
+
+  Linkedin-Connections:
+    tier: core
+    rank: 14
+    display_name: Connections Graph
+    domains: [social-network-analysis]
+    capabilities: [graph-systems, nlp]
+    description: >
+      Treats a LinkedIn export as a social graph — computing centrality,
+      detecting communities, and surfacing the structure of a
+      professional network rather than just listing it.
+
+  kemlang-py:
+    tier: core
+    rank: 15
+    display_name: KemLang
+    aliases: [Gujju.py]
+    domains: [linguistics, education]
+    capabilities: []
+    description: >
+      A Gujarati-flavored teaching language with a hand-written lexer,
+      parser, and interpreter in Python — programming concepts expressed
+      in the keywords of a first language rather than English.
+
+  NewsSite:
+    tier: core
+    rank: 16
+    display_name: Funny News
+    domains: [media]
+    capabilities: [llm-applications, data-engineering, graph-systems]
+    capability_notes:
+      graph-systems: >
+        Stories are linked into a network view so related absurdity
+        clusters together rather than sitting in a flat feed.
+    description: >
+      An AI-curated feed of the internet's most absurd news, with related
+      stories linked into a browsable network graph rather than a flat
+      list.
+
+  ApplicationAgent:
+    tier: core
+    rank: 17
+    display_name: Job Application Agent
+    capabilities: [agent-orchestration, mcp, tool-calling, llm-applications, nlp]
+    capability_notes:
+      mcp: >
+        Exposed as an MCP tool so the agent can be driven directly from
+        Claude Desktop.
+    description: >
+      Reads a job application form, matches a stored profile to its
+      fields semantically, and drafts tailored responses — driven from
+      Claude Desktop over MCP.
+
+  # ── Extended tier: real work, surfaced in Full Ecosystem mode ───────
+  claudos:
+    tier: extended
+    display_name: ClaudOS
+    description: >
+      A browser-based macOS desktop simulator — window management, app
+      chrome, and desktop interaction patterns in vanilla JavaScript.
+  Raichu:
+    tier: extended
+    domains: [gaming]
+    description: >
+      Chess crossed with checkers, with a minimax + alpha-beta engine
+      playing the opposing side.
+  TallyCart:
+    tier: extended
+    domains: [e-commerce]
+  WindowPilot:
+    tier: extended
+    domains: [developer-tooling]
+  jobfit:
+    tier: extended
+    display_name: JD Keyword Extractor
+    capabilities: [nlp]
+  Superstore-Sales-Management-Dashboard:
+    tier: extended
+    display_name: Superstore Sales Dashboard
+    capabilities: [forecasting]
+  Project-Patent-Classification:
+    tier: extended
+    display_name: Regional Impact of Patents
+    capabilities: [nlp, classification]
+  Game-analytics:
+    tier: extended
+    display_name: Chat & Gameplay Correlation
+    capabilities: [nlp]
+  ECC-LBFS:
+    tier: extended
+    display_name: Location-Based File Sharing
+
+# ── Narrative relationships — CURATED ONLY ──────────────────────────
+# Never inferred from similarity, dates, dependencies, or shared
+# technologies. Each type means something different:
+#   EVOLVED_INTO        earlier work of mine matured into later work
+#   DERIVED_FROM        built on top of someone else's upstream work
+#   INSPIRED_BY         idea borrowed, code not
+#   SHARES_PATTERN_WITH same technique, different context
+#   RELATED_TO          generic sibling relationship
+narrative_edges:
+  - from: RAG-Chatbot-Jupyter
+    to: FileChatAI
+    type: SHARES_PATTERN_WITH
+    context: >
+      Two parallel first passes at retrieval in 2024 — the same
+      embed/index/retrieve pattern, once in notebooks and once behind a
+      Streamlit UI.
+  - from: FileChatAI
+    to: LexOrchestrator
+    type: EVOLVED_INTO
+    context: >
+      Single-document retrieval grew into a production-shaped hybrid
+      pipeline — keyword, vector, and authority signals ranked together
+      over a real corpus.
+  - from: RAG-Chatbot-Jupyter
+    to: LexOrchestrator
+    type: EVOLVED_INTO
+    context: >
+      The notebook retrieval experiments became the retrieval stage of an
+      eight-agent workflow.
+  - from: LexOrchestrator
+    to: matter-graph-legal-ai
+    type: EVOLVED_INTO
+    context: >
+      The litigation-agent demo's orchestration and evidence handling
+      became the foundation of a production legal-tech product.
+  - from: ApplicationAgent
+    to: LexOrchestrator
+    type: SHARES_PATTERN_WITH
+    context: >
+      Both expose their capabilities as MCP tools so an external agent
+      can drive them — one for job applications, one for litigation work.
+  - from: Project-AirNet
+    to: US-Metro-Transit-Network-Mega-Visualization
+    type: SHARES_PATTERN_WITH
+    context: >
+      The same network-theory toolkit — centrality, clustering,
+      targeted-removal failure analysis — applied to air routes and then
+      to metro systems.
+  - from: Linkedin-Connections
+    to: LanguageLineage
+    type: SHARES_PATTERN_WITH
+    context: >
+      Graph analysis moved from a private social export to a public,
+      citation-backed dataset built for other people to explore.
+  - from: mirofish-api-server
+    to: GTM-SImulator
+    type: SHARES_PATTERN_WITH
+    context: >
+      Two productizations of the same upstream swarm engine — one as a
+      metered prediction API, one as a go-to-market simulation lab.
+
+hidden: []

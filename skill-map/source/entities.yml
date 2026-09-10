@@ -1,0 +1,139 @@
+# Hand-authored entities the pipeline can't derive from GitHub:
+# professional experience, and the curated "story mode" groupings behind
+# the narrative-path buttons.
+#
+# Capability and domain nodes are generated automatically from whatever
+# ids in scripts/skill_map/ontology.py actually receive evidence during
+# a build — this file only adds what a script cannot know.
+
+experience:
+  - id: e-progressive
+    name: Progressive Insurance
+    role: AI Engineer
+    period: "May 2024 – Present"
+    domains: [insurance]
+    detail: >
+      Engineered NLP and computer-vision models using TensorFlow and
+      PyTorch to classify claim texts, forms, and images. Built ML
+      pipelines with Apache Airflow and Azure Data Factory, deployed to
+      Azure ML Services — 35% reduction in manual claim processing time,
+      25% improvement in fraud detection.
+    technologies: [tensorflow, pytorch, azure, mlflow, sql, docker, python, airflow]
+    capabilities: [nlp, computer-vision, mlops, data-engineering]
+
+  - id: e-iu
+    name: Indiana University
+    role: Research Assistant
+    period: "Dec 2023 – May 2024"
+    domains: [education]
+    detail: >
+      Improved transcript accuracy by 18 percentage points using a GPT-4
+      RAG pipeline on the BigRed200 HPC cluster, processing 200+ hours of
+      esports video. Cut chat latency 40% with a sentiment microservice
+      handling 1M+ messages in near real time.
+    technologies: [openai, langchain, sklearn, python]
+    capabilities: [rag, nlp, information-retrieval]
+
+  - id: e-ibm
+    name: IBM
+    role: Data Analyst
+    period: "Sep 2020 – Jun 2022"
+    domains: [finance]
+    detail: >
+      Led churn prediction model development in Python and Scikit-learn —
+      20% reduction in customer attrition. Refactored ETL workflows with
+      Azure Data Lake and SQL for 15% faster data availability, and
+      shipped models to Azure ML behind CI/CD for 25% faster releases.
+    technologies: [python, sklearn, azure, sql]
+    capabilities: [classification, data-engineering, mlops]
+
+story_modes:
+  - id: agentic-systems
+    name: Agentic Systems
+    description: >
+      Multi-agent orchestration, tool calling, and MCP — from a job
+      application agent to an eight-agent litigation workflow to a
+      production legal-tech product.
+    node_ids:
+      - cap-agent-orchestration
+      - cap-mcp
+      - cap-tool-calling
+      - LexOrchestrator
+      - matter-graph-legal-ai
+      - ApplicationAgent
+      - mirofish-api-server
+      - GTM-SImulator
+      - mcp-security-tooling
+
+  - id: rag-retrieval
+    name: RAG & Retrieval
+    description: >
+      The retrieval lineage: notebook experiments in 2024, then hybrid
+      ranking over a real corpus, then retrieval inside a shipped
+      product.
+    node_ids:
+      - cap-rag
+      - cap-hybrid-retrieval
+      - cap-information-retrieval
+      - RAG-Chatbot-Jupyter
+      - FileChatAI
+      - LexOrchestrator
+      - matter-graph-legal-ai
+      - e-iu
+
+  - id: graphs-networks
+    name: Graphs & Networks
+    description: >
+      Treating real-world data as networks — air routes, transit systems,
+      social connections, and the implementation history of programming
+      languages.
+    node_ids:
+      - cap-graph-systems
+      - LanguageLineage
+      - Project-AirNet
+      - US-Metro-Transit-Network-Mega-Visualization
+      - Linkedin-Connections
+      - NewsSite
+
+  - id: ml-foundations
+    name: ML Foundations
+    description: >
+      The applied ML and data work the later AI engineering was built on
+      — production pipelines at IBM and Progressive, and end-to-end
+      modelling projects.
+    node_ids:
+      - cap-mlops
+      - cap-data-engineering
+      - cap-nlp
+      - cap-computer-vision
+      - cap-classification
+      - house-price-ml-pipeline
+      - ai-slop-detector-model
+      - e-ibm
+      - e-progressive
+
+  - id: developer-tools
+    name: Developer Tools
+    description: >
+      Tooling built for developers and for AI agents themselves — MCP
+      infrastructure, LLM client analytics, and language tooling.
+    node_ids:
+      - cap-mcp
+      - cap-observability
+      - mcp-security-tooling
+      - Nerdplexity
+      - kemlang-py
+      - LanguageLineage
+
+  - id: shipped-products
+    name: Shipped Products
+    description: >
+      Work that runs in front of real users on its own domain, rather
+      than sitting in a repository.
+    node_ids:
+      - matter-graph-legal-ai
+      - LanguageLineage
+      - NewsSite
+      - kemlang-py
+      - Raichu
+      - mirofish-api-server

@@ -1,0 +1,59 @@
+# Public-safe abstractions of private work.
+#
+# This file is the ONLY route by which anything derived from a private
+# repository enters the public graph:
+#
+#   private repository
+#     -> private extraction (stays in the gitignored cache)
+#     -> manually approved abstraction (this file)
+#     -> public graph
+#
+# Everything here is written by hand, in the author's own words, and is
+# an explicit approval to publish. Nothing is copied from the private
+# repo — not its name, URL, paths, descriptions, dependencies,
+# endpoints, architecture, customers, or internal terminology.
+#
+# The `capabilities`, `technologies`, and `domains` lists below are
+# ALLOWLISTS: scripts/skill_map/validate.py rejects any edge involving
+# one of these nodes that is not enumerated here, so private work can
+# never quietly widen a public aggregate such as "used across N
+# projects".
+#
+# Private repos NOT listed here contribute nothing to the public graph
+# at all — no node, no edge, no aggregate, no inferred skill.
+
+abstractions:
+  - id: matter-graph-legal-ai
+    display_name: MatterGraph
+    node_type: project
+    tier: core
+    rank: 2
+    domains: [legal-tech]
+    capabilities: [agent-orchestration, graph-systems, rag, llm-applications]
+    technologies: [nextjs, typescript, tailwind]
+    description: >
+      A legal case collaboration workspace that turns a client's
+      narrated account into a structured chronology, an evidence graph,
+      a review queue, and an attorney-controlled case outline — AI
+      output framed as drafts for professional review, never as advice.
+      Grew out of the public LexOrchestrator demo.
+    evidence_note: >
+      Public-safe summary of private product work, published at the
+      author's discretion.
+
+  - id: mcp-security-tooling
+    display_name: MCP Flight Recorder
+    node_type: project
+    tier: core
+    rank: 18
+    domains: [security, developer-tooling]
+    capabilities: [mcp, observability]
+    technologies: [typescript, vitest]
+    description: >
+      A CI-native scanner and out-of-band flight recorder for the Model
+      Context Protocol — capturing agent tool calls, identities, data
+      access, tool versions, and side effects as an evidence trail, so
+      what an autonomous agent did can be reconstructed after the fact.
+    evidence_note: >
+      Public-safe summary of private tooling work, published at the
+      author's discretion.

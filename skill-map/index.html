@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Ecosystem"
-description: "Interactive skills and projects network — clustered force-directed graph with work experience, tech logos, and connection context"
+title: "Knowledge Graph"
+description: "An explorable engineering knowledge graph — projects, technologies, capabilities, domains, and experience, evidence-backed and generated from GitHub"
 ---
 
 <style>
@@ -42,7 +42,7 @@ body > canvas    { display: none !important; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.875rem 1.75rem 0.3rem;
+  padding: 1.25rem 2.25rem 0.6rem;
   animation: eco-down 0.45s cubic-bezier(0.16,1,0.3,1) both;
 }
 .eco-title-label {
@@ -73,13 +73,13 @@ body > canvas    { display: none !important; }
   overflow: hidden;
 }
 .eco-stat {
-  display: flex; align-items: baseline; gap: 0.35rem;
-  padding: 0.4rem 1.05rem;
+  display: flex; align-items: baseline; gap: 0.45rem;
+  padding: 0.55rem 1.3rem;
   border-right: var(--glass-border);
 }
 .eco-stat:last-child { border-right: none; }
 .eco-stat-num {
-  font-size: 1.5rem; font-weight: 700;
+  font-size: 1.75rem; font-weight: 700;
   color: rgba(255,255,255,0.82);
   font-variant-numeric: tabular-nums;
   letter-spacing: -0.03em;
@@ -97,7 +97,7 @@ body > canvas    { display: none !important; }
   flex-shrink: 0;
   display: flex;
   justify-content: center; align-items: center;
-  padding: 0.5rem 1rem 0.65rem;
+  padding: 0.7rem 1rem 0.85rem;
   animation: eco-down 0.45s 0.06s cubic-bezier(0.16,1,0.3,1) both;
 }
 
@@ -113,8 +113,8 @@ body > canvas    { display: none !important; }
 
 .eco-filter {
   font-family: var(--font);
-  font-size: 0.8125rem; font-weight: 500;
-  padding: 0.45rem 0.975rem;
+  font-size: 0.875rem; font-weight: 500;
+  padding: 0.55rem 1.15rem;
   border-radius: 100px; border: none;
   background: transparent;
   color: rgba(255,255,255,0.32);
@@ -132,6 +132,8 @@ body > canvas    { display: none !important; }
 }
 .eco-filter.active[data-group="project"]    { color:#a5b4fc; background:rgba(99,102,241,0.17);   }
 .eco-filter.active[data-group="experience"] { color:#fed7aa; background:rgba(251,146,60,0.17);   }
+.eco-filter.active[data-group="capability"] { color:#99f6e4; background:rgba(45,212,191,0.15);   }
+.eco-filter.active[data-group="domain"]     { color:#fecdd3; background:rgba(251,113,133,0.15);  }
 .eco-filter.active[data-group="language"]   { color:#fde68a; background:rgba(245,158,11,0.14);   }
 .eco-filter.active[data-group="ai"]         { color:#fbcfe8; background:rgba(236,72,153,0.14);   }
 .eco-filter.active[data-group="data"]       { color:#a7f3d0; background:rgba(16,185,129,0.13);   }
@@ -215,9 +217,9 @@ body > canvas    { display: none !important; }
 /* ── Info panel ─────────────────────────────────────────────── */
 #info-panel {
   position: absolute;
-  bottom: 1.375rem; left: 1.375rem;
+  bottom: 1.75rem; left: 1.75rem;
   z-index: 45;
-  width: 308px;
+  width: 360px;
   padding: 0;
   background: var(--glass-bg);
   backdrop-filter: var(--glass-blur);
@@ -236,7 +238,7 @@ body > canvas    { display: none !important; }
 
 .ip-header {
   display: flex; align-items: center; justify-content: space-between;
-  padding: 0.75rem 0.875rem 0.55rem;
+  padding: 0.9rem 1.15rem 0.65rem;
   border-bottom: 0.5px solid rgba(255,255,255,0.055);
 }
 .ip-badge {
@@ -253,15 +255,15 @@ body > canvas    { display: none !important; }
 .ip-close:hover { color: rgba(255,255,255,0.72); }
 
 .ip-name {
-  font-size: 1.25rem; font-weight: 700;
+  font-size: 1.4375rem; font-weight: 700;
   color: rgba(255,255,255,0.90);
-  letter-spacing: -0.028em; line-height: 1.2;
-  padding: 0.65rem 0.875rem 0.15rem;
+  letter-spacing: -0.028em; line-height: 1.22;
+  padding: 0.85rem 1.15rem 0.2rem;
   margin: 0;
 }
 .ip-desc {
-  font-size: 0.8125rem; color: rgba(255,255,255,0.50);
-  line-height: 1.5; margin: 0; padding: 0.28rem 0.875rem 0;
+  font-size: 0.875rem; color: rgba(255,255,255,0.55);
+  line-height: 1.6; margin: 0; padding: 0.4rem 1.15rem 0;
 }
 .ip-detail {
   font-size: 0.75rem; color: rgba(255,255,255,0.38);
@@ -346,9 +348,9 @@ body > canvas    { display: none !important; }
 
 /* ── Legend ─────────────────────────────────────────────────── */
 .eco-legend {
-  position: absolute; bottom: 1.375rem; right: 1.375rem; z-index: 40;
-  display: flex; flex-direction: column; gap: 0.42rem;
-  padding: 0.7rem 1rem;
+  position: absolute; bottom: 1.75rem; right: 1.75rem; z-index: 40;
+  display: flex; flex-direction: column; gap: 0.55rem;
+  padding: 0.95rem 1.25rem;
   background: var(--glass-bg);
   backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
   border: 0.5px solid rgba(255,255,255,0.055);
@@ -357,13 +359,118 @@ body > canvas    { display: none !important; }
   animation: eco-up-abs 0.45s 0.16s cubic-bezier(0.16,1,0.3,1) both;
 }
 .eco-legend-row {
-  display: flex; align-items: center; gap: 0.5rem;
-  font-size: 0.6875rem; font-weight: 500;
+  display: flex; align-items: center; gap: 0.6rem;
+  font-size: 0.75rem; font-weight: 500;
   letter-spacing: 0.04em; text-transform: uppercase;
   color: rgba(255,255,255,0.32);
 }
 .lg-dot  { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
 .lg-ring { width: 8px; height: 8px; border-radius: 50%; border: 1.5px solid; background: transparent; flex-shrink: 0; }
+
+/* ── View mode toggle ───────────────────────────────────────── */
+.eco-view-btn {
+  font-family: var(--font);
+  font-size: 0.75rem; font-weight: 600;
+  padding: 0.4rem 0.85rem;
+  border-radius: 100px; border: none;
+  background: transparent;
+  color: rgba(255,255,255,0.32);
+  cursor: pointer;
+  transition: background 130ms, color 130ms;
+}
+.eco-view-btn:hover  { color: rgba(255,255,255,0.68); background: rgba(255,255,255,0.044); }
+.eco-view-btn.active { color: rgba(255,255,255,0.92); background: rgba(255,255,255,0.09); }
+
+/* ── Story mode bar ─────────────────────────────────────────── */
+#eco-story-bar {
+  display: flex; flex-wrap: wrap; gap: 0.35rem;
+  justify-content: center;
+  padding: 0 1rem 0.5rem;
+}
+.eco-story-btn {
+  font-family: var(--font);
+  font-size: 0.6875rem; font-weight: 600;
+  letter-spacing: 0.01em;
+  padding: 0.32rem 0.7rem;
+  border-radius: 100px;
+  border: 0.5px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.02);
+  color: rgba(255,255,255,0.45);
+  cursor: pointer;
+  transition: background 130ms, color 130ms, border-color 130ms;
+}
+.eco-story-btn:hover  { color: rgba(255,255,255,0.8); border-color: rgba(255,255,255,0.22); }
+.eco-story-btn.active { color: #fff; background: rgba(255,255,255,0.14); border-color: rgba(255,255,255,0.3); }
+
+/* ── Info panel extras ─────────────────────────────────────── */
+.ip-evidence {
+  font-size: 0.6875rem; color: rgba(255,255,255,0.34);
+  font-style: italic; margin: 0; padding: 0.35rem 0.875rem 0;
+}
+.ip-share {
+  font-family: var(--font);
+  display: block; margin: 0.3rem 0.875rem 0.75rem;
+  font-size: 0.6875rem; font-weight: 600;
+  color: rgba(255,255,255,0.32);
+  background: transparent; border: 0.5px solid rgba(255,255,255,0.12);
+  border-radius: 6px; padding: 0.3rem 0.6rem;
+  cursor: pointer; transition: color 150ms, border-color 150ms;
+}
+.ip-share:hover { color: rgba(255,255,255,0.7); border-color: rgba(255,255,255,0.3); }
+
+/* ── Info panel: capability-first sections ──────────────────── */
+.ip-meta {
+  font-size: 0.75rem; color: rgba(255,255,255,0.42);
+  letter-spacing: 0.02em; margin: 0; padding: 0.1rem 1.15rem 0;
+}
+.ip-section-label {
+  display: block; width: 100%;
+  font-size: 0.5625rem; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  margin-bottom: 0.1rem;
+}
+.ip-provenance {
+  display: flex; flex-direction: column; gap: 0.22rem;
+  margin: 0.6rem 1.15rem 0; padding: 0.55rem 0.7rem;
+  border-left: 2px solid rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.028);
+  border-radius: 0 8px 8px 0;
+}
+.ip-prov-label {
+  font-size: 0.5625rem; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: rgba(255,255,255,0.42);
+}
+.ip-prov-body {
+  font-size: 0.75rem; color: rgba(255,255,255,0.5); line-height: 1.5;
+}
+.ip-prov-body a { color: rgba(255,255,255,0.72); }
+.ip-expand {
+  font-family: var(--font);
+  display: block; width: calc(100% - 2.3rem);
+  margin: 0.65rem 1.15rem 0.2rem;
+  font-size: 0.75rem; font-weight: 600;
+  color: var(--ip-accent, rgba(255,255,255,0.7));
+  background: rgba(255,255,255,0.045);
+  border: 0.5px solid rgba(255,255,255,0.14);
+  border-radius: 8px; padding: 0.45rem 0.6rem;
+  cursor: pointer; transition: background 150ms, border-color 150ms;
+}
+.ip-expand:hover { background: rgba(255,255,255,0.09); border-color: rgba(255,255,255,0.3); }
+
+/* ── SEO / accessible fallback (visually hidden but present for
+   crawlers, screen readers, and no-JS visitors) ─────────────── */
+.eco-seo-fallback {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+.eco-page.no-js .eco-seo-fallback,
+html.no-js .eco-seo-fallback {
+  position: static; width: auto; height: auto; margin: 0; padding: 2rem;
+  clip: auto; white-space: normal; overflow: visible; color: #ccc;
+}
 
 /* ── Hint ───────────────────────────────────────────────────── */
 .eco-hint {
@@ -378,6 +485,12 @@ body > canvas    { display: none !important; }
 @keyframes eco-down    { from { opacity:0; transform:translateY(-8px); }   to { opacity:1; transform:translateY(0); } }
 @keyframes eco-up      { from { opacity:0; transform:translateX(-50%) translateY(8px); } to { opacity:1; transform:translateX(-50%) translateY(0); } }
 @keyframes eco-up-abs  { from { opacity:0; transform:translateY(8px); }    to { opacity:1; transform:translateY(0); } }
+
+/* ── Reduced motion: skip entrance/settle animation chrome ───── */
+@media (prefers-reduced-motion: reduce) {
+  .eco-header, .eco-controls, .eco-legend, .eco-hint { animation: none !important; }
+  #info-panel, .ip-cta span { transition: none !important; }
+}
 
 /* ── Mobile ─────────────────────────────────────────────────── */
 @media (max-width: 720px) {
@@ -412,6 +525,20 @@ body > canvas    { display: none !important; }
   /* Hide search + its adjacent separator on mobile */
   .eco-search-wrap  { display: none; }
   .eco-sep:last-of-type { display: none; }
+
+  /* Story bar: horizontally scrollable row on mobile */
+  #eco-story-bar {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 0 0.875rem 0.5rem;
+    -webkit-mask-image: linear-gradient(to right, black 85%, transparent 100%);
+    mask-image: linear-gradient(to right, black 85%, transparent 100%);
+  }
+  #eco-story-bar::-webkit-scrollbar { display: none; }
+  .eco-story-btn { flex-shrink: 0; }
 
   /* Legend and hint: hidden */
   .eco-legend { display: none; }
@@ -464,24 +591,24 @@ body > canvas    { display: none !important; }
   <div class="eco-header">
     <div>
       <span class="eco-title-label">Sanket Muchhala</span>
-      <span class="eco-title-main">Skills &amp; Projects Ecosystem</span>
+      <span class="eco-title-main">Engineering Knowledge Graph</span>
     </div>
     <div class="eco-stats">
       <div class="eco-stat">
-        <span class="eco-stat-num" id="stat-projects">27</span>
+        <span class="eco-stat-num" id="stat-capabilities">0</span>
+        <span class="eco-stat-lbl">Capabilities</span>
+      </div>
+      <div class="eco-stat">
+        <span class="eco-stat-num" id="stat-projects">0</span>
         <span class="eco-stat-lbl">Projects</span>
       </div>
       <div class="eco-stat">
-        <span class="eco-stat-num" id="stat-exp">3</span>
-        <span class="eco-stat-lbl">Roles</span>
-      </div>
-      <div class="eco-stat">
-        <span class="eco-stat-num" id="stat-tech">43</span>
+        <span class="eco-stat-num" id="stat-tech">0</span>
         <span class="eco-stat-lbl">Technologies</span>
       </div>
       <div class="eco-stat">
-        <span class="eco-stat-num" id="stat-links">115</span>
-        <span class="eco-stat-lbl">Connections</span>
+        <span class="eco-stat-num" id="stat-exp">0</span>
+        <span class="eco-stat-lbl">Roles</span>
       </div>
     </div>
   </div>
@@ -489,19 +616,26 @@ body > canvas    { display: none !important; }
   <!-- Filter controls -->
   <div class="eco-controls">
     <div class="eco-pill">
+      <button class="eco-view-btn active" data-view="core" title="The strongest work, ~70 nodes">Core</button>
+      <button class="eco-view-btn" data-view="full" title="Every project and technology">Full ecosystem</button>
+      <button class="eco-view-btn" data-view="technical" title="Adds source repositories and provenance">Technical</button>
+      <div class="eco-sep"></div>
       <button class="eco-filter active" data-group="all">All</button>
+      <button class="eco-filter" data-group="capability">Capabilities</button>
       <button class="eco-filter" data-group="project">Projects</button>
+      <button class="eco-filter" data-group="domain">Domains</button>
       <button class="eco-filter" data-group="experience">Experience</button>
       <button class="eco-filter" data-group="language">Languages</button>
       <button class="eco-filter" data-group="ai">AI · ML</button>
       <button class="eco-filter" data-group="data">Data</button>
-      <button class="eco-filter" data-group="cloud">Cloud</button>
+      <button class="eco-filter" data-group="cloud">Cloud / Infra</button>
       <button class="eco-filter" data-group="tool">Tools</button>
       <div class="eco-sep"></div>
       <div class="eco-search-wrap">
         <input id="eco-search" class="eco-search-input" type="text"
-               placeholder="Search…" autocomplete="off" spellcheck="false">
-        <span id="search-count"></span>
+               placeholder="Search…" autocomplete="off" spellcheck="false"
+               aria-label="Search capabilities, projects, technologies, and domains">
+        <span id="search-count" aria-live="polite"></span>
       </div>
       <div class="eco-sep"></div>
       <button class="eco-reset" id="reset-graph" title="Reset view (or press Esc)">
@@ -510,19 +644,28 @@ body > canvas    { display: none !important; }
     </div>
   </div>
 
+  <!-- Story mode -->
+  <div id="eco-story-bar" aria-label="Narrative exploration paths"></div>
+
   <!-- Graph -->
   <div id="graph-wrapper">
-    <svg id="skill-graph"></svg>
+    <svg id="skill-graph" role="img" aria-label="Interactive knowledge graph of projects, technologies, capabilities, domains, and experience"></svg>
     <div id="graph-tooltip"></div>
     <div id="info-panel"></div>
 
     <!-- Legend -->
     <div class="eco-legend">
       <div class="eco-legend-row">
+        <div class="lg-dot" style="background:#2dd4bf"></div><span>Capability</span>
+      </div>
+      <div class="eco-legend-row">
         <div class="lg-ring" style="border-color:#818cf8"></div><span>Project</span>
       </div>
       <div class="eco-legend-row">
         <div class="lg-ring" style="border-color:#fb923c"></div><span>Experience</span>
+      </div>
+      <div class="eco-legend-row">
+        <div class="lg-dot" style="background:#fb7185"></div><span>Domain</span>
       </div>
       <div class="eco-legend-row">
         <div class="lg-dot" style="background:#fbbf24"></div><span>Language</span>
@@ -531,29 +674,83 @@ body > canvas    { display: none !important; }
         <div class="lg-dot" style="background:#f472b6"></div><span>AI / ML</span>
       </div>
       <div class="eco-legend-row">
-        <div class="lg-dot" style="background:#34d399"></div><span>Data</span>
+        <div class="lg-dot" style="background:#38bdf8"></div><span>Cloud / Infra</span>
       </div>
       <div class="eco-legend-row">
-        <div class="lg-dot" style="background:#38bdf8"></div><span>Cloud</span>
-      </div>
-      <div class="eco-legend-row">
-        <div class="lg-dot" style="background:#c084fc"></div><span>Tool</span>
+        <div class="lg-dot" style="background:#c084fc"></div><span>Dev Tooling</span>
       </div>
       <div class="eco-legend-row" style="margin-top:0.25rem;border-top:0.5px solid rgba(255,255,255,0.055);padding-top:0.42rem">
-        <span style="font-size:0.5625rem;color:rgba(255,255,255,0.20);letter-spacing:0.06em">hover edges for context</span>
+        <span style="font-size:0.5625rem;color:rgba(255,255,255,0.20);letter-spacing:0.06em">solid = implements · dashed = lineage</span>
       </div>
     </div>
 
     <!-- Hint -->
     <div class="eco-hint">
-      Drag &nbsp;·&nbsp; Scroll to zoom &nbsp;·&nbsp; Click to explore &nbsp;·&nbsp; Hover edges for context &nbsp;·&nbsp; F to search &nbsp;·&nbsp; Esc to reset
+      Click a node to focus &nbsp;·&nbsp; Expand to go deeper &nbsp;·&nbsp; Hover edges for evidence &nbsp;·&nbsp; F to search &nbsp;·&nbsp; Esc to reset
     </div>
   </div>
+
+  <!-- Semantic / SEO / no-JS fallback, generated from the same graph data
+       at Jekyll build time via site.data.skill_map (see scripts/build_skill_map.py) -->
+  <noscript><style>.eco-seo-fallback{position:static!important;width:auto!important;height:auto!important;margin:0!important;padding:2rem!important;clip:auto!important;white-space:normal!important;overflow:visible!important;}</style></noscript>
+  <section class="eco-seo-fallback" aria-label="Text summary of the engineering knowledge graph">
+    <h1>Sanket Muchhala — Engineering Knowledge Graph</h1>
+    {% assign all_nodes = site.data.skill_map.nodes %}
+    {% assign all_edges = site.data.skill_map.edges %}
+    {% assign capabilities = all_nodes | where: "type", "capability" %}
+    {% assign projects = all_nodes | where: "type", "project" %}
+    {% assign technologies = all_nodes | where: "type", "technology" %}
+    {% assign domains = all_nodes | where: "type", "domain" %}
+    {% assign experience = all_nodes | where: "type", "experience" %}
+    <p>{{ capabilities | size }} engineering capabilities, proven across {{ projects | size }} projects and
+    {{ experience | size }} professional roles, implemented with {{ technologies | size }} technologies
+    across {{ domains | size }} domains. Generated from public repository evidence.</p>
+
+    <h2>Engineering capabilities</h2>
+    <p>What these projects demonstrate the ability to build.</p>
+    {% for cap in capabilities %}
+    <h3>{{ cap.name }}</h3>
+    <p>{{ cap.description }}</p>
+    <ul>
+      {% for edge in all_edges %}
+        {% if edge.target == cap.id and edge.type == "IMPLEMENTS" or edge.target == cap.id and edge.type == "DEMONSTRATES" %}
+          {% assign src = all_nodes | where: "id", edge.source | first %}
+          {% if src %}<li>{{ src.name }}{% if edge.context %} — {{ edge.context }}{% endif %}</li>{% endif %}
+        {% endif %}
+      {% endfor %}
+    </ul>
+    {% endfor %}
+
+    <h2>Projects</h2>
+    {% assign sorted_projects = projects | sort: "rank" %}
+    <ul>
+      {% for proj in sorted_projects %}
+      <li>
+        <strong>{{ proj.name }}</strong> — {{ proj.description }}
+        {% if proj.origin == "fork" %} (fork of {{ proj.upstream }}; contribution: {{ proj.contributionNote }}){% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+
+    <h2>Experience</h2>
+    <ul>
+      {% for exp in experience %}
+      <li><strong>{{ exp.name }}</strong> — {{ exp.role }}, {{ exp.period }}. {{ exp.description }}</li>
+      {% endfor %}
+    </ul>
+
+    <h2>Domains</h2>
+    <ul>{% for dom in domains %}<li>{{ dom.name }}</li>{% endfor %}</ul>
+
+    <h2>Technologies</h2>
+    {% assign sorted_tech = technologies | sort: "name" %}
+    <ul>{% for tech in sorted_tech %}<li>{{ tech.name }}</li>{% endfor %}</ul>
+  </section>
 
 </div>
 
 <script src="https://d3js.org/d3.v7.min.js"></script>
 <script>
-  window.ECOSYSTEM_DATA_URL = '{{ "/skill-map/data.json" | relative_url }}';
+  window.ECOSYSTEM_DATA_URL = '{{ "/skill-map/data.generated.json" | relative_url }}';
 </script>
 <script src="{{ '/skill-map/graph.js' | relative_url }}"></script>

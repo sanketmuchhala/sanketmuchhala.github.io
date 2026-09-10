@@ -28,3 +28,6 @@ Thumbs.db
 # Temporary files
 *.tmp
 *.temp
+
+# Skill-map pipeline: raw GitHub API cache (regenerable, may contain private repo data)
+skill-map/source/cache/

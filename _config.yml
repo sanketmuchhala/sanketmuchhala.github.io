@@ -82,6 +82,9 @@ exclude:
   - src/
   - projects/*.html
   - blogs/*.html
+  - docs/
+  - scripts/
+  - skill-map/source/
 
 # Include files that should be processed
 include:

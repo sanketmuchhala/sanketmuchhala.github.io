@@ -183,6 +183,7 @@ image: "/photos/export.png"
                 </div>
             </div>
 
+            {% comment %}IBM experience temporarily hidden until further notice.
             <div class="timeline-item">
                 <div class="timeline-card">
                     <div class="timeline-header">
@@ -202,6 +203,7 @@ image: "/photos/export.png"
                     </ul>
                 </div>
             </div>
+            {% endcomment %}
 
         </div>
     </div>
